@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,8 +6,54 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+
+    <link rel="stylesheet" href="{% static 'css/login.css' %}">
 </head>
 <body>
-    <h1>Login</h1>
+
+    <div class="login-division">
+
+        <div class="logo">
+
+        </div>
+
+        <div id="login-container">
+
+            <div class="basic-login-information">
+                <div class="flex-row">
+                    <h2 class="orange-subtitle">Login</h2>
+                    <h2 class="subtitle">Cadastrar-se</h2>
+                </div>
+
+                <h3 class="minor-subtitle">Preencha os campos corretamente.</h3>
+            </div>
+
+            <div class="form">
+                <form action="" class="form-content">
+
+                    <div class="label-inputs">
+
+                        <div class="label-input-placeholder">
+                            <label for="email" class="minor-subtitle">Email</label>
+                            <input type="text" id="email" placeholder="luana.oliveira@gmail.com" class="input">
+                        </div>
+    
+                        <div class="label-input-placeholder">
+                            <label for="password" class="minor-subtitle">Senha</label>
+                            <input type="text" id="password" placeholder="exemplo.exemplo" class="input">
+                        </div>
+
+                    </div>
+        
+                    <a href="#" id="forgot-password" class="link">Esqueceu a senha?</a>
+        
+                    <button id="enter-button" class="button"><label class="minor-subtitle">Entrar</label></button>
+                </form>
+            </div>
+
+        </div>
+
+    </div>
+
 </body>
 </html>
