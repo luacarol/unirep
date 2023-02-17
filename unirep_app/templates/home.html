@@ -1,0 +1,84 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unirep</title>
+
+    <link rel="stylesheet" href="{% static 'css/global.css' %}">
+    <link rel="stylesheet" href="{% static 'css/home.css' %}">
+</head>
+<body>
+
+    <div class="header">
+
+        <img src="{% static 'img/logo-simulator.svg' %}" alt="Imagem do logo, Unirep." class="logo-image">
+
+        <div class="header-navigation-link">
+            <a href=""><h3 class="minor-subtitle">Home</h3></a>
+            <a href=""><h3 class="minor-subtitle">Repúblicas</h3></a>
+            <a href=""><h3 class="minor-subtitle">Itens à pagar</h3></a>
+        </div>
+
+        <div class="username-icon">
+            <h3 class="minor-subtitle">Username</h3>
+            <a href=""><img class="icon32" src="{% static 'img/logout-icon.svg' %}" alt="Ícone de logout, ou seja, de sair da aplicação."></a>
+        </div>
+
+    </div>
+
+    <div class="body-container">
+
+        <h1 class="title">Home</h1>
+
+        <div>
+
+            <h2 class="subtitle">Meu perfil</h2>
+
+            <div class="user-card">
+
+                <img src="{% static 'img/big-female-profile-picture.svg' %}" alt="Imagem de perfil do usuário.">
+
+                <div class="basic-informations">
+
+                    <div>
+                        <h4 class="minor-subtitle">Nome do usuário</h4>
+                        <p class="legend">Luana Caroliny</p>
+                    </div>
+
+                    <div>
+                        <h4 class="minor-subtitle">Idade</h4>
+                        <p class="legend">22 anos</p>
+                    </div>
+
+                    <div>
+                        <h4 for="username" class="minor-subtitle">Whatsapp</h4>
+                        <p class="legend">(12) 982173929</p>
+                    </div>
+
+                </div>
+
+                <div class="extra-informations">
+
+                    <div>
+                        <h4 class="minor-subtitle">Descrição</h4>
+
+                        <p class="commom-text" id="user-description">Descrição curta do perfil do usuário falando da sua personalidade. Descrição curta do perfil do usuário falando da sua personalidade. Descrição curta do perfil do usuário falando da sua personalidade.</p>
+                    </div>
+
+                    <a href="" class="link-navigation">
+                        <p class="minor-subtitle">Editar meu perfil</p>
+                        <img src="{% static 'img/arrow-orange-icon.svg' %}" alt="Seta laranja que aponta para a direita.">
+                    </a>
+                </div>
+            
+            </div>
+
+        </div>
+
+    </div>
+    
+</body>
+</html>

@@ -1,0 +1,247 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
+
+:root {
+    --orange: #FF8063;
+    --yellow: #FFBF1A;
+    --gray: #999999;
+    --light-gray: #CDCDCD;
+    --brown: #A65858;
+    --light-green: #C1B886;
+    --black: #434343;
+    --white: #ffffff;
+    --less-white: #F9F9F9;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    font-family: 'Quicksand', sans-serif;
+}
+
+.body-container {
+    margin: 0em 7.625em;
+}
+
+/* header */
+
+.header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0em 7.625em;
+}
+
+.header .username-icon {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.header .username-icon a:hover img {
+    /* trocar imagem com fundo laranja */
+}
+
+.header .username-icon img {
+    margin-left: 2em;
+}
+
+/* texts */
+
+.title {
+    font-weight: 700;
+    font-size: 2em;
+    line-height: 2.5em;
+    color: var(--black);
+}
+
+.subtitle {
+    font-weight: 700;
+    font-size: 1.5em;
+    line-height: 1.875em;
+}
+
+.orange-subtitle {
+    font-weight: 700;
+    font-size: 1.5em;
+    line-height: 1.875em;
+    color: var(--orange);
+}
+
+.minor-subtitle {
+    font-weight: 700;
+    font-size: 1.125em;
+    line-height: 1.375em;
+    color: var(--black);
+}
+
+.common-text {
+    font-weight: 500;
+    font-size: 0.875em;
+    line-height: 1.125em;
+    color: var(--black);
+}
+
+.legend {
+    font-weight: 600;
+    font-size: 1em;
+    line-height: 1.25em;
+    color: var(--black);
+}
+
+.link {
+    font-weight: 300;
+    font-size: 1em;
+    line-height: 1.25em;
+    text-decoration-line: underline;
+    color: var(--black);
+}
+
+/* forms */
+
+.form {
+    width: 100%;
+    height: 100%;
+}
+
+.form .form-content {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.form .form-content .label-inputs {
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+/* inputs */
+
+.input {
+    height: 3.063em;
+    background: var(--white);
+    border: 0.188em solid var(--light-gray);
+    border-radius: 0.625em;
+    padding: 0em 0.5em;
+}
+
+.label-input-placeholder {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+} 
+
+/* links */
+
+.header-navigation-link {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.header-navigation-link a {
+    text-decoration: none;
+    margin: 1em 4em;
+}
+
+.header-navigation-link a:hover h3 {
+    color: var(--orange);
+}
+
+/* buttons */
+
+.button {
+    width: 27.375em;
+    height: 3.813em;
+    background: var(--white);
+    border: 0.188em solid var(--light-gray);
+    border-radius: 0.625em;
+}   
+
+.button:hover {
+    width: 27.375em;
+    height: 3.813em;
+    background: var(--orange);
+    border: 0.188em solid var(--orange);
+    border-radius: 0.625em;
+    cursor: pointer;
+}
+
+.button:hover .minor-subtitle {
+    color: var(--white);
+}
+
+/* icons */
+
+.icon32 {
+    width: 2em;
+    height: 2em;
+}
+
+/* usar card */
+
+.user-card {
+    width: fit-content;
+    min-width: 51.938em;
+    max-height: 16.188em;
+    background: #FFFFFF;
+    border: 0.188em solid #CDCDCD;
+    border-radius: 1.25em;
+    padding: 2em;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    box-sizing: border-box;
+}
+
+.user-card .basic-informations {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.user-card h4 {
+    margin: 0em;
+}
+
+.user-card .extra-informations h4 {
+    margin-bottom: 0.375em;
+}
+
+.user-card .extra-informations div {
+    margin-bottom: 1.688em;
+}
+
+.user-card .basic-informations p, .user-card .extra-informations p {
+    margin: 0em;
+}
+
+.user-card .basic-informations div {
+    align-self: flex-start;
+    justify-self: flex-start;
+    margin-bottom: 0.938em;
+}
+
+#user-description { 
+    width: 20.063em;
+    word-break: break-all;
+}
+
+.link-navigation {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    text-decoration: none;
+}
+
+.link-navigation p {
+    color: var(--orange);
+}

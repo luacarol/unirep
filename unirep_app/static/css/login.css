@@ -1,43 +1,8 @@
-@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
-
 body {
-    width: 100vw;
-    height: 100vh;
-    font-family: 'Quicksand', sans-serif;
     background-image: url('../img/login-background.png');
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
-}
-
-/* texts */
-
-.subtitle {
-    font-weight: 700;
-    font-size: 1.5em;
-    line-height: 1.875em;
-}
-
-.orange-subtitle {
-    font-weight: 700;
-    font-size: 1.5em;
-    line-height: 1.875em;
-    color: #FF8063;
-}
-
-.minor-subtitle {
-    font-weight: 700;
-    font-size: 1.125em;
-    line-height: 1.375em;
-    color: #434343;
-}
-
-.link {
-    font-weight: 300;
-    font-size: 1em;
-    line-height: 1.25em;
-    text-decoration-line: underline;
-    color: #434343;
 }
 
 /* containers */
@@ -45,7 +10,7 @@ body {
 #login-container {
     width: 33.5em;
     height: 40.75em;
-    background: #F9F9F9;
+    background: var(--less-white);
     border-radius: 1.25em;
     padding: 3.813em 3em;
     box-sizing: border-box;
@@ -72,43 +37,6 @@ body {
     justify-content: space-around;
 }
 
-/* inputs */
-
-.input {
-    height: 3.063em;
-    background: #FFFFFF;
-    border: 0.188em solid #CDCDCD;
-    border-radius: 0.625em;
-    padding: 0em 0.5em;
-}
-
-.label-input-placeholder {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-}
-
-/* forms */
-
-.form {
-    width: 100%;
-    height: 100%;
-}
-
-.form .form-content {
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-}
-
-.form .form-content .label-inputs {
-    height: 50%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-} 
-
 /* links */
 
 #forgot-password {
@@ -116,7 +44,7 @@ body {
 }
 
 #forgot-password:hover {
-    color: #FF8063;
+    color: var(--orange);
 }
 
 #click-login, #click-register {
@@ -124,27 +52,6 @@ body {
 }
 
 /* buttons */
-
-.button {
-    width: 27.375em;
-    height: 3.813em;
-    background: #FFFFFF;
-    border: 0.188em solid #CDCDCD;
-    border-radius: 0.625em;
-}   
-
-.button:hover {
-    width: 27.375em;
-    height: 3.813em;
-    background: #FF8063;
-    border: 0.188em solid #FF8063;
-    border-radius: 0.625em;
-    cursor: pointer;
-}
-
-.button:hover .minor-subtitle {
-    color: #FFFFFF;
-}
 
 #enter-button {
     width: 100%;
