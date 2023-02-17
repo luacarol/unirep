@@ -115,6 +115,14 @@ body {
     align-self: flex-end;
 }
 
+#forgot-password:hover {
+    color: #FF8063;
+}
+
+#click-login, #click-register {
+    cursor: pointer;
+}
+
 /* buttons */
 
 .button {
