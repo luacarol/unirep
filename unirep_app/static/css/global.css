@@ -277,10 +277,33 @@ body {
     background: var(--white);
     border: 0.188em solid var(--light-gray);
     border-radius: 1.25em;
-    padding: 1em;
+    padding: 1.5em;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
     box-sizing: border-box;
 }
+
+.member-card div {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.member-card p {
+    margin: 0em;
+    word-break: break-all;
+}
+
+.member-card .basic-informations {
+    display: flex;
+    flex-direction: column;
+}
+
+.member-card .basic-informations p {
+    margin: 0em;
+}
+
