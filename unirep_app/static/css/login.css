@@ -5,6 +5,11 @@ body {
     background-size: cover;
 }
 
+/* texts */
+.subtitle {
+    color: var(--black);
+}
+
 /* containers */
 
 #login-container {
