@@ -7,6 +7,8 @@
     {% include 'partials/head.html' %}
 
     <link rel="stylesheet" href="{% static 'css/edit_profle.css' %}">
+
+    <link rel="stylesheet" href="{% static 'css/see_items_pay.css' %}">
 </head>
 
 <body>
@@ -20,6 +22,102 @@
         <div class="section">
 
             <h2 class="subtitle">Informações da república</h2>
+
+            <div class="user-republic-card card">
+
+                <img src="{% static 'img/big-republic-picture.svg' %}" alt="Imagem da república que o usuário mora.">
+
+                <div class="basic-informations">
+
+                    <div>
+                        <h4 class="minor-subtitle">Nome do república</h4>
+                        <p class="legend">Mal te vejo</p>
+                    </div>
+
+                    <div>
+                        <h4 class="minor-subtitle">Quantidade de membros</h4>
+                        <p class="legend">4 membros</p>
+                    </div>
+
+                    <div>
+                        <h4 for="username" class="minor-subtitle">Contato administrador</h4>
+                        <p class="legend">(12) 982173929</p>
+                    </div>
+
+                </div>
+
+                <div class="basic-informations" id="address-informations">
+
+                    <div>
+                        <h4 class="minor-subtitle">Endereço</h4>
+                        <p class="legend">Rua Antonio Amaral Santos, n.137. </p>
+                    </div>
+
+                    <div>
+                        <h4 class="minor-subtitle">Bairro</h4>
+                        <p class="legend">Residencial Jatobá. </p>
+                    </div>
+
+                    <div>
+                        <h4 for="username" class="minor-subtitle">Cidade</h4>
+                        <p class="legend">São José dos Campos/SP</p>
+                    </div>
+
+                </div>
+
+                <div class="extra-informations">
+
+                    <div>
+                        <h4 class="minor-subtitle">Descrição</h4>
+
+                        <p class="commom-text" id="user-description">Descrição curta do perfil do usuário falando da sua personalidade. Descrição curta do perfil do usuário falando da sua personalidade. Descrição curta do perfil do usuário falando da sua personalidade.</p>
+                    </div>
+
+                    <p class="minor-subtitle orange-text">Valor total dos itens: R$ 400,00</p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="section">
+
+            <h2 class="subtitle">Informações dos itens à pagar</h2>
+
+            <div class="item-card">
+
+                <div class="item-card-content">
+
+                    <div class="image-basic-informations">
+
+                        <img src="{% static 'img/credit-card-picture.svg' %}" alt="Imagem de cartão de crédito.">
+
+                        <div>
+
+                            <div>
+                                <h4 class="minor-subtitle">Nome da conta</h4>
+                                <p class="legend">Aluguel</p>
+                            </div>
+
+                            <p class="minor-subtitle orange-text item-value">Valor: R$ 150,00</p>
+
+                        </div>
+
+                    </div>
+
+                    <p class="minor-subtitle orange-text">Vencimento em: 12/12/2023</p>
+
+                    <div class="status-image">
+
+                        <p class="minor-subtitle light-green-text">Status: pago</p>
+                        <img src="{% static 'img/done-icon.svg' %}" alt="Ícone de verificação, que representa um item pago.">
+
+                    </div>
+
+                </div>
+
+            </div>
 
         </div>
 
