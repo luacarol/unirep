@@ -184,6 +184,11 @@ body {
 
 /* icons */
 
+.icon18 {
+    width: 1.125em;
+    height: 1.125em;
+}
+
 .icon32 {
     width: 2em;
     height: 2em;
@@ -252,6 +257,16 @@ body {
 
 .link-navigation p {
     color: var(--orange);
+}
+
+.user-name-gender {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.user-name-gender img {
+    margin-left: 0.5em;
 }
 
 /* user republic card */
