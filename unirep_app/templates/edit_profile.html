@@ -11,29 +11,7 @@
 
 <body>
 
-    <div class="header">
-
-        <img src="{% static 'img/logo-simulator.svg' %}" alt="Imagem do logo, Unirep." class="logo-image">
-
-        <div class="header-navigation-link">
-            <a href="">
-                <h3 class="minor-subtitle">Home</h3>
-            </a>
-            <a href="">
-                <h3 class="minor-subtitle">Repúblicas</h3>
-            </a>
-            <a href="">
-                <h3 class="minor-subtitle">Itens à pagar</h3>
-            </a>
-        </div>
-
-        <div class="username-icon">
-            <h3 class="minor-subtitle">Username</h3>
-            <a href=""><img class="icon32" src="{% static 'img/logout-icon.svg' %}"
-                    alt="Ícone de logout, ou seja, de sair da aplicação."></a>
-        </div>
-
-    </div>
+    {% include 'partials/header.html' %}
 
     <div class="body-container">
 
