@@ -263,6 +263,7 @@ body {
     display: flex;
     flex-direction: row;
     align-items: center;
+    justify-content: space-between;
 }
 
 .user-name-gender img {
@@ -362,4 +363,34 @@ body {
 
 .select:active {
     border-color: var(--light-gray);
+}
+
+/* tooltips */
+
+.tooltip-content {
+    margin: 0;
+}
+
+.tooltip-content .tooltip-text {
+    width: 6em;
+    background-color: var(--black);
+    color: var(--white);
+    text-align: center;
+    padding: 0.5em 0;
+    border-radius: 1.25em;
+    position: absolute;
+    z-index: 1;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.5s;
+}
+
+.tooltip-content a {
+    text-decoration: none;
+    color: var(--black);
+}
+
+.tooltip-content:hover .tooltip-text {
+    opacity: 1;
+    visibility: visible;
 }
