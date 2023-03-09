@@ -1,12 +1,14 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="pt">
+
 <head>
 
     {% include 'partials/head.html' %}
 
     <link rel="stylesheet" href="{% static 'css/edit_profle.css' %}">
 </head>
+
 <body>
 
     <div class="header">
@@ -14,107 +16,128 @@
         <img src="{% static 'img/logo-simulator.svg' %}" alt="Imagem do logo, Unirep." class="logo-image">
 
         <div class="header-navigation-link">
-            <a href=""><h3 class="minor-subtitle">Home</h3></a>
-            <a href=""><h3 class="minor-subtitle">Repúblicas</h3></a>
-            <a href=""><h3 class="minor-subtitle">Itens à pagar</h3></a>
+            <a href="">
+                <h3 class="minor-subtitle">Home</h3>
+            </a>
+            <a href="">
+                <h3 class="minor-subtitle">Repúblicas</h3>
+            </a>
+            <a href="">
+                <h3 class="minor-subtitle">Itens à pagar</h3>
+            </a>
         </div>
 
         <div class="username-icon">
             <h3 class="minor-subtitle">Username</h3>
-            <a href=""><img class="icon32" src="{% static 'img/logout-icon.svg' %}" alt="Ícone de logout, ou seja, de sair da aplicação."></a>
-        </div>
-
-    </div>    
-
-    <div class="body-container">
-
-        <h1 class="title">Editar perfil</h1>
-
-        <div class="section">
-
-            <h2 class="subtitle">Informações pessoais</h3>
-
-            <div class="two-columns">
-
-                <img src="{% static 'img/big-female-profile-picture.svg' %}" alt="Imagem de perfil do usuário.">
-                
-                <div class="two-rows">
-
-                    <div class="three-columns">
-    
-                        <div class="label-input-placeholder">
-                            <label for="full_name" class="minor-subtitle">Nome completo</label>
-                            <input type="text" id="full_name" placeholder="Luana Caroliny Pedroso de Oliveira" class="input">
-                        </div>
-        
-                        <div class="label-input-placeholder">
-                            <label for="age" class="minor-subtitle">Idade</label>
-                            <input type="text" id="age" placeholder="22 anos" class="input">
-                        </div>
-        
-                        <div class="label-input-placeholder">
-                            <label for="sex_selection" class="minor-subtitle">Qual é o seu sexo?</label>
-                            <select name="" id="sex_selection" class="select">
-                                <option class="option" value="female">Feminino</option>
-                                <option class="option" value="male">Masculino</option>
-                            </select>
-                        </div>
-        
-                    </div>
-        
-                    <div class="label-input-placeholder">
-                        <label for="whatsapp" class="minor-subtitle">Whatsapp</label>
-                        <input type="text" id="whatsapp" placeholder="(12) 982173929" class="input">
-                    </div>
-    
-                </div>
-
-            </div>
-        
-        </div>
-
-        <div class="section">
-
-            <h2 class="subtitle">Informações gerais</h3>
-
-                <div class="two-rows">
-
-                    <div class="three-columns">
-    
-                        <div class="label-input-placeholder">
-                            <label for="course" class="minor-subtitle">Qual curso você está cursando?</label>
-                            <input type="text" id="course" placeholder="Engenharia de Software" class="input">
-                        </div>
-    
-                        <div class="label-input-placeholder">
-                            <label for="hobbie" class="minor-subtitle">Qual é o seu hobbie preferido?</label>
-                            <input type="text" id="hobbie" placeholder="Jogar bola" class="input">
-                        </div>
-    
-                        <div class="label-input-placeholder">
-                            <label for="which_do_you_prefer" class="minor-subtitle">Qual você prefere?</label>
-                            <select name="" id="which_do_you_prefer" class="select">
-                                <option class="option" value="female">Limpar o banheiro</option>
-                                <option class="option" value="male">Lavar a louça</option>
-                            </select>
-                        </div>
-    
-                    </div>
-    
-                    <div class="three-columns">
-    
-                        <div class="label-input-placeholder">
-                            <label for="i_do_not_like" class="minor-subtitle">Eu não gosto de....</label>
-                            <input type="text" id="i_do_not_like" placeholder="Desorganização e cheiro de cigarro." class="input">
-                        </div>  
-    
-                    <div>
-
-                </div>
-
+            <a href=""><img class="icon32" src="{% static 'img/logout-icon.svg' %}"
+                    alt="Ícone de logout, ou seja, de sair da aplicação."></a>
         </div>
 
     </div>
-    
+
+    <div class="body-container">
+
+        <form action="" class="form">
+
+            <div class="form-content">
+
+                <h1 class="title">Editar perfil</h1>
+
+                <div class="section">
+
+                    <h2 class="subtitle">Informações pessoais</h3>
+
+                        <div class="two-columns">
+
+                            <img src="{% static 'img/big-female-profile-picture.svg' %}"
+                                alt="Imagem de perfil do usuário.">
+
+                            <div class="two-rows">
+
+                                <div class="three-columns">
+
+                                    <div class="label-input-placeholder">
+                                        <label for="full_name" class="minor-subtitle">Nome completo</label>
+                                        <input type="text" id="full_name"
+                                            placeholder="Luana Caroliny Pedroso de Oliveira" class="input">
+                                    </div>
+
+                                    <div class="label-input-placeholder">
+                                        <label for="age" class="minor-subtitle">Idade</label>
+                                        <input type="text" id="age" placeholder="22 anos" class="input">
+                                    </div>
+
+                                    <div class="label-input-placeholder">
+                                        <label for="sex_selection" class="minor-subtitle">Qual é o seu sexo?</label>
+                                        <select name="" id="sex_selection" class="select">
+                                            <option class="option" value="female">Feminino</option>
+                                            <option class="option" value="male">Masculino</option>
+                                        </select>
+                                    </div>
+
+                                </div>
+
+                                <div class="label-input-placeholder">
+                                    <label for="whatsapp" class="minor-subtitle">Whatsapp</label>
+                                    <input type="text" id="whatsapp" placeholder="(12) 982173929" class="input">
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                </div>
+
+                <div class="section">
+
+                    <h2 class="subtitle">Informações gerais</h3>
+
+                        <div class="two-rows">
+
+                            <div class="three-columns">
+
+                                <div class="label-input-placeholder">
+                                    <label for="course" class="minor-subtitle">Qual curso você está cursando?</label>
+                                    <input type="text" id="course" placeholder="Engenharia de Software" class="input">
+                                </div>
+
+                                <div class="label-input-placeholder">
+                                    <label for="hobbie" class="minor-subtitle">Qual é o seu hobbie preferido?</label>
+                                    <input type="text" id="hobbie" placeholder="Jogar bola" class="input">
+                                </div>
+
+                                <div class="label-input-placeholder">
+                                    <label for="which_do_you_prefer" class="minor-subtitle">Qual você prefere?</label>
+                                    <select name="" id="which_do_you_prefer" class="select">
+                                        <option class="option" value="female">Limpar o banheiro</option>
+                                        <option class="option" value="male">Lavar a louça</option>
+                                    </select>
+                                </div>
+
+                            </div>
+
+                            <div class="three-columns">
+
+                                <div class="label-input-placeholder">
+                                    <label for="i_do_not_like" class="minor-subtitle">Eu não gosto de....</label>
+                                    <input type="text" id="i_do_not_like"
+                                        placeholder="Desorganização e cheiro de cigarro." class="input">
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                </div>
+
+                <button id="save-edit-profile-button" class="button"><label class="minor-subtitle">Salvar</label></button>
+
+            </div>
+
+        </form>
+
+    </div>
+
 </body>
+
 </html>

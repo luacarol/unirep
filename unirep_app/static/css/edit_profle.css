@@ -18,3 +18,7 @@
 #whatsapp {
     width: 15.813em;
 }
+
+.form .button {
+    align-self: center;
+}
