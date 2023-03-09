@@ -8,3 +8,6 @@ def home(request):
 
 def edit_profile(request):
     return render(request, 'edit_profile.html')
+
+def see_items_pay(request):
+    return render(request, 'see_items_pay.html')
