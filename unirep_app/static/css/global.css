@@ -45,7 +45,7 @@ body {
 }
 
 .header .username-icon a:hover img {
-    /* trocar imagem com fundo laranja */
+    content: url('../img/logout-icon-orange.svg');
 }
 
 .header .username-icon img {

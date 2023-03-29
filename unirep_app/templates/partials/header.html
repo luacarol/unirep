@@ -12,7 +12,16 @@
 
     <div class="username-icon">
         <h3 class="minor-subtitle">Username</h3>
-        <a href="{% url 'login' %}"><img class="icon32" src="{% static 'img/logout-icon.svg' %}" alt="Ícone de logout, ou seja, de sair da aplicação."></a>
+
+
+        <div class="tooltip-content" style="margin: 0;">
+
+            <a href="{% url 'login' %}"><img class="icon32" src="{% static 'img/logout-icon.svg' %}" alt="Ícone de logout, ou seja, de sair da aplicação."></a>
+
+            <span class="tooltip-text">sair</span>
+
+        </div>
+
     </div>
 
 </div>
