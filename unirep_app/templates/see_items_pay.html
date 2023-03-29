@@ -15,7 +15,7 @@
 
     {% include 'partials/header.html' %}
 
-    <div class="body-container">
+    <div class="body-container" id="body-see-items-pay">
 
         <h1 class="title">Itens à pagar</h1>
 
@@ -85,34 +85,17 @@
 
             <h2 class="subtitle">Informações dos itens à pagar</h2>
 
-            <div class="item-card">
+            <div class="div-item-cards">
 
-                <div class="item-card-content">
+                <div class="div-item-card">
 
-                    <div class="image-basic-informations">
+                    <div class="div-img-basic-informations">
+                        <img src="{% static 'img/credit-card-picture.svg' %}" />
 
-                        <img src="{% static 'img/credit-card-picture.svg' %}" alt="Imagem de cartão de crédito.">
-
-                        <div>
-
-                            <div>
-                                <h4 class="minor-subtitle">Nome da conta</h4>
-                                <p class="legend">Aluguel</p>
-                            </div>
-
-                            <p class="minor-subtitle orange-text item-value">Valor: R$ 150,00</p>
-
+                        <div class="div-basic-informations">
+                            <h4 class="minor-subtitle">Nome da conta</h4>
+                            <h5 class="legend">Aluguel</h5>
                         </div>
-
-                    </div>
-
-                    <p class="minor-subtitle orange-text">Vencimento em: 12/12/2023</p>
-
-                    <div class="status-image">
-
-                        <p class="minor-subtitle light-green-text">Status: pago</p>
-                        <img src="{% static 'img/done-icon.svg' %}" alt="Ícone de verificação, que representa um item pago.">
-
                     </div>
 
                 </div>
