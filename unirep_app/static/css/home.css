@@ -1,36 +1,3 @@
-/* texts */
-
 .subtitle {
     color: var(--brown);
-}
-
-.section-members {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.section-members .subtitle-members {
-    align-self: flex-start;
-}
-
-.div-member-cards {
-    width: 66.25em;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-}
-
-.div-basic-informations-icon-gender {
-    display: flex;
-    flex-direction: row;
-    align-items: flex-end;
-    justify-content: flex-end;
-}
-
-.div-basic-informations-icon-gender .basic-informations {
-    margin-right: 0.5em;
-}
-
-.member-card .description {
-    text-align: center;
 }

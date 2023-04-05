@@ -78,65 +78,10 @@
             </div>
 
             <div class="section section-my-house">
+
                 <h2 class="subtitle">Minha moradia</h2>
             
-                <div class="user-republic-card card">
-
-                    <img src="{% static 'img/big-republic-picture.svg' %}" alt="Imagem da república que o usuário mora.">
-
-                    <div class="basic-informations">
-
-                        <div>
-                            <h4 class="minor-subtitle">Nome do república</h4>
-                            <p class="legend">Mal te vejo</p>
-                        </div>
-
-                        <div>
-                            <h4 class="minor-subtitle">Quantidade de membros</h4>
-                            <p class="legend">4 membros</p>
-                        </div>
-
-                        <div>
-                            <h4 for="username" class="minor-subtitle">Contato administrador</h4>
-                            <p class="legend">(12) 982173929</p>
-                        </div>
-
-                    </div>
-
-                    <div class="basic-informations" id="address-informations">
-
-                        <div>
-                            <h4 class="minor-subtitle">Endereço</h4>
-                            <p class="legend">Rua Antonio Amaral Santos, n.137. </p>
-                        </div>
-
-                        <div>
-                            <h4 class="minor-subtitle">Bairro</h4>
-                            <p class="legend">Residencial Jatobá. </p>
-                        </div>
-
-                        <div>
-                            <h4 for="username" class="minor-subtitle">Cidade</h4>
-                            <p class="legend">São José dos Campos/SP</p>
-                        </div>
-
-                    </div>
-
-                    <div class="extra-informations">
-
-                        <div>
-                            <h4 class="minor-subtitle">Descrição</h4>
-
-                            <p class="commom-text" id="user-description">Descrição curta do perfil do usuário falando da sua personalidade. Descrição curta do perfil do usuário falando da sua personalidade. Descrição curta do perfil do usuário falando da sua personalidade.</p>
-                        </div>
-
-                        <a href="{% url 'see-items-pay' %}" class="link-navigation">
-                            <p class="minor-subtitle">Ver itens à pagar</p>
-                            <img src="{% static 'img/arrow-orange-icon.svg' %}" alt="Seta laranja que aponta para a direita.">
-                        </a>
-                    </div>
-
-                </div>
+                {% include 'partials/cards/republic_card.html' %}
                 
             </div>
 
@@ -144,104 +89,7 @@
 
                 <h2 class="subtitle subtitle-members">Membros</h2>
 
-                <div class="div-member-cards">
-
-                    <div class="member-card">
-
-                        <div class="div-img-profile-basic-informations">
-    
-                            <img src="{% static 'img/small-male-profile-picture.svg' %}" alt="Imagem do membro da república.">
-
-                            <div class="div-basic-informations-icon-gender">
-
-                                <div class="basic-informations">
-                                    <label class="minor-subtitle">Nome do usuário</label>
-                                    <p class="legend">Luana Caroliny</p>
-                                </div>
-
-                                <div class="tooltip-content" style="margin: 0;">
-
-                                    <a href="">
-                                        <img src="{% static 'img/gender/icon-gender-male.svg' %}" alt="Male gender icon" />
-                                    </a>
-
-                                    <span class="tooltip-text">masculino</span>
-
-                                </div>
-                                
-                            </div>
-    
-                        </div>        
-    
-                        <p class="commmon-text desciption">Eu gosto de jogar bola e odeio sentir cheiro de cigarro. Faço faculdade de ADS e amo programar. Faço faculdade de ADS e amo programar.</p>
-    
-                    </div>
-
-                    <div class="member-card">
-
-                        <div class="div-img-profile-basic-informations">
-    
-                            <img src="{% static 'img/small-male-profile-picture.svg' %}" alt="Imagem do membro da república.">
-
-                            <div class="div-basic-informations-icon-gender">
-
-                                <div class="basic-informations">
-                                    <label class="minor-subtitle">Nome do usuário</label>
-                                    <p class="legend">Luana Caroliny</p>
-                                </div>
-
-                                <div class="tooltip-content" style="margin: 0;">
-
-                                    <a href="">
-                                        <img src="{% static 'img/gender/icon-gender-male.svg' %}" alt="Male gender icon" />
-                                    </a>
-
-                                    <span class="tooltip-text">masculino</span>
-
-                                </div>
-                                
-                            </div>
-    
-                        </div>        
-    
-                        <p class="commmon-text desciption">Eu gosto de jogar bola e odeio sentir cheiro de cigarro. Faço faculdade de ADS e amo programar. Faço faculdade de ADS e amo programar.</p>
-    
-                    </div>
-
-                    <div class="member-card">
-
-                        <div class="div-img-profile-basic-informations">
-    
-                            <img src="{% static 'img/small-male-profile-picture.svg' %}" alt="Imagem do membro da república.">
-
-                            <div class="div-basic-informations-icon-gender">
-
-                                <div class="basic-informations">
-                                    <label class="minor-subtitle">Nome do usuário</label>
-                                    <p class="legend">Luana Caroliny</p>
-                                </div>
-
-                                <div class="tooltip-content" style="margin: 0;">
-
-                                    <a href="">
-                                        <img src="{% static 'img/gender/icon-gender-male.svg' %}" alt="Male gender icon" />
-                                    </a>
-
-                                    <span class="tooltip-text">masculino</span>
-
-                                </div>
-                                
-                            </div>
-    
-                        </div>        
-    
-                        <p class="commmon-text desciption">Eu gosto de jogar bola e odeio sentir cheiro de cigarro. Faço faculdade de ADS e amo programar. Faço faculdade de ADS e amo programar.</p>
-    
-                    </div>
-
-                </div>
-
-                {% include 'partials/pagination.html' %}
+                {% include 'partials/cards/member_carroussel_card.html' %}
 
             </div>
 

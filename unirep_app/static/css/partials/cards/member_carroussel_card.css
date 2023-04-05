@@ -1,0 +1,66 @@
+.member-card {
+    width: 21.625em;
+    height: 13.813em;
+    background: var(--white);
+    border: 0.188em solid var(--light-gray);
+    border-radius: 1.25em;
+    padding: 1.5em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    box-sizing: border-box;
+}
+
+.member-card .div-img-profile-basic-informations {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.member-card p {
+    margin: 0em;
+    word-break: break-all;
+}
+
+.member-card .basic-informations {
+    display: flex;
+    flex-direction: column;
+}
+
+.member-card .basic-informations p {
+    margin: 0em;
+}
+
+.div-member-cards {
+    width: 66.25em;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.member-card .description {
+    text-align: center;
+}
+
+.section-members {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.section-members .subtitle-members {
+    align-self: flex-start;
+}
+
+.div-basic-informations-icon-gender {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: flex-end;
+}
+
+.div-basic-informations-icon-gender .basic-informations {
+    margin-right: 0.5em;
+}

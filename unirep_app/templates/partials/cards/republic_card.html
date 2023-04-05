@@ -1,0 +1,59 @@
+{% load static %}
+
+<div class="card user-republic-card">
+
+    <img src="{% static 'img/big-republic-picture.svg' %}" alt="Imagem da república que o usuário mora.">
+
+    <div class="basic-informations">
+
+        <div>
+            <h4 class="minor-subtitle">Nome do república</h4>
+            <p class="legend">Mal te vejo</p>
+        </div>
+
+        <div>
+            <h4 class="minor-subtitle">Quantidade de membros</h4>
+            <p class="legend">4 membros</p>
+        </div>
+
+        <div>
+            <h4 for="username" class="minor-subtitle">Contato administrador</h4>
+            <p class="legend">(12) 982173929</p>
+        </div>
+
+    </div>
+
+    <div class="basic-informations" id="address-informations">
+
+        <div>
+            <h4 class="minor-subtitle">Endereço</h4>
+            <p class="legend">Rua Antonio Amaral Santos, n.137. </p>
+        </div>
+
+        <div>
+            <h4 class="minor-subtitle">Bairro</h4>
+            <p class="legend">Residencial Jatobá. </p>
+        </div>
+
+        <div>
+            <h4 for="username" class="minor-subtitle">Cidade</h4>
+            <p class="legend">São José dos Campos/SP</p>
+        </div>
+
+    </div>
+
+    <div class="extra-informations">
+
+        <div>
+            <h4 class="minor-subtitle">Descrição</h4>
+
+            <p class="commom-text" id="user-description">Descrição curta do perfil do usuário falando da sua personalidade. Descrição curta do perfil do usuário falando da sua personalidade. Descrição curta do perfil do usuário falando da sua personalidade.</p>
+        </div>
+
+        <a href="{% url 'see-items-pay' %}" class="link-navigation">
+            <p class="minor-subtitle">Ver itens à pagar</p>
+            <img src="{% static 'img/arrow-orange-icon.svg' %}" alt="Seta laranja que aponta para a direita.">
+        </a>
+    </div>
+
+</div>

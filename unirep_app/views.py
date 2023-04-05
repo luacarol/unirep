@@ -14,3 +14,6 @@ def see_items_pay(request):
 
 def republics(request):
     return render(request, 'republics.html')
+
+def republic_information(request):
+    return render(request, 'republic_information.html')

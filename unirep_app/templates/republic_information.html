@@ -1,0 +1,46 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+
+    {% include 'partials/head.html' %}
+
+    <link rel="stylesheet" href="{% static 'css/republics.css' %}">
+</head>
+<body>
+
+    {% include 'partials/header.html' %}
+
+    <div class="body-container">
+
+        <h1 class="title">República</h1>
+
+        <section class="section section-republic-information">
+
+            <h2 class="subtitle">Informações gerais</h2>
+
+            {% include 'partials/cards/republic_card.html' %}
+
+        </section>
+
+        <section class="section section-members">
+
+            <h2 class="subtitle subtitle-members">Informações dos membros</h2>
+
+            {% include 'partials/cards/member_carroussel_card.html' %}
+            
+        </section>
+
+        <section class="section section-item-to-pay">
+
+            <h2 class="subtitle subtitle-item-to-pay">Informações dos itens à pagar</h2>
+
+            
+            
+        </section>
+
+    </div>
+
+    <footer>Footer Unirep</footer>
+</body>
+</html>
