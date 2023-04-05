@@ -1,7 +1,24 @@
+#body-see-items-pay .section-item-to-pay {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#body-see-items-pay .section-item-to-pay .subtitle-item-to-pay {
+    align-self: flex-start;
+}
+
+#body-see-items-pay .div-item-cards {
+    width: 66.875em;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
 #body-see-items-pay .div-item-card {
-    width: 21.625em;
-    height: 13.313em;
-    padding: 0.228em 2.019em 1.524em 2.007em;
+    width: fit-content;
+    height: fit-content;
+    padding: 2.29em 2.019em 1.524em 2.007em;
     background: #FFFFFF;
     border: 0.188em solid #CDCDCD;
     border-radius: 1.25em;
@@ -9,12 +26,65 @@
 
 #body-see-items-pay .div-img-basic-informations {
     display: flex;
+    flex-direction: column;
+}
+
+#body-see-items-pay .div-image-basic-informations {
+    display: flex;
     flex-direction: row;
-    align-items: center;
+    align-items: flex-end;
     justify-content: space-between;
+}
+
+#body-see-items-pay .div-basic-informations-value {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
 }
 
 #body-see-items-pay .div-basic-informations {
     display: flex;
     flex-direction: column;
+    margin-bottom: 0.774em;
+}
+
+#body-see-items-pay .div-imgs-item-card-download {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: flex-end;
+    margin-right: 0.779em;
+}
+
+#body-see-items-pay .icon-download {
+    cursor: pointer;
+}
+
+#body-see-items-pay .div-maturity-status-informations {
+    margin-top: 0.825em;
+}
+
+.div-pagination {
+    width: 100%;
+    position: relative;
+    top: -7em;
+    z-index: -1;
+}
+
+.div-imgs-pagination {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 0;
+}
+
+.div-item-card .img-item-card {
+    width: 4.375em;
+    height: 3.991em;
+}
+
+.link-icon-download {
+    text-decoration: none;
+    z-index: 1;
 }

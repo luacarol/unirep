@@ -107,6 +107,10 @@ body {
     color: var(--light-green);
 }
 
+.gray-text {
+    color: var(--gray);
+}
+
 /* forms */
 
 .form {
@@ -190,6 +194,11 @@ body {
 .icon18 {
     width: 1.125em;
     height: 1.125em;
+}
+
+.icon24 {
+    width: 1.5em;
+    height: 1.5em;
 }
 
 .icon32 {
