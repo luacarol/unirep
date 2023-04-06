@@ -1,0 +1,42 @@
+/* Card payable item */
+
+.section-item-to-pay {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.section-item-to-pay .subtitle-item-to-pay {
+    align-self: flex-start;
+}
+
+.div-payable-items {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    column-gap: 0.688em;
+}
+
+.div-payable-item {
+    width: 21.625em;
+    height: 9.438em;
+    background: #FFFFFF;
+    border: 0.188em solid #CDCDCD;
+    border-radius: 1.25em;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 0em 1.875em;
+    box-sizing: border-box;
+}
+
+.div-payable-item .div-basic-informations {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-left: 2.375em;
+}
+
+.div-payable-item .div-basic-informations .text-account-value {
+    margin-top: 0.875em;
+}
