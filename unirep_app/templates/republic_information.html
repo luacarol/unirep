@@ -35,24 +35,7 @@
 
             <h2 class="subtitle subtitle-item-to-pay">Informações dos itens à pagar</h2>
 
-            <div class="div-payable-items">
-
-                <div class="div-payable-item">
-
-                    <img class="img-item-card" src="{% static 'img/credit-card-picture.svg' %}" />
-
-                    <div class="div-basic-informations">
-
-                        <h3 class="minor-subtitle text-label-account-name">Nome da conta</h3>
-                        <h4 class="legend text-account-name">Aluguel</h4>
-
-                        <h4 class="legend orange-text text-account-value">Valor: R$ 150,00</h4>
-
-                    </div>
-
-                </div>
-
-            </div>
+            {% include 'partials/cards/view_item_carroussel_card.html' %}
             
         </section>
 
