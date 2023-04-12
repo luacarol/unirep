@@ -12,10 +12,14 @@ def home(request):
     # 4 - usuário com solicitação recusada
     # 5 - usuário do tipo administrador
 
-    type_user = '3'
+    type_user = '5'
+
+    if type_user == '5':
+        incoming_requests = True
 
     return render(request, 'home.html', {
-        'type_user': type_user
+        'type_user': type_user,
+        'incoming_requests': incoming_requests
     })
 
 def edit_profile(request):

@@ -81,6 +81,7 @@
 
                 <h2 class="subtitle">Minha moradia</h2>
 
+                <!-- 1 - usuário que não realizou nenhuma solicitação -->
                 {% if type_user == '1' %}
 
                     <div class="div-without-something">
@@ -89,6 +90,7 @@
                         <p class="minor-subtitle">Não há nenhuma solicitação até agora</p>
                     </div>
 
+                <!-- 2 - usuário com solicitação pendente -->
                 {% elif type_user == '2' %}
 
                     <div class="div-without-something">
@@ -97,7 +99,8 @@
                         <p class="minor-subtitle">Solicitação em andamento.</p>
                     </div>
             
-                {% elif type_user == '3' %}
+                <!-- 3 - usuário com solicitação aprovada ou 5 - usuário do tipo administrador -->
+                {% elif type_user == '3' or type_user == '5' %}
 
                     {% include 'partials/cards/republic/republic_card.html' %}
 
@@ -108,13 +111,39 @@
                 
             </div>
 
-            {% if type_user == '3' %}
+            <!-- 3 - usuário com solicitação aprovada ou 5 - usuário do tipo administrador -->
+            {% if type_user == '3' or type_user == '5' %}
 
                 <div class="section section-members">
 
                     <h2 class="subtitle subtitle-members">Membros</h2>
 
                     {% include 'partials/cards/member_carroussel_card.html' %}
+
+                </div>
+
+            {% endif %}
+
+            <!-- 5 - usuário do tipo administrador -->
+            {% if type_user == '5' %}
+
+                <div class="section section-members">
+
+                    <h2 class="subtitle subtitle-members">Solicitações de entrada</h2>
+
+                    {% if incoming_requests %}
+
+                        {% include 'partials/cards/incoming_requests_carroussel_card.html' %}
+
+                    {% else %}
+
+                        <div class="div-without-something">
+                            <img class="img-icon-no-data" src="{% static 'img/icon-no-data.svg' %}" alt="Dois papéis sobrepostos" />
+
+                            <p class="minor-subtitle">Não há nenhuma solicitação até agora</p>
+                        </div>
+
+                    {% endif %}
 
                 </div>
 
