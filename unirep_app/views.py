@@ -5,11 +5,14 @@ def login(request):
 
 def home(request):
 
-    # 1 - usuário sem moradia
-    # 2 - usuário com moradia
-    # 3 - administrador
+    #Quanto a alocação do usuário em uma república:
+    # 1 - usuário que não realizou nenhuma solicitação
+    # 2 - usuário com solicitação pendente
+    # 3 - usuário com solicitação aprovada
+    # 4 - usuário com solicitação recusada
+    # 5 - usuário do tipo administrador
 
-    type_user = '1'
+    type_user = '2'
 
     return render(request, 'home.html', {
         'type_user': type_user

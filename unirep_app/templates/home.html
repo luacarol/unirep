@@ -88,8 +88,16 @@
 
                         <p class="minor-subtitle">Não há nenhuma solicitação até agora</p>
                     </div>
-            
+
                 {% elif type_user == '2' %}
+
+                    <div class="div-without-something">
+                        <img class="img-icon-alarm" src="{% static 'img/icon-alarm.svg' %}" alt="Alarme" />
+
+                        <p class="minor-subtitle">Solicitação em andamento.</p>
+                    </div>
+            
+                {% elif type_user == '3' %}
 
                     {% include 'partials/cards/republic/republic_card.html' %}
 
@@ -100,9 +108,7 @@
                 
             </div>
 
-            {% if type_user == '1' %}
-
-            {% else %}
+            {% if type_user == '3' %}
 
                 <div class="section section-members">
 
