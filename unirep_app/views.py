@@ -12,7 +12,7 @@ def home(request):
     # 4 - usuário com solicitação recusada
     # 5 - usuário do tipo administrador
 
-    type_user = '2'
+    type_user = '3'
 
     return render(request, 'home.html', {
         'type_user': type_user

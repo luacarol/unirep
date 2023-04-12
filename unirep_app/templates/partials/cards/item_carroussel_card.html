@@ -1,0 +1,179 @@
+{% load static %}
+
+<link rel="stylesheet" href="{% static '/css/partials/cards/item_carroussel_card.css' %}">
+
+<div class="div-item-cards">
+
+    <div class="div-item-card">
+
+        <div class="div-img-basic-informations">
+
+            <div class="div-image-basic-informations">
+
+                <div class="div-imgs-item-card-download">
+
+                    <a href="" class="link-icon-download"><img class="img-item-card" src="{% static 'img/credit-card-picture.svg' %}" /></a>
+                    <a href="" class="link-icon-download"><img class="icon24 icon-download" src="{% static 'img/icon-download.svg' %}" /></a>
+
+                </div>
+
+                <div class="div-basic-informations-value">
+
+                    <div class="div-basic-informations">
+                        <h4 class="minor-subtitle account-name-text">Nome da conta</h4>
+                        <h5 class="legend">Aluguel</h5>
+                    </div>
+
+                    <h5 class="legend">Valor: R$ 150,00</h5>
+
+                </div>
+
+            </div>
+
+            <div class="div-maturity-status-informations">
+
+                <h5 class="legend orange-text maturity-text">Vencimento em: 12/12/2023</h5>
+
+                <a id="link-status-item-to-pay"  class="link-status-item-to-pay">
+                    <h5 class="legend orange-text status-text">Status: Pagar</h5>
+                    <img class="icon22" src="{% static 'img/arrow-orange-icon.svg' %}" alt="Seta laranja que aponta para a direita.">
+                </a>
+
+            </div>
+            
+        </div>
+
+    </div>
+
+    <div class="div-item-card">
+
+        <div class="div-img-basic-informations">
+
+            <div class="div-image-basic-informations">
+
+                <div class="div-imgs-item-card-download">
+
+                    <a href="" class="link-icon-download"><img class="img-item-card" src="{% static 'img/credit-card-picture.svg' %}" /></a>
+                    <a href="" class="link-icon-download"><img class="icon24 icon-download" src="{% static 'img/icon-download.svg' %}" /></a>
+
+                </div>
+
+                <div class="div-basic-informations-value">
+
+                    <div class="div-basic-informations">
+                        <h4 class="minor-subtitle account-name-text">Nome da conta</h4>
+                        <h5 class="legend">Aluguel</h5>
+                    </div>
+
+                    <h5 class="legend">Valor: R$ 150,00</h5>
+
+                </div>
+
+            </div>
+
+            <div class="div-maturity-status-informations">
+
+                <h5 class="legend gray-text maturity-text">Vencimento em: 12/12/2023</h5>
+                <h5 class="legend gray-text status-text">Status: Pago</h5>
+
+            </div>
+            
+        </div>
+
+    </div>
+
+    <div class="div-item-card">
+
+        <div class="div-img-basic-informations">
+
+            <div class="div-image-basic-informations">
+
+                <div class="div-imgs-item-card-download">
+
+                    <a href="" class="link-icon-download"><img class="img-item-card" src="{% static 'img/credit-card-picture.svg' %}" /></a>
+                    <a href="" class="link-icon-download"><img class="icon24 icon-download" src="{% static 'img/icon-download.svg' %}" /></a>
+
+                </div>
+
+                <div class="div-basic-informations-value">
+
+                    <div class="div-basic-informations">
+                        <h4 class="minor-subtitle account-name-text">Nome da conta</h4>
+                        <h5 class="legend">Aluguel</h5>
+                    </div>
+
+                    <h5 class="legend">Valor: R$ 150,00</h5>
+
+                </div>
+
+            </div>
+
+            <div class="div-maturity-status-informations">
+
+                <h5 class="legend gray-text maturity-text">Vencimento em: 12/12/2023</h5>
+                <h5 class="legend gray-text status-text">Status: Pago</h5>
+
+            </div>
+            
+        </div>
+
+    </div>
+
+</div>
+
+<div id="div-modal-item-to-pay" class="div-modal">
+
+    <div class="div-modal-content">
+
+        <h2 class="subtitle orange-text">Verificação</h2>
+
+        <div class="div-basic-information">
+            <label class="minor-subtitle gray-text">Pagamento</label>
+            <p class="minor-subtitle">R$ 140,00</p>
+        </div>
+        
+        <div class="div-basic-information">
+            <label class="minor-subtitle gray-text">Nome do item à pagar</label>
+            <p class="minor-subtitle">Aluguel</p>
+        </div>
+
+        <div class="div-basic-information">
+            <label class="minor-subtitle gray-text">Método de pagamento</label>
+            <p class="minor-subtitle">Pix</p>
+        </div>
+
+        <div class="div-basic-information">
+            <label class="minor-subtitle gray-text">Email</label>
+            <p class="minor-subtitle">luana.oliveira@gmail.com</p>
+        </div>
+
+        <button id="button-confirm" class="button"><label class="minor-subtitle">Confirmar</label></button>
+
+    </div>
+
+</div>
+
+<script>
+
+    // All varibales 
+    let link_status_item_to_pay = document.getElementById('link-status-item-to-pay')
+    let div_modal_item_to_pay   = document.getElementById('div-modal-item-to-pay')
+    let button_confirm          = document.getElementById('button-confirm')
+
+    link_status_item_to_pay.onclick = function() {
+        div_modal_item_to_pay.style.display = 'flex'
+    }
+
+    button_confirm.onclick = function() {
+        div_modal_item_to_pay.style.display = 'none'
+    }
+
+    window.onclick = function(e) {
+        if (e.target == div_modal_item_to_pay) {
+            div_modal_item_to_pay.style.display = "none";
+        }
+    }
+
+</script>
+
+{% include 'partials/pagination.html' %}

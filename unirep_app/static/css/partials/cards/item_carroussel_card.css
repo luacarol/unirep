@@ -1,0 +1,28 @@
+.link-status-item-to-pay {
+    text-decoration: none;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    cursor: pointer;
+}
+
+.link-status-item-to-pay:hover h5 {
+    color: var(--black);
+}
+
+.link-status-item-to-pay:hover img {
+    content: url('../../../img/arrow-black-icon.svg');
+}
+
+/* Modal item to pay */
+#div-modal-item-to-pay .div-modal-content {
+    width: 37.75em;
+    height: 23.813em;
+}
+
+#div-modal-item-to-pay .div-basic-information {
+    width: 34.188em;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
