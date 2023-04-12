@@ -99,10 +99,15 @@
                         <p class="minor-subtitle">Solicitação em andamento.</p>
                     </div>
             
-                <!-- 3 - usuário com solicitação aprovada ou 5 - usuário do tipo administrador -->
-                {% elif type_user == '3' or type_user == '5' %}
+                <!-- 3 - usuário com solicitação aprovada -->
+                {% elif type_user == '3' %}
 
                     {% include 'partials/cards/republic/republic_card.html' %}
+
+                <!-- 5 - usuário do tipo administrador -->
+                {% elif type_user == '5' %}
+
+                    {% include 'partials/cards/republic/republic_card_3.html' %}
 
                 {% else %}
 
