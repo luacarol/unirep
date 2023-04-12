@@ -41,8 +41,52 @@
 
         <button id="button-request-entry" class="button"><label class="minor-subtitle">Solicitar Entrada</label></button>
 
+        <!-- Modal Request Sent -->
+        <div id="div-modal-request-sent" class="div-modal">
+            <div class="div-modal-content">
+                <h2 class="subtitle orange-text">Sucesso!</h2>
+
+                <h3 class="minor-subtitle">Sua solicitação foi enviada com sucesso.</h3>
+
+                <h4 class="legend">Em breve terá o retorno do administrador.</h4>
+
+                <button id="button-modal-ok" class="button"><label class="minor-subtitle">Ok</label></button>
+            </div>
+        </div>
+
     </div>
 
     <footer>Footer Unirep</footer>
+
+    <script>
+
+        // All varibales        
+        let button_request_entry   = document.getElementById('button-request-entry')
+        let div_modal_request_sent = document.getElementById('div-modal-request-sent')
+        let button_modal_ok        = document.getElementById('button-modal-ok')
+        
+
+        button_request_entry.onclick = function(e) {
+
+            div_modal_request_sent.style.display = 'flex'
+        }
+
+        button_modal_ok.onclick = function() {
+
+            div_modal_request_sent.style.display = 'none'
+
+        }
+
+        window.onclick = function(e) {
+
+            if (e.target == div_modal_request_sent) {
+
+                div_modal_request_sent.style.display = "none";
+
+            }
+
+        }
+
+    </script>
 </body>
 </html>
