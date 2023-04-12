@@ -4,7 +4,16 @@ def login(request):
     return render(request, 'login.html')
 
 def home(request):
-    return render(request, 'home.html')
+
+    # 1 - usuário sem moradia
+    # 2 - usuário com moradia
+    # 3 - administrador
+
+    type_user = '1'
+
+    return render(request, 'home.html', {
+        'type_user': type_user
+    })
 
 def edit_profile(request):
     return render(request, 'edit_profile.html')

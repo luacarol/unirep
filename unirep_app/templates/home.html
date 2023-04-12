@@ -80,23 +80,42 @@
             <div class="section section-my-house">
 
                 <h2 class="subtitle">Minha moradia</h2>
+
+                {% if type_user == '1' %}
+
+                    <div class="div-without-something">
+                        <img class="img-icon-no-data" src="{% static 'img/icon-no-data.svg' %}" alt="Dois papéis sobrepostos" />
+
+                        <p class="minor-subtitle">Não há nenhuma solicitação até agora</p>
+                    </div>
             
-                {% include 'partials/cards/republic/republic_card.html' %}
+                {% elif type_user == '2' %}
+
+                    {% include 'partials/cards/republic/republic_card.html' %}
+
+                {% else %}
+
+                {% endif %}
+
                 
             </div>
 
-            <div class="section section-members">
+            {% if type_user == '1' %}
 
-                <h2 class="subtitle subtitle-members">Membros</h2>
+            {% else %}
 
-                {% include 'partials/cards/member_carroussel_card.html' %}
+                <div class="section section-members">
 
-            </div>
+                    <h2 class="subtitle subtitle-members">Membros</h2>
+
+                    {% include 'partials/cards/member_carroussel_card.html' %}
+
+                </div>
+
+            {% endif %}
 
         </div>
 
     </div>
-
-    <footer>Footer Unirep</footer>
 </body>
 </html>

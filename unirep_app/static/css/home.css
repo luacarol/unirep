@@ -1,3 +1,18 @@
 .subtitle {
     color: var(--brown);
 }
+
+.div-without-something {
+    width: 74.313em;
+    height: 33.125em;
+    border: 0.094em dashed #CDCDCD;
+    border-radius: 0.75em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.img-icon-no-data {
+    margin-bottom: 1.503em;
+}
