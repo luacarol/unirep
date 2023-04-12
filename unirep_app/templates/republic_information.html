@@ -7,13 +7,13 @@
 
     <link rel="stylesheet" href="{% static 'css/republic_information.css' %}">
 </head>
-<body>
+<body id="body-republic-information">
 
     {% include 'partials/header.html' %}
 
     <div class="body-container">
 
-        <h1 class="title">República</h1>
+        <h1 class="title" id="title">República</h1>
 
         <section class="section section-republic-information">
 
@@ -38,6 +38,8 @@
             {% include 'partials/cards/view_item_carroussel_card.html' %}
             
         </section>
+
+        <button id="button-request-entry" class="button"><label class="minor-subtitle">Solicitar Entrada</label></button>
 
     </div>
 

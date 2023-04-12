@@ -1,3 +1,8 @@
+#body-republic-information .body-container {
+    display: flex;
+    flex-direction: column;
+}
+
 .section-item-to-pay {
     display: flex;
     flex-direction: column;
@@ -6,4 +11,8 @@
 
 .section-item-to-pay .subtitle-item-to-pay {
     align-self: flex-start;
+}
+
+#button-request-entry {
+    align-self: center;
 }
