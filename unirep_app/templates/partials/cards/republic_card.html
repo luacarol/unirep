@@ -1,5 +1,7 @@
 {% load static %}
 
+<link rel="stylesheet" href="{% static 'css/partials/cards/republic_card.css' %}">
+
 <div class="card user-republic-card">
 
     <img src="{% static 'img/big-republic-picture.svg' %}" alt="Imagem da república que o usuário mora.">
@@ -17,27 +19,24 @@
         </div>
 
         <div>
-            <h4 for="username" class="minor-subtitle">Contato administrador</h4>
-            <p class="legend">(12) 982173929</p>
+            <h4 for="gender" class="minor-subtitle">Gênero disponível</h4>
+            <p class="legend">Misto</p>
         </div>
 
     </div>
 
-    <div class="basic-informations" id="address-informations">
+    <div class="basic-informations div-address-administrator">
 
         <div>
             <h4 class="minor-subtitle">Endereço</h4>
-            <p class="legend">Rua Antonio Amaral Santos, n.137. </p>
+            <p class="common-text">Rua Antonio Amaral Santos, n.137. </p>
+            <p class="common-text">Residencial Jatobá. </p>
+            <p class="common-text">São José dos Campos/SP</p>
         </div>
 
         <div>
-            <h4 class="minor-subtitle">Bairro</h4>
-            <p class="legend">Residencial Jatobá. </p>
-        </div>
-
-        <div>
-            <h4 for="username" class="minor-subtitle">Cidade</h4>
-            <p class="legend">São José dos Campos/SP</p>
+            <h4 for="username" class="minor-subtitle">Contato administrador</h4>
+            <p class="legend">(12) 982173929</p>
         </div>
 
     </div>
