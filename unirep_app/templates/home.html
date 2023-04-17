@@ -7,7 +7,7 @@
     
     <link rel="stylesheet" href="{% static 'css/home.css' %}">
 </head>
-<body>
+<body id="body-home">
 
     {% include 'partials/header.html' %}
 
@@ -111,7 +111,7 @@
                         {% include 'partials/cards/republic/republic_card_3.html' %}
 
                     {% else %}
-                        <p>Icon</p>
+                        <img class='icon32 icon-add-circle' src="{% static 'img/icon-add-circle.svg' %}" alt="Ícone de um círculo com um símbolo de soma no meio" />
                     {% endif %}
 
                     
