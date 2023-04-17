@@ -77,12 +77,14 @@
 
             </div>
 
-            <div class="section section-my-house">
+            <!--MINHA MORADIA-->
 
-                <h2 class="subtitle">Minha moradia</h2>
+            <!-- 1 - usuário que não realizou nenhuma solicitação -->
+            {% if type_user == '1' %}
 
-                <!-- 1 - usuário que não realizou nenhuma solicitação -->
-                {% if type_user == '1' %}
+                <div class="section section-my-house">
+
+                    <h2 class="subtitle">Minha moradia</h2>
 
                     <div class="div-without-something">
                         <img class="img-icon-no-data" src="{% static 'img/icon-no-data.svg' %}" alt="Dois papéis sobrepostos" />
@@ -90,43 +92,55 @@
                         <p class="minor-subtitle">Não há nenhuma solicitação até agora</p>
                     </div>
 
-                <!-- 2 - usuário com solicitação pendente -->
-                {% elif type_user == '2' %}
+                </div>
+
+            <!-- 2 - usuário com solicitação pendente -->
+            {% elif type_user == '2' %}
+
+                <div class="section section-my-house">
+
+                    <h2 class="subtitle">Minha moradia</h2>
 
                     <div class="div-without-something">
                         <img class="img-icon-alarm" src="{% static 'img/icon-alarm.svg' %}" alt="Alarme" />
 
                         <p class="minor-subtitle">Solicitação em andamento.</p>
                     </div>
-            
-                <!-- 3 - usuário com solicitação aprovada -->
-                {% elif type_user == '3' %}
+                    
+                </div>
+        
+            <!-- 3 - usuário com solicitação aprovada -->
+            {% elif type_user == '3' %}
+
+                <div class="section section-my-house" style="margin-bottom: 3.125em;">
+
+                    <h2 class="subtitle">Minha moradia</h2> 
 
                     {% include 'partials/cards/republic/republic_card.html' %}
-
-                <!-- 5 - usuário do tipo administrador -->
-                {% elif type_user == '5' %}
-
-                    {% if exists_republic %}
-                        {% include 'partials/cards/republic/republic_card_3.html' %}
-
-                    {% else %}
-                        <img class='icon32 icon-add-circle' src="{% static 'img/icon-add-circle.svg' %}" alt="Ícone de um círculo com um símbolo de soma no meio" />
-                    {% endif %}
-
                     
+                <div>
+
+            <!-- 5 - usuário do tipo administrador -->
+            {% elif type_user == '5' %}
+
+                {% if exists_republic %}
+                    {% include 'partials/cards/republic/republic_card_3.html' %}
 
                 {% else %}
-
+                    <img class='icon32 icon-add-circle' src="{% static 'img/icon-add-circle.svg' %}" alt="Ícone de um círculo com um símbolo de soma no meio" />
                 {% endif %}
 
-                
-            </div>
+            {% else %}
+
+            {% endif %}
+
+
+            <!--MEMBROS-->
 
             <!-- 3 - usuário com solicitação aprovada -->
             {% if type_user == '3' %}
 
-                <div class="section section-members">
+                <div class="section section-members" style="margin-top: 3.125em;">
 
                     <h2 class="subtitle subtitle-members">Membros</h2>
 
@@ -135,7 +149,6 @@
                 </div>
 
             {% endif %}
-
             <!-- 5 - usuário do tipo administrador -->
             {% if type_user == '5' and  exists_republic %}
 
@@ -148,6 +161,9 @@
                 </div>
             
             {% endif %}
+
+            
+            <!--SOLICITAÇÕES DE MEMBROS-->
 
             <!-- 5 - usuário do tipo administrador -->
             {% if type_user == '5' and exists_republic %}
