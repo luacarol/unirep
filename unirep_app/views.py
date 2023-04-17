@@ -11,7 +11,7 @@ def home(request):
     # 3 - usuário com solicitação aprovada
     # 4 - usuário com solicitação recusada
     # 5 - usuário do tipo administrador
-    type_user = '3'
+    type_user = '5'
 
     # Solicitações de entrada
     incoming_requests = False
@@ -39,6 +39,9 @@ def republics(request):
 
 def republic_information(request):
     return render(request, 'republic_information.html')
+
+def create_republic(request):
+    return render(request, 'create_republic.html')
 
 def edit_republic(request):
     return render(request, 'edit_republic.html')

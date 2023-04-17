@@ -1,0 +1,137 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+
+    {% include 'partials/head.html' %}
+
+    <link rel="stylesheet" href="{% static 'css/edit_republic.css' %}">
+</head>
+
+<body id="body-edit-republic">
+
+    {% include 'partials/header.html' %}
+
+    <div class="body-container">
+
+        <form action="" class="form">
+
+            <div class="form-content">
+
+                <h1 class="title">Criar República</h1>
+
+                <div class="section">
+
+                    <h2 class="subtitle">Informações gerais</h2>
+
+                    <div class="div-two-columns-img-inputs">
+
+                        <div class="div-img-republic">
+                            <img class="img-republic" src="{% static 'img/big-republic-picture.svg' %}" alt="Imagem do perfil da república" />
+                        </div>
+
+                        <div>
+                            <div class="div-two-columns-inputs-name-whatsapp">
+
+                                <div class="div-label-input">
+                                    <label for="full_name" class="minor-subtitle">Nome da república</label>
+                                    <input type="text" id="full_name" placeholder="Bem te vi" class="input">
+                                </div>
+    
+                                <div class="div-label-input">
+                                    <label for="phone_number" class="minor-subtitle">Whatsapp</label>
+                                    <input type="text" id="phone_number" placeholder="(12) 982173929" class="input">
+                                </div>
+    
+                            </div>
+    
+                            <div class="div-two-columns-inputs-name-whatsapp">
+    
+                                <div class="div-label-input">
+                                    <label for="address" class="minor-subtitle">Endereço</label>
+                                    <input type="text" id="address" placeholder="Rua Antônio Amaral Santos, 137" class="input">
+                                </div>
+    
+                                <div class="div-label-input">
+                                    <label for="cep" class="minor-subtitle">CEP</label>
+                                    <input type="text" id="cep" placeholder="12228176" class="input">
+                                </div>
+    
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="div-three-columns-inputs">
+
+                        <div class="div-label-input">
+                            <label for="neighborhood" class="minor-subtitle">Bairro</label>
+                            <input type="text" id="neighborhood" placeholder="Residencial Jatobá" class="input">
+                        </div>
+
+                        <div class="div-label-input">
+                            <label for="city" class="minor-subtitle">Cidade</label>
+                            <input type="text" id="city" placeholder="São José dos Campos" class="input">
+                        </div>
+
+                        <div class="div-label-input">
+                            <label for="state" class="minor-subtitle">Estado</label>
+                            <input type="text" id="state" placeholder="SP" class="input">
+                        </div>
+
+                    </div>
+
+                    <div class="div-two-colunns-select-input">
+
+                        <div class="div-label-select">
+                            <label for="gender" class="minor-subtitle">Qual gênero atende?</label>
+                            <select name="" id="gender" class="select">
+                                <option class="option" value="female">Feminino</option>
+                                <option class="option" value="male">Masculino</option>
+                                <option class="option" value="male">Misto</option>
+                            </select>
+                        </div>
+
+                        <div class="div-label-input">
+                            <label for="number_vacancies" class="minor-subtitle">Qtd. Vagas</label>
+                            <input type="text" id="number_vacancies" placeholder="6 vagas" class="input">
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="section">
+
+                    <div class="div-subtitle-img">
+                        <h2 class="subtitle">Itens à pagar</h3>
+                        
+                        <img class='icon32' src="{% static 'img/icon-add-circle.svg' %}" alt="Ícone de um círculo com um símbolo de soma no meio" />
+                    </div>
+
+                    <div class="div-item-to-pay">
+                        <h3 class="minor-subtitle">Aluguel</h3>
+
+                        <div class="div-input-img-name-item-to-pay">
+                            <input type="text" id="name_item_to_pay" placeholder="conta_de_agua.png" class="input">
+                            <img class="icon22" src="{% static 'img/icon-add-photo.svg' %}" alt="Ícone de uma câmera com um símbolo do somatória do lado" />
+                        </div>
+
+                        <input type="text" id="value_item_to_pay" placeholder="R$ 120,00" class="input">
+
+                    </div>
+
+                </div>
+
+                <button id="button-edit-republic" class="button"><label class="minor-subtitle">Salvar</label></button>
+
+            </div>
+
+        </form>
+
+    </div>
+
+</body>
+
+</html>

@@ -16,3 +16,23 @@
 .img-icon-no-data {
     margin-bottom: 1.503em;
 }
+
+.div-subtitle-icon-add-republic {
+    width: 14.438em;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.div-subtitle-icon-add-republic .subtitle {
+    margin: 0em;
+}
+
+.div-subtitle-icon-add-republic img {
+    cursor: pointer;
+}
+
+.link-img-icon-add-republic {
+    text-decoration: none;
+}

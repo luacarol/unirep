@@ -127,7 +127,23 @@
                     {% include 'partials/cards/republic/republic_card_3.html' %}
 
                 {% else %}
-                    <img class='icon32 icon-add-circle' src="{% static 'img/icon-add-circle.svg' %}" alt="Ícone de um círculo com um símbolo de soma no meio" />
+                    <div class="section section-my-house">
+
+                        <div class="div-subtitle-icon-add-republic">
+
+                            <h2 class="subtitle">Minha moradia</h2>
+
+                            <a href="{% url 'create-republic' %}" class="link-img-icon-add-republic"><img class='icon32 icon-add-circle' src="{% static 'img/icon-add-circle.svg' %}" alt="Ícone de um círculo com um símbolo de soma no meio" /></a>
+
+                        </div>
+
+                        <div class="div-without-something">
+                            <img class="img-icon-no-data" src="{% static 'img/icon-no-data.svg' %}" alt="Dois papéis sobrepostos" />
+    
+                            <p class="minor-subtitle">Não há nenhuma república criada.</p>
+                        </div>
+
+                    </div>
                 {% endif %}
 
             {% else %}
