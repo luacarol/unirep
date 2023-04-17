@@ -1,0 +1,101 @@
+#body-edit-republic {
+    display: flex;
+    flex-direction: column;
+}
+
+#body-edit-republic .div-two-columns-img-inputs {
+    display: grid;
+    grid-template-columns: 27.875em 45.625em;
+    margin-bottom: 1em;
+}
+
+.div-img-republic {
+    width: 25.938em;
+    height: 11.125em;
+    background: #FFFFFF;
+    border: 0.125em solid #CDCDCD;
+    border-radius: 1.25em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#body-edit-republic .img-republic {
+    width: 18.938em;
+    height: 9.811em;
+}
+
+.div-two-columns-inputs-name-whatsapp {
+    display: grid;
+    grid-template-columns: 27.313em 16.188em;
+    column-gap: 2em;
+    margin-bottom: 1em;
+}
+
+.div-label-input {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.div-label-input input {
+    width: 100%;
+}
+
+.div-three-columns-inputs {
+    display: grid;
+    grid-template-columns: 27.438em 27.438em 16.188em;
+    column-gap: 1.813em;
+    margin-bottom: 1em;
+}
+
+.div-two-colunns-select-input {
+    display: grid;
+    grid-template-columns: 15.875em 16.188em;
+    column-gap: 1.813em;
+}
+
+.div-label-select, .div-label-select select {
+    width: 100%;
+}
+
+.div-subtitle-img {
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+}
+
+.div-subtitle-img .subtitle {
+    margin-right: 2.188em;
+}
+
+.div-item-to-pay {
+    width: 17.875em;
+    height: 11.313em;
+    background: #FFFFFF;
+    border: 0.125em solid #CDCDCD;
+    border-radius: 1.25em;
+    padding: 1em;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+.div-input-img-name-item-to-pay {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.div-input-img-name-item-to-pay input {
+    margin-right: 0.688em;
+}
+
+#body-edit-republic #button-edit-republic {
+    align-self: center;
+}
