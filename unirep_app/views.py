@@ -11,17 +11,21 @@ def home(request):
     # 3 - usuário com solicitação aprovada
     # 4 - usuário com solicitação recusada
     # 5 - usuário do tipo administrador
-
-    incoming_requests = False
-
     type_user = '5'
 
+    # Solicitações de entrada
+    incoming_requests = False
+    # Se existe república
+    exists_republic = False
+
     if type_user == '5':
-        incoming_requests = True
+        incoming_requests = False
+        exists_republic = False
 
     return render(request, 'home.html', {
         'type_user': type_user,
-        'incoming_requests': incoming_requests
+        'incoming_requests': incoming_requests,
+        'exists_republic': exists_republic
     })
 
 def edit_profile(request):
