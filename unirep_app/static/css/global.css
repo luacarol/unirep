@@ -27,30 +27,6 @@ body {
     margin-bottom: 3.125em;
 }
 
-/* header */
-
-.header {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    padding: 1.625em 7.625em;
-    box-shadow: 0px 0.25em 0.25em rgba(0, 0, 0, 0.25);
-}
-
-.header .username-icon {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-}
-
-.header .username-icon a:hover img {
-    content: url('../img/logout-icon-orange.svg');
-}
-
-.header .username-icon img {
-    margin-left: 2em;
-}
-
 /* texts */
 
 .title {
@@ -187,6 +163,23 @@ body {
 
 .button:hover .minor-subtitle {
     color: var(--white);
+}
+
+.button-welcome {
+    width: fit-content;
+    height: fit-content;
+    padding: 0.813em 1.094em;
+    box-sizing: border-box;
+    background: #FFFFFF;
+    border: 0.125em solid #FF8063;
+    border-radius: 0.625em;
+    cursor: pointer;
+}
+
+.button-welcome:hover, .button-welcome:hover label {
+    cursor: pointer;
+    background-color: #FF8063;
+    color: #FFFFFF;
 }
 
 /* icons */

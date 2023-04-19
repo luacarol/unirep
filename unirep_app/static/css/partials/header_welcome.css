@@ -1,0 +1,8 @@
+.div-header-navigation-link-button-register {
+    display: flex;
+    flex-direction: row;
+}
+
+.link-button {
+    text-decoration: none;
+}

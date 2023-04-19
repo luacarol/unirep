@@ -1,0 +1,69 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+
+    {% include 'partials/head.html' %}
+
+    <link rel="stylesheet" href="{% static 'css/welcome.css' %}">
+</head>
+<body id="body-welcome">
+
+    {% include 'partials/header_welcome.html' %}
+
+    <div class="body-container">
+
+        <section class="section section-about">
+
+            <div class="div-texts-section-about">
+
+                <h1 class="title">BEM-VINDO</h1>
+
+                <h2 class="subtitle orange-text text-subtitle-section-about">Você estudando e morando bem :)</h2>
+
+                <p class="subtitle gray-text text-about-section">Já pensou se você passa naquela faculdade dos sonhos, mas de depara com um problema, o medo de se mudar, de arrumar uma boa locação, ou de compartilhar a sua moradia com outras pessoas</p>
+
+                <a href="{% url 'login' %}" class="link-button"><button class="button-welcome" id="button-login"><label class="legend orange-text">Entrar</label></button></a>
+                
+            </div>
+
+            <img class="img-first" src="{% static 'img/welcome/first-img-welcome.svg' %}" alt="Moça com os pés em cima de uma mesa" />
+
+        </section>
+
+        <section class="section section-know-more">
+
+            <img class="img-second" src="{% static 'img/welcome/second-img-welcome.svg' %}" alt="Rapaz segurando casas em sua mão" />
+
+            <div class="div-texts-section-know-more">
+                <p class="subtitle gray-text">Aqui universitários podem conhecer um pouco um do outro antes de decidirem se desejam compartilhar as despesas da mesma república.</p>
+
+                <p class="subtitle gray-text">São diversas repúblicas disponíveis em várias regiões do Brasil, próximas das faculdades mais disputadas.</p>
+            </div>
+
+        </section>
+
+        <section class="section section-services">
+
+            <div class="div-texts-section-services">
+                <p class="subtitle gray-text">As informações de cada membro podem ser compartilhadas entre os usuários, a fim de verificar proximidades entre ambos.</p>
+
+                <a href="{% url 'login' %}" class="link-button"><button class="button-welcome" id="button-register"><label class="legend orange-text">Cadastrar-se</label></button></a>
+            </div>
+
+            <img class="img-third" src="{% static 'img/welcome/third-img-welcome.svg' %}" alt="Dois garotos segurando balões" />
+
+        </section>
+
+    </div>
+
+    <footer class="footer">
+
+        <div class="div-texts-footer">
+            <h3 class="subtitle gray-text">UNIREP</h3>
+            <h4 class="minor-subtitke gray-text">Copyright 2023</h4>
+        </div>
+        
+    </footer>
+</body>
+</html>

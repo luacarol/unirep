@@ -1,0 +1,22 @@
+{% load static %}
+
+<link rel="stylesheet" href="{% static 'css/partials/header.css' %}">
+<link rel="stylesheet" href="{% static 'css/partials/header_welcome.css' %}">
+
+<div class="header">
+
+    <img src="{% static 'img/logo-simulator.svg' %}" alt="Imagem do logo, Unirep." class="logo-image">
+
+    <div class="div-header-navigation-link-button-register">
+
+        <div class="header-navigation-link">
+            <a href=""><h3 class="minor-subtitle">Sobre</h3></a>
+            <a href=""><h3 class="minor-subtitle">Saiba mais</h3></a>
+            <a href=""><h3 class="minor-subtitle">Serviços</h3></a>
+        </div>
+    
+        <a href="{% url 'login' %}" class="link-button"><button class="button-welcome" id="button-register"><label class="legend orange-text">Cadastrar-se</label></button></a>
+
+    </div>    
+
+</div>
