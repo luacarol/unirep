@@ -347,7 +347,7 @@ body {
     background-color: var(--black);
     color: var(--white);
     text-align: center;
-    padding: 0.5em 0;
+    padding: 0.5em 1em;
     border-radius: 1.25em;
     position: absolute;
     z-index: 1;

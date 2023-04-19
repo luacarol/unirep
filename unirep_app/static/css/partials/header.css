@@ -14,7 +14,7 @@
 }
 
 .header .username-icon a:hover img {
-    content: url('../img/logout-icon-orange.svg');
+    content: url('../../img/logout-icon-orange.svg');
 }
 
 .header .username-icon img {

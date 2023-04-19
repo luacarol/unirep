@@ -14,7 +14,7 @@ def home(request):
     # 3 - usuário com solicitação aprovada
     # 4 - usuário com solicitação recusada
     # 5 - usuário do tipo administrador
-    type_user = '1'
+    type_user = '5'
 
     # Solicitações de entrada
     incoming_requests = False
