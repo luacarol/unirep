@@ -102,9 +102,14 @@
                     <h2 class="subtitle">Minha moradia</h2>
 
                     <div class="div-without-something">
-                        <img class="img-icon-alarm" src="{% static 'img/icon-alarm.svg' %}" alt="Alarme" />
 
-                        <p class="minor-subtitle">Solicitação em andamento.</p>
+                        <div class="div-img-text-button">
+                            <img class="img-icon-alarm" src="{% static 'img/icon-alarm.svg' %}" alt="Alarme" />
+
+                            <p class="minor-subtitle">Solicitação em andamento.</p>
+
+                            <button class="button-welcome" id="button-cancel-request"><label class="legend orange-text">Cancelar</label></button>
+                        </div>
                     </div>
                     
                 </div>

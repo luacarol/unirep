@@ -10,21 +10,30 @@
     background: #FFFFFF;
     border: 0.188em solid #CDCDCD;
     border-radius: 1.25em;
-    display: flex;
-    flex-direction: row;
+    display: grid;
+    grid-template-columns: 5em 1.563em 9.313em;
     align-items: center;
-    justify-content: center;
-    padding: 0em 1.875em;
+    justify-content: space-between;
+    padding: 2em 1.875em;
     box-sizing: border-box;
 }
 
 .div-payable-item .div-basic-informations {
+    height: 100%;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    margin-left: 2.375em;
+}
+
+.div-basic-informations .text-label-account-name {
+    margin-bottom: 0.5em;
 }
 
 .div-payable-item .div-basic-informations .text-account-value {
     margin-top: 0.875em;
+}
+
+.img-icon-info {
+    align-self: flex-start;
+    cursor: pointer;
 }
