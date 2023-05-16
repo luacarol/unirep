@@ -38,7 +38,11 @@ def see_items_pay(request):
     return render(request, 'see_items_pay.html')
 
 def republics(request):
-    return render(request, 'republics.html')
+
+    context = {
+    }
+
+    return render(request, 'republics.html', context)
 
 def republic_information(request):
     return render(request, 'republic_information.html')
