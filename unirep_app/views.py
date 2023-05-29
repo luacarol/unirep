@@ -1,10 +1,20 @@
-from django.shortcuts import render
+from django.shortcuts import redirect, render
 
 def welcome(request):
     return render(request, 'welcome.html')
 
 def login(request):
-    return render(request, 'login.html')
+
+    if request.method == 'GET':
+        return render(request, 'login.html')
+
+    if request.method == 'POST':
+        
+        print("aqui é post")
+        print(request.POST)
+
+        return redirect('home')
+
 
 def home(request):
 

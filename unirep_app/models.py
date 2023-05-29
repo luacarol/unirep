@@ -1,7 +1,41 @@
-from django.utils import timezone
 from django.db import models
+from django.contrib.auth.models import AbstractUser, BaseUserManager
+from django.utils import timezone
 
-class User(models.Model):
+class Manager(BaseUserManager):
+    def create_user(self, email, username, password=None):
+        try:
+            if not email:
+                raise ValueError('Users must have an email address.')
+            if not username:
+                raise ValueError('Users must have a username.')
+
+            user = self.model(email=self.normalize_email(email), username=username)
+            user.set_password(password)
+            user.save(using=self._db)
+            return user
+        except Exception as exception:
+            print(f'[Class Manager: create_user]: {exception}')
+
+    def create_superuser(self, email, username, password):
+        try:
+            user = self.create_user(
+                email=self.normalize_email(email),
+                username=username,
+                password=password
+            )
+
+            user.is_admin = True
+            user.is_staff = True
+            user.is_superuser = True
+
+            user.save(using=self._db)
+            return user
+        except Exception as exception:
+            print(f'[Class Manager: create_superuser]: {exception}')
+
+
+class User(AbstractUser):
     TYPES_USERS = [
         ("1", "Normal"),
         ("2", "Admin"),
@@ -11,17 +45,43 @@ class User(models.Model):
         ("FE", "Feminine"),
     ]
 
-    name = models.CharField(max_length=200)
+    username = models.CharField(verbose_name='username', max_length=100)
+    email = models.EmailField(verbose_name='email', max_length=100, unique=True)
+    is_admin = models.BooleanField(default=False)
+    is_active = models.BooleanField(default=True)
+    is_staff = models.BooleanField(default=False)
+    is_superuser = models.BooleanField(default=False)
+
     user_type = models.CharField(max_length=1, choices=TYPES_USERS)
     age = models.IntegerField(default=0)
     sex = models.CharField(max_length=2, choices=TYPES_GENRES)
     cellphone = models.CharField(max_length=11)
-    email = models.EmailField()
+    email = models.EmailField(verbose_name='email', max_length=100, unique=True)
     course = models.CharField(max_length=200)
     hobbie = models.CharField(max_length=200)
     preference = models.CharField(max_length=200)
     disgust = models.CharField(max_length=200)
-    created_in = models.DateTimeField(default=timezone.now)
+    created_at = models.DateTimeField(default=timezone.now)
+
+    objects = Manager()
+
+    USERNAME_FIELD = 'email'
+    REQUIRED_FIELDS = ['username']
+
+    def has_perm(self, perm, obj=None):
+        try:
+            return self.is_admin
+        except Exception as exception:
+            print(f'[Class User: has_perm]: {exception}')
+        
+    def has_module_perms(self, app_label):
+        try:
+            return True
+        except Exception as exception:
+            print(f'[Class User: has_module_perms]: {exception}')
+
+    def __str__(self):
+        return self.username
 
 class Republic(models.Model):
     TYPES_GENRES = [
@@ -39,7 +99,7 @@ class Republic(models.Model):
     state = models.CharField(max_length=50)
     gender = models.CharField(max_length=2, choices=TYPES_GENRES)
     num_vacancies = models.IntegerField(default=0)
-    created_in = models.DateTimeField(default=timezone.now)
+    created_at = models.DateTimeField(default=timezone.now)
     user_id = models.ForeignKey(User, verbose_name='user_id', on_delete=models.CASCADE, blank=True, null=True)
 
 class PayableItem(models.Model):
@@ -54,4 +114,4 @@ class PayableItem(models.Model):
     user_id = models.ForeignKey(User, verbose_name='user_id', on_delete=models.CASCADE, blank=True, null=True)
     maturity_in = models.DateTimeField()
     status = models.CharField(max_length=1, choices=TYPES_GENRES)
-    created_in = models.DateTimeField(default=timezone.now)
+    created_at = models.DateTimeField(default=timezone.now)

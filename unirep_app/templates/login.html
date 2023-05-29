@@ -30,25 +30,25 @@
             </div>
 
             <div class="form">
-                <form method="GET" action="{% url 'home' %}" class="form-content">
+                <form method="POST" action="{% url 'login' %}" class="form-content"> {% csrf_token %}
 
                     <div class="label-inputs">
 
                         <div class="label-input-placeholder">
                             <label for="email" class="minor-subtitle">Email</label>
-                            <input type="text" id="email" placeholder="luana.oliveira@gmail.com" class="input">
+                            <input required type="text" id="email" placeholder="luana.oliveira@gmail.com" class="input">
                         </div>
     
                         <div class="label-input-placeholder">
                             <label for="password" class="minor-subtitle">Senha</label>
-                            <input type="text" id="password" placeholder="exemplo.exemplo" class="input">
+                            <input required type="text" id="password" placeholder="exemplo.exemplo" class="input">
                         </div>
 
                     </div>
         
                     <a href="#" id="forgot-password" class="link">Esqueceu a senha?</a>
         
-                    <button id="enter-button" class="button"><label class="minor-subtitle">Entrar</label></button>
+                    <button type="submit" id="enter-button" class="button"><label class="minor-subtitle">Entrar</label></button>
                 </form>
             </div>
 
