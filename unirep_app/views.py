@@ -1,4 +1,7 @@
 from django.shortcuts import redirect, render
+from django.contrib import auth
+
+from unirep_app.forms import LoginForm
 
 def welcome(request):
     return render(request, 'welcome.html')
@@ -9,12 +12,24 @@ def login(request):
         return render(request, 'login.html')
 
     if request.method == 'POST':
-        
-        print("aqui é post")
-        print(request.POST)
 
-        return redirect('home')
+        form_login = LoginForm(request.POST)
+        if form_login.is_valid():
+            print("form is valid")
 
+            email, password = form_login.cleaned_data['email'], form_login.cleaned_data['password']
+            user = auth.authenticate(email=email, password=password)
+
+            print("email ", email)
+            print("password ", password)
+            print("user ", user)
+
+
+            return redirect('home')
+    
+        elif not form_login.is_valid():
+            print("form is not valid")
+            return redirect('login')
 
 def home(request):
 
