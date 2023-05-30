@@ -56,7 +56,6 @@ class User(AbstractUser):
     age = models.IntegerField(default=0)
     sex = models.CharField(max_length=2, choices=TYPES_GENRES)
     cellphone = models.CharField(max_length=11)
-    email = models.EmailField(verbose_name='email', max_length=100, unique=True)
     course = models.CharField(max_length=200)
     hobbie = models.CharField(max_length=200)
     preference = models.CharField(max_length=200)
