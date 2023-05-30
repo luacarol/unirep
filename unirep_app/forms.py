@@ -1,6 +1,7 @@
 from django import forms
 
 class LoginForm(forms.Form):
+    print("entra aq")
     email    = forms.EmailField(label='email', max_length=50, required=True)
     password = forms.CharField(label='password', max_length=50, required=True)
 

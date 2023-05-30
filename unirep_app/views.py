@@ -2,6 +2,7 @@ from django.shortcuts import redirect, render
 from django.contrib import auth
 
 from unirep_app.forms import LoginForm
+from django.contrib.auth import models as auth_models
 
 def welcome(request):
     return render(request, 'welcome.html')
@@ -15,20 +16,20 @@ def login(request):
 
         form_login = LoginForm(request.POST)
         if form_login.is_valid():
-            print("form is valid")
 
-            email, password = form_login.cleaned_data['email'], form_login.cleaned_data['password']
+            email = form_login.cleaned_data['email']
+            password = form_login.cleaned_data['password']
+
             user = auth.authenticate(email=email, password=password)
 
-            print("email ", email)
-            print("password ", password)
-            print("user ", user)
-
-
-            return redirect('home')
+            if user is not None:
+                return redirect('home')
+            else:
+                print("Credenciais inválidas")
+                return redirect('login')
     
         elif not form_login.is_valid():
-            print("form is not valid")
+            print("Formulário inválido")
             return redirect('login')
 
 def home(request):
