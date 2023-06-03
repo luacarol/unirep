@@ -3,6 +3,7 @@ from django.contrib import auth
 
 from unirep_app.forms import LoginForm
 from django.contrib.auth import models as auth_models
+from unirep_app.models import User
 
 def welcome(request):
     return render(request, 'welcome.html')
@@ -35,28 +36,14 @@ def login(request):
 
 def home(request):
 
-    #Quanto a alocação do usuário em uma república:
-    # 1 - usuário que não realizou nenhuma solicitação
-    # 2 - usuário com solicitação pendente
-    # 3 - usuário com solicitação aprovada
-    # 4 - usuário com solicitação recusada
-    # 5 - usuário do tipo administrador
-    type_user = '1'
+    if request.user.is_authenticated:
 
-    # Solicitações de entrada
-    incoming_requests = False
-    # Se existe república
-    exists_republic = False
+        if request.method == 'GET':
+            user = User.objects.get(email=request.user.email)
+            return render(request, 'home.html', {'user': user})
 
-    if type_user == '5':
-        incoming_requests = False
-        exists_republic = False
-
-    return render(request, 'home.html', {
-        'type_user': type_user,
-        'incoming_requests': incoming_requests,
-        'exists_republic': exists_republic
-    })
+    else:
+        return render(request, 'login.html', {'message': 'Usuário não autenticado.'})
 
 def edit_profile(request):
     return render(request, 'edit_profile.html')

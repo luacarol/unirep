@@ -31,7 +31,7 @@
                             <h4 class="minor-subtitle">Nome do usuário</h4>
 
                             <div class="user-name-gender" style="margin: 0;">
-                                <p class="legend">Luana Caroliny</p>
+                                <p class="legend">{{user.username}}</p>
 
                                 <div class="tooltip-content" style="margin: 0;">
 
@@ -39,7 +39,7 @@
                                         <img class="icon18" src="{% static 'img/female-icon.svg' %}" alt="Imagem de ícone do gẽnero feminino.">
                                     </a>
 
-                                    <span class="tooltip-text">feminino</span>
+                                    <span class="tooltip-text">{{user.sex}}</span>
 
                                 </div>
 
@@ -49,12 +49,12 @@
 
                         <div>
                             <h4 class="minor-subtitle">Idade</h4>
-                            <p class="legend">22 anos</p>
+                            <p class="legend">{{user.age}} anos</p>
                         </div>
 
                         <div>
                             <h4 for="username" class="minor-subtitle">Whatsapp</h4>
-                            <p class="legend">(12) 982173929</p>
+                            <p class="legend">{{user.cellphone}}</p>
                         </div>
 
                     </div>
