@@ -120,4 +120,19 @@ def create_republic(request):
         return render(request, 'create_republic.html')
 
 def edit_republic(request):
-    return render(request, 'edit_republic.html')
+
+    if request.method == 'GET':
+
+        # Recuperar república
+
+        # Retornar os dados da república
+
+        return render(request, 'edit_republic.html')
+    
+    elif request.method == 'POST':
+
+        # Recuperar república
+
+        # Atualizar dados da república
+
+        return render(request, 'edit_republic.html')
