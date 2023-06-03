@@ -85,10 +85,13 @@ def see_items_pay(request):
 
 def republics(request):
 
-    context = {
-    }
+    if request.method == 'GET':
 
-    return render(request, 'republics.html', context)
+        # Recuperar todas as repúblicas existentes
+
+        # Retornar as repúblicas
+
+        return render(request, 'republics.html')
 
 def republic_information(request):
     return render(request, 'republic_information.html')
