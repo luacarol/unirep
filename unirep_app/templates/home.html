@@ -17,6 +17,7 @@
 
         <div class="div-sections div-sections-home">
 
+            {% comment %} Informações do usuário {% endcomment %}
             <div class="section section-my-profile">
 
                 <h2 class="subtitle">Meu perfil</h2>
@@ -77,25 +78,21 @@
 
             </div>
 
-            <!--MINHA MORADIA-->
-
-            <!-- 1 - usuário que não realizou nenhuma solicitação -->
-            {% if type_user == '1' %}
-
+            {% comment %} Usuário sem solicitação para entrar em alguma república {% endcomment %}
+            {% if user.republic_id is None %}
                 <div class="section section-my-house">
-
                     <h2 class="subtitle">Minha moradia</h2>
 
                     <div class="div-without-something">
                         <img class="img-icon-no-data" src="{% static 'img/icon-no-data.svg' %}" alt="Dois papéis sobrepostos" />
-
                         <p class="minor-subtitle">Não há nenhuma solicitação até agora</p>
                     </div>
-
+                    
                 </div>
+            {% endif %}
 
             <!-- 2 - usuário com solicitação pendente -->
-            {% elif type_user == '2' %}
+            {% comment %} {% elif type_user == '2' %}
 
                 <div class="section section-my-house">
 
@@ -215,7 +212,7 @@
 
                 </div>
 
-            {% endif %}
+            {% endif %} {% endcomment %}
 
         </div>
 

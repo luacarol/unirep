@@ -62,6 +62,8 @@ class User(AbstractUser):
     disgust = models.CharField(max_length=200, blank=True, null=True)
     created_at = models.DateTimeField(default=timezone.now)
 
+    republic_id = models.ForeignKey('Republic', on_delete=models.CASCADE,blank=True, null=True)
+
     objects = Manager()
 
     USERNAME_FIELD = 'email'
