@@ -68,7 +68,20 @@ def edit_profile(request):
         return render(request, 'edit_profile.html')
 
 def see_items_pay(request):
-    return render(request, 'see_items_pay.html')
+
+    if request.method == 'GET':
+
+        # Recuperar a república que o usuário está alocado(a)
+
+        # Recuperar os itens à pagar dessa república
+
+        # Retornar a república e os itens à pagar para o frontend consumir os dados
+
+        return render(request, 'see_items_pay.html')
+    
+    elif request.method == 'POST':
+
+        return render(request, 'see_items_pay.html')
 
 def republics(request):
 
