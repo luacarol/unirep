@@ -94,7 +94,16 @@ def republics(request):
         return render(request, 'republics.html')
 
 def republic_information(request):
-    return render(request, 'republic_information.html')
+
+    if request.method == 'GET':
+
+        # Recuperar república
+
+        # Recuperar membros da república
+
+        # Recuperar itens à pagar dessa república
+
+        return render(request, 'republic_information.html')
 
 def create_republic(request):
     return render(request, 'create_republic.html')
