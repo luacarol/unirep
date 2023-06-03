@@ -15,21 +15,22 @@ def login(request):
     if request.method == 'POST':
 
         form_login = LoginForm(request.POST)
-        if form_login.is_valid():
 
+        if form_login.is_valid():
             email = form_login.cleaned_data['email']
             password = form_login.cleaned_data['password']
 
             user = auth.authenticate(email=email, password=password)
 
-            if user is not None:
+            if user is not None and user.is_active:
+                auth.login(request, user)
                 return redirect('home')
             else:
-                print("Credenciais inválidas")
-                return redirect('login')
+                print("Invalid credentials")
+                return render(request, 'login.html', {'message': 'Usuário ou Senha incorretos!'})
     
         elif not form_login.is_valid():
-            print("Formulário inválido")
+            print("Invalid form")
             return redirect('login')
 
 def home(request):
