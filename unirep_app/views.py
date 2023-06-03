@@ -106,7 +106,18 @@ def republic_information(request):
         return render(request, 'republic_information.html')
 
 def create_republic(request):
-    return render(request, 'create_republic.html')
+
+    if request.method == 'GET':
+
+        return render(request, 'create_republic.html')
+    
+    elif request.method == 'POST':
+
+        # Recuperar administrador
+
+        # Criar república
+
+        return render(request, 'create_republic.html')
 
 def edit_republic(request):
     return render(request, 'edit_republic.html')
