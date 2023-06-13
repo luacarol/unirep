@@ -28,7 +28,7 @@ def login(request):
                 return redirect('home')
             else:
                 print("Invalid credentials")
-                return render(request, 'login.html', {'message': 'Usuário ou Senha incorretos!'})
+                return render(request, 'login.html', {'message': 'Email ou Senha incorretos!'})
     
         elif not form_login.is_valid():
             print("Invalid form")

@@ -84,6 +84,7 @@ class User(AbstractUser):
     def __str__(self):
         return self.username
 
+
 class Republic(models.Model):
     TYPES_GENRES = [
         ("MA", "Male"),
@@ -92,8 +93,8 @@ class Republic(models.Model):
     ]
 
     name = models.CharField(max_length=200)
-    cellphone = models.CharField(max_length=11)
-    address = models.CharField(max_length=50)
+    cellphone = models.CharField(max_length=15)
+    address = models.CharField(max_length=200)
     zip_code = models.CharField(max_length=50)
     district = models.CharField(max_length=50)
     city = models.CharField(max_length=50)
@@ -102,6 +103,7 @@ class Republic(models.Model):
     num_vacancies = models.IntegerField(default=0)
     created_at = models.DateTimeField(default=timezone.now)
     user_id = models.ForeignKey(User, verbose_name='user_id', on_delete=models.CASCADE, blank=True, null=True)
+
 
 class PayableItem(models.Model):
     TYPES_GENRES = [
