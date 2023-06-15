@@ -30,7 +30,13 @@ def creating_republics(qtd_users):
         name = random.choice(republics_names)
         cellphone = fake.phone_number()
         address = fake.address()
-        republic = Republic(name=name, cellphone=cellphone, address=address)
+        value = random.randrange(100, 600)
+        qtd_members = random.randrange(1, 6)
+        gender_names = ['MA', 'FE', 'MI']
+        gender = random.choice(gender_names)
+        num_vacancies = 10
+
+        republic = Republic(name=name, cellphone=cellphone, address=address, value=value, qtd_members=qtd_members, gender=gender, num_vacancies=num_vacancies)
         republic.save()
 
 creating_users(10)

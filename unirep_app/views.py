@@ -3,7 +3,7 @@ from django.contrib import auth
 
 from unirep_app.forms import LoginForm
 from django.contrib.auth import models as auth_models
-from unirep_app.models import User
+from unirep_app.models import Republic, User
 
 def welcome(request):
     return render(request, 'welcome.html')
@@ -87,11 +87,8 @@ def republics(request):
 
     if request.method == 'GET':
 
-        # Recuperar todas as repúblicas existentes
-
-        # Retornar as repúblicas
-
-        return render(request, 'republics.html')
+        republics = Republic.objects.all()
+        return render(request, 'republics.html', {'republics': republics})
 
 def republic_information(request):
 
