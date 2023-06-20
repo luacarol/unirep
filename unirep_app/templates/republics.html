@@ -56,7 +56,13 @@
 
                             <div class="div-number-members-gender-republic">
                                 <h4 class="common-text text-number-members">{{republic.qtd_members}} membros</h4>
-                                <h4 class="common-text text-gender-republic">{{republic.gender}}</h4>
+                                {% if republic.gender == "MI" %}
+                                    <h4 class="common-text text-gender-republic">Mista</h4>
+                                {% elif republic.gender == "MA" %}
+                                    <h4 class="common-text text-gender-republic">Masculina</h4>
+                                {% elif republic.gender == "FE" %}
+                                    <h4 class="common-text text-gender-republic">Feminina</h4>
+                                {% endif %}
                             </div>
 
                             <div class="div-icon-text-description">
