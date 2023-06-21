@@ -76,12 +76,12 @@
 
                                 <div class="label-input-placeholder">
                                     <label for="course" class="minor-subtitle">Qual curso você está cursando?</label>
-                                    <input name="course" type="text" id="course" placeholder={% if user.course == None %}"Engenharia de Software"{% else %}{{user.course}}{% endif %} class="input">
+                                    <input name="course" type="text" id="course" placeholder="{% if user.course == None %}Engenharia de Softwares{% else %} {{user.course}} {% endif %}" class="input">
                                 </div>
 
                                 <div class="label-input-placeholder">
                                     <label for="hobbie" class="minor-subtitle">Qual é o seu hobbie preferido?</label>
-                                    <input name="hobbie" type="text" id="hobbie" placeholder={% if user.hobbie == None %}"Jogar bola"{% else %}{{user.hobbie}}{% endif %} class="input">
+                                    <input name="hobbie" type="text" id="hobbie" placeholder="{% if user.hobbie == None %}Jogar bola{% else %}{{user.hobbie}}{% endif %}" class="input">
                                 </div>
 
                                 <div class="label-input-placeholder">
@@ -98,7 +98,7 @@
 
                                 <div class="label-input-placeholder">
                                     <label for="i_do_not_like" class="minor-subtitle">Eu não gosto de....</label>
-                                    <input name="disgust" type="text" id="i_do_not_like" placeholder={% if user.disgust == None %}"Desorganização e cheiro de cigarro."{% else %}{{user.disgust}}{% endif %} class="input">
+                                    <input name="disgust" type="text" id="i_do_not_like" placeholder="{% if user.disgust == None %}Desorganização e cheiro de cigarro.{% else %}{{user.disgust}}{% endif %}" class="input">
                                 </div>
 
                             </div>
