@@ -17,7 +17,6 @@
 
         <div class="div-sections div-sections-home">
 
-            {% comment %} Informações do usuário {% endcomment %}
             <div class="section section-my-profile">
 
                 <h2 class="subtitle">Meu perfil</h2>
@@ -65,7 +64,7 @@
                         <div>
                             <h4 class="minor-subtitle">Descrição</h4>
 
-                            <p class="commom-text" id="user-description">Descrição curta do perfil do usuário falando da sua personalidade. Descrição curta do perfil do usuário falando da sua personalidade. Descrição curta do perfil do usuário falando da sua personalidade.</p>
+                            <p class="commom-text" id="user-description">Olá, meu nome é {{user.username}}, tenho {{user.age}} anos, gosto bastante de {{user.hobbie}}, estou querendo me formar em {{user.course}}. Gostaria de morar com pessoas que não {{user.disgust}}, sou muito boa em {{user.preference}}.</p>
                         </div>
 
                         <a href="{% url 'edit-profile' %}" class="link-navigation">
