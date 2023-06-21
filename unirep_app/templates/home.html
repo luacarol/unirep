@@ -40,7 +40,7 @@
                                         <img class="icon18" src="{% static 'img/female-icon.svg' %}" alt="Imagem de ícone do gẽnero feminino.">
                                     </a>
 
-                                    <span class="tooltip-text">{{user.sex}}</span>
+                                    <span class="tooltip-text">{% if user.sex == 'FE' %}Feminino {% elif user.sex == 'MA' %}Masculino{% endif %}</span>
 
                                 </div>
 

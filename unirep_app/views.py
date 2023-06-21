@@ -61,7 +61,6 @@ def edit_profile(request):
             course = request.POST["course"]
             hobbie = request.POST["hobbie"]
             disgust = request.POST["disgust"]
-
             # print("full_name ", full_name)
             # print("age ", age)
             # print("sex ", sex)
@@ -71,22 +70,21 @@ def edit_profile(request):
             # print("disgust ", disgust)
 
             # Validar os dados com o forms.py
+            if sex == "female":
+                sex = "FE"
+            elif sex == "male":
+                sex = "MA"
 
             # Atualizar os dados do usuário
             User.objects.filter(email=request.user.email).update(
                 username=full_name,
                 age=age,
+                sex=sex,
+                cellphone=cellphone,
                 course=course,
                 hobbie=hobbie,
                 disgust=disgust,
             )
-
-            # age=age,
-            # sex=sex,
-            # cellphone=cellphone,
-            # course=course,
-            # hobbie=hobbie,
-            # disgust=disgust,
 
             # Retornar mensagem de sucesso ou não
 
