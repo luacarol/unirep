@@ -15,7 +15,7 @@
 
     <div class="body-container">
 
-        <form action="" class="form">
+        <form method="POST" action="{% url 'edit-profile' %}" class="form"> {% csrf_token %}
 
             <div class="form-content">
 
@@ -36,18 +36,18 @@
 
                                 <div class="label-input-placeholder">
                                     <label for="full_name" class="minor-subtitle">Nome completo</label>
-                                    <input type="text" id="full_name"
-                                        placeholder="Luana Caroliny Pedroso de Oliveira" class="input">
+                                    <input name="full_name" type="text" id="full_name"
+                                        placeholder="{{user.username}}" class="input">
                                 </div>
 
                                 <div class="label-input-placeholder">
                                     <label for="age" class="minor-subtitle">Idade</label>
-                                    <input type="text" id="age" placeholder="22 anos" class="input">
+                                    <input name="age" type="text" id="age" placeholder="{{user.age}} anos" class="input">
                                 </div>
 
                                 <div class="label-input-placeholder">
                                     <label for="sex_selection" class="minor-subtitle">Qual é o seu sexo?</label>
-                                    <select name="" id="sex_selection" class="select">
+                                    <select name="sex" id="sex_selection" class="select">
                                         <option class="option" value="female">Feminino</option>
                                         <option class="option" value="male">Masculino</option>
                                     </select>
@@ -57,7 +57,7 @@
 
                             <div class="label-input-placeholder">
                                 <label for="whatsapp" class="minor-subtitle">Whatsapp</label>
-                                <input type="text" id="whatsapp" placeholder="(12) 982173929" class="input">
+                                <input name="cellphone" type="text" id="whatsapp" placeholder={% if user.cellphone == None %}"(12) 982173929" {% else %} {{user.cellphone}} {% endif %} class="input">
                             </div>
 
                         </div>
@@ -76,12 +76,12 @@
 
                                 <div class="label-input-placeholder">
                                     <label for="course" class="minor-subtitle">Qual curso você está cursando?</label>
-                                    <input type="text" id="course" placeholder="Engenharia de Software" class="input">
+                                    <input name="course" type="text" id="course" placeholder={% if user.course == None %}"Engenharia de Software"{% else %}{{user.course}}{% endif %} class="input">
                                 </div>
 
                                 <div class="label-input-placeholder">
                                     <label for="hobbie" class="minor-subtitle">Qual é o seu hobbie preferido?</label>
-                                    <input type="text" id="hobbie" placeholder="Jogar bola" class="input">
+                                    <input name="hobbie" type="text" id="hobbie" placeholder={% if user.hobbie == None %}"Jogar bola"{% else %}{{user.hobbie}}{% endif %} class="input">
                                 </div>
 
                                 <div class="label-input-placeholder">
@@ -98,8 +98,7 @@
 
                                 <div class="label-input-placeholder">
                                     <label for="i_do_not_like" class="minor-subtitle">Eu não gosto de....</label>
-                                    <input type="text" id="i_do_not_like"
-                                        placeholder="Desorganização e cheiro de cigarro." class="input">
+                                    <input name="disgust" type="text" id="i_do_not_like" placeholder={% if user.disgust == None %}"Desorganização e cheiro de cigarro."{% else %}{{user.disgust}}{% endif %} class="input">
                                 </div>
 
                             </div>
@@ -108,7 +107,7 @@
 
                 </div>
 
-                <button id="save-edit-profile-button" class="button"><label class="minor-subtitle">Salvar</label></button>
+                <button type="submit" id="save-edit-profile-button" class="button"><label class="minor-subtitle">Salvar</label></button>
 
             </div>
 
