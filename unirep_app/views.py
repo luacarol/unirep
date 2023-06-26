@@ -1,7 +1,7 @@
 from django.shortcuts import redirect, render
 from django.contrib import auth
 
-from unirep_app.forms import LoginForm
+from unirep_app.forms import LoginForm, EditProfileForm
 from django.contrib.auth import models as auth_models
 from unirep_app.models import Republic, User
 
@@ -53,42 +53,34 @@ def edit_profile(request):
             return render(request, "edit_profile.html", {"user": user})
 
         elif request.method == "POST":
-            # Pegar dados do frontend
-            full_name = request.POST["full_name"]
-            age = int(request.POST["age"])
-            sex = request.POST["sex"]
-            cellphone = request.POST["cellphone"]
-            course = request.POST["course"]
-            hobbie = request.POST["hobbie"]
-            disgust = request.POST["disgust"]
-            # print("full_name ", full_name)
-            # print("age ", age)
-            # print("sex ", sex)
-            # print("cellphone ", cellphone)
-            # print("course ", course)
-            # print("hobbie ", hobbie)
-            # print("disgust ", disgust)
+            form_edit_profile = EditProfileForm(request.POST)
 
-            # Validar os dados com o forms.py
-            if sex == "female":
-                sex = "FE"
-            elif sex == "male":
-                sex = "MA"
+            if form_edit_profile.is_valid():
+                full_name = form_edit_profile.cleaned_data["full_name"]
+                age = form_edit_profile.cleaned_data["age"]
+                sex = form_edit_profile.cleaned_data["sex"]
+                cellphone = form_edit_profile.cleaned_data["cellphone"]
+                course = form_edit_profile.cleaned_data["course"]
+                hobbie = form_edit_profile.cleaned_data["hobbie"]
+                disgust = form_edit_profile.cleaned_data["disgust"]
 
-            # Atualizar os dados do usuário
-            User.objects.filter(email=request.user.email).update(
-                username=full_name,
-                age=age,
-                sex=sex,
-                cellphone=cellphone,
-                course=course,
-                hobbie=hobbie,
-                disgust=disgust,
-            )
+                User.objects.filter(email=request.user.email).update(
+                    username=full_name,
+                    age=age,
+                    sex=sex,
+                    cellphone=cellphone,
+                    course=course,
+                    hobbie=hobbie,
+                    disgust=disgust,
+                )
+                return render(
+                    request, "edit_profile.html", {"message": "Editado com sucesso!"}
+                )
 
-            # Retornar mensagem de sucesso ou não
-
-            return render(request, "edit_profile.html")
+            elif not form_edit_profile.is_valid():
+                return render(
+                    request, "edit_profile.html", {"message": "Formulário inválido!"}
+                )
     else:
         return render(request, "login.html", {"message": "Usuário não autenticado."})
 

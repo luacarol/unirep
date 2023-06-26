@@ -27,8 +27,7 @@
 
                     <div class="two-columns">
 
-                        <img src="{% static 'img/big-female-profile-picture.svg' %}"
-                            alt="Imagem de perfil do usuário.">
+                        <img src="{% static 'img/big-female-profile-picture.svg' %}" alt="Imagem de perfil do usuário.">
 
                         <div class="two-rows">
 
@@ -36,20 +35,21 @@
 
                                 <div class="label-input-placeholder">
                                     <label for="full_name" class="minor-subtitle">Nome completo</label>
-                                    <input name="full_name" type="text" id="full_name"
-                                        placeholder="{{user.username}}" class="input">
+                                    <input name="full_name" type="text" id="full_name" placeholder="{{user.username}}"
+                                        class="input">
                                 </div>
 
                                 <div class="label-input-placeholder">
                                     <label for="age" class="minor-subtitle">Idade</label>
-                                    <input name="age" type="text" id="age" placeholder="{{user.age}} anos" class="input">
+                                    <input name="age" type="text" id="age" placeholder="{{user.age}} anos"
+                                        class="input">
                                 </div>
 
                                 <div class="label-input-placeholder">
                                     <label for="sex_selection" class="minor-subtitle">Qual é o seu sexo?</label>
                                     <select name="sex" id="sex_selection" class="select">
-                                        <option class="option" value="female">Feminino</option>
-                                        <option class="option" value="male">Masculino</option>
+                                        <option class="option" value="FE">Feminino</option>
+                                        <option class="option" value="MA">Masculino</option>
                                     </select>
                                 </div>
 
@@ -57,7 +57,7 @@
 
                             <div class="label-input-placeholder">
                                 <label for="whatsapp" class="minor-subtitle">Whatsapp</label>
-                                <input name="cellphone" type="text" id="whatsapp" placeholder={% if user.cellphone == None %}"(12) 982173929" {% else %} {{user.cellphone}} {% endif %} class="input">
+                                <input name="cellphone" type="text" id="whatsapp" placeholder="{% if user.cellphone == None %} (12) 982173929 {% else %} {{user.cellphone}} {% endif %}" class="input">
                             </div>
 
                         </div>
@@ -76,17 +76,21 @@
 
                                 <div class="label-input-placeholder">
                                     <label for="course" class="minor-subtitle">Qual curso você está cursando?</label>
-                                    <input name="course" type="text" id="course" placeholder="{% if user.course == None %}Engenharia de Softwares{% else %} {{user.course}} {% endif %}" class="input">
+                                    <input name="course" type="text" id="course"
+                                        placeholder="{% if user.course == None %}Engenharia de Softwares{% else %} {{user.course}} {% endif %}"
+                                        class="input">
                                 </div>
 
                                 <div class="label-input-placeholder">
                                     <label for="hobbie" class="minor-subtitle">Qual é o seu hobbie preferido?</label>
-                                    <input name="hobbie" type="text" id="hobbie" placeholder="{% if user.hobbie == None %}Jogar bola{% else %}{{user.hobbie}}{% endif %}" class="input">
+                                    <input name="hobbie" type="text" id="hobbie"
+                                        placeholder="{% if user.hobbie == None %}Jogar bola{% else %}{{user.hobbie}}{% endif %}"
+                                        class="input">
                                 </div>
 
                                 <div class="label-input-placeholder">
                                     <label for="which_do_you_prefer" class="minor-subtitle">Qual você prefere?</label>
-                                    <select name="" id="which_do_you_prefer" class="select">
+                                    <select name="preference" id="which_do_you_prefer" class="select">
                                         <option class="option" value="female">Limpar o banheiro</option>
                                         <option class="option" value="male">Lavar a louça</option>
                                     </select>
@@ -98,7 +102,9 @@
 
                                 <div class="label-input-placeholder">
                                     <label for="i_do_not_like" class="minor-subtitle">Eu não gosto de....</label>
-                                    <input name="disgust" type="text" id="i_do_not_like" placeholder="{% if user.disgust == None %}Desorganização e cheiro de cigarro.{% else %}{{user.disgust}}{% endif %}" class="input">
+                                    <input name="disgust" type="text" id="i_do_not_like"
+                                        placeholder="{% if user.disgust == None %}Desorganização e cheiro de cigarro.{% else %}{{user.disgust}}{% endif %}"
+                                        class="input">
                                 </div>
 
                             </div>
@@ -107,7 +113,8 @@
 
                 </div>
 
-                <button type="submit" id="save-edit-profile-button" class="button"><label class="minor-subtitle">Salvar</label></button>
+                <button type="submit" id="save-edit-profile-button" class="button"><label
+                        class="minor-subtitle">Salvar</label></button>
 
             </div>
 
@@ -116,6 +123,19 @@
     </div>
 
     {% include 'partials/footer.html' %}
+
+    <script>
+
+        window.addEventListener('load', () => {
+            let message = '{{message}}'
+
+            if (message.length > 0) {
+                console.log("message ", message)
+                alert(message)
+            }
+        })
+
+    </script>
 
 </body>
 
