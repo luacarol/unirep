@@ -20,16 +20,24 @@
 
         <div>
             <h4 for="gender" class="minor-subtitle">Gênero disponível</h4>
-            <p class="legend">{{republic.gender}}</p>
+            <p class="legend">
+                {% if republic.gender == 'MA' %}
+                    Masculino
+                {% elif republic.gender == 'FE' %}
+                    Feminina
+                {% else %}
+                    Mista
+                {% endif %}
+            </p>
         </div>
 
     </div>
 
-    <div class="basic-informations div-address-administrator">
+    <div class="basic-informations div-address-administrator">  
 
-        <div>
+        <div class="div-address">
             <h4 class="minor-subtitle">Endereço</h4>
-            <p class="common-text">{{republic.address}}</p>
+            <p class="legend">{{republic.address}}</p>
         </div>
 
         <div>

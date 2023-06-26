@@ -16,3 +16,7 @@
 .div-address-administrator {
     align-self: flex-start;
 }
+
+.div-address-administrator .div-address p {
+    white-space: pre-wrap;
+}
