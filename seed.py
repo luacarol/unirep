@@ -38,6 +38,12 @@ def creating_republics(qtd_users):
         gender = random.choice(gender_names)
         num_vacancies = 10
 
+        user_id = random.randrange(1, 5)
+        admin_user = User.objects.get(id=user_id)
+
+        member_id = random.randrange(6, 11)
+        member = User.objects.get(id=member_id)
+
         republic = Republic(
             name=name,
             cellphone=cellphone,
@@ -46,7 +52,9 @@ def creating_republics(qtd_users):
             qtd_members=qtd_members,
             gender=gender,
             num_vacancies=num_vacancies,
+            user_id=admin_user,
         )
+        republic.members.add(member)
         republic.save()
 
 

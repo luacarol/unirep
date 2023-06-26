@@ -86,6 +86,23 @@ class User(AbstractUser):
         return self.username
 
 
+class PayableItem(models.Model):
+    TYPES_GENRES = [
+        ("1", "Payable"),  # a pagar
+        ("2", "Paid"),  # pago
+    ]
+
+    name = models.CharField(max_length=200)
+    value = models.FloatField()
+    republic_id = models.ForeignKey("Republic", on_delete=models.CASCADE)
+    user_id = models.ForeignKey(
+        User, verbose_name="user_id", on_delete=models.CASCADE, blank=True, null=True
+    )
+    maturity_in = models.DateTimeField()  # vencimento em
+    status = models.CharField(max_length=1, choices=TYPES_GENRES)
+    created_at = models.DateTimeField(default=timezone.now)
+
+
 class Republic(models.Model):
     TYPES_GENRES = [
         ("MA", "Male"),
@@ -102,22 +119,20 @@ class Republic(models.Model):
     num_vacancies = models.IntegerField(default=0)
     created_at = models.DateTimeField(default=timezone.now)
     user_id = models.ForeignKey(
-        User, verbose_name="user_id", on_delete=models.CASCADE, blank=True, null=True
+        User,
+        related_name="republics_as_user",
+        verbose_name="user_id",
+        on_delete=models.CASCADE,
+        blank=True,
+        null=True,
     )
-
-
-class PayableItem(models.Model):
-    TYPES_GENRES = [
-        ("1", "Payable"),
-        ("2", "Paid"),
-    ]
-
-    name = models.CharField(max_length=200)
-    value = models.FloatField()
-    republic_id = models.ForeignKey(Republic, on_delete=models.CASCADE)
-    user_id = models.ForeignKey(
-        User, verbose_name="user_id", on_delete=models.CASCADE, blank=True, null=True
+    members = models.ManyToManyField(
+        User,
+        related_name="republics_as_member",
+        verbose_name="members",
+        blank=True,
+        null=True,
     )
-    maturity_in = models.DateTimeField()
-    status = models.CharField(max_length=1, choices=TYPES_GENRES)
-    created_at = models.DateTimeField(default=timezone.now)
+    payable_items = models.ManyToManyField(
+        PayableItem, verbose_name="payable_items", blank=True, null=True
+    )
