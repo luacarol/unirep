@@ -54,8 +54,9 @@ def creating_republics(qtd_users):
             num_vacancies=num_vacancies,
             user_id=admin_user,
         )
-        republic.members.add(member)
         republic.save()
+
+        republic.members.add(member)
 
 
 creating_users(10)
