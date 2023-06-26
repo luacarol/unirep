@@ -105,15 +105,13 @@ def republics(request):
         return render(request, "republics.html", {"republics": republics})
 
 
-def republic_information(request):
-    if request.method == "GET":
-        # Recuperar república
-
-        # Recuperar membros da república
-
-        # Recuperar itens à pagar dessa república
-
-        return render(request, "republic_information.html")
+def republic_information(request, id):
+    if request.user.is_authenticated:
+        if request.method == "GET":
+            republic = Republic.objects.get(id=id)
+            return render(request, "republic_information.html", {"republic": republic})
+    else:
+        return render(request, "login.html", {"message": "Usuário não autenticado."})
 
 
 def create_republic(request):

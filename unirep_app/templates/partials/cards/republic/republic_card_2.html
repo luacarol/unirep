@@ -10,17 +10,17 @@
 
         <div>
             <h4 class="minor-subtitle">Nome do república</h4>
-            <p class="legend">Mal te vejo</p>
+            <p class="legend">{{republic.name}}</p>
         </div>
 
         <div>
             <h4 class="minor-subtitle">Quantidade de membros</h4>
-            <p class="legend">4 membros</p>
+            <p class="legend">{{republic.qtd_members}} membros</p>
         </div>
 
         <div>
             <h4 for="gender" class="minor-subtitle">Gênero disponível</h4>
-            <p class="legend">Misto</p>
+            <p class="legend">{{republic.gender}}</p>
         </div>
 
     </div>
@@ -29,14 +29,12 @@
 
         <div>
             <h4 class="minor-subtitle">Endereço</h4>
-            <p class="common-text">Rua Antonio Amaral Santos, n.137. </p>
-            <p class="common-text">Residencial Jatobá. </p>
-            <p class="common-text">São José dos Campos/SP</p>
+            <p class="common-text">{{republic.address}}</p>
         </div>
 
         <div>
             <h4 for="username" class="minor-subtitle">Contato administrador</h4>
-            <p class="legend">(12) 982173929</p>
+            <p class="legend">{{republic.cellphone}}</p>
         </div>
 
     </div>
@@ -50,7 +48,7 @@
         </div>
 
         <a href="" class="link-navigation">
-            <p class="minor-subtitle">Valor total dos itens: R$ 400,00</p>
+            <p class="minor-subtitle">Valor total dos itens: R$ {{republic.value}},00</p>
         </a>
     </div>
 

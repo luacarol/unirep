@@ -36,7 +36,7 @@
 
                 {% for republic in republics %}
 
-                <a href="{% url 'republic-information' %}" class="link-republic-card">
+                <a href="{% url 'republic-information' republic.id %}" class="link-republic-card">
                     <div class="div-republic-card">
 
                         <img src="{% static 'img/republics/small-republic-picture.svg' %}" alt="Three houses icon" />
