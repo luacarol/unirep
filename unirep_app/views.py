@@ -109,7 +109,17 @@ def republic_information(request, id):
     if request.user.is_authenticated:
         if request.method == "GET":
             republic = Republic.objects.get(id=id)
-            return render(request, "republic_information.html", {"republic": republic})
+
+            members = 0
+
+            if len(republic.members.all()) > 0:
+                members = republic.members.all()
+
+            return render(
+                request,
+                "republic_information.html",
+                {"republic": republic, "members": members},
+            )
     else:
         return render(request, "login.html", {"message": "Usuário não autenticado."})
 
