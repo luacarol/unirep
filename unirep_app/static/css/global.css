@@ -392,3 +392,10 @@ body {
     align-items: center;
     justify-content: space-between;
 }
+
+/* images */
+
+.logo-image {
+    width: 10em;
+    height: 9em;
+}
