@@ -30,8 +30,8 @@ body {
 .login-division {
     width: 100%;
     height: 100%;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+    display: flex;
+    flex-direction: row;
     align-items: center;
     justify-content: center;
 }
@@ -52,7 +52,8 @@ body {
     color: var(--orange);
 }
 
-#click-login, #click-register {
+#click-login,
+#click-register {
     cursor: pointer;
 }
 

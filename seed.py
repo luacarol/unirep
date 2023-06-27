@@ -38,7 +38,7 @@ def creating_payable_items(qtd):
     for _ in range(qtd):
         items_name = ["Água", "Energia", "Gás", "Netflix"]
         name = random.choice(items_name)
-        value = random.randrange(30, 80)
+        value = random.randrange(10, 60)
         user_id = random.randrange(1, 5)
         user = User.objects.get(id=user_id)
 
