@@ -4,77 +4,33 @@
 
 <div class="div-payable-items">
 
-    <div class="div-payable-item">
+    {% for payable_item in payable_items %}
+    
+        <div class="div-payable-item">
 
-        <img class="img-item-card" src="{% static 'img/credit-card-picture.svg' %}" />
+            <img class="img-item-card" src="{% static 'img/credit-card-picture.svg' %}" />
 
-        <div class="tooltip-content" style="margin: 0;">
+            <div class="tooltip-content" style="margin: 0;">
 
-            <a href="">
-                <img class="img-icon-info" src="{% static 'img/icon-info.svg' %}" alt="Ícone de informação" />
-            </a>
+                <a href="">
+                    <img class="img-icon-info" src="{% static 'img/icon-info.svg' %}" alt="Ícone de informação" />
+                </a>
 
-            <span class="tooltip-text">Esse valor já é a simulação do preço caso você fizesse parte dessa república</span>
+                <span class="tooltip-text">Esse valor já é a simulação do preço caso você fizesse parte dessa república</span>
 
-        </div>
+            </div>
 
-        <div class="div-basic-informations">
+            <div class="div-basic-informations">
 
-            <h3 class="minor-subtitle text-label-account-name">Nome da conta</h3>
-            <h4 class="legend text-account-name">Aluguel</h4>
-            <h4 class="legend orange-text text-account-value">Valor: R$ 150,00</h4>
+                <h3 class="minor-subtitle text-label-account-name">Nome da conta</h3>
+                <h4 class="legend text-account-name">{{payable_item.name}}</h4>
+                <h4 class="legend orange-text text-account-value">Valor: R$ {{payable_item.value}}</h4>
 
-        </div>
-
-    </div>
-
-    <div class="div-payable-item">
-
-        <img class="img-item-card" src="{% static 'img/credit-card-picture.svg' %}" />
-
-        <div class="tooltip-content" style="margin: 0;">
-
-            <a href="">
-                <img class="img-icon-info" src="{% static 'img/icon-info.svg' %}" alt="Ícone de informação" />
-            </a>
-
-            <span class="tooltip-text">Esse valor já é a simulação do preço caso você fizesse parte dessa república</span>
+            </div>
 
         </div>
-
-        <div class="div-basic-informations">
-
-            <h3 class="minor-subtitle text-label-account-name">Nome da conta</h3>
-            <h4 class="legend text-account-name">Aluguel</h4>
-            <h4 class="legend orange-text text-account-value">Valor: R$ 150,00</h4>
-
-        </div>
-
-    </div>
-
-    <div class="div-payable-item">
-
-        <img class="img-item-card" src="{% static 'img/credit-card-picture.svg' %}" />
-
-        <div class="tooltip-content" style="margin: 0;">
-
-            <a href="">
-                <img class="img-icon-info" src="{% static 'img/icon-info.svg' %}" alt="Ícone de informação" />
-            </a>
-
-            <span class="tooltip-text">Esse valor já é a simulação do preço caso você fizesse parte dessa república</span>
-
-        </div>
-
-        <div class="div-basic-informations">
-
-            <h3 class="minor-subtitle text-label-account-name">Nome da conta</h3>
-            <h4 class="legend text-account-name">Aluguel</h4>
-            <h4 class="legend orange-text text-account-value">Valor: R$ 150,00</h4>
-
-        </div>
-
-    </div>
+    
+    {% endfor %}
 
 </div>
 

@@ -94,7 +94,6 @@ class PayableItem(models.Model):
 
     name = models.CharField(max_length=200)
     value = models.FloatField()
-    republic_id = models.ForeignKey("Republic", on_delete=models.CASCADE)
     user_id = models.ForeignKey(
         User, verbose_name="user_id", on_delete=models.CASCADE, blank=True, null=True
     )
@@ -127,12 +126,8 @@ class Republic(models.Model):
         null=True,
     )
     members = models.ManyToManyField(
-        User,
-        related_name="republics_as_member",
-        verbose_name="members",
-        blank=True,
-        null=True,
+        User, related_name="republics_as_member", verbose_name="members", blank=True
     )
     payable_items = models.ManyToManyField(
-        PayableItem, verbose_name="payable_items", blank=True, null=True
+        PayableItem, verbose_name="payable_items", blank=True
     )

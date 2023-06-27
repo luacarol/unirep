@@ -110,15 +110,20 @@ def republic_information(request, id):
         if request.method == "GET":
             republic = Republic.objects.get(id=id)
 
-            members = 0
-
             if len(republic.members.all()) > 0:
                 members = republic.members.all()
+
+            if len(republic.payable_items.all()) > 0:
+                payable_items = republic.payable_items.all()
 
             return render(
                 request,
                 "republic_information.html",
-                {"republic": republic, "members": members},
+                {
+                    "republic": republic,
+                    "members": members,
+                    "payable_items": payable_items,
+                },
             )
     else:
         return render(request, "login.html", {"message": "Usuário não autenticado."})
