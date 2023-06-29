@@ -15,4 +15,5 @@ urlpatterns = [
     ),
     path("create-republic", views.create_republic, name="create-republic"),
     path("edit-republic", views.edit_republic, name="edit-republic"),
+    path("request-sent/<int:republic_id>", views.request_sent, name="request-sent"),
 ]

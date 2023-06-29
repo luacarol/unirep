@@ -1,3 +1,4 @@
+from django.http import HttpResponse
 from django.shortcuts import redirect, render
 from django.contrib import auth
 
@@ -41,11 +42,7 @@ def home(request):
     if request.user.is_authenticated:
         if request.method == "GET":
             user = User.objects.get(email=request.user.email)
-
             republic = user.republic_id
-
-            print("user.republic_id ", user.republic_id)
-
             return render(request, "home.html", {"user": user, "republic": republic})
     else:
         return render(request, "login.html", {"message": "Usuário não autenticado."})
@@ -160,3 +157,9 @@ def edit_republic(request):
         # Atualizar dados da república
 
         return render(request, "edit_republic.html")
+
+
+def request_sent(request, republic_id):
+    print("request.user ", request.user)
+    print("republic_id ", republic_id)
+    return HttpResponse("URL chamada com sucesso!")

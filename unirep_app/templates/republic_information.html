@@ -6,6 +6,8 @@
     {% include 'partials/head.html' %}
 
     <link rel="stylesheet" href="{% static 'css/republic_information.css' %}">
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 <body id="body-republic-information">
 
@@ -67,7 +69,16 @@
 
 
         button_request_entry.onclick = function(e) {
-            div_modal_request_sent.style.display = 'flex'
+            $.ajax({
+                url: "{% url 'request-sent' republic.id %}",
+                success: function(response) {
+                    console.log(response);
+                    div_modal_request_sent.style.display = 'flex'
+                },
+                error: function(xhr) {
+                    console.error(xhr.responseText);
+                }
+            });
         }
 
         button_modal_ok.onclick = function() {
