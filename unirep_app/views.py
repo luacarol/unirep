@@ -41,7 +41,12 @@ def home(request):
     if request.user.is_authenticated:
         if request.method == "GET":
             user = User.objects.get(email=request.user.email)
-            return render(request, "home.html", {"user": user})
+
+            republic = user.republic_id
+
+            print("user.republic_id ", user.republic_id)
+
+            return render(request, "home.html", {"user": user, "republic": republic})
     else:
         return render(request, "login.html", {"message": "Usuário não autenticado."})
 

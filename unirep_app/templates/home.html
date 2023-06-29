@@ -77,8 +77,15 @@
 
             </div>
 
-            {% comment %} Usuário sem solicitação para entrar em alguma república {% endcomment %}
-            {% if user.republic_id is None %}
+            {% if republic %}
+                <div class="section section-my-house" style="margin-bottom: 3.125em;">
+
+                    <h2 class="subtitle">Minha moradia</h2> 
+
+                    {% include 'partials/cards/republic/republic_card.html' %}
+                    
+                <div>
+            {% else %}
                 <div class="section section-my-house">
                     <h2 class="subtitle">Minha moradia</h2>
 
