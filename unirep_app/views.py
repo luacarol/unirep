@@ -4,7 +4,7 @@ from django.contrib import auth
 
 from unirep_app.forms import LoginForm, EditProfileForm
 from django.contrib.auth import models as auth_models
-from unirep_app.models import Republic, User
+from unirep_app.models import Republic, User, UserRepublic
 
 
 def welcome(request):
@@ -160,6 +160,14 @@ def edit_republic(request):
 
 
 def request_sent(request, republic_id):
-    print("request.user ", request.user)
-    print("republic_id ", republic_id)
+    user = User.objects.get(id=request.user.id)
+    republic = Republic.objects.get(id=republic_id)
+
+    user_republic = UserRepublic.objects.create(
+        user=user,
+        republic=republic,
+    )
+
+    user_republic.save()
+
     return HttpResponse("URL chamada com sucesso!")

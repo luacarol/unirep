@@ -131,3 +131,14 @@ class Republic(models.Model):
     payable_items = models.ManyToManyField(
         PayableItem, verbose_name="payable_items", blank=True
     )
+
+
+class UserRepublic(models.Model):
+    TYPES_STATUS = [("1", "Pending"), ("2", "Approved")]
+
+    user = models.ForeignKey(User, verbose_name="user", blank=False, null=False)
+    republic = models.ForeignKey(
+        Republic, verbose_name="republic", blank=False, null=False
+    )
+    status = models.CharField(max_length=1, choices=TYPES_STATUS, default="1")
+    created_at = models.DateTimeField(default=timezone.now)
