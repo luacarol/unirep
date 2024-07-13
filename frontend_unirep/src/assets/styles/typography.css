@@ -1,0 +1,42 @@
+.title {
+    font-size: 2.125rem;
+    font-weight: 700;
+    color: var(--black-dark);
+}
+
+.bigger-subtitle {
+    font-size: 1.625rem;
+    font-weight: 700;
+    color: var(--black-dark);
+}
+
+.minor-subtitle {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--black-dark);
+}
+
+.text-commom {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: var(--black-dark);
+}
+
+.smaller-commom {
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--black-dark);
+}
+
+.legend {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--black-dark);
+}
+
+.link {
+    font-size: 1rem;
+    font-weight: 400;
+    color: var(--black-dark);
+    text-decoration: underline;
+}

@@ -11,7 +11,11 @@
 
 .nav .label {
     margin-right: 2rem;
-    color: var(--black-dark);
+}
+
+.nav .label:hover, .login .label:hover {
+    color: var(--orange);
+    cursor: pointer;
 }
 
 .login .label {
