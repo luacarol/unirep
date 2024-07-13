@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+import Header from './components/Header';
 
 function App() {
   const [republics, setRepublics] = useState([]);
@@ -16,6 +17,7 @@ function App() {
 
   return (
     <div className="App">
+      <Header/>
       <h1>Republics</h1>
       <ul>
         {republics.map(item => (
