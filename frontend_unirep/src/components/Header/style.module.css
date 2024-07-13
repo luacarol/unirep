@@ -6,10 +6,12 @@
     align-items: center;
     justify-items: center;
     box-sizing: border-box;
+    background-color: var(--gray-light);
 }
 
 .nav .label {
     margin-right: 2rem;
+    color: var(--black-dark);
 }
 
 .login .label {
