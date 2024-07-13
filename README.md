@@ -4,8 +4,12 @@ Este repositório contém o meu Trabalho de Conclusão de Curso (TCC) para o cur
 # Instalar virtualenv se ainda não estiver instalado
 pip install virtualenv
 
-# Criar um novo ambiente virtual
-virtualenv venv
+# Criar um ambiente virtual para o backend e para o frontendo
+cd backend_unirep 
+virtualvenv venv
+
+cd frontend_unirep
+virtualvenv venv
 
 # Ativar o ambiente virtual
 # No Windows
@@ -13,17 +17,8 @@ venv\Scripts\activate
 # No Linux/Mac
 source venv/bin/activate
 
-# Instalar Django e DRF
-pip install django djangorestframework
+# Instale as dependências do backend
+pip install -r requirements.txt
 
-# Criar e aplicar migrações
-cd backend_unirep
-
-python manage.py makemigrations
-python manage.py migrate
-
-# Criar um superusuário para acessar o admin
-python manage.py createsuperuser
-
-# Iniciar o servidor
-python manage.py runserver
+# Instale as dependências do frontend
+npm install
