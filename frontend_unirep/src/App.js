@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import Header from './components/Header';
+import Home from './components/Home';
 
 function App() {
   const [republics, setRepublics] = useState([]);
@@ -17,8 +18,10 @@ function App() {
 
   return (
     <div className="App">
-      <Header/>
-      <h1>Republics</h1>
+      <Header />
+      <div className="container">
+        <Home />
+      </div>
       <ul>
         {republics.map(item => (
           <li key={item.id}>{item.name}</li>
