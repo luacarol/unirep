@@ -1,0 +1,15 @@
+button {
+    border: none;
+    background-color: transparent;
+    color: var(--black-dark);
+}
+
+/* Icon Button */
+
+.iconButton .icon {
+    font-size: 1.625rem;
+}
+
+.iconButton .icon:hover {
+    color: var(--orange);
+}

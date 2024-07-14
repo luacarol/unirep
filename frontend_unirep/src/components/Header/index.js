@@ -1,3 +1,4 @@
+import Button from '../Button';
 import styles from './style.module.css'
 
 const Header = () => {
@@ -11,7 +12,7 @@ const Header = () => {
 
             <div className={styles.login}>
                 <label className={`${styles.label} minor-subtitle`}>Nome do usuário</label>
-                <button>Sair</button>
+                <Button/>
             </div>
         </header>
     )
