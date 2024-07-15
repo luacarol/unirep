@@ -17,14 +17,10 @@ body {
   flex: 1;
 }
 
-.container {
+.body {
   display: flex;
   flex: 1; 
   justify-content: center;
   align-items: center; 
   margin-bottom: 2rem;
-}
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
 }

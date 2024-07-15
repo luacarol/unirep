@@ -1,18 +1,12 @@
-import React, { } from 'react';
-import Header from './components/Header';
-import Home from './components/Home';
-import Footer from './components/Footer';
+import React from 'react';
+import AppRoutes from './Routes';
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <Header />
-      <div className="container">
-        <Home />
-      </div>
-      <Footer />
+    <div>
+      <AppRoutes />
     </div>
   );
-}
+};
 
 export default App;
