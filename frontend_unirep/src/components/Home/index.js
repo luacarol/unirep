@@ -1,5 +1,6 @@
 import ProfileCard from '../Cards/ProfileCard';
 import RepublicCard from '../Cards/RepublicCard';
+import MemberCarousel from '../Carousels/MemberCarousel';
 import styles from './style.module.css';
 
 const Home = () => {
@@ -20,6 +21,7 @@ const Home = () => {
 
                 <section className={styles.membersSection}>
                     <h2 className='bigger-subtitle'>Membros</h2>
+                    <MemberCarousel/>
                 </section>
             </div>
         </div>

@@ -1,0 +1,20 @@
+.container {
+    width: 19.587rem;
+    border: 0.094rem solid var(--gray-light);
+    border-radius: 0.75rem;
+    padding: 1.875rem 1.5rem;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.imgNameUser {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 0.4rem;
+}
+
+.profileImg {
+    width: 3.369rem;
+    margin-right: 0.3rem;
+}
