@@ -1,0 +1,34 @@
+.container {
+    width: 48rem;
+    border: 0.094rem solid var(--gray-light);
+    border-radius: 0.75rem;
+    padding: 1.875rem 1.5rem;
+    display: grid;
+    grid-template-columns: 7.25rem repeat(2, auto);
+    column-gap: 2rem;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+.container label:not(:last-child) {
+    margin-bottom: 0.25rem;
+}
+
+.profileImg {
+    width: 7.25rem;
+    height: 7.25rem;
+}
+
+.userInfo, .descriptionInfo {
+    display: flex;
+    flex-direction: column;
+}
+
+.descriptionInfo button {
+    margin-top: 0.5rem;
+}
+
+.descriptionText {
+    max-width: 20.625rem;
+    text-wrap: wrap;
+}

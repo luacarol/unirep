@@ -1,13 +1,17 @@
 import styles from './style.module.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faRightToBracket } from '@fortawesome/free-solid-svg-icons';
 
-const Button = () => {
+const Button = ({ variant, label, icon }) => {
+    // Variant Types:
+    // iconButton
+    // navigationButton
+    
     return (
-        <button className={styles.iconButton}>
-            <FontAwesomeIcon icon={faRightToBracket} className={styles.icon} />
+        <button className={styles[variant]}>
+            {variant === 'navigationButton' && <label className='legend'>{label}</label>}
+            <FontAwesomeIcon icon={icon} className={styles.icon} />
         </button>
-    )
+    );
 }
 
 export default Button;

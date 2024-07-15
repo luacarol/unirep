@@ -1,3 +1,4 @@
+import ProfileCard from '../Cards/ProfileCard';
 import styles from './style.module.css';
 
 const Home = () => {
@@ -8,6 +9,8 @@ const Home = () => {
             <div className={styles.content}>
                 <section className={styles.profileSection}>
                     <h2 className='bigger-subtitle'>Meu perfil</h2>
+
+                    <ProfileCard/>
                 </section>
 
                 <section className={styles.myHomeSection}>

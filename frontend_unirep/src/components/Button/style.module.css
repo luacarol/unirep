@@ -2,14 +2,38 @@ button {
     border: none;
     background-color: transparent;
     color: var(--black-dark);
+    padding: 0rem;
 }
 
 /* Icon Button */
 
-.iconButton .icon {
-    font-size: 1.625rem;
+.iconButton {
+    align-items: center;
+    justify-content: center;
 }
 
-.iconButton .icon:hover {
+.icon {
+    font-size: 1.2rem;
+}
+
+.iconButton:hover .icon {
     color: var(--orange);
+}
+
+/* Navigation Button */
+
+.navigationButton {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.navigationButton:hover, .navigationButton:hover label {
+    color: var(--orange-yellow);
+}
+
+.navigationButton, .navigationButton label {
+    color: var(--orange);
+    cursor: pointer;
 }

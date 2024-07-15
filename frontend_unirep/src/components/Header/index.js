@@ -1,5 +1,6 @@
 import Button from '../Button';
 import styles from './style.module.css'
+import { faRightToBracket } from '@fortawesome/free-solid-svg-icons';
 
 const Header = () => {
     return (
@@ -12,7 +13,7 @@ const Header = () => {
 
             <div className={styles.login}>
                 <label className={`${styles.label} minor-subtitle`}>Nome do usuário</label>
-                <Button/>
+                <Button variant='iconButton' icon={faRightToBracket} />
             </div>
         </header>
     )
