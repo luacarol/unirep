@@ -8,20 +8,21 @@ body {
   -moz-osx-font-smoothing: grayscale;
   display: flex;
   flex-direction: column;
-  min-height: 100vh; /* Garante que o body tenha pelo menos a altura da viewport */
+  min-height: 100vh;
 }
 
 #root {
   display: flex;
   flex-direction: column;
-  flex: 1; /* Permite que o root ocupe o máximo de espaço possível */
+  flex: 1;
 }
 
 .container {
   display: flex;
-  flex: 1; /* Permite que o container ocupe o máximo de espaço possível */
-  justify-content: center; /* Centraliza o conteúdo horizontalmente */
-  align-items: center; /* Centraliza o conteúdo verticalmente */
+  flex: 1; 
+  justify-content: center;
+  align-items: center; 
+  margin-bottom: 2rem;
 }
 
 code {

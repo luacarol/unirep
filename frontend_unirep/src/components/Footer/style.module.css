@@ -1,0 +1,14 @@
+.footer {
+    text-align: center;
+    background-color: #f1f1f1;
+    /* Customize the background color as needed */
+    padding: 10px 0;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+.madeByText {
+    align-self: flex-end;
+    justify-self: flex-end;
+}
