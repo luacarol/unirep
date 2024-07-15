@@ -8,6 +8,8 @@ const MemberCarousel = () => {
         <div className={styles.container}>
             <div className={styles.carousel}>
                 <MemberCard />
+                <MemberCard />
+                <MemberCard />
             </div>
             
             <div className={styles.buttons}>
