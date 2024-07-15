@@ -1,0 +1,41 @@
+.container {
+    border: 0.094rem solid var(--gray-light);
+    border-radius: 0.75rem;
+    padding: 1.875rem 1.5rem;
+    display: grid;
+    grid-template-columns: 15.455rem repeat(2, auto);
+    column-gap: 2rem;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+label {
+    margin-bottom: 0.25rem;
+}
+
+.addres label {
+    margin-bottom: 0;
+}
+
+.republicImg {
+    width: 15.455rem;
+    height: 9rem;
+}
+
+.republicInfo, .addres, .descriptionInfo {
+    display: flex;
+    flex-direction: column;
+}
+
+.addres {
+    margin-bottom: 0.25rem;
+}
+
+.descriptionInfo button {
+    margin-top: 0.5rem;
+}
+
+.descriptionText {
+    max-width: 20.625rem;
+    text-wrap: wrap;
+}

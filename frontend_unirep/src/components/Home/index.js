@@ -1,4 +1,5 @@
 import ProfileCard from '../Cards/ProfileCard';
+import RepublicCard from '../Cards/RepublicCard';
 import styles from './style.module.css';
 
 const Home = () => {
@@ -14,6 +15,7 @@ const Home = () => {
 
                 <section className={styles.myHomeSection}>
                     <h2 className='bigger-subtitle'>Minha moradia</h2>
+                    <RepublicCard />
                 </section>
 
                 <section className={styles.membersSection}>
