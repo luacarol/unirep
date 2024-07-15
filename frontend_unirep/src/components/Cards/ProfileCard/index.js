@@ -2,8 +2,15 @@ import styles from './style.module.css'
 import profileImg from '../../../assets/images/profile.svg';
 import Button from '../../Button';
 import { faChevronRight } from '@fortawesome/free-solid-svg-icons';
+import { useNavigate } from 'react-router-dom';
 
 const ProfileCard = () => {
+    const navigate = useNavigate();
+
+    const handleEditProfile = () => {
+        navigate('/edit-profile');
+    }
+    
     return (
         <div className={styles.container}>
             <img className={styles.profileImg} src={profileImg} alt='Profile'></img>
@@ -19,7 +26,7 @@ const ProfileCard = () => {
                 
                 <label className={`${styles.descriptionText} smaller-text`}>Descrição curta do perfil do usuário falando da sua personalidade.</label>
 
-                <Button variant='navigationButton' label='Editar perfil' icon={faChevronRight} />
+                <Button variant='navigationButton' label='Editar perfil' icon={faChevronRight} onClick={handleEditProfile} />
             </div>
 
         </div>
