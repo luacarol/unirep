@@ -1,5 +1,5 @@
 import ProfileCard from '../Cards/ProfileCard';
-import RepublicCard from '../Cards/RepublicCard';
+import RepublicCard from '../Cards/RepublicCards/MemberRepublicCard/index';
 import MemberCarousel from '../Carousels/MemberCarousel';
 import Layout from '../Layout';
 import styles from './style.module.css';

@@ -1,9 +1,9 @@
 import styles from './style.module.css';
-import republicImg from '../../../assets/images/republic.svg';
-import Button from '../../Button';
+import republicImg from '../../../../assets/images/republic.svg';
+import Button from '../../../Button';
 import { faChevronRight } from '@fortawesome/free-solid-svg-icons';
 
-const RepublicCard = () => {
+const MemberRepublicCard = () => {
     return (
         <div className={styles.container}>
             <img className={styles.republicImg} src={republicImg} alt='Home'></img>
@@ -30,4 +30,4 @@ const RepublicCard = () => {
     )
 }
 
-export default RepublicCard;
+export default MemberRepublicCard;
