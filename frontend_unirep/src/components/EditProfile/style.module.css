@@ -1,0 +1,19 @@
+.userEditImg {
+    position: relative;
+    display: inline-block;
+}
+
+.userEditImg img {
+    display: block;
+    width: 100%; 
+}
+
+#editButton {
+    position: absolute;
+    bottom: -5px; 
+    right: -5px; 
+    background-color: white; 
+    border: 0.5px solid var(--black-dark); 
+    padding: 5px; 
+    border-radius: 50%; 
+}

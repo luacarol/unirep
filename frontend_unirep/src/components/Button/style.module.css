@@ -3,6 +3,11 @@ button {
     background-color: transparent;
     color: var(--black-dark);
     padding: 0rem;
+    cursor: pointer;
+}
+
+label {
+    cursor: pointer;
 }
 
 /* Icon Button */
@@ -36,4 +41,20 @@ button {
 .navigationButton, .navigationButton label {
     color: var(--orange);
     cursor: pointer;
+}
+
+/* Label Button */
+
+.labelButton {
+    width: 15rem;
+    border: 2px solid var(--black-dark);
+    border-radius: 0.625rem;
+    padding: 0.75rem 1rem;
+    box-sizing: border-box;
+}
+
+.labelButton:hover, .labelButton:hover label {
+    border: 2px solid var(--orange);
+    background-color: var(--orange);
+    color: white;
 }
