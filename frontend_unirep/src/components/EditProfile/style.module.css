@@ -25,6 +25,11 @@
     border-radius: 50%; 
 }
 
+#editButton:hover {
+    background-color: var(--orange);
+    border: 0.5px solid var(--orange); 
+} 
+
 .form {
     width: 70%;
     display: grid;
