@@ -1,9 +1,9 @@
 import styles from './style.module.css';
-import profileImg from '../../assets/images/profile.svg';
-import Layout from '../Layout';
-import Button from '../Button';
+import profileImg from '../../../assets/images/profile.svg';
+import Layout from '../../Layout';
+import Button from '../../Button';
 import { faPen } from '@fortawesome/free-solid-svg-icons';
-import Input from '../Input';
+import Input from '../../Input';
 
 const EditProfile = () => {
     return (

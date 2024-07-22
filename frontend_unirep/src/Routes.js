@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import Home from './components/Home';
-import EditProfile from './components/EditProfile';
+import Home from './components/pages/Home';
+import EditProfile from './components/pages/EditProfile';
 import Republics from './components/pages/Republics';
 
 const AppRoutes = () => {
