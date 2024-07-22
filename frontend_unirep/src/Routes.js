@@ -2,6 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Home from './components/Home';
 import EditProfile from './components/EditProfile';
+import Republics from './components/pages/Republics';
 
 const AppRoutes = () => {
   return (
@@ -9,6 +10,7 @@ const AppRoutes = () => {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/edit-profile" element={<EditProfile />} />
+        <Route path="/republics" element={<Republics />} />
       </Routes>
     </Router>
   );

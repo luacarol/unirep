@@ -1,19 +1,32 @@
+import RepublicCard from '../../Cards/RepublicCards/RepublicCard';
+import Layout from '../../Layout';
+import Search from '../../Search';
 import styles from './style.module.css';
 
-const Republics = ({}) => {
+const Republics = () => {
     return (
-        <div className={styles.container}>
-            <div className={styles.search}>
+        <Layout body={<div className={styles.container}>
 
-            </div>
-            <div className={styles.cardContainer}>
-                <h2 className={`bigger-subtitle`}>Informações das repúblicas</h2>
+            <h1 className={`title`}>Repúblicas</h1>
 
-                <div className={styles.cards}>
+            <div className={styles.content}>
+                <Search id={styles.searchRepublics} placeholder='Pesquise por uma república' />
 
+                <div className={styles.cardContainer}>
+                    <h2 className={`bigger-subtitle`}>Informações das repúblicas</h2>
+
+                    <div className={styles.cards}>
+                        <RepublicCard />
+                        <RepublicCard />
+                        <RepublicCard />
+                        <RepublicCard />
+                    </div>
                 </div>
             </div>
-        </div>
+
+        </div>}>
+
+        </Layout>
     )
 }
 

@@ -1,0 +1,22 @@
+.container {
+    width: 28rem;
+    border-radius: 0.625rem;
+    border: 1.5px solid var(--gray);
+    padding: 0.5rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+.icon {
+    margin-right: 0.5rem;
+}
+
+svg {
+    color: var(--black-dark);
+}
+
+input {
+    width: 100%;
+}
