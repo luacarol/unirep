@@ -2,6 +2,7 @@ import styles from './style.module.css';
 import MemberCarousel from '../../Carousels/MemberCarousel/index';
 import Layout from '../../Layout';
 import ItemToPayCarousel from '../../Carousels/ItemToPayCarousel';
+import AdditionalRepublicCard from '../../Cards/RepublicCards/AdditionalRepublicCard';
 
 const Republic = () => {
     return (
@@ -15,7 +16,7 @@ const Republic = () => {
 
                     <h2 className={`bigger-subtitle`}>Informações gerais</h2>
 
-                    {/* Additional Republic Card */}
+                    <AdditionalRepublicCard/>
 
                 </div>
 

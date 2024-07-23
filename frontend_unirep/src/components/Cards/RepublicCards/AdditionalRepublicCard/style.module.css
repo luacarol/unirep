@@ -1,0 +1,42 @@
+.container {
+    border: 0.094rem solid var(--gray-light);
+    border-radius: 0.75rem;
+    padding: 1.875rem 1.5rem;
+    display: grid;
+    grid-template-columns: 7.25rem repeat(2, auto);
+    column-gap: 2rem;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+.republicInfo {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.addres {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.addres label {
+    margin: 0rem;
+    padding: 0rem;
+}
+
+.descriptionInfo {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.descriptionText {
+    max-width: 20.625rem;
+    text-wrap: wrap;
+}
+
+.valueTotalItem {
+    color: var(--orange);
+}
