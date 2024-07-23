@@ -15,7 +15,7 @@ const Header = () => {
     }
 
     const handleItensToPay = () => {
-        
+        navigate('/itemstopay')
     }
 
     return (

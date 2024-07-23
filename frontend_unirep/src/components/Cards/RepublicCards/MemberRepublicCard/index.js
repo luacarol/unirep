@@ -2,8 +2,15 @@ import styles from './style.module.css';
 import republicImg from '../../../../assets/images/republic.svg';
 import Button from '../../../Button';
 import { faChevronRight } from '@fortawesome/free-solid-svg-icons';
+import { useNavigate } from 'react-router-dom';
 
 const MemberRepublicCard = () => {
+    const navigate = useNavigate();
+
+    const handleViewItemsToPay = () => {
+        navigate('/itemstopay')
+    }
+
     return (
         <div className={styles.container}>
             <img className={styles.republicImg} src={republicImg} alt='Home'></img>
@@ -24,7 +31,7 @@ const MemberRepublicCard = () => {
                 
                 <label className={`${styles.descriptionText} smaller-text`}>Curta descrição da cultura e da vibe dentro da república., falando de suas características físicas e peculiares.</label>
 
-                <Button variant='navigationButton' label='Ver itens à pagar' icon={faChevronRight} />
+                <Button variant='navigationButton' label='Ver itens à pagar' icon={faChevronRight} onClick={handleViewItemsToPay} />
             </div>
         </div>
     )
