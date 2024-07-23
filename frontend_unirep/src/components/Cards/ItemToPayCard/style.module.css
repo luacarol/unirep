@@ -1,0 +1,28 @@
+.container {
+    width: 16.438rem;
+    border: 0.094rem solid var(--gray-light);
+    border-radius: 0.75rem;
+    padding: 1.875rem 1.5rem;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+.imgNameItem {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 0.5rem;
+}
+
+.itemImg {
+    height: 3rem;
+    margin-right: 0.5rem;
+}
+
+#toPayButton {
+    align-self: center;
+    margin-top: 0.5rem;
+}

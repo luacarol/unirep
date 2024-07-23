@@ -1,6 +1,7 @@
 import styles from './style.module.css';
 import MemberCarousel from '../../Carousels/MemberCarousel/index';
 import Layout from '../../Layout';
+import ItemToPayCarousel from '../../Carousels/ItemToPayCarousel';
 
 const Republic = () => {
     return (
@@ -29,6 +30,8 @@ const Republic = () => {
                 <div className={`${styles.itensToBePayInfo} ${styles.section}`}>
 
                     <h2 className={`bigger-subtitle`}>Informações dos itens à pagar</h2>
+
+                    <ItemToPayCarousel/>
 
                 </div>
 
