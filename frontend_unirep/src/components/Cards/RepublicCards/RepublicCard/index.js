@@ -1,9 +1,9 @@
 import styles from './style.module.css';
 import republicImg from '../../../../assets/images/republic.svg';
 
-const RepublicCard = () => {
+const RepublicCard = ({ onClick }) => {
     return (
-        <div className={styles.container}>
+        <div className={styles.container} onClick={onClick}>
 
             <div className={styles.republicImgSection}>
                 <img className={styles.republicImg} src={republicImg} alt='Republic' />

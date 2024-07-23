@@ -2,8 +2,15 @@ import RepublicCard from '../../Cards/RepublicCards/RepublicCard';
 import Layout from '../../Layout';
 import Search from '../../Search';
 import styles from './style.module.css';
+import { useNavigate } from 'react-router-dom';
 
 const Republics = () => {
+    const navigate = useNavigate();
+
+    const handleRepublicCard = () => {
+        navigate('/republic')
+    }
+
     return (
         <Layout body={<div className={styles.container}>
 
@@ -16,7 +23,7 @@ const Republics = () => {
                     <h2 className={`bigger-subtitle`}>Informações das repúblicas</h2>
 
                     <div className={styles.cards}>
-                        <RepublicCard />
+                        <RepublicCard onClick={handleRepublicCard} />
                         <RepublicCard />
                         <RepublicCard />
                         <RepublicCard />

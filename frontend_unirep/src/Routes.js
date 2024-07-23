@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Home from './components/pages/Home';
 import EditProfile from './components/pages/EditProfile';
 import Republics from './components/pages/Republics';
+import Republic from './components/pages/Republic';
 
 const AppRoutes = () => {
   return (
@@ -11,6 +12,7 @@ const AppRoutes = () => {
         <Route path="/" element={<Home />} />
         <Route path="/edit-profile" element={<EditProfile />} />
         <Route path="/republics" element={<Republics />} />
+        <Route path="/republic" element={<Republic />} />
       </Routes>
     </Router>
   );
