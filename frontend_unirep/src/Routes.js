@@ -5,6 +5,7 @@ import EditProfile from './components/pages/EditProfile';
 import Republics from './components/pages/Republics';
 import Republic from './components/pages/Republic';
 import ItemsToPay from './components/pages/ItemsToPay';
+import Members from './components/pages/Members';
 
 const AppRoutes = () => {
   return (
@@ -15,6 +16,7 @@ const AppRoutes = () => {
         <Route path="/republics" element={<Republics />} />
         <Route path="/republic" element={<Republic />} />
         <Route path="/itemstopay" element={<ItemsToPay />} />
+        <Route path="/members" element={<Members />} />
       </Routes>
     </Router>
   );
