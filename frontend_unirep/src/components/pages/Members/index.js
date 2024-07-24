@@ -1,10 +1,11 @@
 import styles from './style.module.css';
 import AdditionalRepublicCard from '../../Cards/RepublicCards/AdditionalRepublicCard/index';
 import MemberInfoCard from '../../Cards/MemberCards/MemberInfoCard';
+import Layout from '../../Layout/index';
 
 const Members = () => {
     return (
-        <div className={styles.container}>
+        <Layout body={<div className={styles.container}>
 
             <h1 className={`title`}>Membros</h1>
 
@@ -14,7 +15,7 @@ const Members = () => {
 
                     <h2 className={`bigger-subtitle`}>Informações da república</h2>
 
-                    <AdditionalRepublicCard/>
+                    <AdditionalRepublicCard />
 
                 </div>
 
@@ -22,13 +23,18 @@ const Members = () => {
 
                     <h2 className={`bigger-subtitle`}>Informações dos membros</h2>
 
-                    <MemberInfoCard/>
+                    <div className={styles.membersSection}>
+                        <MemberInfoCard />
+                        <MemberInfoCard />
+                        <MemberInfoCard />
+                        <MemberInfoCard />
+                    </div>
 
                 </div>
 
             </div>
 
-        </div>
+        </div>} />
     )
 }
 

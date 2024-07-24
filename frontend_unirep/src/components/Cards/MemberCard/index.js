@@ -1,9 +1,9 @@
 import styles from './style.module.css';
 import profileImg from '../../../assets/images/profile.svg';
 
-const MemberCard = () => {
+const MemberCard = ({ onClick }) => {
     return (
-        <div className={styles.container}>
+        <div className={styles.container} onClick={onClick}>
 
             <div className={styles.imgNameUser}>
                 <img className={styles.profileImg} src={profileImg} alt='Profile'></img>

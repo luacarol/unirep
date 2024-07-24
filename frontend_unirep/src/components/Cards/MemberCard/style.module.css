@@ -5,6 +5,13 @@
     padding: 1.875rem 1.5rem;
     box-sizing: border-box;
     text-align: center;
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.container:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .imgNameUser {
