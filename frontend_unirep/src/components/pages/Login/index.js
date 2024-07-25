@@ -7,11 +7,11 @@ import { useState } from 'react';
 const Login = () => {
     const navigate = useNavigate();
 
-    const [selectedLabel, setSelectedLabel] = useState('loginSelected')
-
     const handleToEnterButton = () => {
         navigate('/home')
     }
+
+    const [selectedLabel, setSelectedLabel] = useState('loginSelected')
 
     const handleLoginLabel = () => {
         setSelectedLabel('loginSelected')
@@ -19,6 +19,7 @@ const Login = () => {
 
     const handleRegisterLabel = () => {
         setSelectedLabel('registerSelected')
+        navigate('/register')
     }
 
     return (

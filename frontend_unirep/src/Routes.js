@@ -7,6 +7,7 @@ import Republic from './components/pages/Republic';
 import ItemsToPay from './components/pages/ItemsToPay';
 import Members from './components/pages/Members';
 import Login from './components/pages/Login';
+import Register from './components/pages/Register';
 
 const AppRoutes = () => {
   return (
@@ -19,6 +20,7 @@ const AppRoutes = () => {
         <Route path="/republic" element={<Republic />} />
         <Route path="/itemstopay" element={<ItemsToPay />} />
         <Route path="/members" element={<Members />} />
+        <Route path="/register" element={<Register />} />
       </Routes>
     </Router>
   );

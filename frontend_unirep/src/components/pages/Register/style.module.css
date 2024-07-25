@@ -1,0 +1,110 @@
+.container {
+    width: 100vw;
+    height: 100vh;
+    background-image: url('../../../assets/images/Login.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.registerContainer {
+    width: 55.938rem;
+    border: 0.094rem solid var(--gray-light);
+    border-radius: 2.5rem;
+    padding: 4rem 3rem;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+}
+
+.loginOrRegister {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 2rem;
+}
+
+.loginLabel {
+    margin-right: 2rem;
+}
+
+.loginOrRegister h2:hover {
+    color: var(--orange);
+    cursor: pointer;
+}
+
+.selectedLabel {
+    color: var(--orange);
+}
+
+.form {
+    display: grid;
+    grid-template-columns: 0.6fr 0.2fr 1fr;
+}
+
+.registerAs {
+    width: 16.75rem;
+}
+
+.choice {
+    margin-top: 1rem;
+}
+
+.choice .choiceItem:not(:last-child) {
+    margin-bottom: 0.5rem;
+}
+
+.line {
+    width: 2px;
+    height: 100%;
+    background-color: var(--gray-light);
+    margin: 0 auto;
+}
+
+/* Input type radio */
+
+.choiceItem input[type="radio"] {
+    all: unset;
+    width: 16px;
+    height: 16px;
+    border: 2px solid var(--orange);
+    border-radius: 50%;
+    margin-right: 10px;
+    position: relative;
+    cursor: pointer;
+}
+
+.choiceItem input[type="radio"]:checked,
+.choiceItem .inputSelected {
+    background-color: var(--orange);
+    border-color: var(--orange);
+}
+
+.choiceItem input[type="radio"]:checked::before,
+.choiceItem .inputSelected::before {
+    content: '';
+    display: block;
+    width: 8px;
+    height: 8px;
+    background-color: white;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.chosenForm .item:not(:last-child) {
+    margin-bottom: 0.5rem;
+}
+
+#registerButton {
+    align-self: center;
+    width: 40%;
+    margin-top: 2rem;
+}
