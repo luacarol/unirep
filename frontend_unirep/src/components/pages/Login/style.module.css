@@ -1,0 +1,60 @@
+.container {
+    width: 100vw;
+    height: 100vh;
+    background-image: url('../../../assets/images/Login.png');
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.loginContainer {
+    width: 31rem;
+    border: 0.094rem solid var(--gray-light);
+    border-radius: 2.5rem;
+    padding: 4rem 3rem;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+}
+
+.loginOrRegister {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 2rem;
+}
+
+.loginOrRegister h2:hover, .forgetPasswordLabel:hover {
+    color: var(--orange);
+    cursor: pointer;
+}
+
+.loginLabel {
+    margin-right: 2rem;
+}
+
+.warnLabel {
+    align-self: center;
+}
+
+.form {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+.input:not(:last-child) {
+    margin-bottom: 0.5rem;
+}
+
+.forgetPasswordLabel {
+    align-self: flex-end;
+}
+
+#toEnterButton {
+    margin-top: 2rem;
+}

@@ -6,12 +6,14 @@ import Republics from './components/pages/Republics';
 import Republic from './components/pages/Republic';
 import ItemsToPay from './components/pages/ItemsToPay';
 import Members from './components/pages/Members';
+import Login from './components/pages/Login';
 
 const AppRoutes = () => {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route path="/" element={<Login />} />
+        <Route path="/home" element={<Home />} />
         <Route path="/edit-profile" element={<EditProfile />} />
         <Route path="/republics" element={<Republics />} />
         <Route path="/republic" element={<Republic />} />
