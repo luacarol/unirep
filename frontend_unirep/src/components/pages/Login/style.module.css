@@ -38,6 +38,10 @@
     margin-right: 2rem;
 }
 
+.selectedLabel {
+    color: var(--orange);
+}
+
 .warnLabel {
     align-self: center;
 }
