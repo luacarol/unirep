@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import styles from './style.module.css';
 import Input from '../../Input';
 import Button from '../../Button';
@@ -9,6 +9,7 @@ const Register = () => {
 
     const [selectedLabel, setSelectedLabel] = useState('registerSelected');
     const [registerAsSelectedInput, setRegisterAsSelectedInput] = useState('memberSelected');
+    const [visible, setVisible] = useState(true);
 
     const handleLoginLabel = () => {
         setSelectedLabel('loginSelected');
@@ -20,11 +21,19 @@ const Register = () => {
     };
 
     const handleOwnerInput = () => {
-        setRegisterAsSelectedInput('ownerSelected');
+        setVisible(false);
+        setTimeout(() => {
+            setRegisterAsSelectedInput('ownerSelected');
+            setVisible(true);
+        }, 500);
     };
 
     const handleMemberInput = () => {
-        setRegisterAsSelectedInput('memberSelected');
+        setVisible(false);
+        setTimeout(() => {
+            setRegisterAsSelectedInput('memberSelected');
+            setVisible(true);
+        }, 500);
     };
 
     return (
@@ -78,7 +87,7 @@ const Register = () => {
 
                     <div className={styles.line}></div>
 
-                    <div className={styles.chosenForm}>
+                    <div className={`${styles.chosenForm} ${!visible ? styles.hidden : ''}`}>
                         {registerAsSelectedInput === 'memberSelected' ? (
                             <>
                                 <Input className={`${styles.item}`} variant='labelInput' label='Nome completo' placeholder='Luana Caroliny Pedroso de Oliveira' />
