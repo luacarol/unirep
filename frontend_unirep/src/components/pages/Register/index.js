@@ -1,4 +1,5 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
+import validator from 'validator';
 import styles from './style.module.css';
 import Input from '../../Input';
 import Button from '../../Button';
@@ -6,10 +7,19 @@ import { useNavigate } from 'react-router-dom';
 
 const Register = () => {
     const navigate = useNavigate();
-
     const [selectedLabel, setSelectedLabel] = useState('registerSelected');
     const [registerAsSelectedInput, setRegisterAsSelectedInput] = useState('memberSelected');
     const [visible, setVisible] = useState(true);
+
+    // States for input values and errors
+    const [formData, setFormData] = useState({
+        name: '',
+        age: '',
+        cpf: '',
+        whatsapp: '',
+        cep: ''
+    });
+    const [errors, setErrors] = useState({});
 
     const handleLoginLabel = () => {
         setSelectedLabel('loginSelected');
@@ -21,6 +31,7 @@ const Register = () => {
     };
 
     const handleOwnerInput = () => {
+        setErrors([])
         setVisible(false);
         setTimeout(() => {
             setRegisterAsSelectedInput('ownerSelected');
@@ -29,11 +40,70 @@ const Register = () => {
     };
 
     const handleMemberInput = () => {
+        setErrors([])
         setVisible(false);
         setTimeout(() => {
             setRegisterAsSelectedInput('memberSelected');
             setVisible(true);
         }, 500);
+    };
+
+    const validateForm = () => {
+        let isValid = true;
+        let errors = {};
+
+        if (registerAsSelectedInput === 'memberSelected') {
+            if (validator.isEmpty(formData.name)) {
+                errors.name = 'Nome é obrigatório';
+                isValid = false;
+            }
+            if (!validator.isInt(formData.age, { min: 1 })) {
+                errors.age = 'Idade deve ser um número válido';
+                isValid = false;
+            }
+            if (!validator.isLength(formData.cpf, { min: 11, max: 11 }) || !validator.isNumeric(formData.cpf)) {
+                errors.cpf = 'CPF deve ter 11 dígitos numéricos';
+                isValid = false;
+            }
+            if (!validator.isMobilePhone(formData.whatsapp, 'pt-BR')) {
+                errors.whatsapp = 'Número de Whatsapp inválido';
+                isValid = false;
+            }
+        } else {
+            if (validator.isEmpty(formData.name)) {
+                errors.name = 'Nome é obrigatório';
+                isValid = false;
+            }
+            if (!validator.isLength(formData.cpf, { min: 11, max: 11 }) || !validator.isNumeric(formData.cpf)) {
+                errors.cpf = 'CPF deve ter 11 dígitos numéricos';
+                isValid = false;
+            }
+            if (!validator.isMobilePhone(formData.whatsapp, 'pt-BR')) {
+                errors.whatsapp = 'Número de Whatsapp inválido';
+                isValid = false;
+            }
+            if (!validator.isLength(formData.cep, { min: 8, max: 8 }) || !validator.isNumeric(formData.cep)) {
+                errors.cep = 'CEP deve ter 8 dígitos numéricos';
+                isValid = false;
+            }
+        }
+
+        setErrors(errors);
+        return isValid;
+    };
+
+    const handleSubmit = () => {
+        if (validateForm()) {
+            // Proceed to the next step or navigate
+            navigate('/next-step');
+        }
+    };
+
+    const handleChange = (e) => {
+        setFormData({
+            ...formData,
+            [e.target.name]: e.target.value
+        });
     };
 
     return (
@@ -90,23 +160,95 @@ const Register = () => {
                     <div className={`${styles.chosenForm} scrollbar ${!visible ? styles.hidden : ''}`}>
                         {registerAsSelectedInput === 'memberSelected' ? (
                             <>
-                                <Input className={`${styles.item}`} variant='labelInput' label='Nome completo' placeholder='Luana Caroliny Pedroso de Oliveira' />
-                                <Input className={`${styles.item}`} variant='labelInput' label='Idade' placeholder='23 anos' />
-                                <Input className={`${styles.item}`} variant='labelInput' label='CPF' placeholder='42678705619' />
-                                <Input className={`${styles.item}`} variant='labelInput' label='Whatsapp' placeholder='(12) 982173929' />
+                                <Input
+                                    className={`${styles.item}`}
+                                    variant='labelInput'
+                                    label='Nome completo'
+                                    name='name'
+                                    value={formData.name}
+                                    onChange={handleChange}
+                                    placeholder='Luana Caroliny Pedroso de Oliveira'
+                                    errorMessage={errors.name}
+                                />
+                                <Input
+                                    className={`${styles.item}`}
+                                    variant='labelInput'
+                                    label='Idade'
+                                    name='age'
+                                    value={formData.age}
+                                    onChange={handleChange}
+                                    placeholder='23'
+                                    errorMessage={errors.age}
+                                />
+                                <Input
+                                    className={`${styles.item}`}
+                                    variant='labelInput'
+                                    label='CPF'
+                                    name='cpf'
+                                    value={formData.cpf}
+                                    onChange={handleChange}
+                                    placeholder='42678705619'
+                                    errorMessage={errors.cpf}
+                                />
+                                <Input
+                                    className={`${styles.item}`}
+                                    variant='labelInput'
+                                    label='Whatsapp'
+                                    name='whatsapp'
+                                    value={formData.whatsapp}
+                                    onChange={handleChange}
+                                    placeholder='(12) 982173929'
+                                    errorMessage={errors.whatsapp}
+                                />
                             </>
                         ) : (
                             <>
-                                <Input className={`${styles.item}`} variant='labelInput' label='Nome completo' placeholder='Luana Caroliny Pedroso de Oliveira' />
-                                <Input className={`${styles.item}`} variant='labelInput' label='CPF' placeholder='42678705619' />
-                                <Input className={`${styles.item}`} variant='labelInput' label='Whatsapp' placeholder='(12) 982173929' />
-                                <Input className={`${styles.item}`} variant='labelInput' label='CEP do Imóvel' placeholder='12228005' />
+                                <Input
+                                    className={`${styles.item}`}
+                                    variant='labelInput'
+                                    label='Nome completo'
+                                    name='name'
+                                    value={formData.name}
+                                    onChange={handleChange}
+                                    placeholder='Luana Caroliny Pedroso de Oliveira'
+                                    errorMessage={errors.name}
+                                />
+                                <Input
+                                    className={`${styles.item}`}
+                                    variant='labelInput'
+                                    label='CPF'
+                                    name='cpf'
+                                    value={formData.cpf}
+                                    onChange={handleChange}
+                                    placeholder='42678705619'
+                                    errorMessage={errors.cpf}
+                                />
+                                <Input
+                                    className={`${styles.item}`}
+                                    variant='labelInput'
+                                    label='Whatsapp'
+                                    name='whatsapp'
+                                    value={formData.whatsapp}
+                                    onChange={handleChange}
+                                    placeholder='(12) 982173929'
+                                    errorMessage={errors.whatsapp}
+                                />
+                                <Input
+                                    className={`${styles.item}`}
+                                    variant='labelInput'
+                                    label='CEP do Imóvel'
+                                    name='cep'
+                                    value={formData.cep}
+                                    onChange={handleChange}
+                                    placeholder='12228005'
+                                    errorMessage={errors.cep}
+                                />
                             </>
                         )}
                     </div>
                 </div>
 
-                <Button id={styles.registerButton} variant='labelButton' label='Cadastrar-se' />
+                <Button id={styles.registerButton} variant='labelButton' label='Próximo' onClick={handleSubmit} />
             </div>
         </div>
     );

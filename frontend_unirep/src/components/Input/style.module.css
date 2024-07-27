@@ -18,5 +18,11 @@
 .input::placeholder {
     font-size: 1rem;
     font-weight: 500;
-    color: var(--black-dark);
+    color: var(--gray-light);
+}
+
+.errorMessage {
+    color: var(--orange);
+    font-size: 0.75rem;
+    font-weight: 600;
 }
