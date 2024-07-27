@@ -21,6 +21,10 @@ const Register = () => {
     const [showRegisterLogin, setShowRegisterLogin] = useState(false);
     const [registerAsIsLocked, setRegisterAsIsLocked] = useState(false);
     const [registerLabelText, setRegisterLabelText] = useState('Próximo');
+    const [formRegisterData, setFormRegisterData] = useState({
+        email: '',
+        password: ''
+    });
 
     const handleLoginLabel = useCallback(() => {
         setSelectedLabel('loginSelected');
@@ -38,8 +42,15 @@ const Register = () => {
         }));
     }, []);
 
+    const handleRegisterInputChange = useCallback((e) => {
+        setFormRegisterData(prevState => ({
+            ...prevState,
+            [e.target.name]: e.target.value
+        }));
+    }, []);
+
     const handleRegisterAsSelection = useCallback((selection) => {
-        if (!registerAsIsLocked) { 
+        if (!registerAsIsLocked) {
             setErrors({});
             setVisible(false);
             setTimeout(() => {
@@ -59,9 +70,11 @@ const Register = () => {
             isValid = false;
         }
 
-        if (!validator.isInt(age, { min: 1 })) {
-            errors.age = 'Idade deve ser um número válido';
-            isValid = false;
+        if (registerAsSelectedInput === 'memberSelected') {
+            if (!validator.isInt(age, { min: 1 })) {
+                errors.age = 'Idade deve ser um número válido';
+                isValid = false;
+            }
         }
 
         if (!validator.isLength(cpf, { min: 11, max: 11 }) || !validator.isNumeric(cpf)) {
@@ -85,13 +98,39 @@ const Register = () => {
         return isValid;
     }, [formData, registerAsSelectedInput]);
 
+    const validateRegisterForm = useCallback(() => {
+        const { email, password } = formRegisterData;
+        let isValid = true;
+        let errors = {};
+
+        if (!validator.isEmail(email)) {
+            errors.email = 'E-mail inválido';
+            isValid = false;
+        }
+
+        if (validator.isEmpty(password)) {
+            errors.password = 'Senha é obrigatória';
+            isValid = false;
+        } else if (password.length < 6) {
+            errors.password = 'Senha deve ter pelo menos 6 caracteres';
+            isValid = false;
+        }
+
+        setErrors(errors);
+        return isValid;
+    }, [formRegisterData]);
+
     const handleSubmit = useCallback(() => {
-        if (validateForm()) {
+        if (showRegisterLogin) {
+            if (validateRegisterForm()) {
+                // Lógica de submissão final
+            }
+        } else if (validateForm()) {
             setShowRegisterLogin(true);
             setRegisterAsIsLocked(true);
             setRegisterLabelText('Cadastrar-se');
         }
-    }, [validateForm, navigate]);
+    }, [validateForm, validateRegisterForm, showRegisterLogin]);
 
     const renderFormFields = () => {
         const commonFields = (
@@ -226,8 +265,8 @@ const Register = () => {
                                     variant='labelInput'
                                     label='E-mail'
                                     name='email'
-                                    value={formData.email}
-                                    onChange={handleInputChange}
+                                    value={formRegisterData.email}
+                                    onChange={handleRegisterInputChange}
                                     placeholder='luanacaroliny07@gmail.com'
                                     errorMessage={errors.email}
                                 />
@@ -236,8 +275,8 @@ const Register = () => {
                                     variant='labelInput'
                                     label='Senha'
                                     name='password'
-                                    value={formData.password}
-                                    onChange={handleInputChange}
+                                    value={formRegisterData.password}
+                                    onChange={handleRegisterInputChange}
                                     placeholder='*************'
                                     errorMessage={errors.password}
                                 />

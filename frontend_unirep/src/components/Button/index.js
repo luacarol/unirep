@@ -10,7 +10,7 @@ const Button = ({ id, variant, label, icon, onClick }) => {
     return (
         <button id={id} className={`${styles.button} ${styles[variant]}`} onClick={onClick}>
             {(variant === 'navigationButton' || variant === 'labelButton') && <label className='legend'>{label}</label>}
-            <FontAwesomeIcon icon={icon} className={styles.icon} />
+            {icon && <FontAwesomeIcon icon={icon} className={styles.icon} />}
         </button>
     );
 }
