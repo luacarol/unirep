@@ -1,6 +1,6 @@
 import styles from './style.module.css';
 
-const Input = ({ id, className, variant, label, name, value, onChange, placeholder, errorMessage, disabled }) => {
+const Input = ({ id, className, variant, label, name, value, onChange, placeholder, errorMessage, disabled, type = 'text' }) => {
     let content;
 
     if (variant === 'labelInput') {
@@ -8,7 +8,7 @@ const Input = ({ id, className, variant, label, name, value, onChange, placehold
             <div id={id} className={`${className} ${styles.container}`}>
                 <label className={`legend`}>{label}</label>
                 <input
-                    type='text'
+                    type={type}
                     name={name}
                     value={value}
                     onChange={onChange}

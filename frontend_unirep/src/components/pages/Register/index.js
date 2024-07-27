@@ -275,6 +275,7 @@ const Register = () => {
                                     variant='labelInput'
                                     label='Senha'
                                     name='password'
+                                    type='password'
                                     value={formRegisterData.password}
                                     onChange={handleRegisterInputChange}
                                     placeholder='*************'
