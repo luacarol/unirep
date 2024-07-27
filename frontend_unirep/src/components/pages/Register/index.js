@@ -19,6 +19,8 @@ const Register = () => {
     });
     const [errors, setErrors] = useState({});
     const [showRegisterLogin, setShowRegisterLogin] = useState(false);
+    const [registerAsIsLocked, setRegisterAsIsLocked] = useState(false);
+    const [registerLabelText, setRegisterLabelText] = useState('Próximo');
 
     const handleLoginLabel = useCallback(() => {
         setSelectedLabel('loginSelected');
@@ -37,13 +39,15 @@ const Register = () => {
     }, []);
 
     const handleRegisterAsSelection = useCallback((selection) => {
-        setErrors({});
-        setVisible(false);
-        setTimeout(() => {
-            setRegisterAsSelectedInput(selection);
-            setVisible(true);
-        }, 500);
-    }, []);
+        if (!registerAsIsLocked) { 
+            setErrors({});
+            setVisible(false);
+            setTimeout(() => {
+                setRegisterAsSelectedInput(selection);
+                setVisible(true);
+            }, 500);
+        }
+    }, [registerAsIsLocked]);
 
     const validateForm = useCallback(() => {
         const { name, age, cpf, whatsapp, cep } = formData;
@@ -83,7 +87,9 @@ const Register = () => {
 
     const handleSubmit = useCallback(() => {
         if (validateForm()) {
-            setShowRegisterLogin(true)
+            setShowRegisterLogin(true);
+            setRegisterAsIsLocked(true);
+            setRegisterLabelText('Cadastrar-se');
         }
     }, [validateForm, navigate]);
 
@@ -177,7 +183,7 @@ const Register = () => {
                 </div>
 
                 <div className={styles.form}>
-                    <div className={styles.registerAs}>
+                    <div className={`${styles.registerAs} ${registerAsIsLocked === true ? styles.registerAsIsLockedDisabled : ''}`}>
                         <label className={`${styles.warnLabel} text-commom`}>Quero me cadastrar como:</label>
 
                         <div className={styles.choice}>
@@ -189,6 +195,7 @@ const Register = () => {
                                     value="option1"
                                     checked={registerAsSelectedInput === 'ownerSelected'}
                                     onChange={() => handleRegisterAsSelection('ownerSelected')}
+                                    disabled={registerAsIsLocked}
                                 />
                                 <label className='minor-subtitle'>Dono(a) de imóvel</label>
                             </div>
@@ -201,6 +208,7 @@ const Register = () => {
                                     value="option2"
                                     checked={registerAsSelectedInput === 'memberSelected'}
                                     onChange={() => handleRegisterAsSelection('memberSelected')}
+                                    disabled={registerAsIsLocked}
                                 />
                                 <label className='minor-subtitle'>Membro(a) interessado em compartilhar despesas</label>
                             </div>
@@ -241,7 +249,7 @@ const Register = () => {
                     </div>
                 </div>
 
-                <Button id={styles.registerButton} variant='labelButton' label='Próximo' onClick={handleSubmit} />
+                <Button id={styles.registerButton} variant='labelButton' label={registerLabelText} onClick={handleSubmit} />
             </div>
         </div>
     );

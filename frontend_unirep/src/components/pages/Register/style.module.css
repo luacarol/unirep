@@ -120,3 +120,12 @@
 .hidden {
     opacity: 0;
 }
+
+.registerAsIsLockedDisabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.registerAsIsLockedDisabled * {
+    cursor: not-allowed;
+}
