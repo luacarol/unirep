@@ -92,15 +92,15 @@ const Register = () => {
                             <>
                                 <Input className={`${styles.item}`} variant='labelInput' label='Nome completo' placeholder='Luana Caroliny Pedroso de Oliveira' />
                                 <Input className={`${styles.item}`} variant='labelInput' label='Idade' placeholder='23 anos' />
-                                <Input className={`${styles.item}`} variant='labelInput' label='Whatsapp' placeholder='(12) 982173929' />
                                 <Input className={`${styles.item}`} variant='labelInput' label='CPF' placeholder='42678705619' />
+                                <Input className={`${styles.item}`} variant='labelInput' label='Whatsapp' placeholder='(12) 982173929' />
                             </>
                         ) : (
                             <>
                                 <Input className={`${styles.item}`} variant='labelInput' label='Nome completo' placeholder='Luana Caroliny Pedroso de Oliveira' />
+                                <Input className={`${styles.item}`} variant='labelInput' label='CPF' placeholder='42678705619' />
                                 <Input className={`${styles.item}`} variant='labelInput' label='Whatsapp' placeholder='(12) 982173929' />
                                 <Input className={`${styles.item}`} variant='labelInput' label='CEP do Imóvel' placeholder='12228005' />
-                                <Input className={`${styles.item}`} variant='labelInput' label='CPF' placeholder='42678705619' />
                             </>
                         )}
                     </div>
