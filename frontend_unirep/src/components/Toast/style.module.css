@@ -1,0 +1,26 @@
+.container {
+    background-color: var(--green);
+    display: flex;
+    flex-direction: column;
+    border-radius: 0.75rem;
+    padding: 0.75rem 1rem;
+    position: absolute; /* Ensures the container is positioned absolutely */
+    bottom: 1rem; /* Adjusts the distance from the bottom */
+    right: 1rem; /* Adjusts the distance from the right */
+}
+
+.labelTitleButton {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 0.3rem;
+}
+
+#buttonToast:hover svg {
+    color: white;
+}
+
+#buttonToast svg {
+    font-size: 1rem;
+}

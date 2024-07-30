@@ -4,6 +4,7 @@ import styles from './style.module.css';
 import Input from '../../Input';
 import Button from '../../Button';
 import { useNavigate } from 'react-router-dom';
+import Toast from '../../Toast';
 
 const Register = () => {
     const navigate = useNavigate();
@@ -25,6 +26,8 @@ const Register = () => {
         email: '',
         password: ''
     });
+    const [showToast, setShowToast] = useState(false);
+    const [messageToast, setMessageToast] = useState('');
 
     const handleLoginLabel = useCallback(() => {
         setSelectedLabel('loginSelected');
@@ -124,6 +127,9 @@ const Register = () => {
         if (showRegisterLogin) {
             if (validateRegisterForm()) {
                 // Lógica de submissão final
+                console.log("formRegisterData ", formRegisterData)
+                setMessageToast("Cadastro realizado com sucesso!");
+                setShowToast(true);
             }
         } else if (validateForm()) {
             setShowRegisterLogin(true);
@@ -202,6 +208,10 @@ const Register = () => {
             </>
         );
     };
+
+    const handleCloseToast = () => {
+        setShowToast(false);
+    }
 
     return (
         <div className={styles.container}>
@@ -291,6 +301,14 @@ const Register = () => {
 
                 <Button id={styles.registerButton} variant='labelButton' label={registerLabelText} onClick={handleSubmit} />
             </div>
+
+            {showToast && (
+                <Toast
+                    variant='success'
+                    message={messageToast}
+                    onClose={handleCloseToast}
+                />
+            )}
         </div>
     );
 };
