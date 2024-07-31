@@ -7,7 +7,7 @@ const Header = () => {
     const navigate = useNavigate();
 
     const handleHome = () => {
-        navigate('/');
+        navigate('/home');
     }
 
     const handleRepublics = () => {
