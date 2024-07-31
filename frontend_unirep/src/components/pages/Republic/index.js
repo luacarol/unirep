@@ -6,39 +6,41 @@ import AdditionalRepublicCard from '../../Cards/RepublicCards/AdditionalRepublic
 
 const Republic = () => {
     return (
-        <Layout body={<div className={styles.container}>
+        <Layout>
+            <div className={styles.container}>
 
-            <h1 className={`title`}>República</h1>
+                <h1 className={`title`}>República</h1>
 
-            <div className={styles.content}>
+                <div className={styles.content}>
 
-                <div className={`${styles.generalInfo} ${styles.section}`}>
+                    <div className={`${styles.generalInfo} ${styles.section}`}>
 
-                    <h2 className={`bigger-subtitle`}>Informações gerais</h2>
+                        <h2 className={`bigger-subtitle`}>Informações gerais</h2>
 
-                    <AdditionalRepublicCard/>
+                        <AdditionalRepublicCard />
 
-                </div>
+                    </div>
 
-                <div className={`${styles.memberInfo} ${styles.section}`}>
+                    <div className={`${styles.memberInfo} ${styles.section}`}>
 
-                    <h2 className={`bigger-subtitle`}>Informações dos membros</h2>
+                        <h2 className={`bigger-subtitle`}>Informações dos membros</h2>
 
-                    <MemberCarousel />
+                        <MemberCarousel />
 
-                </div>
+                    </div>
 
-                <div className={`${styles.itensToBePayInfo} ${styles.section}`}>
+                    <div className={`${styles.itensToBePayInfo} ${styles.section}`}>
 
-                    <h2 className={`bigger-subtitle`}>Informações dos itens à pagar</h2>
+                        <h2 className={`bigger-subtitle`}>Informações dos itens à pagar</h2>
 
-                    <ItemToPayCarousel/>
+                        <ItemToPayCarousel />
+
+                    </div>
 
                 </div>
 
             </div>
-
-        </div>} />
+        </Layout>
     )
 }
 

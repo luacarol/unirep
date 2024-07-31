@@ -5,36 +5,38 @@ import Layout from '../../Layout/index';
 
 const Members = () => {
     return (
-        <Layout body={<div className={styles.container}>
+        <Layout>
+            <div className={styles.container}>
 
-            <h1 className={`title`}>Membros</h1>
+                <h1 className={`title`}>Membros</h1>
 
-            <div className={styles.content}>
+                <div className={styles.content}>
 
-                <div className={`${styles.republicInfo} ${styles.section}`}>
+                    <div className={`${styles.republicInfo} ${styles.section}`}>
 
-                    <h2 className={`bigger-subtitle`}>Informações da república</h2>
+                        <h2 className={`bigger-subtitle`}>Informações da república</h2>
 
-                    <AdditionalRepublicCard />
+                        <AdditionalRepublicCard />
 
-                </div>
+                    </div>
 
-                <div className={`${styles.membersInfo} ${styles.section}`}>
+                    <div className={`${styles.membersInfo} ${styles.section}`}>
 
-                    <h2 className={`bigger-subtitle`}>Informações dos membros</h2>
+                        <h2 className={`bigger-subtitle`}>Informações dos membros</h2>
 
-                    <div className={styles.membersSection}>
-                        <MemberInfoCard />
-                        <MemberInfoCard />
-                        <MemberInfoCard />
-                        <MemberInfoCard />
+                        <div className={styles.membersSection}>
+                            <MemberInfoCard />
+                            <MemberInfoCard />
+                            <MemberInfoCard />
+                            <MemberInfoCard />
+                        </div>
+
                     </div>
 
                 </div>
 
             </div>
-
-        </div>} />
+        </Layout>
     )
 }
 

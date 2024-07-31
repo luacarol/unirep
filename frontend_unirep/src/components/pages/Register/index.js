@@ -127,7 +127,7 @@ const Register = () => {
         if (showRegisterLogin) {
             if (validateRegisterForm()) {
                 // Lógica de submissão final
-                console.log("formRegisterData ", formRegisterData)
+                console.log("formRegisterData ", formRegisterData);
                 setMessageToast("Cadastro realizado com sucesso!");
                 setShowToast(true);
             }

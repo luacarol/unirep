@@ -12,27 +12,27 @@ const Republics = () => {
     }
 
     return (
-        <Layout body={<div className={styles.container}>
+        <Layout>
+            <div className={styles.container}>
 
-            <h1 className={`title`}>Repúblicas</h1>
+                <h1 className={`title`}>Repúblicas</h1>
 
-            <div className={styles.content}>
-                <Search id={styles.searchRepublics} placeholder='Pesquise por uma república' />
+                <div className={styles.content}>
+                    <Search id={styles.searchRepublics} placeholder='Pesquise por uma república' />
 
-                <div className={styles.cardContainer}>
-                    <h2 className={`bigger-subtitle`}>Informações das repúblicas</h2>
+                    <div className={styles.cardContainer}>
+                        <h2 className={`bigger-subtitle`}>Informações das repúblicas</h2>
 
-                    <div className={styles.cards}>
-                        <RepublicCard onClick={handleRepublicCard} />
-                        <RepublicCard />
-                        <RepublicCard />
-                        <RepublicCard />
+                        <div className={styles.cards}>
+                            <RepublicCard onClick={handleRepublicCard} />
+                            <RepublicCard />
+                            <RepublicCard />
+                            <RepublicCard />
+                        </div>
                     </div>
                 </div>
+
             </div>
-
-        </div>}>
-
         </Layout>
     )
 }

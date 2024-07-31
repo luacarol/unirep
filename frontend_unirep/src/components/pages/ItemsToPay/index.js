@@ -5,7 +5,7 @@ import Layout from '../../Layout';
 
 const ItemsToPay = () => {
     return (
-        <Layout body={<div className={styles.container}>
+        <Layout><div className={styles.container}>
 
             <h1 className={`title`}>Itens à pagar</h1>
 
@@ -29,7 +29,7 @@ const ItemsToPay = () => {
 
             </div>
 
-        </div>} />
+        </div></Layout>
     )
 }
 
