@@ -4,9 +4,10 @@
     flex-direction: column;
     border-radius: 0.75rem;
     padding: 0.75rem 1rem;
-    position: absolute; /* Ensures the container is positioned absolutely */
-    bottom: 1rem; /* Adjusts the distance from the bottom */
-    right: 1rem; /* Adjusts the distance from the right */
+    position: fixed; 
+    bottom: 1rem; 
+    right: 1rem; 
+    z-index: 1000;
 }
 
 .labelTitleButton {
