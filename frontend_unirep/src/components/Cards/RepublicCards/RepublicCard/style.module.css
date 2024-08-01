@@ -43,6 +43,17 @@
     color: var(--black-dark);
 }
 
+.iconLabel {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.iconLabel svg {
+    margin-right: 0.5rem;
+    color: var(--gray);
+}
+
 .numMembers {
     margin-top: 0.35rem;
 }
