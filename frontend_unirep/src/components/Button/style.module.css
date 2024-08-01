@@ -34,11 +34,11 @@
     justify-content: space-between;
 }
 
-.navigationButton:hover, .navigationButton:hover label {
+.navigationButton:hover, .navigationButton:hover label, .navigationButton:hover svg {
     color: var(--orange-yellow);
 }
 
-.navigationButton, .navigationButton label {
+.navigationButton, .navigationButton label, .navigationButton svg {
     color: var(--orange);
     cursor: pointer;
 }
