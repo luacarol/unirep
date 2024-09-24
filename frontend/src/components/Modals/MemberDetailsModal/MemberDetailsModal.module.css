@@ -28,6 +28,44 @@
     justify-content: space-between;
 }
 
+
+/* Início: infoSection */
+.infoSection {
+    width: 100%;
+}
+
+.infoSection:hover h3 {
+    background-color: var(--cyan);
+    color: var(--white);
+}
+
+.infoSection h3 {
+    background-color: var(--light-cyan);
+    padding: 0.85rem;
+    border-radius: 0.5rem;
+    margin-bottom: 0.2rem;
+}
+
+.infoSection:not(:last-child) {
+    margin-bottom: 0.2rem;
+}
+
+.content {
+    padding: 1rem 1.5rem;
+    border-radius: 0.5rem;
+    /* background-color: var(--light-cyan); */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 2rem;
+}
+
+.content label:not(:last-child) {
+    margin-bottom: 0.4rem;
+}
+/* Fim: infoSection */
+
+
 .xMarkButton svg {
     color: var(--gray);
 }
