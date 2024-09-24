@@ -3,7 +3,7 @@ import Chip from '../../Chip/Chip';
 import style from './RepublicCard.module.css';
 import { faHeart, faHouse, faTransgender } from '@fortawesome/free-solid-svg-icons';
 
-const RepublicCard = ({ onClick }) => {
+const RepublicCard = ({ republic, onClick }) => {
     return (
         <div className={style.container} onClick={onClick}>
 
@@ -14,7 +14,7 @@ const RepublicCard = ({ onClick }) => {
                 <label className={`${style.valueLabel}`}>R$ 400,00</label>
 
                 <div className={style.republicInfo}>
-                    <h2 className={`subtitle ${style.republicName}`}>Freud’s Republic</h2>
+                    <h2 className={`subtitle ${style.republicName}`}>{republic.name}</h2>
 
                     <label className={`${style.republicInfoLabel}`}>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's.Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's.Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's.</label>
 
