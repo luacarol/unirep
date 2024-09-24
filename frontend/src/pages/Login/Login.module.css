@@ -1,0 +1,106 @@
+.container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    height: 100vh;
+}
+
+.firstSection, .secondSection {
+    height: 100%;
+}
+
+.firstSection {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--purple);
+}
+
+.logoInicial {
+    width: 60%;
+}
+
+.secondSection {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--white);
+    padding: 0rem 10rem;
+    box-sizing: border-box;
+}
+
+.titleAndSubtitle {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.titleAndSubtitle h1 {
+    margin-bottom: 1rem;
+}
+
+.titleAndSubtitle h2 {
+    margin-bottom: 2.5rem;
+}
+
+.inputs {
+    width: 100%;
+    align-self: flex-start;
+    margin-bottom: 1rem;
+}
+
+.inputs .child:not(:last-child) {
+    margin-bottom: 1.5rem;
+}
+
+.additionalInputs {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+}
+
+.forgetPassword {
+    color: var(--purple);
+    text-decoration: underline;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.forgetPassword:hover {
+    color: var(--cyan);
+}
+
+.loginButtonSection {
+    width: 100%;
+    margin-bottom: 1.5rem;
+}
+
+.loginButton {
+    width: 100%;
+    height: 2.5rem !important;
+}
+
+.dontHaveAccountSection {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.register {
+    color: var(--cyan);
+    font-size: 700;
+    text-decoration: underline;
+    cursor: pointer;
+    margin-left: 0.5rem;
+    transition: color 0.3 ease;
+}
+
+.register:hover {
+    color: var(--purple);
+}

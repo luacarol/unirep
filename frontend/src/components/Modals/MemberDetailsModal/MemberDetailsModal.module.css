@@ -1,0 +1,33 @@
+.container {
+    width: 30rem;
+    background-color: var(--white);
+    border-radius: 0.25rem;
+    padding: 2rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border: 1px solid var(--light-gray);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    box-sizing: border-box;
+    z-index: 101; /* Garantir que o modal fique sobre o overlay */
+}
+
+.section {
+    align-items: flex-start;
+}
+
+.section:not(:last-child) {
+    width: 100%;
+    margin-bottom: 2rem;
+}
+
+.flexRow {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.xMarkButton svg {
+    color: var(--gray);
+}

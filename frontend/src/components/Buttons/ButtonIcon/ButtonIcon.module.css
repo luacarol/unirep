@@ -1,0 +1,46 @@
+.buttonIcon {
+    all: unset;
+    display: inline-block;
+    cursor: pointer;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    transition: color 0.3s ease;
+}
+
+.buttonIcon svg {
+    font-size: 1.5rem;
+    color: var(--white);
+}
+
+.buttonIcon:hover svg {
+    color: var(--cyan);
+}
+
+.withBg {
+    background-color: var(--light-gray);
+    height: 2rem;
+    border-radius: 0.25rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0.8rem;
+    box-sizing: border-box;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}   
+
+.withBg .buttonIcon svg {
+    font-size: 1rem;
+    color: var(--black);
+}
+
+.filterButtonIcon {
+    background-color: var(--purple);
+}
+
+.filterButtonIcon svg {
+    color: var(--white);
+}

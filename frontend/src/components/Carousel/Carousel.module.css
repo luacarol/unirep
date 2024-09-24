@@ -1,0 +1,63 @@
+.carouselContainer {
+    position: relative;
+    width: 100%; 
+    max-width: 64rem;
+    margin: 0.5rem auto;
+    overflow: hidden;
+}
+
+.slideWrapper {
+    display: flex;
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+.slides {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    width: 100%;
+}
+
+.slide {
+    box-sizing: border-box;
+    padding: 0 0.6rem;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.chipWrapper {
+    position: absolute;
+    top: 6px;
+    right: 14px;
+    z-index: 1;
+}
+
+.slide img {
+    height: auto;
+    max-width: 15rem;
+    border-radius: 0.25rem;
+    object-fit: cover;
+}
+
+.buttonsContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 0.6rem
+}
+
+.prevButton,
+.nextButton {
+    color: var(--gray);
+    padding: 0rem 1rem;
+    cursor: pointer;
+    font-size: 1.4rem;
+}
+
+.prevButton:hover,
+.nextButton:hover {
+    color: var(--cyan);
+}

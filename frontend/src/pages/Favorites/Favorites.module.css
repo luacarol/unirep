@@ -1,0 +1,17 @@
+.container {
+    width: 100%;
+    padding: 2rem;
+    padding-bottom: 0rem;
+}
+
+.title {
+    margin-bottom: 1rem;
+}
+
+.republicCards {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); 
+    gap: 1.25rem; 
+    overflow-y: auto; 
+    padding: 0.625rem;
+}

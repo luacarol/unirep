@@ -1,0 +1,74 @@
+.container {
+    height: 20rem;
+    border-radius: 0.25rem;
+    display: grid;
+    grid-template-rows: 1.4fr 2fr;
+    background-color: var(--white);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    cursor: pointer;
+}
+
+.container:hover {
+    transform: scale(1.01); 
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); 
+}
+
+.imgSection {
+    max-width: 100%;
+    height: auto;
+    background-color: var(--gray);
+    border-radius: 0.25rem 0.25rem 0 0; 
+}
+
+.infoSection {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 1rem 1.5rem;
+}
+
+.valueLabel {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--cyan);
+}
+
+.republicInfo {
+    display: grid;
+    grid-template-rows: repeat(3, auto);
+    row-gap: 0.5rem;
+}
+
+.republicInfoLabel {
+    max-height: 4rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 0.85rem;
+}
+
+.additional {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.chips {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.chips > *:not(:last-child) {
+    margin-right: 0.2rem; 
+}
+
+.heartIcon svg {
+    color: var(--gray);
+    opacity: 0.5;
+}
+
+.heartIcon:hover svg {
+    opacity: 1;
+}

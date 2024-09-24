@@ -1,0 +1,28 @@
+.container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.link {
+    font-size: 0.875rem;
+    font-weight: 350;
+    color: var(--black);
+    transition: color 0.3s ease, font-weight 0.3s ease; /* Transição suave */
+}
+
+.link.active {
+    color: var(--purple);
+    font-weight: 500; 
+}
+
+.link:hover {
+    color: var(--cyan);
+    font-weight: 500;
+}
+
+.icon {
+    margin: 0rem 0.8rem;
+    font-size: 0.8rem;
+    transition: color 0.3s ease; /* Transição suave para a cor do ícone */
+}

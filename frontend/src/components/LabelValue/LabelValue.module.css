@@ -1,0 +1,23 @@
+.container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+}
+
+.container label {
+    white-space: nowrap;
+}
+
+.textValue {
+    font-size: 0.8rem;
+    color: var(--white);
+    background-color: var(--purple);
+    padding: 0.35rem;
+    border-radius: 0.25rem;
+    box-sizing: border-box;
+    margin-left: 0.5rem;
+    flex-grow: 1; 
+    text-align: left; 
+    box-sizing: border-box;
+}

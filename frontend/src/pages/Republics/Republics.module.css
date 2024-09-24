@@ -1,0 +1,9 @@
+.cards {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+}
+
+.search {
+    margin: 2rem 0rem;
+}

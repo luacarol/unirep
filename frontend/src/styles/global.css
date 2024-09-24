@@ -1,0 +1,43 @@
+/* Início: Para de Rolagem (Scroolbar) */
+
+::-webkit-scrollbar {
+    width: 1rem;
+    height: 1rem;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--light-gray);
+    border-radius: 0.625rem;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: var(--gray);
+    /* Cor do polegar */
+    border-radius: 0.625rem;
+    /* Bordas arredondadas */
+    border: 2px solid var(--light-gray);
+    ;
+    /* Margem interna */
+    cursor: pointer;
+}
+
+
+::-webkit-scrollbar-thumb:active {
+    background-color: var(--cyan);
+}
+
+/* Fim: Para de Rolagem (Scroolbar) */
+
+/* Overlay */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5); /* Fundo escurecido */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 100; /* Garantir que fique sobre o conteúdo */
+}

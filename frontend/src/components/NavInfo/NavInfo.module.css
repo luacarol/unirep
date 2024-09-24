@@ -1,0 +1,19 @@
+.container {
+    width: 100%;
+}
+
+.divider {
+    height: 2rem;
+    padding: 1rem;
+    border-radius: 0.25rem;
+    background-color: var(--light-cyan);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    box-sizing: border-box;
+}
+
+.icon {
+    font-size: 0.8rem;
+}

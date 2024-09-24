@@ -1,0 +1,166 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+.layout {
+    display: grid;
+    grid-template-areas:
+        "header header"
+        "sidebar main"
+        "footer footer";
+    grid-template-columns: 200px 1fr;
+    grid-template-rows: auto 1fr auto;
+    height: 100vh;
+}
+
+.header {
+    grid-area: header;
+    background-color: var(--purple);
+    color: var(--white);
+    padding: 0.5rem 0rem;
+    text-align: center;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.usernameAndUserPhoto {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-right: 1rem;
+    cursor: pointer;
+}
+
+.usernameAndUserPhoto label {
+    cursor: pointer;
+}
+
+.usernameAndUserPhoto:hover label {
+    color: var(--cyan);
+}
+
+.userImg {
+    width: 2.25rem;
+    height: 2.25rem;
+    margin-left: 0.5rem;
+}
+
+.active {
+    background-color: var(--light-cyan); /* Cor de fundo quando o item estiver ativo */
+    border-left: 6px solid var(--cyan); /* Indica visualmente que está ativo */
+}
+
+/* Modal estilizado */
+.modal {
+    position: absolute;
+    top: 60px;
+    right: 20px;
+    padding: 0.5rem;
+    background-color:var(--white);
+    border: 1px solid var(--light-gray);
+    border-radius: 0.25rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    box-sizing: border-box;
+}
+
+.modal ul {
+    list-style: none;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+
+.modal li {
+    width: 100%;
+    padding: 0.85rem;
+    cursor: pointer;
+    color: var(--black);
+    border-radius: 0.25rem;
+    box-sizing: border-box;
+    font-weight: 500;
+    font-size: 0.95rem;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+    transition: background-color 0.3s ease;
+}
+
+.modal li:hover {
+    background-color: var(--light-cyan);
+}
+
+.modal .icon {
+    color: var(--gray);
+    margin-right: 0.8rem;
+}
+
+.sidebar {
+    grid-area: sidebar;
+    background-color: var(--white);
+    height: 100%;
+    box-shadow: 5px 0 8px 0.5px rgba(89, 89, 89, 0.3);
+    z-index: 1;
+}
+
+.sidebar .item {
+    padding: 1rem;
+    cursor: pointer;
+    font-weight: 500;
+    font-size: 0.95rem;
+    transition: background-color 0.3s ease;
+}
+
+.sidebar .item label {
+    cursor: pointer;
+}
+
+.sidebar .item:hover {
+    background-color: var(--light-cyan);
+}
+
+.sidebar .item svg {
+    color: var(--gray);
+    margin-right: 0.8rem;
+    font-size: 1.2rem;
+} 
+
+.main {
+    grid-area: main;
+    padding: 2rem;
+    background-color: #fff;
+    overflow-y: auto;
+    /* Habilita scroll apenas no main */
+    max-height: calc(100vh - 160px);
+    /* Calcula a altura do main para não ultrapassar */
+}
+
+.footer {
+    grid-area: footer;
+    background-color: var(--purple);
+    color: var(--white);
+    text-align: center;
+    padding: 0.5rem;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    font-size: 0.85rem;
+    z-index: 2;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+}

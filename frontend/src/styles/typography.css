@@ -1,0 +1,33 @@
+.loginRegisterTitle, .loginRegisterSubtitle, .title, .subtitle, .section, .label {
+    color: var(--black);
+}
+
+.loginRegisterTitle {
+    font-size: 2rem;
+    font-weight: 800;
+}
+
+.loginRegisterSubtitle {
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+.title {
+    font-size: 1.5rem;
+    font-weight: 400;
+}
+
+.subtitle {
+    font-size: 1.25rem;
+    font-weight: 700;
+}
+
+.section {
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.label {
+    font-size: 0.875rem;
+    font-weight: 700;
+}

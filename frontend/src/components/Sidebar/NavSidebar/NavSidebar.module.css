@@ -1,0 +1,25 @@
+.container {
+    height: 3rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    cursor: pointer;
+}
+
+.container:hover {
+    background-color: var(--light-cyan);
+}
+
+.iconPrincipal {
+    margin-left: 1rem;
+}
+
+.labelPrincipal, .label {
+    margin-left: 0.5rem;
+    cursor: pointer;
+}
+
+.icon {
+    margin-left: 3rem;
+}

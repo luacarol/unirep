@@ -1,0 +1,15 @@
+.labelTitle {
+    font-size: 1.125rem;
+    font-weight: 600;
+    transition: color 0.3s ease; /* Transição suave */
+    margin-bottom: 0.3rem;
+    cursor: pointer;
+}
+
+.labelTitle:hover {
+    color: var(--cyan);
+}
+
+.inputCheckBox:not(:last-child) {
+    margin-bottom: 0.3rem;
+}

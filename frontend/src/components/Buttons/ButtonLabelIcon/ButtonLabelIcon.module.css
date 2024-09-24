@@ -1,0 +1,22 @@
+.container {
+    border: 1.4px solid var(--gray);
+    padding: 0.4rem 0.8rem;
+    box-sizing: border-box;
+    border-radius: 0.25rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* Adiciona transição suave */
+}
+
+.container
+* {
+    cursor: pointer;
+}
+
+.container:hover {
+    background-color: var(--cyan);
+    border: 1.4px solid var(--cyan);
+}
+
+.icon {
+    margin-right: 0.5rem;
+}
