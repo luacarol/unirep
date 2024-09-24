@@ -11,19 +11,19 @@ const RepublicCard = ({ republic, onClick }) => {
             </div>
 
             <div className={style.infoSection}>
-                <label className={`${style.valueLabel}`}>R$ 400,00</label>
+                <label className={`${style.valueLabel}`}>R$ {republic.value}</label>
 
                 <div className={style.republicInfo}>
                     <h2 className={`subtitle ${style.republicName}`}>{republic.name}</h2>
 
-                    <label className={`${style.republicInfoLabel}`}>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's.Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's.Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's.</label>
+                    <label className={`${style.republicInfoLabel}`}>{republic.description}</label>
 
                 </div>
 
                 <div className={style.additional}>
                     <div className={style.chips}>
-                        <Chip icon={faHouse} text="Casa" />
-                        <Chip icon={faTransgender} text="Mista" />
+                        <Chip icon={faHouse} text={republic.housing_type} />
+                        <Chip icon={faTransgender} text={republic.community_type} />
                     </div>
 
                     <div>
