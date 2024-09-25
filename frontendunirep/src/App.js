@@ -20,7 +20,7 @@ function App() {
         <Route path="/republics" element={<Republics/>} />
         <Route path="/favorites" element={<Favorites/>} />
         <Route path="/editprofile" element={<EditProfile/>} />
-        <Route path="/detailsrepublic" element={<DetailsRepublic/>} />
+        <Route path="/republics/:id" element={<DetailsRepublic/>} />
       </Routes>
     </Router>
   );

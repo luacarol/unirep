@@ -5,13 +5,39 @@ import styles from './DetailsRepublic.module.css';
 import ButtonLabel from '../../../components/Buttons/ButtonLabel/ButtonLabel';
 import Carrossel from '../../../components/Carousel/Carousel';
 import MemberCard from '../../../components/Cards/MemberCard/MemberCard';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import MemberDetailsModal from '../../../components/Modals/MemberDetailsModal/MemberDetailsModal';
+import { useParams } from 'react-router-dom';
 
 const DetailsRepublic = () => {
+    const { id } = useParams(); // Obtém o ID da república da URL
+    const [republic, setRepublic] =  useState('');
+
+    useEffect(() => {
+        const fetchRepublic = async () => {
+            try {
+                const response = await fetch(`http://127.0.0.1:8000/api/republics/${id}`);
+
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+
+                const data = await response.json();
+                setRepublic(data);
+
+            } catch (error) {
+                console.log("Error: ", error)
+            } finally {
+                console.log("finally")
+            }
+        };
+
+        fetchRepublic();
+    }, []);
+
     const breadcrumbItems = [
         { text: "Repúblicas", href: "/republics" },
-        { text: "Freud's Republic", href: "/republics/1" }
+        { text: `${republic.name}`, href: `${republic.id}` }
     ];
 
     const [isMemberDetailsModalOpen, setIsMemberDetailsModalOpen] = useState(false);
@@ -30,10 +56,10 @@ const DetailsRepublic = () => {
 
                 <Breadcrumb
                     items={breadcrumbItems}
-                    activeItem="Freud's Republic"
+                    activeItem={republic.name}
                 />
 
-                <h1 className={`title ${styles.title}`}>Freud's Republic</h1>
+                <h1 className={`title ${styles.title}`}>{republic.name}</h1>
 
                 <section id={`${styles.locationInfoSection}`} className={`${styles.section}`}>
                     <h2 className={`subtitle ${styles.subtitle}`}>Informações de Localização</h2>
