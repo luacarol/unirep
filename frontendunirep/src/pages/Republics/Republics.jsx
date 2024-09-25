@@ -2,16 +2,9 @@ import Layout from "../../components/Layout/Layout";
 import Search from "../../components/Search/Search";
 import styles from './Republics.module.css';
 import RepublicCard from '../../components/Cards/RepublicCard/RepublicCard';
-import { useNavigate } from 'react-router-dom';
 import { useEffect, useState } from "react";
 
 const Republics = () => {
-    const navigate = useNavigate();
-
-    const handleRepublicCard = () => {
-        navigate('/detailsrepublic');
-    }
-
     const [republics, setRepublics] = useState([]);
 
     useEffect(() => {

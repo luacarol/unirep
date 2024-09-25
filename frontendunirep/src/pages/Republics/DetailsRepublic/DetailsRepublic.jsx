@@ -67,9 +67,9 @@ const DetailsRepublic = () => {
                     <div id={`${styles.locationInfoContent}`} className={`${styles.content}`}>
 
                         <div className={styles.column}>
-                            <LabelValue className={styles.labelValue} textLabel="Endereço" textValue="Rua Antônio Fogaça de Almeida, 200" />
-                            <LabelValue className={styles.labelValue} textLabel="Bairro" textValue="Jardim América" />
-                            <LabelValue className={styles.labelValue} textLabel="CEP" textValue="12322-030" />
+                            <LabelValue className={styles.labelValue} textLabel="Endereço" textValue={republic.address} />
+                            <LabelValue className={styles.labelValue} textLabel="Bairro" textValue={republic.neighborhood} />
+                            <LabelValue className={styles.labelValue} textLabel="CEP" textValue={republic.postal_code} />
                         </div>
 
                         <div className={styles.column}>
@@ -93,7 +93,7 @@ const DetailsRepublic = () => {
                 <section id={`${styles.itemsToPaySection}`} className={`${styles.section}`}>
                     <h2 className={`subtitle ${styles.subtitle}`}>Itens à Pagar</h2>
 
-                    <h3 className={`label ${styles.colorCyan}`}>Valor total: R$ 400,00</h3>
+                    <h3 className={`label ${styles.colorCyan}`}>Valor total: R$ {republic.value}</h3>
 
                     <div id={`${styles.itemsToPayContent}`} className={`${styles.content}`}>
 
