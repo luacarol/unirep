@@ -7,6 +7,7 @@
     align-items: center; /* Use align-items em vez de align-content */
     justify-content: center;
     color: var(--gray);
+    border-radius: 0.25rem;
 }
 
 .container label {
