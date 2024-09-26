@@ -1,16 +1,18 @@
 .container {
     display: flex;
     flex-direction: column;
-    height: 100vh; /* Ocupa toda a altura da tela */
+    height: 100%;
     padding: 1rem; /* Ajuste a margem conforme necessário */
 }
 
 .cards {
     display: grid;
+    padding: 0.5rem 0rem;
     grid-template-columns: repeat(4, 1fr);
     gap: 2rem;
     flex-grow: 1; /* Permite que as cartas ocupem o espaço restante */
     overflow-y: auto; /* Adiciona scroll se necessário */
+    overflow-x: hidden;
 }
 
 .search {

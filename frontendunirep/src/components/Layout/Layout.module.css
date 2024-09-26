@@ -144,7 +144,7 @@ body {
     background-color: #fff;
     overflow-y: auto;
     /* Habilita scroll apenas no main */
-    max-height: calc(100vh - 160px);
+    max-height: calc(100vh - 90px);
     /* Calcula a altura do main para não ultrapassar */
 }
 
