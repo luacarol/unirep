@@ -1,9 +1,26 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh; /* Ocupa toda a altura da tela */
+    padding: 1rem; /* Ajuste a margem conforme necessário */
+}
+
 .cards {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 2rem;
+    flex-grow: 1; /* Permite que as cartas ocupem o espaço restante */
+    overflow-y: auto; /* Adiciona scroll se necessário */
 }
 
 .search {
-    margin: 2rem 0rem;
+    margin: 2rem 0;
+}
+
+.noDataWrapper {
+    grid-column: span 4; /* Faz com que o NoData ocupe toda a largura do grid */
+    display: flex;
+    justify-content: center; /* Centraliza o conteúdo horizontalmente */
+    align-items: center; /* Centraliza o conteúdo verticalmente */
+    height: 100%; /* Opcional, para garantir que ocupe altura total */
 }
