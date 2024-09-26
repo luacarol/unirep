@@ -13,6 +13,7 @@
     flex-grow: 1; /* Permite que as cartas ocupem o espaço restante */
     overflow-y: auto; /* Adiciona scroll se necessário */
     overflow-x: hidden;
+    padding-right: 1rem;
 }
 
 .search {
