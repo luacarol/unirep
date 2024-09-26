@@ -1,13 +1,15 @@
 import os
 import django
-from random import choice, uniform
+from random import choice, uniform, randint
 
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "backendunirep.settings")
 django.setup()
 
-from republic.models import Republic 
+from republic.models import Republic
+from user.models import CustomUser  # Importe o seu modelo de usuário personalizado
+from django.contrib.auth.hashers import make_password  # Para definir senhas
 
-def create_republics():
+def create_republics_and_users():
     housing_types = ['casa', 'apartamento']
     community_types = ['mista', 'feminino', 'masculino']
     
@@ -35,7 +37,10 @@ def create_republics():
         "45678-901",
         "56789-012",
     ]
-
+    
+    user_first_names = ["João", "Maria", "Lucas", "Ana", "Pedro", "Paula", "Tiago", "Julia", "Marcos", "Carla"]
+    user_last_names = ["Silva", "Santos", "Pereira", "Oliveira", "Souza", "Ferreira", "Costa", "Rodrigues", "Almeida", "Barbosa"]
+    
     rep_list = []
 
     for i in range(1, 11):  # Criando 10 repúblicas
@@ -58,12 +63,31 @@ def create_republics():
             value=rep["value"],
             housing_type=rep["housing_type"],
             community_type=rep["community_type"],
-            address=rep["address"],  # Novo campo de endereço
-            neighborhood=rep["neighborhood"],  # Novo campo de bairro
-            postal_code=rep["postal_code"]  # Novo campo de CEP
+            address=rep["address"],
+            neighborhood=rep["neighborhood"],
+            postal_code=rep["postal_code"]
         )
         republic.save()
         print(f"{republic.name} criada com sucesso!")
 
+        # Criar 5 usuários falsos para cada república
+        for j in range(5):
+            first_name = choice(user_first_names)
+            last_name = choice(user_last_names)
+            username = f"{first_name.lower()}{last_name.lower()}{randint(1, 100)}"
+            email = f"{username}@example.com"
+
+            user = CustomUser.objects.create(
+                username=username,
+                first_name=first_name,
+                last_name=last_name,
+                email=email,
+                age=randint(18, 30),
+                gender=choice(['M', 'F']),
+                password=make_password('password123'),  # Definir uma senha segura
+            )
+            republic.members.add(user)  # Associar o usuário à república
+            print(f"Usuário {user.username} criado e associado à {republic.name}")
+
 if __name__ == "__main__":
-    create_republics()
+    create_republics_and_users()

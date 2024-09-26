@@ -1,4 +1,5 @@
 from django.db import models
+from user.models import CustomUser
 
 class Republic(models.Model):
     name = models.CharField(max_length=100)
@@ -22,6 +23,9 @@ class Republic(models.Model):
     address = models.CharField(max_length=255, null=True, blank=True)  # Endereço
     neighborhood = models.CharField(max_length=100, null=True, blank=True)  # Bairro
     postal_code = models.CharField(max_length=10, null=True, blank=True)  # CEP
+
+    # Relacionamento com usuários
+    members = models.ManyToManyField(CustomUser, related_name='republics')  
 
     def __str__(self):
         return self.name
