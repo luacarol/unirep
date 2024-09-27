@@ -11,7 +11,7 @@ import { useParams } from 'react-router-dom';
 
 const DetailsRepublic = () => {
     const { id } = useParams(); // Obtém o ID da república da URL
-    const [republic, setRepublic] =  useState('');
+    const [republic, setRepublic] = useState('');
 
     useEffect(() => {
         const fetchRepublic = async () => {
@@ -59,7 +59,10 @@ const DetailsRepublic = () => {
                     activeItem={republic.name}
                 />
 
-                <h1 className={`title ${styles.title}`}>{republic.name}</h1>
+                <div id={styles.titleAndButton}>
+                    <h1 className={`title ${styles.title}`}>{republic.name}</h1>
+                    <ButtonLabel text="Solicitar Entrada" />
+                </div>
 
                 <section id={`${styles.locationInfoSection}`} className={`${styles.section}`}>
                     <h2 className={`subtitle ${styles.subtitle}`}>Informações de Localização</h2>

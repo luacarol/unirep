@@ -2,10 +2,6 @@
     width: 100%;
 }
 
-.title {
-    margin: 2rem 0rem;
-}
-
 .section:not(:last-child) {
     margin: 2rem 0rem;
 }
@@ -28,6 +24,14 @@
 .colorCyan {
     color: var(--cyan);
     margin-bottom: 0.5rem;
+}
+
+#titleAndButton {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin: 2rem 0rem;
 }
 
 /* Início da Seção: Informações de Localização */
