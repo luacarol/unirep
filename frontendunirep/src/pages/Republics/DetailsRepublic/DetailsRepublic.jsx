@@ -57,6 +57,14 @@ const DetailsRepublic = () => {
         setIsRequestEntryModalOpen(false);
     };
 
+    const handleYesConfirmation = () => {
+        console.log("Yes confirmation")
+    }
+
+    const handleNoConfirmation = () => {
+        console.log("No confirmation")
+    }
+
     return (
         <Layout content={
             <div className={styles.container}>
@@ -146,7 +154,10 @@ const DetailsRepublic = () => {
 
                 {isRequestEntryModalOpen && (
                     <ConfirmationModal text="Tem certeza que deseja confirmar sua solicitação de entrada?"
-                    onClose={closeModal} />
+                    onClose={closeModal}
+                    onYesClick={handleYesConfirmation}
+                    onNoClick={handleNoConfirmation}
+                    />
                 )}
 
             </div>}
