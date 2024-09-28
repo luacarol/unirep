@@ -65,6 +65,11 @@ const DetailsRepublic = () => {
         console.log("No confirmation")
     }
 
+    const handleGoogleMapsClick = () => {
+        const googleMapsUrl = `https://www.google.com/maps?q=${encodeURIComponent(republic.address)}`;
+        window.open(googleMapsUrl, '_blank');
+    }
+
     return (
         <Layout content={
             <div className={styles.container}>
@@ -97,7 +102,7 @@ const DetailsRepublic = () => {
 
                         </div>
 
-                        <ButtonLabel className={styles.seeGoogleMapsButton} text="Ver no Google Maps" />
+                        <ButtonLabel className={styles.seeGoogleMapsButton} text="Ver no Google Maps" onClick={handleGoogleMapsClick} />
 
                     </div>
 
@@ -154,9 +159,9 @@ const DetailsRepublic = () => {
 
                 {isRequestEntryModalOpen && (
                     <ConfirmationModal text="Tem certeza que deseja confirmar sua solicitação de entrada?"
-                    onClose={closeModal}
-                    onYesClick={handleYesConfirmation}
-                    onNoClick={handleNoConfirmation}
+                        onClose={closeModal}
+                        onYesClick={handleYesConfirmation}
+                        onNoClick={handleNoConfirmation}
                     />
                 )}
 
