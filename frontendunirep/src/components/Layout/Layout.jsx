@@ -46,13 +46,13 @@ const Layout = ({ content }) => {
 
             <aside className={styles.sidebar}>
                 {/* Adicionando classe 'active' condicionalmente para a rota de Repúblicas */}
-                <div className={`${styles.item} ${location.pathname === '/republics' ? styles.active : ''}`} onClick={() => navigate('/republics')}>
+                <div className={`${styles.item} ${location.pathname.startsWith('/republics') ? styles.active : ''}`} onClick={() => navigate('/republics')}>
                     <FontAwesomeIcon icon={faHouse} />
                     <label>Repúblicas</label>
                 </div>
 
                 {/* Adicionando classe 'active' condicionalmente para a rota de Configurações */}
-                <div className={`${styles.item} ${location.pathname === '/settings' ? styles.active : ''}`}>
+                <div className={`${styles.item} ${location.pathname === '/settings' ? styles.active : ''}`} onClick={() => navigate('/settings')}>
                     <FontAwesomeIcon icon={faGear} />
                     <label>Configurações</label>
                 </div>
