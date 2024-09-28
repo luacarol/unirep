@@ -66,6 +66,6 @@
 /* Fim: infoSection */
 
 
-.xMarkButton svg {
+#xMarkButton svg {
     color: var(--gray);
 }

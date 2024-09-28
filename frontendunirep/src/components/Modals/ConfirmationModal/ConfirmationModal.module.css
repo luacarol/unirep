@@ -1,0 +1,44 @@
+.container {
+    width: 25rem;
+    background-color: var(--white);
+    border-radius: 0.25rem;
+    padding: 2rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border: 1px solid var(--light-gray);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    box-sizing: border-box;
+    z-index: 101; /* Garantir que o modal fique sobre o overlay */
+    text-align: center;
+}
+
+#titleAndButtonSection {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+}
+
+#titleAndButtonSection svg {
+    color: var(--gray);
+}
+
+#titleAndButtonSection:hover svg {
+    color: var(--cyan);
+}
+
+.buttonsSection {
+    margin-top: 1rem;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.buttonsSection .button:not(:last-child) {
+    margin-right: 1rem;
+} 

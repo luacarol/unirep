@@ -8,6 +8,7 @@ import MemberCard from '../../../components/Cards/MemberCard/MemberCard';
 import { useEffect, useState } from 'react';
 import MemberDetailsModal from '../../../components/Modals/MemberDetailsModal/MemberDetailsModal';
 import { useParams } from 'react-router-dom';
+import ConfirmationModal from '../../../components/Modals/ConfirmationModal/ConfirmationModal';
 
 const DetailsRepublic = () => {
     const { id } = useParams(); // Obtém o ID da república da URL
@@ -41,19 +42,24 @@ const DetailsRepublic = () => {
     ];
 
     const [isMemberDetailsModalOpen, setIsMemberDetailsModalOpen] = useState(false);
+    const [isRequestEntryModalOpen, setIsRequestEntryModalOpen] = useState(false);
 
     const handleMemberCard = () => {
         setIsMemberDetailsModalOpen(prevState => !prevState);
     }
 
+    const handleRequestEntry = () => {
+        setIsRequestEntryModalOpen(true);
+    };
+
     const closeModal = () => {
         setIsMemberDetailsModalOpen(false);
+        setIsRequestEntryModalOpen(false);
     };
 
     return (
         <Layout content={
             <div className={styles.container}>
-
                 <Breadcrumb
                     items={breadcrumbItems}
                     activeItem={republic.name}
@@ -61,7 +67,8 @@ const DetailsRepublic = () => {
 
                 <div id={styles.titleAndButton}>
                     <h1 className={`title ${styles.title}`}>{republic.name}</h1>
-                    <ButtonLabel text="Solicitar Entrada" />
+
+                    <ButtonLabel text="Solicitar Entrada" onClick={handleRequestEntry} />
                 </div>
 
                 <section id={`${styles.locationInfoSection}`} className={`${styles.section}`}>
@@ -135,6 +142,11 @@ const DetailsRepublic = () => {
 
                 {isMemberDetailsModalOpen && (
                     <MemberDetailsModal onClose={closeModal} />
+                )}
+
+                {isRequestEntryModalOpen && (
+                    <ConfirmationModal text="Tem certeza que deseja confirmar sua solicitação de entrada?"
+                    onClose={closeModal} />
                 )}
 
             </div>}

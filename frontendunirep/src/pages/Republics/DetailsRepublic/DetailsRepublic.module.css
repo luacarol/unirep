@@ -56,6 +56,7 @@
 #locationInfoContent .seeGoogleMapsButton:hover {
     background-color: var(--purple);
 }
+
 /* Fim da Seção: Informações de Localização */
 
 
@@ -64,6 +65,7 @@
     width: 100%;
     overflow: hidden;
 }
+
 /* Fim da Seção: Imagens dos Cômodos */
 
 
@@ -81,9 +83,10 @@
 .memberCards {
     width: 100%;
     display: grid;
-    grid-template-columns: repeat(4, 1fr); 
-    gap: 2rem; 
-    overflow-y: auto; 
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+    overflow-y: auto;
     padding: 0.625rem;
 }
+
 /* Fim da Seção: Itens à Pagar */

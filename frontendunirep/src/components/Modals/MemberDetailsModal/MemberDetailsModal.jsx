@@ -30,7 +30,7 @@ const MemberDetailsModal = ({ onClose }) => {
 
                 <div className={`${styles.flexRow} ${styles.section}`}>
                     <h2 className={`title`}>Informações do Membro</h2>
-                    <ButtonIcon className={styles.xMarkButton} icon={faXmark} onlyIcon={true} onClick={onClose} />
+                    <ButtonIcon id={styles.xMarkButton} icon={faXmark} onlyIcon={true} onClick={onClose} />
                 </div>
 
                 <div className={styles.infoSection}>
