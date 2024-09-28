@@ -10,15 +10,23 @@
 }
 
 .container:hover {
-    transform: scale(1.01); 
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); 
+    transform: scale(1.01);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.container > * {
+    cursor: pointer;
+}
+
+.valueLabel, .memberInfoLabel {
+    cursor: pointer;
 }
 
 .imgSection {
     max-width: 100%;
     height: auto;
     background-color: var(--gray);
-    border-radius: 0.25rem 0.25rem 0 0; 
+    border-radius: 0.25rem 0.25rem 0 0;
 }
 
 .infoSection {
@@ -26,6 +34,10 @@
     flex-direction: column;
     justify-content: space-between;
     padding: 1rem 1.5rem;
+}
+
+.infoSection * {
+    cursor: pointer;
 }
 
 .valueLabel {

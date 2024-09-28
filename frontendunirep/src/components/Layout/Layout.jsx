@@ -52,16 +52,16 @@ const Layout = ({ content }) => {
                 </div>
 
                 {/* Adicionando classe 'active' condicionalmente para a rota de Configurações */}
-                <div className={`${styles.item} ${location.pathname === '/settings' ? styles.active : ''}`} onClick={() => navigate('/settings')}>
+                {/* <div className={`${styles.item} ${location.pathname === '/settings' ? styles.active : ''}`} onClick={() => navigate('/settings')}>
                     <FontAwesomeIcon icon={faGear} />
                     <label>Configurações</label>
-                </div>
+                </div> */}
 
                 {/* Adicionando classe 'active' condicionalmente para a rota de Ajuda */}
-                <div className={`${styles.item} ${location.pathname === '/help' ? styles.active : ''}`}>
+                {/* <div className={`${styles.item} ${location.pathname === '/help' ? styles.active : ''}`}>
                     <FontAwesomeIcon icon={faInfoCircle} />
                     <label>Ajuda</label>
-                </div>
+                </div> */}
             </aside>
 
             <main className={styles.main}>
