@@ -1,13 +1,19 @@
 import style from './Search.module.css';
-import { faMagnifyingGlass, faSliders } from '@fortawesome/free-solid-svg-icons';
+import { faSliders } from '@fortawesome/free-solid-svg-icons';
 import ButtonIcon from '../Buttons/ButtonIcon/ButtonIcon';
 import { useState } from 'react';
 import RepublicSearchModal from '../Modals/RepublicSearchModal/RepublicSearchModal';
 
-const Search = ({ className }) => {
+const Search = ({ className, onSearch }) => {
+    const [searchTerm, setSearchTerm] = useState('');
     const [isRepublicSearchModalOpen, setIsRepublicSearchModalOpen] = useState(false);
 
-    const handleSearch = () => {
+    const handleSearch = (event) => {
+        setSearchTerm(event.target.value);
+        onSearch(event.target.value); // Envia o termo de busca para o componente pai
+    };
+
+    const handleFilterClick = () => {
         setIsRepublicSearchModalOpen(prevState => !prevState);
     };
 
@@ -17,28 +23,25 @@ const Search = ({ className }) => {
 
     return (
         <div className={`${className} ${style.container}`}>
-
             <div className={style.inputSection}>
-                <input type='text' placeholder='Pesquise por uma república' />
+                <input
+                    type='text'
+                    placeholder='Pesquise por uma república'
+                    value={searchTerm}
+                    onChange={handleSearch} // Captura a busca em tempo real
+                />
             </div>
-
-            <ButtonIcon
-                className={style.searchButtonIcon}
-                icon={faMagnifyingGlass}
-                onlyIcon={false}
-            />
 
             <ButtonIcon
                 className={style.filterButtonIcon}
                 icon={faSliders}
                 onlyIcon={false}
-                onClick={handleSearch}
+                onClick={handleFilterClick}
             />
 
             {isRepublicSearchModalOpen && (
                 <RepublicSearchModal onClose={closeModal} />
             )}
-
         </div>
     );
 };

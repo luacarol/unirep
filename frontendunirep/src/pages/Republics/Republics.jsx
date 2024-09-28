@@ -7,6 +7,7 @@ import { useEffect, useState } from "react";
 
 const Republics = () => {
     const [republics, setRepublics] = useState([]);
+    const [filteredRepublics, setFilteredRepublics] = useState([]); // Estado para repúblicas filtradas
 
     useEffect(() => {
         const fetchRepublics = async () => {
@@ -17,6 +18,7 @@ const Republics = () => {
                 }
                 const data = await response.json();
                 setRepublics(data);
+                setFilteredRepublics(data); // Inicialmente, exibe todas as repúblicas
             } catch (error) {
                 console.log("Error: ", error);
             }
@@ -24,19 +26,27 @@ const Republics = () => {
         fetchRepublics();
     }, []);
 
+    const handleSearch = (searchTerm) => {
+        // Filtra repúblicas com base no nome
+        const filtered = republics.filter(republic =>
+            republic.name.toLowerCase().includes(searchTerm.toLowerCase())
+        );
+        setFilteredRepublics(filtered); // Atualiza o estado com as repúblicas filtradas
+    };
+
     return (
         <Layout content={
             <div className={styles.container}>
                 <h1 className={`title`}>Repúblicas</h1>
-                <Search className={styles.search} />
+                <Search className={styles.search} onSearch={handleSearch} />
                 <div className={styles.cards}>
-                    {republics.length > 0 ? (
-                        republics.map((republic) => (
+                    {filteredRepublics.length > 0 ? (
+                        filteredRepublics.map((republic) => (
                             <RepublicCard key={republic.id} republic={republic} />
                         ))
                     ) : (
                         <div className={styles.noDataWrapper}>
-                            <NoData /> {/* Coloque o NoData aqui */}
+                            <NoData />
                         </div>
                     )}
                 </div>
