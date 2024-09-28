@@ -7,7 +7,6 @@ import './styles/global.css'
 import Login from './pages/Login/Login';
 import Register from './pages/Register/Register';
 import Republics from './pages/Republics/Republics';
-import Favorites from './pages/Favorites/Favorites';
 import EditProfile from './pages/EditProfile/EditProfile';
 import DetailsRepublic from './pages/Republics/DetailsRepublic/DetailsRepublic';
 
@@ -18,7 +17,6 @@ function App() {
         <Route path="/" element={<Login/>} />
         <Route path="/register" element={<Register/>} />
         <Route path="/republics" element={<Republics/>} />
-        <Route path="/favorites" element={<Favorites/>} />
         <Route path="/editprofile" element={<EditProfile/>} />
         <Route path="/republics/:id" element={<DetailsRepublic/>} />
       </Routes>
