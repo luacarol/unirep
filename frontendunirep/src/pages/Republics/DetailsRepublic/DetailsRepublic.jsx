@@ -9,6 +9,7 @@ import { useEffect, useState } from 'react';
 import MemberDetailsModal from '../../../components/Modals/MemberDetailsModal/MemberDetailsModal';
 import { useParams } from 'react-router-dom';
 import ConfirmationModal from '../../../components/Modals/ConfirmationModal/ConfirmationModal';
+import Loading from '../../../components/Loading/Loading';
 
 const DetailsRepublic = () => {
     const { id } = useParams(); // Obtém o ID da república da URL
@@ -57,12 +58,21 @@ const DetailsRepublic = () => {
         setIsRequestEntryModalOpen(false);
     };
 
+    const [isLoading, setIsLoading] = useState(false);
+
     const handleYesConfirmation = () => {
         console.log("Yes confirmation")
+        setIsLoading(true);
+
+        setTimeout(() => {
+            setIsLoading(false);
+            closeModal();
+        }, 3000);
     }
 
     const handleNoConfirmation = () => {
         console.log("No confirmation")
+        closeModal();
     }
 
     const handleGoogleMapsClick = () => {
@@ -163,6 +173,10 @@ const DetailsRepublic = () => {
                         onYesClick={handleYesConfirmation}
                         onNoClick={handleNoConfirmation}
                     />
+                )}
+
+                {isLoading && (
+                    <Loading/>
                 )}
 
             </div>}
