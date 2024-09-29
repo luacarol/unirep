@@ -1,5 +1,5 @@
 import Chip from '../../Chip/Chip';
-import style from './RepublicCard.module.css';
+import styles from './RepublicCard.module.css';
 import { faHouse, faTransgender } from '@fortawesome/free-solid-svg-icons';
 import { useNavigate } from 'react-router-dom';
 
@@ -11,23 +11,23 @@ const RepublicCard = ({ republic }) => {
     };
 
     return (
-        <div className={style.container} onClick={handleClick}>
+        <div className={styles.container} onClick={handleClick}>
 
-            <div className={style.imgSection}>
+            <div className={styles.imgSection}>
             </div>
 
-            <div className={style.infoSection}>
-                <label className={`${style.valueLabel}`}>R$ {republic.value}</label>
+            <div className={styles.infoSection}>
+                <label className={`${styles.valueLabel}`}>R$ {republic.value}</label>
 
-                <div className={style.republicInfo}>
-                    <h2 className={`subtitle ${style.republicName}`}>{republic.name}</h2>
+                <div className={styles.republicInfo}>
+                    <h2 className={`subtitle ${styles.republicName}`}>{republic.name}</h2>
 
-                    <label className={`${style.republicInfoLabel}`}>{republic.description}</label>
+                    <label className={`${styles.republicInfoLabel}`}>{republic.description}</label>
 
                 </div>
 
-                <div className={style.additional}>
-                    <div className={style.chips}>
+                <div className={styles.additional}>
+                    <div className={styles.chips}>
                         <Chip icon={faHouse} text={republic.housing_type} />
                         <Chip icon={faTransgender} text={republic.community_type} />
                     </div>
