@@ -30,3 +30,6 @@ htmlcov/
 
 # Local configuration files
 local_settings.py
+
+# Banco de Dados
+db.sqlite3
