@@ -12,7 +12,7 @@ const Republics = () => {
     useEffect(() => {
         const fetchRepublics = async () => {
             try {
-                const response = await fetch('http://127.0.0.1:8000/api/republics/');
+                const response = await fetch('http://localhost:8000/api/repubics/republics/');
                 if (!response.ok) {
                     throw new Error('Network response was not ok');
                 }

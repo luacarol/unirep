@@ -14,11 +14,12 @@ import Loading from '../../../components/Loading/Loading';
 const DetailsRepublic = () => {
     const { id } = useParams(); // Obtém o ID da república da URL
     const [republic, setRepublic] = useState('');
+    const [membersID, setMembersID] = useState([]);
 
     useEffect(() => {
         const fetchRepublic = async () => {
             try {
-                const response = await fetch(`http://127.0.0.1:8000/api/republics/${id}`);
+                const response = await fetch(`http://localhost:8000/api/repubics/republics/${id}`);
 
                 if (!response.ok) {
                     throw new Error('Network response was not ok');
@@ -26,6 +27,7 @@ const DetailsRepublic = () => {
 
                 const data = await response.json();
                 setRepublic(data);
+                setMembersID(data.members)
 
             } catch (error) {
                 console.log("Error: ", error)
@@ -153,12 +155,9 @@ const DetailsRepublic = () => {
                     <h3 className={`label ${styles.colorCyan}`}>Quantidade de Membros: 3 pessoas</h3>
 
                     <div className={styles.memberCards}>
-                        <MemberCard onClick={handleMemberCard} />
-                        <MemberCard />
-                        <MemberCard />
-                        <MemberCard />
-                        <MemberCard />
-                        <MemberCard />
+                        {membersID.map((memberID) => (
+                            <MemberCard key={memberID.id} memberID={memberID} onClick={handleMemberCard} />
+                        ))}
                     </div>
 
                 </section>
