@@ -31,8 +31,6 @@ const DetailsRepublic = () => {
 
             } catch (error) {
                 console.log("Error: ", error)
-            } finally {
-                console.log("finally")
             }
         };
 
@@ -46,8 +44,10 @@ const DetailsRepublic = () => {
 
     const [isMemberDetailsModalOpen, setIsMemberDetailsModalOpen] = useState(false);
     const [isRequestEntryModalOpen, setIsRequestEntryModalOpen] = useState(false);
+    const [selectedMember, setSelectedMember] = useState('');
 
-    const handleMemberCard = () => {
+    const handleMemberCard = (memberID) => {
+        setSelectedMember(memberID)
         setIsMemberDetailsModalOpen(prevState => !prevState);
     }
 
@@ -156,14 +156,18 @@ const DetailsRepublic = () => {
 
                     <div className={styles.memberCards}>
                         {membersID.map((memberID) => (
-                            <MemberCard key={memberID.id} memberID={memberID} onClick={handleMemberCard} />
+                            <MemberCard
+                                key={memberID.id}
+                                memberID={memberID}
+                                onClick={() => handleMemberCard(memberID)}  // Certifique-se de passar o objeto correto
+                            />
                         ))}
                     </div>
 
                 </section>
 
                 {isMemberDetailsModalOpen && (
-                    <MemberDetailsModal onClose={closeModal} />
+                    <MemberDetailsModal selectedMember={selectedMember} onClose={closeModal} />
                 )}
 
                 {isRequestEntryModalOpen && (
@@ -175,7 +179,7 @@ const DetailsRepublic = () => {
                 )}
 
                 {isLoading && (
-                    <Loading/>
+                    <Loading />
                 )}
 
             </div>}

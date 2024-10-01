@@ -1,10 +1,32 @@
 import styles from './MemberDetailsModal.module.css';
 import ButtonIcon from '../../Buttons/ButtonIcon/ButtonIcon';
 import { faCaretDown, faCaretUp, faXmark } from '@fortawesome/free-solid-svg-icons';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-const MemberDetailsModal = ({ onClose }) => {
+const MemberDetailsModal = ({ selectedMember, onClose }) => {
+    const [member, setMember] = useState([]);
+
+    useEffect(() => {
+        const fetchUser = async () => {
+            try {
+                const response = await fetch(`http://localhost:8000/api/users/users/${selectedMember}`);
+
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+
+                const data = await response.json();
+                setMember(data)
+
+            } catch (error) {
+                console.log("Error: ", error)
+            }
+        };
+
+        fetchUser();
+    }, [selectedMember]);
+
     const handleOverlayClick = (e) => {
         if (e.target.classList.contains('overlay')) {
             onClose(); // Fecha o modal se o clique for no overlay
@@ -46,10 +68,10 @@ const MemberDetailsModal = ({ onClose }) => {
 
                         {openSections.dadosPessoais && (
                             <div className={styles.content}>
-                                <label className={`label`}>Nome Completo: <label className={`section`}>Luana Caroliny Pedroso dos Anjos</label></label>
-                                <label className={`label`}>Idade: <label className={`section`}>24 anos</label></label>
-                                <label className={`label`}>Gênero: <label className={`section`}>Feminino</label></label>
-                                <label className={`label`}>Curso Universitário: <label className={`section`}>Tecnólogo em Analise e Desenvolvimento de Sistemas</label></label>
+                                <label className={`label`}>Nome Completo: <label className={`section`}>{member.full_name}</label></label>
+                                <label className={`label`}>Idade: <label className={`section`}>{member.age} anos</label></label>
+                                <label className={`label`}>Gênero: <label className={`section`}>{member.gender}</label></label>
+                                <label className={`label`}>Curso Universitário: <label className={`section`}>{member.university_course}</label></label>
                             </div>
                         )}
                     </div>
@@ -64,10 +86,10 @@ const MemberDetailsModal = ({ onClose }) => {
 
                         {openSections.preferenciasMoradia && (
                             <div className={styles.content}>
-                                <label className={`label`}>Tipo de moradia preferida: <label className={`section`}>Casa</label></label>
-                                <label className={`label`}>Fumante?: <label className={`section`}>Não</label></label>
+                                <label className={`label`}>Tipo de moradia preferida: <label className={`section`}>{member.preferred_housing}</label></label>
+                                <label className={`label`}>Fumante?: <label className={`section`}>{member.smoker === true ? 'Sim': 'Não'}</label></label>
                                 <label className={`label`}>Tipo de acomodação preferida: <label className={`section`}>Quarto individual</label></label>
-                                <label className={`label`}>Aceita animais de estimação?: <label className={`section`}>Não</label></label>
+                                <label className={`label`}>Aceita animais de estimação?: <label className={`section`}>{member.pets_allowed === true ? 'Sim': 'Não'}</label></label>
                             </div>
                         )}
                     </div>

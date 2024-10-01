@@ -16,7 +16,6 @@ const MemberCard = ({ memberID, onClick }) => {
                 }
 
                 const data = await response.json();
-                console.log("data ", data)
                 setMember(data)
 
             } catch (error) {
