@@ -37,7 +37,7 @@ const DetailsRepublic = () => {
         };
 
         fetchRepublic();
-    }, []);
+    }, [id]);
 
     const breadcrumbItems = [
         { text: "Repúblicas", href: "/republics" },
