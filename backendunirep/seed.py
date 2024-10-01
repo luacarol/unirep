@@ -9,10 +9,19 @@ from republic.models import Republic
 from user.models import CustomUser  # Importe o seu modelo de usuário personalizado
 from django.contrib.auth.hashers import make_password  # Para definir senhas
 
-from random import randint
-
 def generate_phone_number():
     return f"+55 {randint(11, 99)} {randint(10000, 99999)}-{randint(1000, 9999)}"
+
+def determine_gender(first_name):
+    female_names = ["Ana", "Maria", "Julia", "Paula", "Carla"]
+    male_names = ["João", "Lucas", "Pedro", "Tiago", "Marcos"]
+
+    if first_name in female_names:
+        return 'F'
+    elif first_name in male_names:
+        return 'M'
+    else:
+        return choice(['M', 'F'])  # Gênero aleatório para nomes não identificados
 
 def create_republics_and_users():
     housing_types = ['casa', 'apartamento']
@@ -94,13 +103,15 @@ def create_republics_and_users():
             email = f"{username}@example.com"
             full_name = f"{first_name} {last_name}"
 
+            gender = determine_gender(first_name)  # Determinar gênero com base no primeiro nome
+
             user = CustomUser.objects.create(
                 username=username,
                 first_name=first_name,
                 last_name=last_name,
                 email=email,
                 age=randint(18, 30),  # Idade aleatória entre 18 e 30
-                gender=choice(['M', 'F']),  # Gênero aleatório
+                gender=gender,  # Gênero determinado
                 full_name=full_name,  # Armazenando o nome completo
                 phone_number=generate_phone_number(),
                 university_course=choice(university_courses),  # Curso universitário aleatório

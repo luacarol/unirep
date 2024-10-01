@@ -152,7 +152,7 @@ const DetailsRepublic = () => {
 
                     <h2 className={`subtitle ${styles.subtitle}`}>Informações dos Membros</h2>
 
-                    <h3 className={`label ${styles.colorCyan}`}>Quantidade de Membros: 3 pessoas</h3>
+                    <h3 className={`label ${styles.colorCyan}`}>Quantidade de Membros: {membersID.length} pessoas</h3>
 
                     <div className={styles.memberCards}>
                         {membersID.map((memberID) => (
