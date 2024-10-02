@@ -87,9 +87,9 @@ const MemberDetailsModal = ({ selectedMember, onClose }) => {
                         {openSections.preferenciasMoradia && (
                             <div className={styles.content}>
                                 <label className={`label`}>Tipo de moradia preferida: <label className={`section`}>{member.preferred_housing}</label></label>
-                                <label className={`label`}>Fumante?: <label className={`section`}>{member.smoker === true ? 'Sim': 'Não'}</label></label>
-                                <label className={`label`}>Tipo de acomodação preferida: <label className={`section`}>Quarto individual</label></label>
-                                <label className={`label`}>Aceita animais de estimação?: <label className={`section`}>{member.pets_allowed === true ? 'Sim': 'Não'}</label></label>
+                                <label className={`label`}>Fumante? <label className={`section`}>{member.smoker === true ? 'Sim': 'Não'}</label></label>
+                                <label className={`label`}>Tipo de acomodação preferida: <label className={`section`}>{member.preferred_accommodation}</label></label>
+                                <label className={`label`}>Aceita animais de estimação? <label className={`section`}>{member.pets_allowed === true ? 'Sim': 'Não'}</label></label>
                             </div>
                         )}
                     </div>
@@ -104,10 +104,10 @@ const MemberDetailsModal = ({ selectedMember, onClose }) => {
 
                         {openSections.habitosDeVidaEConvivencia && (
                             <div className={styles.content}>
-                                <label className={`label`}>Horário de estudo: <label className={`section`}>Manhã</label></label>
-                                <label className={`label`}>Nível de socialização: <label className={`section`}>Gosta de interações sociais constantes</label></label>
-                                <label className={`label`}>Organização e limpeza: <label className={`section`}>Muita importância</label></label>
-                                <label className={`label`}>Preferências de alimentação: <label className={`section`}>Carnívoro</label></label>
+                                <label className={`label`}>Horário de estudo: <label className={`section`}>{member.study_schedules}</label></label>
+                                <label className={`label`}>Nível de socialização: <label className={`section`}>{member.level_socialization}</label></label>
+                                <label className={`label`}>Organização e limpeza: <label className={`section`}>{member.organization_and_cleaning}</label></label>
+                                <label className={`label`}>Preferências de alimentação: <label className={`section`}>{member.feeding_preferences}</label></label>
                             </div>
                         )}
                     </div>
@@ -122,8 +122,8 @@ const MemberDetailsModal = ({ selectedMember, onClose }) => {
 
                         {openSections.perfilDePersonalidade && (
                             <div className={styles.content}>
-                                <label className={`label`}>Teste de personalidade ou traços predominantes: <label className={`section`}>Introvertido</label></label>
-                                <label className={`label`}>Preferências por ambientes: <label className={`section`}>Calmos</label></label>
+                                <label className={`label`}>Teste de personalidade ou traços predominantes: <label className={`section`}>{member.personality_test_or_predominant_traits}</label></label>
+                                <label className={`label`}>Preferências por ambientes: <label className={`section`}>{member.preferences_environments}</label></label>
                             </div>
                         )}
                     </div>
