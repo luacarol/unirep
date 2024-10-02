@@ -6,12 +6,12 @@ import Input from '../../components/Inputs/InputLabel/InputLabel';
 import InputCheckBox from '../../components/Inputs/InputCheckBox/InputCheckBox';
 import { useNavigate } from 'react-router-dom';
 import ButtonLabel from '../../components/Buttons/ButtonLabel/ButtonLabel';
+import Toast from '../../components/Toast/Toast';
 
 const Login = () => {
   const navigate = useNavigate();
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
-  const [error, setError] = useState(null);
 
   const handleLogin = async () => {
     try {
@@ -19,21 +19,33 @@ const Login = () => {
         username: username,
         password: password
       });
-  
+
       // Salvando os tokens no localStorage
       localStorage.setItem('access_token', response.data.access);
       localStorage.setItem('refresh_token', response.data.refresh);
-  
+
       // Redireciona para a página de repúblicas
       navigate('/republics');
     } catch (error) {
-      setError('Erro ao fazer login. Verifique suas credenciais.');
+      showToast('Erro ao fazer login. Verifique suas credenciais.', 'error')
     }
   };
 
   const handleRegister = () => {
     navigate('/register');
   };
+
+  // Início das configurações do Toast
+  const [toast, setToast] = useState({ show: false, message: '', type: '' });
+
+  const showToast = (message, type) => {
+    setToast({ show: true, message, type });
+  };
+
+  const closeToast = () => {
+    setToast({ ...toast, show: false });
+  };
+  // Final das configurações do Toast 
 
   return (
     <div className={styles.container}>
@@ -55,7 +67,7 @@ const Login = () => {
             type='text'
             placeholder='admin'
             value={username}
-            onChange={(e) => setUsername(e.target.value)} 
+            onChange={(e) => setUsername(e.target.value)}
           />
           <Input
             id='password'
@@ -64,11 +76,9 @@ const Login = () => {
             type='password'
             placeholder='**************'
             value={password}
-            onChange={(e) => setPassword(e.target.value)} 
+            onChange={(e) => setPassword(e.target.value)}
           />
         </div>
-
-        {error && <p style={{ color: 'red' }}>{error}</p>}
 
         <div className={styles.additionalInputs}>
           <InputCheckBox label='Relembre de mim' />
@@ -84,6 +94,13 @@ const Login = () => {
           <label className={styles.register} onClick={handleRegister}>Cadastrar-se</label>
         </div>
       </div>
+
+      <Toast
+        message={toast.message}
+        type={toast.type}
+        show={toast.show}
+        onClose={closeToast}
+      />
     </div>
   );
 };
