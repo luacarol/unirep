@@ -1,7 +1,7 @@
 import React, { useRef } from 'react';
 import style from './InputLabel.module.css';
 
-const InputLabel = ({ id, className, label, type, placeholder }) => {
+const InputLabel = ({ id, className, label, type, placeholder, onChange }) => {
     const inputRef = useRef(null);
 
     const handleLabelClick = () => {
@@ -22,6 +22,7 @@ const InputLabel = ({ id, className, label, type, placeholder }) => {
                 className={style.input}
                 type={type}
                 placeholder={placeholder}
+                onChange={onChange}
             />
         </div>
     );
