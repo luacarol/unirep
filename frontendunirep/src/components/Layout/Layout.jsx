@@ -4,7 +4,7 @@ import styles from './Layout.module.css';
 import headerLogoImg from '../../assets/images/header-logo.png';
 import userImg from '../../assets/images/user.png';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faGear, faHouse, faInfoCircle, faPencil, faRightFromBracket } from "@fortawesome/free-solid-svg-icons";
+import { faHouse, faPencil, faRightFromBracket } from "@fortawesome/free-solid-svg-icons";
 import { useNavigate } from 'react-router-dom';
 
 const Layout = ({ content }) => {
