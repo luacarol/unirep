@@ -157,9 +157,9 @@ const DetailsRepublic = () => {
                     <div className={styles.memberCards}>
                         {membersID.map((memberID) => (
                             <MemberCard
-                                key={memberID.id}
-                                memberID={memberID}
-                                onClick={() => handleMemberCard(memberID)}  // Certifique-se de passar o objeto correto
+                                key={memberID} // Use memberID diretamente se for um ID único
+                                memberID={memberID} // Passar o ID como props, se necessário
+                                onClick={() => handleMemberCard(memberID)} // Certifique-se de passar o ID correto
                             />
                         ))}
                     </div>
