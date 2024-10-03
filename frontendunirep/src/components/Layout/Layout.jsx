@@ -17,13 +17,17 @@ const Layout = ({ content }) => {
         setIsModalOpen(!isModalOpen); // Alterna o estado do modal
     };
 
+    // Retrieves user data from localStorage
+    const userData = JSON.parse(localStorage.getItem('user_data'));
+    const username = userData ? userData.username : 'Usuário';
+
     return (
         <div className={styles.layout}>
             <header className={styles.header}>
                 <img src={headerLogoImg} alt="Logo do Unirep" />
 
                 <div className={styles.usernameAndUserPhoto} onClick={toggleModal}>
-                    <label>Luana Anjos</label>
+                    <label>{username}</label>
                     <img className={styles.userImg} src={userImg} alt="Foto do Usuário" />
                 </div>
 

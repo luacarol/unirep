@@ -20,9 +20,19 @@ const Login = () => {
         password: password
       });
 
-      // Salvando os tokens no localStorage
+      // Save tokens to localStorage
       localStorage.setItem('access_token', response.data.access);
       localStorage.setItem('refresh_token', response.data.refresh);
+
+      // Make a request to get user details
+      const userResponse = await axios.get('http://127.0.0.1:8000/api/users/users/me/', {
+        headers: {
+          Authorization: `Bearer ${response.data.access}`,
+        },
+      });
+
+      // Save user data to localStorage
+      localStorage.setItem('user_data', JSON.stringify(userResponse.data));
 
       // Redireciona para a página de repúblicas
       navigate('/republics');

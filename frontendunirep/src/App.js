@@ -9,16 +9,20 @@ import Register from './pages/Register/Register';
 import Republics from './pages/Republics/Republics';
 import EditProfile from './pages/EditProfile/EditProfile';
 import DetailsRepublic from './pages/Republics/DetailsRepublic/DetailsRepublic';
+import PrivateRoute from './components/PrivateRoute/PrivateRoute';
 
 function App() {
   return (
     <Router>
       <Routes>
+        {/* Public route */}
         <Route path="/" element={<Login/>} />
-        <Route path="/register" element={<Register/>} />
-        <Route path="/republics" element={<Republics/>} />
-        <Route path="/editprofile" element={<EditProfile/>} />
-        <Route path="/republics/:id" element={<DetailsRepublic/>} />
+
+        {/* Protected routes */}
+        <Route path="/register" element={<PrivateRoute><Register/></PrivateRoute>} />
+        <Route path="/republics" element={<PrivateRoute><Republics/></PrivateRoute>} />
+        <Route path="/editprofile" element={<PrivateRoute><EditProfile/></PrivateRoute>} />
+        <Route path="/republics/:id" element={<PrivateRoute><DetailsRepublic/></PrivateRoute>} />
       </Routes>
     </Router>
   );
