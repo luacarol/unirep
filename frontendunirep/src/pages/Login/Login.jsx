@@ -15,15 +15,10 @@ const Login = () => {
 
   const handleLogin = async () => {
     try {
-      console.log("username ", username)
-      console.log("password ", password)
       const response = await axios.post('http://127.0.0.1:8000/api/token/', {
         username: username,
         password: password
       });
-
-      console.log(response.data.access)
-      console.log(response.data.refresh)
 
       // Save tokens to localStorage
       localStorage.setItem('access_token', response.data.access);
@@ -39,10 +34,9 @@ const Login = () => {
       // Save user data to localStorage
       localStorage.setItem('user_data', JSON.stringify(userResponse.data));
 
-      // Redireciona para a página de repúblicas
+      // Redirects to the republics page
       navigate('/republics');
     } catch (error) {
-      console.log("Error ", error)
       showToast('Erro ao fazer login. Verifique suas credenciais.', 'error')
     }
   };
@@ -51,7 +45,7 @@ const Login = () => {
     navigate('/register');
   };
 
-  // Início das configurações do Toast
+  // Toast Settings Start
   const [toast, setToast] = useState({ show: false, message: '', type: '' });
 
   const showToast = (message, type) => {
@@ -61,7 +55,7 @@ const Login = () => {
   const closeToast = () => {
     setToast({ ...toast, show: false });
   };
-  // Final das configurações do Toast 
+  // End of Toast Settings
 
   return (
     <div className={styles.container}>
