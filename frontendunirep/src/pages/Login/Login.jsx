@@ -15,10 +15,15 @@ const Login = () => {
 
   const handleLogin = async () => {
     try {
+      console.log("username ", username)
+      console.log("password ", password)
       const response = await axios.post('http://127.0.0.1:8000/api/token/', {
         username: username,
         password: password
       });
+
+      console.log(response.data.access)
+      console.log(response.data.refresh)
 
       // Save tokens to localStorage
       localStorage.setItem('access_token', response.data.access);
@@ -37,6 +42,7 @@ const Login = () => {
       // Redireciona para a página de repúblicas
       navigate('/republics');
     } catch (error) {
+      console.log("Error ", error)
       showToast('Erro ao fazer login. Verifique suas credenciais.', 'error')
     }
   };
