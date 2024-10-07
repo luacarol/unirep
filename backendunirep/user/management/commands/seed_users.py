@@ -184,7 +184,7 @@ class Command(BaseCommand):
             user, created = CustomUser.objects.get_or_create(
                 username=user_data['username'],
                 defaults={
-                    'password': make_password(user_data['password']),  # Encripta a senha
+                    'password': make_password(user_data['password']),  # Encrypt the password
                     'full_name': user_data['full_name'],
                     'age': user_data['age'],
                     'gender': user_data['gender'],
