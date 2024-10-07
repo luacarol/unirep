@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import styles from './Login.module.css';
 import logoInicial from '../../assets/images/logo-inicial.png';
@@ -10,8 +10,16 @@ import Toast from '../../components/Toast/Toast';
 
 const Login = () => {
   const navigate = useNavigate();
+
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
+
+  // Clear tokens when mounting the login component
+  useEffect(() => {
+    localStorage.removeItem('access_token');
+    localStorage.removeItem('refresh_token');
+    localStorage.removeItem('user_data');
+  }, []);
 
   const handleLogin = async () => {
     try {
