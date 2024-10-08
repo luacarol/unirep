@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import axios from 'axios';
 import styles from './EditProfile.module.css';
 import Layout from '../../components/Layout/Layout';
 import userVector from '../../assets/images/user-vector.png';
@@ -47,10 +48,19 @@ const EditProfile = () => {
         });
     };
 
-    // Handle form submission (for example, updating the user data)
-    const handleSubmit = () => {
-        // Here you would send the formData to the backend API to update the user profile
-        console.log('Updated user data:', formData);
+    const handleSave = async () => {
+        try {
+            const response = await axios.put('http://127.0.0.1:8000/api/users/users/update_me/', formData, {
+                headers: {
+                    Authorization: `Bearer ${localStorage.getItem('access_token')}`,
+                },
+            });
+
+            // console.log('Profile updated:', response.data);
+            localStorage.setItem('user_data', JSON.stringify(response.data))
+        } catch (err) {
+            console.error('Error updating profile:', err.response);
+        }
     };
 
     return (
@@ -65,7 +75,7 @@ const EditProfile = () => {
                         </div>
                         <ButtonLabelIcon icon={faUpload} text="Trocar foto" />
                     </div>
-                    <ButtonLabel text="Salvar" onClick={handleSubmit} />
+                    <ButtonLabel text="Salvar" onClick={handleSave} />
                 </div>
 
                 <div className={styles.section}>
