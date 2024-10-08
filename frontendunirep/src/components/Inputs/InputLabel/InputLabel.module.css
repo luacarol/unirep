@@ -7,7 +7,7 @@
 .label {
     font-size: 1.125rem;
     font-weight: 600;
-    transition: color 0.3s ease; /* Transição suave */
+    transition: color 0.3s ease; /* Smooth transition */
     cursor: pointer;
 }
 

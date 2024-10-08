@@ -1,12 +1,12 @@
 import React, { useRef } from 'react';
 import style from './InputLabel.module.css';
 
-const InputLabel = ({ id, className, label, type, placeholder, onChange }) => {
+const InputLabel = ({ id, className, label, type, placeholder, value, name, onChange }) => {
     const inputRef = useRef(null);
 
     const handleLabelClick = () => {
         if (inputRef.current) {
-            inputRef.current.focus(); // Foca o input quando o label é clicado
+            inputRef.current.focus(); // Focuses the input when the label is clicked
         }
     };
 
@@ -18,14 +18,16 @@ const InputLabel = ({ id, className, label, type, placeholder, onChange }) => {
 
             <input
                 id={id}
-                ref={inputRef} // Referência para o input
+                ref={inputRef}
                 className={style.input}
                 type={type}
                 placeholder={placeholder}
+                value={value} // Ensuring value is passed
+                name={name} // Ensure the correct field is targeted
                 onChange={onChange}
             />
         </div>
     );
-}
+};
 
 export default InputLabel;

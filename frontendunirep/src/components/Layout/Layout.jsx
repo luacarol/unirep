@@ -9,12 +9,12 @@ import { useNavigate } from 'react-router-dom';
 
 const Layout = ({ content }) => {
     const navigate = useNavigate();
-    const location = useLocation(); // Pega a rota atual
+    const location = useLocation(); // Get the current route
 
-    const [isModalOpen, setIsModalOpen] = useState(false); // Estado para controlar o modal
+    const [isModalOpen, setIsModalOpen] = useState(false); // State to control the modal
 
     const toggleModal = () => {
-        setIsModalOpen(!isModalOpen); // Alterna o estado do modal
+        setIsModalOpen(!isModalOpen); // Toggles the state of the modal
     };
 
     // Retrieves user data from localStorage
@@ -31,7 +31,7 @@ const Layout = ({ content }) => {
                     <img className={styles.userImg} src={userImg} alt="Foto do Usuário" />
                 </div>
 
-                {/* Modal que aparece ao clicar */}
+                {/* Modal that appears when clicking */}
                 {isModalOpen && (
                     <div className={styles.modal}>
                         <ul>
@@ -49,19 +49,19 @@ const Layout = ({ content }) => {
             </header>
 
             <aside className={styles.sidebar}>
-                {/* Adicionando classe 'active' condicionalmente para a rota de Repúblicas */}
+                {/* Conditionally adding 'active' class to Republics route */}
                 <div className={`${styles.item} ${location.pathname.startsWith('/republics') ? styles.active : ''}`} onClick={() => navigate('/republics')}>
                     <FontAwesomeIcon icon={faHouse} />
                     <label>Repúblicas</label>
                 </div>
 
-                {/* Adicionando classe 'active' condicionalmente para a rota de Configurações */}
+                {/* TODO: Conditionally adding 'active' class to Settings route */}
                 {/* <div className={`${styles.item} ${location.pathname === '/settings' ? styles.active : ''}`} onClick={() => navigate('/settings')}>
                     <FontAwesomeIcon icon={faGear} />
                     <label>Configurações</label>
                 </div> */}
 
-                {/* Adicionando classe 'active' condicionalmente para a rota de Ajuda */}
+                {/* TODO: Conditionally adding 'active' class to Help route */}
                 {/* <div className={`${styles.item} ${location.pathname === '/help' ? styles.active : ''}`}>
                     <FontAwesomeIcon icon={faInfoCircle} />
                     <label>Ajuda</label>

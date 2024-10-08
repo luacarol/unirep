@@ -1,19 +1,17 @@
-import React, { useState } from 'react';
+import React from 'react';
 import InputCheckBox from '../Inputs/InputCheckBox/InputCheckBox';
 import styles from './CheckboxGroup.module.css';
 
-const CheckboxGroup = ({ className, options, labelTitle }) => {
-    const [selectedOption, setSelectedOption] = useState(null); // Gerencia o estado de seleção
-
-    // Função para selecionar apenas um checkbox
+const CheckboxGroup = ({ className, options, labelTitle, value, onChange }) => {
+    // Function to select the checkbox
     const handleSelection = (option) => {
-        setSelectedOption(option);
+        onChange(option); // Communicates the selected option back to the parent
     };
 
-    // Função para selecionar o primeiro checkbox
+    // Function to select the first checkbox when the label is clicked
     const handleLabelClick = () => {
         if (options.length > 0) {
-            handleSelection(options[0]); // Seleciona o primeiro checkbox
+            handleSelection(options[0]); // Select the first checkbox
         }
     };
 
@@ -29,8 +27,8 @@ const CheckboxGroup = ({ className, options, labelTitle }) => {
                     className={styles.inputCheckBox}
                     key={index}
                     label={option}
-                    isChecked={selectedOption === option}
-                    onCheck={() => handleSelection(option)}
+                    isChecked={value === option} // Matches the selected value from props
+                    onCheck={() => handleSelection(option)} // Trigger parent onChange
                 />
             ))}
         </div>

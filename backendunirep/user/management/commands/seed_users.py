@@ -10,7 +10,7 @@ class Command(BaseCommand):
             {
                 "username": "joão1",
                 "password": "password123",
-                "full_name": "User One",
+                "full_name": "João Silva",
                 "age": 22,
                 "gender": "M",
                 "phone_number": "123456789",
@@ -29,7 +29,7 @@ class Command(BaseCommand):
             {
                 "username": "maria2",
                 "password": "password123",
-                "full_name": "User Two",
+                "full_name": "Maria Oliveira",
                 "age": 24,
                 "gender": "F",
                 "phone_number": "987654321",
@@ -48,7 +48,7 @@ class Command(BaseCommand):
             {
                 "username": "lucas3",
                 "password": "password123",
-                "full_name": "User Three",
+                "full_name": "Lucas Ferreira",
                 "age": 20,
                 "gender": "M",
                 "phone_number": "567812345",
@@ -67,7 +67,7 @@ class Command(BaseCommand):
             {
                 "username": "ana4",
                 "password": "password123",
-                "full_name": "User Four",
+                "full_name": "Ana Costa",
                 "age": 23,
                 "gender": "F",
                 "phone_number": "876543210",
@@ -86,7 +86,7 @@ class Command(BaseCommand):
             {
                 "username": "pedro5",
                 "password": "password123",
-                "full_name": "User Five",
+                "full_name": "Pedro Almeida",
                 "age": 26,
                 "gender": "M",
                 "phone_number": "654789321",
@@ -105,7 +105,7 @@ class Command(BaseCommand):
             {
                 "username": "juliana6",
                 "password": "password123",
-                "full_name": "User Six",
+                "full_name": "Juliana Souza",
                 "age": 21,
                 "gender": "F",
                 "phone_number": "345678901",
@@ -124,7 +124,7 @@ class Command(BaseCommand):
             {
                 "username": "carlos7",
                 "password": "password123",
-                "full_name": "User Seven",
+                "full_name": "Carlos Pereira",
                 "age": 25,
                 "gender": "M",
                 "phone_number": "234567890",
@@ -143,7 +143,7 @@ class Command(BaseCommand):
             {
                 "username": "laura8",
                 "password": "password123",
-                "full_name": "User Eight",
+                "full_name": "Laura Mendes",
                 "age": 22,
                 "gender": "F",
                 "phone_number": "765432198",
@@ -162,7 +162,7 @@ class Command(BaseCommand):
             {
                 "username": "ricardo9",
                 "password": "password123",
-                "full_name": "User Nine",
+                "full_name": "Ricardo Lima",
                 "age": 27,
                 "gender": "M",
                 "phone_number": "198765432",
