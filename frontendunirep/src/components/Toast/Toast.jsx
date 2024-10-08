@@ -6,7 +6,7 @@ const Toast = ({ message, type, show, onClose }) => {
         if (show) {
             const timer = setTimeout(() => {
                 onClose();
-            }, 3000); // Duração de 3 segundos para desaparecer
+            }, 3000); // 3 second duration to disappear
 
             return () => clearTimeout(timer);
         }

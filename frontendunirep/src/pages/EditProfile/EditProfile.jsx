@@ -8,6 +8,7 @@ import { faUpload } from '@fortawesome/free-solid-svg-icons';
 import ButtonLabel from '../../components/Buttons/ButtonLabel/ButtonLabel';
 import InputLabel from '../../components/Inputs/InputLabel/InputLabel';
 import CheckboxGroup from '../../components/CheckboxGroup/CheckboxGroup';
+import Toast from '../../components/Toast/Toast';
 
 const EditProfile = () => {
     // Retrieves user data from localStorage
@@ -57,11 +58,25 @@ const EditProfile = () => {
             });
 
             // console.log('Profile updated:', response.data);
-            localStorage.setItem('user_data', JSON.stringify(response.data))
+            localStorage.setItem('user_data', JSON.stringify(response.data));
+            showToast('Perfil atualizado com sucesso!', 'success');
+
         } catch (err) {
             console.error('Error updating profile:', err.response);
         }
     };
+
+    // Toast Settings Start
+    const [toast, setToast] = useState({ show: false, message: '', type: '' });
+
+    const showToast = (message, type) => {
+        setToast({ show: true, message, type });
+    };
+
+    const closeToast = () => {
+        setToast({ ...toast, show: false });
+    };
+    // End of Toast Settings
 
     return (
         <Layout content={
@@ -222,6 +237,13 @@ const EditProfile = () => {
                         />
                     </div>
                 </div>
+
+                <Toast
+                    message={toast.message}
+                    type={toast.type}
+                    show={toast.show}
+                    onClose={closeToast}
+                />
             </div>
         } />
     );
