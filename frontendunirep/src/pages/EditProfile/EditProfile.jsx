@@ -59,7 +59,7 @@ const EditProfile = () => {
 
             // console.log('Profile updated:', response.data);
             localStorage.setItem('user_data', JSON.stringify(response.data));
-            showToast('Perfil atualizado com sucesso!', 'success');
+            showToast('Perfil atualizado com sucesso', 'success');
 
         } catch (err) {
             console.error('Error updating profile:', err.response);

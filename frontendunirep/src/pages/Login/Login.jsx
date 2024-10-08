@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import axios from 'axios';
+import axiosInstance from '../../utils/axiosConfig'; // Importe o axiosInstance
 import styles from './Login.module.css';
 import logoInicial from '../../assets/images/logo-inicial.png';
 import Input from '../../components/Inputs/InputLabel/InputLabel';
@@ -7,12 +7,15 @@ import InputCheckBox from '../../components/Inputs/InputCheckBox/InputCheckBox';
 import { useNavigate } from 'react-router-dom';
 import ButtonLabel from '../../components/Buttons/ButtonLabel/ButtonLabel';
 import Toast from '../../components/Toast/Toast';
+import axios from 'axios';
 
 const Login = () => {
   const navigate = useNavigate();
 
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
+
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
 
   // Clear tokens when mounting the login component
   useEffect(() => {
@@ -25,27 +28,26 @@ const Login = () => {
     try {
       const response = await axios.post('http://127.0.0.1:8000/api/token/', {
         username: username,
-        password: password
+        password: password,
       });
 
-      // Save tokens to localStorage
       localStorage.setItem('access_token', response.data.access);
       localStorage.setItem('refresh_token', response.data.refresh);
 
-      // Make a request to get user details
+      // Mantenha o estado de autenticação
+      setIsAuthenticated(true);
+
       const userResponse = await axios.get('http://127.0.0.1:8000/api/users/users/me/', {
         headers: {
           Authorization: `Bearer ${response.data.access}`,
         },
       });
 
-      // Save user data to localStorage
       localStorage.setItem('user_data', JSON.stringify(userResponse.data));
 
-      // Redirects to the republics page
       navigate('/republics');
     } catch (error) {
-      showToast('Erro ao fazer login. Verifique suas credenciais.', 'error')
+      showToast('Erro ao fazer login. Verifique suas credenciais.', 'error');
     }
   };
 
