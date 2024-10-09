@@ -19,7 +19,12 @@ const DetailsRepublic = () => {
     useEffect(() => {
         const fetchRepublic = async () => {
             try {
-                const response = await fetch(`http://localhost:8000/api/repubics/republics/${id}`);
+                const token = localStorage.getItem('access_token'); // Get the token from localStorage
+                const response = await fetch(`http://localhost:8000/api/repubics/republics/${id}`, {
+                    headers: {
+                        'Authorization': `Bearer ${token}`, // Include the token in the Authorization header
+                    },
+                });
 
                 if (!response.ok) {
                     throw new Error('Network response was not ok');

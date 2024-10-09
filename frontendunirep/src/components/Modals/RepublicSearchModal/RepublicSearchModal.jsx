@@ -13,14 +13,14 @@ const RepublicSearchModal = ({ onClose, onFilter }) => {
     const [vacancies, setVacancies] = useState([0, 10]);
 
     const handleFilterClick = () => {
-        // Passando os filtros para o componente pai
+        // Passing filters to the parent component
         onFilter({
             housingType,
             communityType,
             priceRange,
             vacancies
         });
-        onClose(); // Fecha o modal após aplicar os filtros
+        onClose(); // Close the modal after applying filters
     };
 
     const handleOverlayClick = (e) => {
@@ -43,7 +43,7 @@ const RepublicSearchModal = ({ onClose, onFilter }) => {
                         labelTitle="Tipo do Imóvel"
                         options={['Casa', 'Apartamento']}
                         selectedOptions={housingType}
-                        onChange={setHousingType} // Atualiza o estado dos tipos de imóvel
+                        onChange={setHousingType} // Updates the status of property types
                     />
                 </div>
 
@@ -53,7 +53,7 @@ const RepublicSearchModal = ({ onClose, onFilter }) => {
                         labelTitle="Tipo de Comunidade"
                         options={['Mista', 'Feminina', 'Masculina']}
                         selectedOptions={communityType}
-                        onChange={setCommunityType} // Atualiza o estado dos tipos de comunidade
+                        onChange={setCommunityType} // Updates the state of community types
                     />
                 </div>
 
@@ -64,7 +64,7 @@ const RepublicSearchModal = ({ onClose, onFilter }) => {
                         max={100}
                         step={1}
                         initialValue={priceRange[0]}
-                        onChange={setPriceRange} // Atualiza a faixa de preço
+                        onChange={setPriceRange} // Update the price range
                         isMonetary={true} 
                     />
                 </div>
@@ -76,7 +76,7 @@ const RepublicSearchModal = ({ onClose, onFilter }) => {
                         max={10}
                         step={1}
                         initialValue={vacancies[0]}
-                        onChange={setVacancies} // Atualiza o número de vagas
+                        onChange={setVacancies} // Update the number of vacancies
                         isMonetary={false} 
                     />
                 </div>
