@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import axiosInstance from '../../utils/axiosConfig'; // Importe o axiosInstance
 import styles from './Login.module.css';
 import logoInicial from '../../assets/images/logo-inicial.png';
 import Input from '../../components/Inputs/InputLabel/InputLabel';
@@ -36,6 +35,7 @@ const Login = () => {
 
       // Mantenha o estado de autenticação
       setIsAuthenticated(true);
+      console.log("isAuthenticated ", isAuthenticated)
 
       const userResponse = await axios.get('http://127.0.0.1:8000/api/users/users/me/', {
         headers: {
