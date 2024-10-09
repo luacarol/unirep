@@ -4,13 +4,13 @@ import ButtonIcon from '../Buttons/ButtonIcon/ButtonIcon';
 import { useState } from 'react';
 import RepublicSearchModal from '../Modals/RepublicSearchModal/RepublicSearchModal';
 
-const Search = ({ className, onSearch }) => {
+const Search = ({ className, onSearch, onFilter }) => {
     const [searchTerm, setSearchTerm] = useState('');
     const [isRepublicSearchModalOpen, setIsRepublicSearchModalOpen] = useState(false);
 
     const handleSearch = (event) => {
         setSearchTerm(event.target.value);
-        onSearch(event.target.value); // Sends the search term to the parent component
+        onSearch(event.target.value);
     };
 
     const handleFilterClick = () => {
@@ -28,7 +28,7 @@ const Search = ({ className, onSearch }) => {
                     type='text'
                     placeholder='Pesquise por uma república'
                     value={searchTerm}
-                    onChange={handleSearch} // Captures search in real time
+                    onChange={handleSearch}
                 />
             </div>
 
@@ -40,7 +40,7 @@ const Search = ({ className, onSearch }) => {
             />
 
             {isRepublicSearchModalOpen && (
-                <RepublicSearchModal onClose={closeModal} />
+                <RepublicSearchModal onClose={closeModal} onFilter={onFilter} />
             )}
         </div>
     );

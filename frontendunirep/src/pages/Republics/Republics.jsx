@@ -7,15 +7,15 @@ import { useEffect, useState } from "react";
 
 const Republics = () => {
     const [republics, setRepublics] = useState([]);
-    const [filteredRepublics, setFilteredRepublics] = useState([]); // State for republics filtered
+    const [filteredRepublics, setFilteredRepublics] = useState([]);
 
     useEffect(() => {
         const fetchRepublics = async () => {
             try {
-                const token = localStorage.getItem('access_token'); // Get the token from localStorage
+                const token = localStorage.getItem('access_token');
                 const response = await fetch('http://localhost:8000/api/repubics/republics/', {
                     headers: {
-                        'Authorization': `Bearer ${token}`, // Include the token in the Authorization header
+                        'Authorization': `Bearer ${token}`,
                     },
                 });
                 if (!response.ok) {
@@ -23,7 +23,7 @@ const Republics = () => {
                 }
                 const data = await response.json();
                 setRepublics(data);
-                setFilteredRepublics(data); // Initially, it displays all republics
+                setFilteredRepublics(data);
             } catch (error) {
                 console.log("Error: ", error);
             }
@@ -32,18 +32,36 @@ const Republics = () => {
     }, []);
 
     const handleSearch = (searchTerm) => {
-        // Filters republics based on name
         const filtered = republics.filter(republic =>
-            republic.name.toLowerCase().includes(searchTerm.toLowerCase())
+            republic.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+            republic.description.toLowerCase().includes(searchTerm.toLowerCase()) ||
+            republic.address.toLowerCase().includes(searchTerm.toLowerCase()) ||
+            republic.neighborhood.toLowerCase().includes(searchTerm.toLowerCase()) ||
+            republic.value.toString().includes(searchTerm)
         );
-        setFilteredRepublics(filtered); // Updates the state with filtered republics
+        setFilteredRepublics(filtered);
+    };
+
+    const handleFilter = (filters) => {
+        const { housingType, communityType, priceRange } = filters;
+
+        const filtered = republics.filter(republic => {
+
+            const matchesHousingType = housingType.length === 0 || housingType.includes(republic.housing_type.toLowerCase());
+            const matchesCommunityType = communityType.length === 0 || communityType.includes(republic.community_type.toLowerCase());
+            const matchesPrice = republic.value <= priceRange;
+
+            return matchesHousingType && matchesPrice && matchesCommunityType
+        });
+
+        setFilteredRepublics(filtered);
     };
 
     return (
         <Layout content={
             <div className={styles.container}>
                 <h1 className={`title`}>Repúblicas</h1>
-                <Search className={styles.search} onSearch={handleSearch} />
+                <Search className={styles.search} onSearch={handleSearch} onFilter={handleFilter} />
                 <div className={styles.cards}>
                     {filteredRepublics.length > 0 ? (
                         filteredRepublics.map((republic) => (

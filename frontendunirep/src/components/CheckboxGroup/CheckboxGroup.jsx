@@ -2,13 +2,17 @@ import React from 'react';
 import InputCheckBox from '../Inputs/InputCheckBox/InputCheckBox';
 import styles from './CheckboxGroup.module.css';
 
-const CheckboxGroup = ({ className, options, labelTitle, value, onChange }) => {
-    // Function to select the checkbox
+const CheckboxGroup = ({ className, options, labelTitle, selectedOptions, onChange }) => {
     const handleSelection = (option) => {
-        onChange(option); // Communicates the selected option back to the parent
+        if (selectedOptions.includes(option)) {
+            // Remove the option if it's already selected
+            onChange(selectedOptions.filter(item => item !== option));
+        } else {
+            // Add the option if it's not selected
+            onChange([...selectedOptions, option]);
+        }
     };
 
-    // Function to select the first checkbox when the label is clicked
     const handleLabelClick = () => {
         if (options.length > 0) {
             handleSelection(options[0]); // Select the first checkbox
@@ -27,7 +31,7 @@ const CheckboxGroup = ({ className, options, labelTitle, value, onChange }) => {
                     className={styles.inputCheckBox}
                     key={index}
                     label={option}
-                    isChecked={value === option} // Matches the selected value from props
+                    isChecked={selectedOptions.includes(option)} // Check if the option is selected
                     onCheck={() => handleSelection(option)} // Trigger parent onChange
                 />
             ))}

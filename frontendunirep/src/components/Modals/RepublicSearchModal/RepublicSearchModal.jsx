@@ -41,9 +41,9 @@ const RepublicSearchModal = ({ onClose, onFilter }) => {
                     <CheckboxGroup
                         className={style.checkBoxGroup}
                         labelTitle="Tipo do Imóvel"
-                        options={['Casa', 'Apartamento']}
-                        selectedOptions={housingType}
-                        onChange={setHousingType} // Updates the status of property types
+                        options={['casa', 'apartamento']}
+                        selectedOptions={housingType} // Certifique-se de usar selectedOptions
+                        onChange={setHousingType} // Atualiza a lista de tipos de imóveis
                     />
                 </div>
 
@@ -51,7 +51,7 @@ const RepublicSearchModal = ({ onClose, onFilter }) => {
                     <CheckboxGroup
                         className={style.checkBoxGroup}
                         labelTitle="Tipo de Comunidade"
-                        options={['Mista', 'Feminina', 'Masculina']}
+                        options={['mista', 'feminina', 'masculina']}
                         selectedOptions={communityType}
                         onChange={setCommunityType} // Updates the state of community types
                     />
@@ -61,15 +61,15 @@ const RepublicSearchModal = ({ onClose, onFilter }) => {
                     <InputRange
                         text="Faixa de preço"
                         min={0}
-                        max={100}
+                        max={1000}
                         step={1}
                         initialValue={priceRange[0]}
                         onChange={setPriceRange} // Update the price range
-                        isMonetary={true} 
+                        isMonetary={true}
                     />
                 </div>
 
-                <div className={style.section}>
+                {/* <div className={style.section}>
                     <InputRange
                         text="Número de vagas disponíveis"
                         min={0}
@@ -77,9 +77,9 @@ const RepublicSearchModal = ({ onClose, onFilter }) => {
                         step={1}
                         initialValue={vacancies[0]}
                         onChange={setVacancies} // Update the number of vacancies
-                        isMonetary={false} 
+                        isMonetary={false}
                     />
-                </div>
+                </div> */}
 
                 <div className={`${style.section} ${style.filterButton}`}>
                     <ButtonLabel text="Filtrar" onClick={handleFilterClick} />
