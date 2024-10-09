@@ -9,7 +9,7 @@
     flex-direction: column;
     align-items: flex-start;
     box-sizing: border-box;
-    z-index: 101; /* Garantir que o modal fique sobre o overlay */
+    z-index: 101; /* Ensure the modal sits on top of the overlay */
 }
 
 .section {

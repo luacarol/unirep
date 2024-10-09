@@ -7,18 +7,23 @@ import { useEffect, useState } from "react";
 
 const Republics = () => {
     const [republics, setRepublics] = useState([]);
-    const [filteredRepublics, setFilteredRepublics] = useState([]); // Estado para repúblicas filtradas
+    const [filteredRepublics, setFilteredRepublics] = useState([]); // State for republics filtered
 
     useEffect(() => {
         const fetchRepublics = async () => {
             try {
-                const response = await fetch('http://localhost:8000/api/repubics/republics/');
+                const token = localStorage.getItem('access_token'); // Get the token from localStorage
+                const response = await fetch('http://localhost:8000/api/repubics/republics/', {
+                    headers: {
+                        'Authorization': `Bearer ${token}`, // Include the token in the Authorization header
+                    },
+                });
                 if (!response.ok) {
                     throw new Error('Network response was not ok');
                 }
                 const data = await response.json();
                 setRepublics(data);
-                setFilteredRepublics(data); // Inicialmente, exibe todas as repúblicas
+                setFilteredRepublics(data); // Initially, it displays all republics
             } catch (error) {
                 console.log("Error: ", error);
             }
@@ -27,11 +32,11 @@ const Republics = () => {
     }, []);
 
     const handleSearch = (searchTerm) => {
-        // Filtra repúblicas com base no nome
+        // Filters republics based on name
         const filtered = republics.filter(republic =>
             republic.name.toLowerCase().includes(searchTerm.toLowerCase())
         );
-        setFilteredRepublics(filtered); // Atualiza o estado com as repúblicas filtradas
+        setFilteredRepublics(filtered); // Updates the state with filtered republics
     };
 
     return (

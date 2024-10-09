@@ -10,7 +10,7 @@ const Search = ({ className, onSearch }) => {
 
     const handleSearch = (event) => {
         setSearchTerm(event.target.value);
-        onSearch(event.target.value); // Envia o termo de busca para o componente pai
+        onSearch(event.target.value); // Sends the search term to the parent component
     };
 
     const handleFilterClick = () => {
@@ -28,7 +28,7 @@ const Search = ({ className, onSearch }) => {
                     type='text'
                     placeholder='Pesquise por uma república'
                     value={searchTerm}
-                    onChange={handleSearch} // Captura a busca em tempo real
+                    onChange={handleSearch} // Captures search in real time
                 />
             </div>
 
