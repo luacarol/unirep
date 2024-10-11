@@ -1,6 +1,13 @@
+import React, { useState } from 'react';
 import style from './InputCheckBox.module.css';
 
-const InputCheckBox = ({ id, className, label, isChecked, onCheck }) => {
+const InputCheckBox = ({ id, className, label }) => {
+    const [isChecked, setIsChecked] = useState(false);
+
+    const handleCheck = () => {
+        setIsChecked(prev => !prev); // Alterna o estado do checkbox
+    };
+
     return (
         <div className={`${className} ${style.container}`}>
             <div className={style.checkboxContainer}>
@@ -8,10 +15,12 @@ const InputCheckBox = ({ id, className, label, isChecked, onCheck }) => {
                     id={id}
                     className={style.input}
                     type='checkbox'
-                    checked={isChecked} // Checkbox controlado por prop
-                    onChange={onCheck} // Chama o evento para checar/deschecar
+                    checked={isChecked} // Checkbox controlado pelo estado interno
+                    onChange={handleCheck} // Atualiza o estado ao mudar
                 />
-                <label htmlFor={id} className={style.label}>{label}</label>
+                <label htmlFor={id} className={style.label}>
+                    {label}
+                </label>
             </div>
         </div>
     );

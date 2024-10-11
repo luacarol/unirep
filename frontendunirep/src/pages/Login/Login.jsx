@@ -101,7 +101,7 @@ const Login = () => {
         </div>
 
         <div className={styles.additionalInputs}>
-          <InputCheckBox label='Relembre de mim' />
+          <InputCheckBox id="rememberMe" label="Relembre de mim" />
           <label className={styles.forgetPassword}>Esqueceu a senha?</label>
         </div>
 
