@@ -2,12 +2,9 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import styles from './EditProfile.module.css';
 import Layout from '../../components/Layout/Layout';
-import userVector from '../../assets/images/user-vector.png';
 import ButtonLabelIcon from '../../components/Buttons/ButtonLabelIcon/ButtonLabelIcon';
 import { faUpload } from '@fortawesome/free-solid-svg-icons';
 import ButtonLabel from '../../components/Buttons/ButtonLabel/ButtonLabel';
-import InputLabel from '../../components/Inputs/InputLabel/InputLabel';
-import CheckboxGroup from '../../components/CheckboxGroup/CheckboxGroup';
 import Toast from '../../components/Toast/Toast';
 
 const EditProfile = () => {
@@ -19,6 +16,7 @@ const EditProfile = () => {
         full_name: userData.full_name || '',
         age: userData.age || '',
         gender: userData.gender || '',
+        profile_image: userData.profile_image || '',
         university_course: userData.university_course || '',
         preferred_housing: userData.preferred_housing || '',
         preferred_accommodation: userData.preferred_accommodation || '',
@@ -31,23 +29,6 @@ const EditProfile = () => {
         personality_test_or_predominant_traits: userData.personality_test_or_predominant_traits || '',
         preferences_environments: userData.preferences_environments || ''
     });
-
-    // Handle input change
-    const handleChange = (e) => {
-        const { name, value } = e.target;
-        setFormData({
-            ...formData,
-            [name]: value
-        });
-    };
-
-    // Handle checkbox change
-    const handleCheckboxChange = (name, value) => {
-        setFormData({
-            ...formData,
-            [name]: value
-        });
-    };
 
     const handleSave = async () => {
         try {
@@ -86,7 +67,7 @@ const EditProfile = () => {
                 <div className={styles.imageAndSaveButton}>
                     <div className={styles.imageAndChangeButton}>
                         <div className={styles.imgUser}>
-                            <img src={userVector} alt="User Vector" />
+                            <img src={formData.profile_image} alt="User Vector" />
                         </div>
                         <ButtonLabelIcon icon={faUpload} text="Trocar foto" />
                     </div>

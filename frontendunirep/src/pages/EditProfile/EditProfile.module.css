@@ -20,21 +20,16 @@
     align-items: center;
 }
 
-.imgUser {
+.imgUser img {
     width: 6.5rem;
     height: 6.5rem;
-    background-color: var(--gray);
-    padding: 1rem;
     border-radius: 50%;
+    border: 1.6px solid var(--cyan);
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     margin-right: 0.5rem;
-}
-
-.imgUser img {
-    width: 3rem;
 }
 
 .section:not(:last-child) {
