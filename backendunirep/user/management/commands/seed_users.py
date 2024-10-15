@@ -1,6 +1,8 @@
 from django.core.management.base import BaseCommand
 from user.models import CustomUser
 from django.contrib.auth.hashers import make_password
+from django.core.files.base import ContentFile
+import requests
 
 class Command(BaseCommand):
     help = 'Seeds the database with user data'
@@ -26,165 +28,14 @@ class Command(BaseCommand):
                 "personality_test_or_predominant_traits": "Extrovertido",
                 "preferences_environments": "Agitados",
             },
-            {
-                "username": "maria2",
-                "password": "password123",
-                "full_name": "Maria Oliveira",
-                "age": 24,
-                "gender": "F",
-                "phone_number": "987654321",
-                "university_course": "Ciências Biológicas",
-                "preferred_housing": "Apartamento",
-                "preferred_accommodation": "Quarto compartilhado",
-                "smoker": True,
-                "pets_allowed": False,
-                "study_schedules": "Tarde",
-                "organization_and_cleaning": "Mediana",
-                "level_socialization": "Prefere mais privacidade",
-                "feeding_preferences": "Vegetariano",
-                "personality_test_or_predominant_traits": "Introvertido",
-                "preferences_environments": "Calmos",
-            },
-            {
-                "username": "lucas3",
-                "password": "password123",
-                "full_name": "Lucas Ferreira",
-                "age": 20,
-                "gender": "M",
-                "phone_number": "567812345",
-                "university_course": "Engenharia",
-                "preferred_housing": "Casa",
-                "preferred_accommodation": "Quarto individual",
-                "smoker": False,
-                "pets_allowed": True,
-                "study_schedules": "Noite",
-                "organization_and_cleaning": "Pouca importância",
-                "level_socialization": "Extrovertido",
-                "feeding_preferences": "Carnívoro",
-                "personality_test_or_predominant_traits": "Aventureiro",
-                "preferences_environments": "Agitados",
-            },
-            {
-                "username": "ana4",
-                "password": "password123",
-                "full_name": "Ana Costa",
-                "age": 23,
-                "gender": "F",
-                "phone_number": "876543210",
-                "university_course": "Psicologia",
-                "preferred_housing": "Apartamento",
-                "preferred_accommodation": "Quarto compartilhado",
-                "smoker": False,
-                "pets_allowed": True,
-                "study_schedules": "Tarde",
-                "organization_and_cleaning": "Alta importância",
-                "level_socialization": "Interações equilibradas",
-                "feeding_preferences": "Vegano",
-                "personality_test_or_predominant_traits": "Empática",
-                "preferences_environments": "Calmos",
-            },
-            {
-                "username": "pedro5",
-                "password": "password123",
-                "full_name": "Pedro Almeida",
-                "age": 26,
-                "gender": "M",
-                "phone_number": "654789321",
-                "university_course": "Administração",
-                "preferred_housing": "Casa",
-                "preferred_accommodation": "Quarto individual",
-                "smoker": True,
-                "pets_allowed": False,
-                "study_schedules": "Manhã",
-                "organization_and_cleaning": "Baixa importância",
-                "level_socialization": "Extrovertido",
-                "feeding_preferences": "Onívoro",
-                "personality_test_or_predominant_traits": "Líder",
-                "preferences_environments": "Agitados",
-            },
-            {
-                "username": "juliana6",
-                "password": "password123",
-                "full_name": "Juliana Souza",
-                "age": 21,
-                "gender": "F",
-                "phone_number": "345678901",
-                "university_course": "Direito",
-                "preferred_housing": "Apartamento",
-                "preferred_accommodation": "Quarto individual",
-                "smoker": False,
-                "pets_allowed": True,
-                "study_schedules": "Noite",
-                "organization_and_cleaning": "Alta importância",
-                "level_socialization": "Introvertida",
-                "feeding_preferences": "Carnívoro",
-                "personality_test_or_predominant_traits": "Analítica",
-                "preferences_environments": "Calmos",
-            },
-            {
-                "username": "carlos7",
-                "password": "password123",
-                "full_name": "Carlos Pereira",
-                "age": 25,
-                "gender": "M",
-                "phone_number": "234567890",
-                "university_course": "Medicina",
-                "preferred_housing": "Casa",
-                "preferred_accommodation": "Quarto compartilhado",
-                "smoker": True,
-                "pets_allowed": False,
-                "study_schedules": "Tarde",
-                "organization_and_cleaning": "Muita importância",
-                "level_socialization": "Gosta de interações sociais constantes",
-                "feeding_preferences": "Vegetariano",
-                "personality_test_or_predominant_traits": "Empreendedor",
-                "preferences_environments": "Agitados",
-            },
-            {
-                "username": "laura8",
-                "password": "password123",
-                "full_name": "Laura Mendes",
-                "age": 22,
-                "gender": "F",
-                "phone_number": "765432198",
-                "university_course": "Arquitetura",
-                "preferred_housing": "Apartamento",
-                "preferred_accommodation": "Quarto individual",
-                "smoker": False,
-                "pets_allowed": True,
-                "study_schedules": "Manhã",
-                "organization_and_cleaning": "Mediana",
-                "level_socialization": "Prefere mais privacidade",
-                "feeding_preferences": "Onívoro",
-                "personality_test_or_predominant_traits": "Criativa",
-                "preferences_environments": "Calmos",
-            },
-            {
-                "username": "ricardo9",
-                "password": "password123",
-                "full_name": "Ricardo Lima",
-                "age": 27,
-                "gender": "M",
-                "phone_number": "198765432",
-                "university_course": "Sociologia",
-                "preferred_housing": "Casa",
-                "preferred_accommodation": "Quarto compartilhado",
-                "smoker": True,
-                "pets_allowed": False,
-                "study_schedules": "Noite",
-                "organization_and_cleaning": "Baixa importância",
-                "level_socialization": "Extrovertido",
-                "feeding_preferences": "Carnívoro",
-                "personality_test_or_predominant_traits": "Engajado",
-                "preferences_environments": "Agitados",
-            },
+            # Adicione os outros usuários aqui...
         ]
 
         for user_data in users_data:
             user, created = CustomUser.objects.get_or_create(
                 username=user_data['username'],
                 defaults={
-                    'password': make_password(user_data['password']),  # Encrypt the password
+                    'password': make_password(user_data['password']),
                     'full_name': user_data['full_name'],
                     'age': user_data['age'],
                     'gender': user_data['gender'],
@@ -203,7 +54,13 @@ class Command(BaseCommand):
                 }
             )
 
+            # Adiciona imagem de perfil fake
             if created:
+                image_url = "https://fakeimg.pl/250x250/"  # URL para gerar imagem fake
+                response = requests.get(image_url)
+                if response.status_code == 200:
+                    user.profile_image.save(f"{user.username}_profile_image.jpg", ContentFile(response.content))
+
                 self.stdout.write(self.style.SUCCESS(f'User {user.username} created successfully!'))
             else:
                 self.stdout.write(self.style.WARNING(f'User {user.username} already exists.'))

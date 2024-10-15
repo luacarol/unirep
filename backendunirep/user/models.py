@@ -5,7 +5,9 @@ class CustomUser(AbstractUser):
     full_name = models.CharField(max_length=100, null=True, blank=True)
     age = models.PositiveIntegerField(null=True, blank=True)
     gender = models.CharField(max_length=10, choices=[('M', 'Masculino'), ('F', 'Feminino')], null=True, blank=True)
-    phone_number = models.CharField(max_length=15, null=True, blank=True)  
+    phone_number = models.CharField(max_length=15, null=True, blank=True) 
+    profile_image = models.ImageField(upload_to='profile_images/', null=True, blank=True)
+ 
 
     UNIVERSITY_COURSE_CHOICES = [
         ('Ciências Exatas', 'Ciências Exatas'),
