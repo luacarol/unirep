@@ -1,3 +1,4 @@
+import axios from 'axios';
 import Layout from "../../components/Layout/Layout";
 import Search from "../../components/Search/Search";
 import styles from './Republics.module.css';
@@ -12,18 +13,45 @@ const Republics = () => {
     useEffect(() => {
         const fetchRepublics = async () => {
             try {
-                const token = localStorage.getItem('access_token');
+                let token = localStorage.getItem('access_token');
+                
                 const response = await fetch('http://localhost:8000/api/repubics/republics/', {
                     headers: {
                         'Authorization': `Bearer ${token}`,
                     },
                 });
-                if (!response.ok) {
+        
+                if (response.status === 401) { // Unauthorized
+                    const refreshToken = localStorage.getItem('refresh_token');
+                    const refreshResponse = await axios.post('http://127.0.0.1:8000/api/token/refresh/', {
+                        refresh: refreshToken,
+                    });
+        
+                    // Atualize o token de acesso
+                    token = refreshResponse.data.access;
+                    localStorage.setItem('access_token', token);
+        
+                    // Tente novamente buscar as repúblicas
+                    const retryResponse = await fetch('http://localhost:8000/api/repubics/republics/', {
+                        headers: {
+                            'Authorization': `Bearer ${token}`,
+                        },
+                    });
+        
+                    if (!retryResponse.ok) {
+                        throw new Error('Network response was not ok');
+                    }
+        
+                    const data = await retryResponse.json();
+                    setRepublics(data);
+                    setFilteredRepublics(data);
+                } else if (!response.ok) {
                     throw new Error('Network response was not ok');
+                } else {
+                    const data = await response.json();
+                    setRepublics(data);
+                    setFilteredRepublics(data);
                 }
-                const data = await response.json();
-                setRepublics(data);
-                setFilteredRepublics(data);
             } catch (error) {
                 console.log("Error: ", error);
             }
