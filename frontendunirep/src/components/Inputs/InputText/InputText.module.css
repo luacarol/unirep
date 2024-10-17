@@ -1,0 +1,26 @@
+.container {
+    display: flex;
+    flex-direction: column;
+}
+
+.container label {
+    margin-bottom: 0.2rem;
+    cursor: pointer;
+}
+
+.container label:hover {
+    color: var(--cyan);
+}
+
+.container input {
+    width: 100%;
+    height: 2rem;
+    border-radius: 0.25rem;
+    border: 1px solid var(--gray);
+    padding: 0rem 0.5rem;
+    box-sizing: border-box;
+}
+
+.container input:hover {
+    border: 1px solid var(--cyan);
+}

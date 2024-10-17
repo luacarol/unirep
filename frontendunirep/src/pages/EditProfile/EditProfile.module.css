@@ -32,25 +32,13 @@
     margin-right: 0.5rem;
 }
 
-.section:not(:last-child) {
-    margin-bottom: 1rem;
+.labelInputCheckBox {
+    display: flex;
 }
 
-.section h2 {
-    background-color: var(--light-cyan);
-    padding: 0.5rem;
-    margin-bottom: 1rem;
-    border-radius: 0.25rem;
-    box-sizing: border-box;
-}
-
-.gridInputs {
-    width: 80%;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1rem;
-}
-
-.gridInputs:not(:last-child) {
-    margin-bottom: 1rem;
+.labelInputCheckBox label {
+    cursor: pointer;
+    height: 100%;
+    align-self: center;
+    justify-self: center;
 }

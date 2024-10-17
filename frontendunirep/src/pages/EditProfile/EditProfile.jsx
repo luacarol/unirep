@@ -6,16 +6,26 @@ import ButtonLabelIcon from '../../components/Buttons/ButtonLabelIcon/ButtonLabe
 import { faUpload } from '@fortawesome/free-solid-svg-icons';
 import ButtonLabel from '../../components/Buttons/ButtonLabel/ButtonLabel';
 import Toast from '../../components/Toast/Toast';
+import InputText from '../../components/Inputs/InputText/InputText';
 
 const EditProfile = () => {
     // Retrieves user data from localStorage
     const userData = JSON.parse(localStorage.getItem('user_data')) || {};
+    console.log("userData ", userData)
+
+    // Function to convert gender letter to full description
+    const getGenderDescription = (gender) => {
+        if (gender === 'M') return 'Masculino';
+        if (gender === 'F') return 'Feminino';
+        return 'Outros';
+    };
 
     // State to manage the form data
     const [formData, setFormData] = useState({
         full_name: userData.full_name || '',
         age: userData.age || '',
-        gender: userData.gender || '',
+        gender: getGenderDescription(userData.gender) || '',
+        phone_number: userData.phone_number || '',
         profile_image: userData.profile_image || '',
         university_course: userData.university_course || '',
         preferred_housing: userData.preferred_housing || '',
@@ -72,6 +82,18 @@ const EditProfile = () => {
                         <ButtonLabelIcon icon={faUpload} text="Trocar foto" />
                     </div>
                     <ButtonLabel text="Salvar" onClick={handleSave} />
+                </div>
+
+                <InputText id='full_name' label='Nome completo' value={formData.full_name} />
+
+                <div className={styles.labelInput}>
+                    <label htmlFor='age' className={`section`}>Idade</label>
+                    <input id='age' value={formData.age}></input>
+                </div>
+
+                <div className={styles.labelInput}>
+                    <label htmlFor='phone_number' className={`section`}>Número de Contato</label>
+                    <input id='phone_number' value={formData.phone_number}></input>
                 </div>
 
                 <Toast

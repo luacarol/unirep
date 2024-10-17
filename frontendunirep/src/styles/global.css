@@ -1,4 +1,4 @@
-/* Início: Para de Rolagem (Scroolbar) */
+/* Init: Scrollbar */
 
 ::-webkit-scrollbar {
     width: 1rem;
@@ -12,12 +12,9 @@
 
 ::-webkit-scrollbar-thumb {
     background-color: var(--gray);
-    /* Cor do polegar */
     border-radius: 0.625rem;
-    /* Bordas arredondadas */
     border: 2px solid var(--light-gray);
     ;
-    /* Margem interna */
     cursor: pointer;
 }
 
@@ -26,7 +23,7 @@
     background-color: var(--cyan);
 }
 
-/* Fim: Para de Rolagem (Scroolbar) */
+/* End: Scrollbar */
 
 /* Overlay */
 .overlay {
@@ -35,9 +32,70 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: rgba(0, 0, 0, 0.5); /* Fundo escurecido */
+    background-color: rgba(0, 0, 0, 0.5);
+    /* Darkened background */
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 100; /* Garantir que fique sobre o conteúdo */
+    z-index: 100;
+    /* Ensure it stays on top of the content */
 }
+
+
+/* Oculta o checkbox original */
+input[type="checkbox"] {
+    display: none;
+}
+
+
+/* Init: Input Type Checkbox */
+
+/* Styling the "visual checkbox" */
+.custom-checkbox {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background-color: var(--white);
+    border: 2px solid var(--cyan);
+    border-radius: 5px;
+    position: relative;
+    cursor: pointer;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+/* Checkmark inside the checkbox when it is checked */
+.custom-checkbox::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 10px;
+    height: 10px;
+    background-color: var(--cyan);
+    transform: translate(-50%, -50%) scale(0);
+    transition: transform 0.2s ease;
+    border-radius: 2px;
+}
+
+/* Change when interacting (hover) */
+.custom-checkbox:hover {
+    background-color: #f0f0f0;
+}
+
+/* When the checkbox is checked */
+input[type="checkbox"]:checked+.custom-checkbox::after {
+    transform: translate(-50%, -50%) scale(1);
+}
+
+/* When the checkbox is focused (keyboard) */
+input[type="checkbox"]:focus+.custom-checkbox {
+    outline: 2px solid var(--cyan);
+}
+
+/* Change in color when marked */
+input[type="checkbox"]:checked+.custom-checkbox {
+    background-color: var(--cyan);
+    border-color: var(--cyan);
+}
+
+/* End: Input Type Checkbox */
