@@ -6,7 +6,8 @@ import ButtonLabelIcon from '../../components/Buttons/ButtonLabelIcon/ButtonLabe
 import { faUpload } from '@fortawesome/free-solid-svg-icons';
 import ButtonLabel from '../../components/Buttons/ButtonLabel/ButtonLabel';
 import Toast from '../../components/Toast/Toast';
-import InputText from '../../components/Inputs/InputText/InputText';
+import InputText from '../../components/Inputs/EditProfileInputs/InputText/InputText';
+import InputCheckbox from '../../components/Inputs/EditProfileInputs/InputCheckbox/InputCheckbox';
 
 const EditProfile = () => {
     // Retrieves user data from localStorage
@@ -39,6 +40,8 @@ const EditProfile = () => {
         personality_test_or_predominant_traits: userData.personality_test_or_predominant_traits || '',
         preferences_environments: userData.preferences_environments || ''
     });
+
+    console.log("setFormData ", setFormData)
 
     const handleSave = async () => {
         try {
@@ -84,16 +87,18 @@ const EditProfile = () => {
                     <ButtonLabel text="Salvar" onClick={handleSave} />
                 </div>
 
-                <InputText id='full_name' label='Nome completo' value={formData.full_name} />
+                <div className={styles.inputs}>
+                    <InputText id='full_name' label='Nome completo' value={formData.full_name} />
 
-                <div className={styles.labelInput}>
-                    <label htmlFor='age' className={`section`}>Idade</label>
-                    <input id='age' value={formData.age}></input>
-                </div>
+                    <InputText id='age' label='Idade' value={formData.age} />
 
-                <div className={styles.labelInput}>
-                    <label htmlFor='phone_number' className={`section`}>Número de Contato</label>
-                    <input id='phone_number' value={formData.phone_number}></input>
+                    <InputText id='phone_number' label='Celular' value={formData.phone_number} />
+
+                    <InputCheckbox
+                        id="university_course"
+                        label="Curso Universitário"
+                        options={['Ciências Exatas', 'Ciências Biológicas', 'Ciências Humanas', 'Ciências Sociais Aplicadas', 'Artes', 'Tecnológicos']}
+                    />
                 </div>
 
                 <Toast

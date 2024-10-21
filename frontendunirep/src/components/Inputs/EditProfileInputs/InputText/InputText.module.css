@@ -6,6 +6,7 @@
 .container label {
     margin-bottom: 0.2rem;
     cursor: pointer;
+    font-weight: 700;
 }
 
 .container label:hover {

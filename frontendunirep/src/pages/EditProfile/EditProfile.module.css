@@ -42,3 +42,9 @@
     align-self: center;
     justify-self: center;
 }
+
+.inputs {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 1rem;
+}
