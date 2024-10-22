@@ -7,6 +7,12 @@
     color: var(--cyan);
 }
 
+.option {
+    display: flex;
+    align-items: center; 
+    justify-content: flex-start;
+}
+
 .option input, .option label {
     cursor: pointer;
 }
@@ -21,4 +27,44 @@
 
 .option:hover label {
     color: var(--cyan);
+}
+
+.option input[type="radio"] {
+    accent-color: var(--cyan);
+    appearance: none; 
+    width: 1rem;
+    height: 1rem;
+    border: 2px solid var(--gray); 
+    border-radius: 50%; 
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+}
+
+.option input[type="radio"]:checked {
+    background-color: var(--cyan); 
+}
+
+.option input[type="radio"]::before {
+    content: '';
+    display: block;
+    width: 0.5rem; 
+    height: 0.5rem;
+    background-color: var(--cyan); 
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    transition: transform 0.2s ease-in-out;
+}
+
+.option input[type="radio"]:checked::before {
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.option label {
+    cursor: pointer;
+    display: inline-block;
+    margin-left: 0.2rem;
 }
