@@ -41,8 +41,6 @@ const EditProfile = () => {
         preferences_environments: userData.preferences_environments || ''
     });
 
-    console.log("setFormData ", setFormData)
-
     const handleSave = async () => {
         try {
             const response = await axios.put('http://127.0.0.1:8000/api/users/users/update_me/', formData, {
@@ -72,6 +70,32 @@ const EditProfile = () => {
     };
     // End of Toast Settings
 
+    const handleSmokerChange = (field, value) => {
+        let updatedValue = value;
+
+        if (field === 'smoker') {
+            updatedValue = value === 'Sim'; 
+        }
+
+        setFormData((prevData) => ({
+            ...prevData,
+            [field]: updatedValue,
+        }));
+    };
+
+    const handlePetsAllowedChange = (field, value) => {
+        let updatedValue = value;
+
+        if (field === 'pets_allowed') {
+            updatedValue = value === 'Sim'; 
+        }
+
+        setFormData((prevData) => ({
+            ...prevData,
+            [field]: updatedValue,
+        }));
+    };
+
     return (
         <Layout content={
             <div className={styles.container}>
@@ -98,6 +122,37 @@ const EditProfile = () => {
                         id="university_course"
                         label="Curso Universitário"
                         options={['Ciências Exatas', 'Ciências Biológicas', 'Ciências Humanas', 'Ciências Sociais Aplicadas', 'Artes', 'Tecnológicos']}
+                        selectedValue={formData.university_course}
+                    />
+
+                    <InputCheckbox
+                        id="preferred_housing"
+                        label="Tipo de Moradia Preferida"
+                        options={['Casa', 'Apartamento']}
+                        selectedValue={formData.preferred_housing}
+                    />
+
+                    <InputCheckbox
+                        id="preferred_accommodation"
+                        label="Tipo de Acomodação Preferida"
+                        options={['Quarto individual', 'Quarto compartilhado']}
+                        selectedValue={formData.preferred_accommodation}
+                    />
+
+                    <InputCheckbox
+                        id="smoker"
+                        label="É Fumante?"
+                        options={['Sim', 'Não']}
+                        selectedValue={formData.smoker ? 'Sim' : 'Não'}
+                        onChange={(value) => handleSmokerChange('smoker', value)}
+                    />
+
+                    <InputCheckbox
+                        id="pets_allowed"
+                        label="Aceita Animais de Estimação?"
+                        options={['Sim', 'Não']}
+                        selectedValue={formData.pets_allowed ? 'Sim' : 'Não'}
+                        onChange={(value) => handlePetsAllowedChange('pets_allowed', value)}
                     />
                 </div>
 

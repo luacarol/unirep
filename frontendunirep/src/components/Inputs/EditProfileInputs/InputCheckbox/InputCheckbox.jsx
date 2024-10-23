@@ -1,11 +1,18 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import styles from './InputCheckbox.module.css';
 
-const InputCheckbox = ({ id, className, label, options }) => {
-    const [selectedOption, setSelectedOption] = useState(options[0]); // First option as default
+const InputCheckbox = ({ id, className, label, options, selectedValue, onChange }) => {
+    const [selectedOption, setSelectedOption] = useState(selectedValue);
+
+    useEffect(() => {
+        setSelectedOption(selectedValue);
+    }, [selectedValue]);
 
     const handleChange = (value) => {
-        setSelectedOption(value); // Update the selected option
+        setSelectedOption(value);
+        if (onChange) {
+            onChange(value); // Passa o valor selecionado para o parent
+        }
     };
 
     return (
@@ -14,11 +21,11 @@ const InputCheckbox = ({ id, className, label, options }) => {
             {options.map((option, index) => (
                 <div key={index} className={styles.option}>
                     <input
-                        type='radio' // Use radio to allow only one selection
+                        type='radio'
                         id={`${id}-${index}`}
                         name={id}
                         value={option}
-                        checked={selectedOption === option} // Mark the selected option
+                        checked={selectedOption === option}
                         onChange={() => handleChange(option)}
                     />
                     <label className={`section`} htmlFor={`${id}-${index}`}>{option}</label>

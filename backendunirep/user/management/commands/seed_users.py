@@ -28,7 +28,25 @@ class Command(BaseCommand):
                 "personality_test_or_predominant_traits": "Extrovertido",
                 "preferences_environments": "Agitados",
             },
-            # Adicione os outros usuários aqui...
+            {
+                "username": "maria1",
+                "password": "password123",
+                "full_name": "Maria Monteiro",
+                "age": 25,
+                "gender": "F",
+                "phone_number": "223456789",
+                "university_course": "Ciências Sociais Aplicadas",
+                "preferred_housing": "Apartamento",
+                "preferred_accommodation": "Quarto individual",
+                "smoker": False,
+                "pets_allowed": True,
+                "study_schedules": "Manhã",
+                "organization_and_cleaning": "Muita importância",
+                "level_socialization": "Gosta de interações sociais constantes",
+                "feeding_preferences": "Carnívoro",
+                "personality_test_or_predominant_traits": "Extrovertido",
+                "preferences_environments": "Agitados",
+            },
         ]
 
         for user_data in users_data:
