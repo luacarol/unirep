@@ -74,7 +74,7 @@ const EditProfile = () => {
         let updatedValue = value;
 
         if (field === 'smoker') {
-            updatedValue = value === 'Sim'; 
+            updatedValue = value === 'Sim';
         }
 
         setFormData((prevData) => ({
@@ -87,7 +87,7 @@ const EditProfile = () => {
         let updatedValue = value;
 
         if (field === 'pets_allowed') {
-            updatedValue = value === 'Sim'; 
+            updatedValue = value === 'Sim';
         }
 
         setFormData((prevData) => ({
@@ -153,6 +153,34 @@ const EditProfile = () => {
                         options={['Sim', 'Não']}
                         selectedValue={formData.pets_allowed ? 'Sim' : 'Não'}
                         onChange={(value) => handlePetsAllowedChange('pets_allowed', value)}
+                    />
+
+                    <InputCheckbox
+                        id="study_schedules"
+                        label="Horários dos Estudos"
+                        options={['Manhã', 'Tarde', 'Noite']}
+                        selectedValue={formData.study_schedules}
+                    />
+
+                    <InputCheckbox
+                        id="organization_and_cleaning"
+                        label="Organização e Limpeza"
+                        options={['Muita importância', 'Mediana', 'Pouca']}
+                        selectedValue={formData.organization_and_cleaning}
+                    />
+
+                    <InputCheckbox
+                        id="level_socialization"
+                        label="Nível de Socialização"
+                        options={['Gosta de interações sociais constantes', 'Prefere mais privacidade']}
+                        selectedValue={formData.level_socialization}
+                    />
+
+                    <InputCheckbox
+                        id="feeding_preferences"
+                        label="Preferências de Alimentação"
+                        options={['Vegetariano', 'Vegano', 'Carnívoro']}
+                        selectedValue={formData.feeding_preferences}
                     />
                 </div>
 
