@@ -1,4 +1,5 @@
-import './App.css';
+import "./styles/colors.css";
+import "./styles/typography.css";
 import Republics from './pages/Republics';
 
 function App() {

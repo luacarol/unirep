@@ -12,7 +12,7 @@ const Republics = () => {
 
     return (
         <div>
-            <h1>Repúblicas</h1>
+            <h1 className="title">Repúblicas</h1>
 
             <div className="cards_section">
                 <RepublicCard/>
