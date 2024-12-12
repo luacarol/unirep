@@ -1,7 +1,8 @@
-import axios from 'axios';
+import axios from "axios";
+import RepublicCard from "../components/Cards/RepublicCard/RepublicCard";
 
 const Republics = () => {
-    axios.get('http://127.0.0.1:8000/republics/')
+    axios.get("http://127.0.0.1:8000/republics/")
         .then(response => {
             console.log(response.data);
         })
@@ -12,6 +13,10 @@ const Republics = () => {
     return (
         <div>
             <h1>Repúblicas</h1>
+
+            <div className="cards_section">
+                <RepublicCard/>
+            </div>
         </div>
     )
 }
