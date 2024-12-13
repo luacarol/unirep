@@ -10,16 +10,16 @@ const RepublicCard = () => {
 
             <div className={styles.information_section}>
                 <div className={styles.value_section}>
-                    <h3>R$ 400,00</h3>
+                    <h3 className="label">R$ 400,00</h3>
                 </div>
 
                 <div className={`styles.textual-information_section`}>
                     <div className={styles.name_section}>
-                        <h2>Freud's Republic</h2>
+                        <h2 className="subtitle">Freud's Republic</h2>
                     </div>
 
                     <div className={styles.description_section}>
-                        <h4>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's.</h4>
+                        <h4 className="section">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's.</h4>
                     </div>
                 </div>
 
