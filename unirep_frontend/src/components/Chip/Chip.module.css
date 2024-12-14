@@ -1,0 +1,14 @@
+.chip_container {
+    width: fit-content;
+    border-radius: 6.25rem;
+    padding: 0.5rem 0.8rem;
+    background-color: var(--light-gray);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.fontawesome-icon {
+    color: var(--gray);
+    margin-right: 0.4rem;
+}

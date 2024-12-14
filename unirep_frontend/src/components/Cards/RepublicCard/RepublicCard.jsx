@@ -1,19 +1,22 @@
+import Chip from "../../Chip/Chip";
 import styles from "./RepublicCard.module.css";
+import { faHouse, faTransgender } from '@fortawesome/free-solid-svg-icons';
 
 const RepublicCard = () => {
     return (
         <div className={styles.card_container}>
 
             <div className={styles.image_section}>
-                <img className={styles.republic_image} alt="Logo of the republic"/>
+                {/* <img className={styles.republic_image} alt="Logo of the republic"/> */}
             </div>
 
             <div className={styles.information_section}>
+
                 <div className={styles.value_section}>
                     <h3 className="label">R$ 400,00</h3>
                 </div>
 
-                <div className={`styles.textual-information_section`}>
+                <div className={styles["textual-information_section"]}>
                     <div className={styles.name_section}>
                         <h2 className="subtitle">Freud's Republic</h2>
                     </div>
@@ -23,13 +26,17 @@ const RepublicCard = () => {
                     </div>
                 </div>
 
-                <div className={styles.chips_section}>
-                    {/* TODO: put here the "Chip" component  */}
+                <div className={styles["chips-and-heart-button-_section"]}>
+                    <div className={styles.chips_section}>
+                        <Chip icon={faTransgender} text="Mista" />
+                        <Chip icon={faHouse} text="Casa" />
+                    </div>
+
+                    <div className={styles["heart-button_section"]}>
+                        {/* TODO: put here the "IconButton" component  */}
+                    </div>
                 </div>
 
-                <div className={`styles.heart-button_section`}>
-                    {/* TODO: put here the "IconButton" component  */}
-                </div>
             </div>
 
         </div>

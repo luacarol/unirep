@@ -1,6 +1,6 @@
 .card_container {
     border: 2px solid var(--light-gray);
-    border-radius: 8px;
+    border-radius: 0.5rem;
     padding: 1rem; 
     background-color: var(--white); 
     max-width: 21.438rem;
@@ -9,7 +9,10 @@
 }
 
 .image_section {
-
+    height: 10rem;
+    border-radius: 0.5rem;
+    background-color: var(--light-gray);
+    margin-bottom: 1rem;
 }
 
 .republic_image {
@@ -21,7 +24,7 @@
 }
 
 .value_section {
-
+    margin-bottom: 0.5rem;
 } 
 
 .value_section h3 {
@@ -29,15 +32,31 @@
 }
 
 .textual-information_section {
+    margin-bottom: 0.5rem;
+}
 
+.name_section {
+    margin-bottom: 0.2rem;
 }
 
 .description_section {
+}
 
+.chips-and-heart-button-_section {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
 }
 
 .chips_section {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
 
+.chips_section > *:not(:last-child) {
+    margin-right: 0.5rem;
 }
 
 .heart-button_section {
