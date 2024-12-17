@@ -3,9 +3,16 @@
     border-radius: 0.5rem;
     padding: 1rem; 
     background-color: var(--white); 
-    max-width: 21.438rem;
+    max-width: 16rem;
     margin: 1rem auto; 
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.card_container:hover {
+    transform: scale(1.05); 
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
 }
 
 .image_section {
@@ -59,6 +66,17 @@
     margin-right: 0.5rem;
 }
 
-.heart-button_section {
+.heart-button_section button {
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
 
+.heart-button_section button:hover svg {
+    color: var(--cyan)
+}
+
+.heart-button_section svg {
+    color: var(--light-gray);
+    height: 1.2rem;
+    transition: color 0.3s ease;
 }

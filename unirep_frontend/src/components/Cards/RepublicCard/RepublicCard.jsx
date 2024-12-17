@@ -1,6 +1,7 @@
+import IconButton from "../../Buttons/IconButton/IconButton";
 import Chip from "../../Chip/Chip";
 import styles from "./RepublicCard.module.css";
-import { faHouse, faTransgender } from '@fortawesome/free-solid-svg-icons';
+import { faHeart, faHouse, faTransgender } from '@fortawesome/free-solid-svg-icons';
 
 const RepublicCard = () => {
     return (
@@ -33,7 +34,7 @@ const RepublicCard = () => {
                     </div>
 
                     <div className={styles["heart-button_section"]}>
-                        {/* TODO: put here the "IconButton" component  */}
+                        <IconButton icon={faHeart} />
                     </div>
                 </div>
 
