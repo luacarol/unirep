@@ -1,11 +1,14 @@
 import "./styles/reset.css";
 import "./styles/colors.css";
 import "./styles/typography.css";
-import Republics from './pages/Republics';
+import Republics from "./pages/Republics/Republics";
+import Layout from "./components/Layout/Layout";
 
 function App() {
   return (
-    <Republics/>
+    <Layout>
+      <Republics />
+    </Layout>
   );
 }
 
