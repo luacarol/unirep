@@ -35,3 +35,9 @@
     font-weight: 336;
     color: var(--black);
 }
+
+.link {
+    text-decoration: underline;
+    font-weight: 500;
+    color: var(--black);
+}
