@@ -1,3 +1,4 @@
+import Input from "../../components/Input/Input";
 import styles from "./Login.module.css";
 
 const Login = () => {
@@ -8,15 +9,8 @@ const Login = () => {
             <div className={styles.login_content}>
 
                 <div className={styles.inputs}>
-                    <div className={styles["label-input_container"]}>
-                        <label className={`section ${styles.label}`}>Email</label>
-                        <input className={`section ${styles.input}`} type="text" />
-                    </div>
-
-                    <div className={styles["label-input_container"]}>
-                        <label className={`section ${styles.label}`}>Password</label>
-                        <input className={`section ${styles.input}`} type="password" />
-                    </div>
+                    <Input id="email" label="Email" type="text" />
+                    <Input id="password" label="Password" type="password" />
                 </div>
 
                 <button className={styles["icon-label_button"]}><label className={`section ${styles.label}`}>Entrar</label></button>
