@@ -1,0 +1,9 @@
+.label-value_section {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+}
+
+.label-value_section .label {
+    margin-bottom: 0.2rem;
+}

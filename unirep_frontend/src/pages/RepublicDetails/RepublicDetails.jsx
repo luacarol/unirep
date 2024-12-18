@@ -1,3 +1,4 @@
+import LabelValue from "../../components/LabelValue/LabelValue";
 import styles from "./RepublicDetails.module.css";
 
 const RepublicDetails = () => {
@@ -8,19 +9,27 @@ const RepublicDetails = () => {
             <div className={styles.content}>
 
                 <div className={styles.section}>
-                    <h2 className="subtitle">Informações da República</h2>
+                    <h2 className="subtitle">Informações</h2>
 
                     <div className={styles["labels-values_grid"]}>
-                        <div className={styles["label-value_section"]}>
-                            <label className={`label-light ${styles.label}`}>Nome da República: </label>
-                            <label className={`label ${styles.value}`}>Republic's Name</label>
-                        </div>
+                        <LabelValue label="Nome da República" value="Republic's Name" />
 
-                        <div className={styles["label-value_section"]}>
-                            <label className={`label-light ${styles.label}`}>Descrição da República: </label>
-                            <label className={`label ${styles.value}`}>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</label>
-                        </div>
+                        <LabelValue label="Descrição da República" value="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s" />
                     </div>
+                </div>
+
+                <div className={styles.section}>
+                    <h2 className="subtitle">Imagens</h2>
+                </div>
+
+                <div className={styles.section}>
+                    <h2 className="subtitle">Itens à Pagar</h2>
+
+                    <LabelValue label="Àgua" value="R$ 54,00" />
+                </div>
+
+                <div className={styles.section}>
+                    <h2 className="subtitle">Membros</h2>
                 </div>
 
             </div>
