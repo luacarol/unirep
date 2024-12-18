@@ -15,6 +15,7 @@
 
 .header h1 {
     color: var(--white);
+    cursor: pointer;
 }
 
 .nav ul {
