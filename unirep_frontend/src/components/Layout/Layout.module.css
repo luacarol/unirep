@@ -11,8 +11,10 @@
 }
 
 .footer {
-    background-color: var(--dark-gray);
-    color: var(--gray);
     text-align: center;
     padding: 1rem;
+}
+
+.footer p {
+    color: var(--gray);
 }

@@ -13,7 +13,7 @@ const Layout = ({ children }) => {
 
       {/* Footer */}
       <footer className={styles.footer}>
-        <p>&copy; 2024 Created by Luana Caroliny Pedroso de Oliveira</p>
+        <p className="label-light">&copy; 2024 Created by Luana Caroliny Pedroso de Oliveira</p>
       </footer>
     </div>
   );

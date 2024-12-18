@@ -19,9 +19,6 @@ const Republics = () => {
                 <RepublicCard />
                 <RepublicCard />
                 <RepublicCard />
-                <RepublicCard />
-                <RepublicCard />
-                <RepublicCard />
             </div>
         </div>
     );
