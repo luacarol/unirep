@@ -6,6 +6,7 @@ import Republics from "./pages/Republics/Republics";
 import Layout from "./components/Layout/Layout";
 import Login from "./pages/Login/Login";
 import Register from "./pages/Register/Register";
+import RepublicDetails from "./pages/RepublicDetails/RepublicDetails";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
           <Route path="/" element={<Republics/>} />
           <Route path="/login" element={<Login></Login>} />
           <Route path="/register" element={<Register></Register>} />
+          <Route path="/republic-details" element={<RepublicDetails></RepublicDetails>} />
         </Routes>
       </Layout>
     </Router>

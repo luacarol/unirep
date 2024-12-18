@@ -3,9 +3,9 @@ import Chip from "../../Chip/Chip";
 import styles from "./RepublicCard.module.css";
 import { faHeart, faHouse, faTransgender } from '@fortawesome/free-solid-svg-icons';
 
-const RepublicCard = () => {
+const RepublicCard = ({ onClick }) => {
     return (
-        <div className={styles.card_container}>
+        <div className={styles.card_container} onClick={onClick}>
 
             <div className={styles.image_section}>
                 {/* <img className={styles.republic_image} alt="Logo of the republic"/> */}
