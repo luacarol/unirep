@@ -1,3 +1,4 @@
+import LabelButton from "../../components/Buttons/LabelButton/LabelButton";
 import Input from "../../components/Input/Input";
 import styles from "./Login.module.css";
 
@@ -13,7 +14,7 @@ const Login = () => {
                     <Input id="password" label="Password" type="password" />
                 </div>
 
-                <button className={styles["icon-label_button"]}><label className={`section ${styles.label}`}>Entrar</label></button>
+                <LabelButton label="Entrar" />
 
                 <div className={styles.register_section}>
                     <a className={`label link ${styles.link}`} href="/register">Cadastrar-se</a>

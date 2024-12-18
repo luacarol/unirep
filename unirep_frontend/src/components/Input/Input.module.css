@@ -23,22 +23,3 @@
     outline: none;
     box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
 }
-
-.icon-label_button {
-    padding: 0.35rem;
-    border-radius: 0.5rem;
-    background-color: var(--cyan);
-    box-sizing: border-box;
-    border: none;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-.icon-label_button .label {
-    color: var(--white);
-    cursor: pointer;
-}
-
-.icon-label_button:hover {
-    background-color: var(--purple);
-}
