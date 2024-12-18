@@ -6,8 +6,8 @@ const Header = () => {
             <h1 className="subtitle">UniRep</h1>
             <nav className={styles.nav}>
                 <ul>
-                    <li><a className="section" href="/">Login</a></li>
-                    <li><a className="section" href="/about">Cadastrar-se</a></li>
+                    <li><a className="section" href="/login">Login</a></li>
+                    <li><a className="section" href="/register">Cadastrar-se</a></li>
                 </ul>
             </nav>
         </header>
