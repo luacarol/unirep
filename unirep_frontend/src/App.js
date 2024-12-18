@@ -5,6 +5,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Republics from "./pages/Republics/Republics";
 import Layout from "./components/Layout/Layout";
 import Login from "./pages/Login/Login";
+import Register from "./pages/Register/Register";
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Republics/>} />
           <Route path="/login" element={<Login></Login>} />
+          <Route path="/register" element={<Register></Register>} />
         </Routes>
       </Layout>
     </Router>

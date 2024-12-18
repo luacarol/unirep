@@ -1,0 +1,28 @@
+.register_content {
+    padding: 4rem;
+    margin: 2rem 14rem;
+    border-radius: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--light-cyan);
+}
+
+.register_content .inputs {
+    margin-bottom: 2em;
+}
+
+.register_content .inputs > :not(:last-child) {
+    margin-bottom: 1rem;
+}
+
+.login_section {
+    margin-top: 1rem;
+}
+
+.login_section .link {
+    color: var(--gray);
+}
+
+.login_section .link:hover {
+    color: var(--black);
+}
