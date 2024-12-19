@@ -21,6 +21,13 @@ const RepublicDetails = () => {
 
                 <div className={styles.section}>
                     <h2 className="subtitle">Imagens</h2>
+
+                    <div className={styles.images_section}>
+                        <div className={styles.republic_image}></div>
+                        <div className={styles.republic_image}></div>
+                        <div className={styles.republic_image}></div>
+                        <div className={styles.republic_image}></div>
+                    </div>
                 </div>
 
                 <div className={styles.section}>
