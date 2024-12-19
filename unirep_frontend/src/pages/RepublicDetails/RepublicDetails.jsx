@@ -1,3 +1,4 @@
+import MemberCard from "../../components/Cards/MemberCard/MemberCard";
 import LabelValue from "../../components/LabelValue/LabelValue";
 import styles from "./RepublicDetails.module.css";
 
@@ -30,6 +31,10 @@ const RepublicDetails = () => {
 
                 <div className={styles.section}>
                     <h2 className="subtitle">Membros</h2>
+
+                    <div className={styles.members_section}>
+                        <MemberCard/>
+                    </div>
                 </div>
 
             </div>
