@@ -29,8 +29,8 @@ const RepublicCard = ({ onClick }) => {
 
                 <div className={styles["chips-and-heart-button-_section"]}>
                     <div className={styles.chips_section}>
-                        <Chip icon={faTransgender} text="Mista" />
-                        <Chip icon={faHouse} text="Casa" />
+                        <Chip icon={faTransgender} text="Mista" size="medium" />
+                        <Chip icon={faHouse} text="Casa" size="medium" />
                     </div>
 
                     <div className={styles["heart-button_section"]}>

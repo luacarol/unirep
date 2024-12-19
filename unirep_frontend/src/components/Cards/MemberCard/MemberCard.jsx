@@ -16,7 +16,7 @@ const MemberCard = () => {
 
                 <p className="label-light">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
 
-                <Chip icon={faTransgender} text="Mista" />
+                <Chip icon={faTransgender} text="Mista" size="small" />
 
             </div>
 

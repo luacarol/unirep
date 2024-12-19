@@ -34,6 +34,10 @@ const RepublicDetails = () => {
 
                     <div className={styles.members_section}>
                         <MemberCard/>
+                        <MemberCard/>
+                        <MemberCard/>
+                        <MemberCard/>
+                        <MemberCard/>
                     </div>
                 </div>
 
