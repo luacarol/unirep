@@ -33,6 +33,11 @@
     background-color: var(--light-gray);
 }
 
+.items-to-pay_grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+}
+
 .members_section {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;

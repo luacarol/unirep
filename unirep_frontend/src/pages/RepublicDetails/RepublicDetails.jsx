@@ -33,18 +33,21 @@ const RepublicDetails = () => {
                 <div className={styles.section}>
                     <h2 className="subtitle">Itens à Pagar</h2>
 
-                    <LabelValue label="Àgua" value="R$ 54,00" />
+                    <div className={styles["items-to-pay_grid"]}>
+                        <LabelValue label="Àgua" value="R$ 54,00" />
+                        <LabelValue label="Energia" value="R$ 23,00" />
+                    </div>
                 </div>
 
                 <div className={styles.section}>
                     <h2 className="subtitle">Membros</h2>
 
                     <div className={styles.members_section}>
-                        <MemberCard/>
-                        <MemberCard/>
-                        <MemberCard/>
-                        <MemberCard/>
-                        <MemberCard/>
+                        <MemberCard />
+                        <MemberCard />
+                        <MemberCard />
+                        <MemberCard />
+                        <MemberCard />
                     </div>
                 </div>
 
