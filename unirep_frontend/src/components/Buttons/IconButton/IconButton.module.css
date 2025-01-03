@@ -1,3 +1,15 @@
 .icon_button {
     all: unset;
 }
+
+.icon_button.small svg {
+    height: 1rem;
+}
+
+.icon_button.medium svg {
+    height: 1.35rem;
+}
+
+.icon_button.large svg {
+    height: 1.65rem;
+}

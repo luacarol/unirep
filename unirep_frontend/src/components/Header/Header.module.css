@@ -1,7 +1,6 @@
 .header {
     background-color: var(--primary-color);
     color: var(--white);
-    padding: 1rem;
     text-align: center;
     background-color: var(--purple);
     display: flex;
@@ -9,8 +8,8 @@
     align-items: center;
     justify-content: space-between;
     padding: 1.4rem 12rem;
-    box-sizing: border-box;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
 }
 
 .header h1 {
@@ -35,4 +34,16 @@
 
 .nav ul li a:hover {
     color: var(--cyan);
+}
+
+.profile_img {
+    width: 2rem;
+    height: 2rem;
+    background-color: var(--light-gray);
+    border-radius: 50%;
+    border: 2px solid var(--white);
+}
+
+.profile_img:hover {
+    border: 2px solid var(--cyan);
 }
