@@ -16,8 +16,8 @@ const Header = () => {
             <h1 className="subtitle" onClick={handleTitleClick}>UniRep</h1>
             <nav className={styles.nav}>
                 <ul>
-                    <li><a className="section" href="/login">Login</a></li>
-                    <li><a className="section" href="/register">Cadastrar-se</a></li>
+                    {ifLoggedIn == false && <li><a className="section" href="/login">Login</a></li>} 
+                    {ifLoggedIn == false && <li><a className="section" href="/register">Cadastrar-se</a></li>} 
 
                     {ifLoggedIn == true && <li><a className="section" href="/"><IconButton icon={faBars} size="large"/></a></li>}
                     
