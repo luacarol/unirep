@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { useAuth } from "../../context/AuthContext";
-import { Link } from "react-router-dom"; // Importando Link
+import { Link } from "react-router-dom";
 import RepublicCard from "../../components/RepublicCard/RepublicCard";
 import UserRepublic from "../../components/UserRepublic/UserRepublic";
+import './Home.css';
 
 const Home = () => {
   const { user } = useAuth(); // Pega os dados do usuário logado
@@ -18,7 +19,7 @@ const Home = () => {
   }, []);
 
   return (
-    <div>
+    <div className="home">
       {/* Se o usuário estiver logado, exibe a república que ele está alocado */}
       {user ? (
         <>
@@ -29,9 +30,9 @@ const Home = () => {
         </>
       ) : (
         <>
-          <h2 className="bigger-subtitle">Bem-vindo(a) ao UniRep!</h2>
+          <h2 className="bigger-subtitle welcome-title">Bem-vindo(a) ao UniRep!</h2>
           <h1 className="title">🏠 Repúblicas Disponíveis</h1>
-          <div style={styles.grid}>
+          <div className="republics">
             {republics.map((rep) => (
               <RepublicCard
                 key={rep.id}
@@ -45,17 +46,6 @@ const Home = () => {
       )}
     </div>
   );
-};
-
-// Estilos inline para o grid
-const styles = {
-  grid: {
-    display: "flex",
-    gap: "20px",
-    flexWrap: "wrap",
-    justifyContent: "center",
-    padding: "20px",
-  },
 };
 
 export default Home;
