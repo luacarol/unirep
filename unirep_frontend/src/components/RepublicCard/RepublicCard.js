@@ -1,12 +1,12 @@
 import React from "react";
-import "./RepublicCard.css"; // Estilos do card
+import "./RepublicCard.css"
 
 const RepublicCard = ({ name, rent, members }) => {
     return (
         <div className="republic-card">
-            <h3>{name}</h3>
-            <p>💰 Aluguel: R$ {rent}</p>
-            <p>👥 Membros: {members}</p>
+            <h4>{name}</h4>
+            <p>Aluguel: R$ {rent}</p>
+            <p>Membros: {members}</p>
         </div>
     );
 };

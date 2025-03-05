@@ -1,10 +1,13 @@
 import React, { useEffect, useState } from "react";
+import { useAuth } from "../../context/AuthContext";
 import RepublicCard from "../../components/RepublicCard/RepublicCard";
+import UserRepublic from "../../components/UserRepublic/UserRepublic";
 
 const Home = () => {
+  const { user } = useAuth(); // Pega os dados do usuário logado
   const [republics, setRepublics] = useState([]);
 
-  // Simulação de dados (pode ser substituído por um fetch na API)
+  // Simulação de dados de repúblicas (pode ser substituído por um fetch na API)
   useEffect(() => {
     setRepublics([
       { id: 1, name: "República Alpha", rent: 800, members: 3 },
@@ -15,12 +18,25 @@ const Home = () => {
 
   return (
     <div>
-      <h1>🏠 Repúblicas Disponíveis</h1>
-      <div style={styles.grid}>
-        {republics.map((rep) => (
-          <RepublicCard key={rep.id} name={rep.name} rent={rep.rent} members={rep.members} />
-        ))}
-      </div>
+      {/* Se o usuário estiver logado, exibe a república que ele está alocado */}
+      {user ? (
+        <UserRepublic republic={user.republic} />
+      ) : (
+        <>
+          <h2>Bem-vindo(a) ao UniRep!</h2>
+          <h1>🏠 Repúblicas Disponíveis</h1>
+          <div style={styles.grid}>
+            {republics.map((rep) => (
+              <RepublicCard
+                key={rep.id}
+                name={rep.name}
+                rent={rep.rent}
+                members={rep.members}
+              />
+            ))}
+          </div>
+        </>
+      )}
     </div>
   );
 };
