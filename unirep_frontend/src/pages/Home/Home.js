@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useAuth } from "../../context/AuthContext";
+import { Link } from "react-router-dom"; // Importando Link
 import RepublicCard from "../../components/RepublicCard/RepublicCard";
 import UserRepublic from "../../components/UserRepublic/UserRepublic";
 
@@ -20,7 +21,10 @@ const Home = () => {
     <div>
       {/* Se o usuário estiver logado, exibe a república que ele está alocado */}
       {user ? (
-        <UserRepublic republic={user.republic} />
+        <>
+          <UserRepublic republic={user.republic} />
+          <Link to="/edit-profile">Editar Perfil</Link> {/* Link para a página de edição */}
+        </>
       ) : (
         <>
           <h2>Bem-vindo(a) ao UniRep!</h2>
