@@ -7,6 +7,7 @@
     border: 1.5px solid var(--gray-light);
     transition: box-shadow 0.3s ease, transform 0.2s ease;
     cursor: pointer;
+    box-sizing: border-box;
 }
 
 .republic-card:hover {

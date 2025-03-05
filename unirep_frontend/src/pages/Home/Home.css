@@ -2,14 +2,18 @@
     padding: 1rem 15rem;
 }
 
-.welcome-title {
+.home .welcome-title {
     margin: 1rem 0rem;
 }
 
-.republics {
+.home .republics {
     margin-top: 1rem;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     row-gap: 1.5rem;
     max-height: 30rem;
+}
+
+.home .section-title {
+    margin-bottom: 0.5rem;
 }

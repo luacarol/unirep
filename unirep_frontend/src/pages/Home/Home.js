@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import RepublicCard from "../../components/RepublicCard/RepublicCard";
 import UserRepublic from "../../components/UserRepublic/UserRepublic";
 import './Home.css';
+import EditProfileCard from "../../components/EditProfileCard/EditProfileCard";
 
 const Home = () => {
   const { user } = useAuth(); // Pega os dados do usuário logado
@@ -23,10 +24,15 @@ const Home = () => {
       {/* Se o usuário estiver logado, exibe a república que ele está alocado */}
       {user ? (
         <>
-          <UserRepublic republic={user.republic} />
+          <h2 className="bigger-subtitle welcome-title">Home</h2>
+
+          <h1 className="title section-title">👤 Meu Perfil</h1>
+
+          <EditProfileCard/>
+          {/* <UserRepublic republic={user.republic} />
           <Link to="/edit-profile">Editar Perfil</Link>
           <br />
-          <Link to="/bills">Ver Itens à Pagar</Link>
+          <Link to="/bills">Ver Itens à Pagar</Link> */}
         </>
       ) : (
         <>
