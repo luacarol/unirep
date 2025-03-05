@@ -5,7 +5,7 @@ import "./Navbar.css"; // Importando os estilos
 const Navbar = () => {
     return (
         <nav className="navbar">
-            <h2>UniRep</h2>
+            <h2 className="title">UniRep</h2>
             <ul>
                 <li>
                     <Link to="/">Home</Link>

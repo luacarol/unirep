@@ -29,8 +29,8 @@ const Home = () => {
         </>
       ) : (
         <>
-          <h2>Bem-vindo(a) ao UniRep!</h2>
-          <h1>🏠 Repúblicas Disponíveis</h1>
+          <h2 className="bigger-subtitle">Bem-vindo(a) ao UniRep!</h2>
+          <h1 className="title">🏠 Repúblicas Disponíveis</h1>
           <div style={styles.grid}>
             {republics.map((rep) => (
               <RepublicCard

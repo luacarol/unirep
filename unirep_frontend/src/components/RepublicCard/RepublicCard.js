@@ -4,9 +4,9 @@ import "./RepublicCard.css"
 const RepublicCard = ({ name, rent, members }) => {
     return (
         <div className="republic-card">
-            <h4>{name}</h4>
-            <p>Aluguel: R$ {rent}</p>
-            <p>Membros: {members}</p>
+            <h4 className="minor-subtitle">{name}</h4>
+            <p className="smaller-text">Aluguel: R$ {rent}</p>
+            <p className="smaller-text">Membros: {members}</p>
         </div>
     );
 };
