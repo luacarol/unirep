@@ -6,6 +6,7 @@ import Register from "./pages/Register/Register";
 import Login from "./pages/Login/Login";
 import Navbar from "./components/Navbar/Navbar";
 import EditProfile from "./pages/EditProfile/EditProfile";
+import Bills from "./pages/Bills/Bills";
 import "./App.css";
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
           <Route path="/register" element={<Register />} />
           <Route path="/login" element={<Login />} />
           <Route path="/edit-profile" element={<EditProfile />} />
+          <Route path="/bills" element={<Bills />} /> 
         </Routes>
       </Router>
     </AuthProvider>

@@ -23,7 +23,9 @@ const Home = () => {
       {user ? (
         <>
           <UserRepublic republic={user.republic} />
-          <Link to="/edit-profile">Editar Perfil</Link> {/* Link para a página de edição */}
+          <Link to="/edit-profile">Editar Perfil</Link>
+          <br />
+          <Link to="/bills">Ver Itens à Pagar</Link>
         </>
       ) : (
         <>
