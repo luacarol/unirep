@@ -1,42 +1,34 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { useAuth } from "../../context/AuthContext";
 import { useNavigate } from "react-router-dom";
 
 const EditProfile = () => {
-  const { user, setUser } = useAuth(); // Pegando o usuário logado e a função para atualizar o estado
+  const { user } = useAuth(); // Pegando o usuário logado
+  const navigate = useNavigate(); // Para redirecionar após salvar o perfil
+
+  // Estado inicial com os dados do usuário (pode ser substituído por um fetch real)
   const [formData, setFormData] = useState({
-    hobby: user?.hobby || "",
-    sociable: user?.sociable || false,
-    likesCooking: user?.likesCooking || false,
-    likesCleaning: user?.likesCleaning || false,
+    fullName: user ? user.full_name : "",
+    age: user ? user.age : "",
+    cpf: user ? user.cpf : "",
+    whatsapp: user ? user.whatsapp : "",
+    course: user ? user.university_course : "",
+    hobby: user ? user.hobby : "",
+    dislikes: user ? user.dislikes : "",
   });
-  const navigate = useNavigate(); // Para redirecionar após salvar
 
-  // Atualiza os dados do formulário conforme o estado do usuário
-  useEffect(() => {
-    if (user) {
-      setFormData({
-        hobby: user.hobby || "",
-        sociable: user.sociable || false,
-        likesCooking: user.likesCooking || false,
-        likesCleaning: user.likesCleaning || false,
-      });
-    }
-  }, [user]);
-
+  // Função para lidar com as mudanças nos inputs
   const handleChange = (e) => {
-    const { name, value, type, checked } = e.target;
-    setFormData({
-      ...formData,
-      [name]: type === "checkbox" ? checked : value,
-    });
+    setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
+  // Função para salvar as informações (aqui você pode fazer uma chamada para a API real)
   const handleSubmit = (e) => {
     e.preventDefault();
-    const updatedUser = { ...user, ...formData }; // Atualizando o usuário com as novas informações
-    setUser(updatedUser); // Atualizando o estado no contexto
-    navigate("/"); // Redireciona para a Home após salvar
+    // Aqui você pode salvar as alterações, por exemplo, chamando uma função do contexto ou fazendo um fetch
+    console.log(formData); // Para testar e ver as mudanças no console
+    // Simular redirecionamento para a Home após salvar
+    navigate("/");
   };
 
   return (
@@ -44,43 +36,86 @@ const EditProfile = () => {
       <h2>Editar Perfil</h2>
       <form onSubmit={handleSubmit}>
         <div>
-          <label>Hobby:</label>
+          <label htmlFor="fullName">Nome Completo:</label>
           <input
             type="text"
+            id="fullName"
+            name="fullName"
+            value={formData.fullName}
+            onChange={handleChange}
+            required
+          />
+        </div>
+
+        <div>
+          <label htmlFor="age">Idade:</label>
+          <input
+            type="number"
+            id="age"
+            name="age"
+            value={formData.age}
+            onChange={handleChange}
+            required
+          />
+        </div>
+
+        <div>
+          <label htmlFor="cpf">CPF:</label>
+          <input
+            type="text"
+            id="cpf"
+            name="cpf"
+            value={formData.cpf}
+            onChange={handleChange}
+            required
+          />
+        </div>
+
+        <div>
+          <label htmlFor="whatsapp">Whatsapp:</label>
+          <input
+            type="text"
+            id="whatsapp"
+            name="whatsapp"
+            value={formData.whatsapp}
+            onChange={handleChange}
+            required
+          />
+        </div>
+
+        <div>
+          <label htmlFor="course">Curso:</label>
+          <input
+            type="text"
+            id="course"
+            name="course"
+            value={formData.course}
+            onChange={handleChange}
+            required
+          />
+        </div>
+
+        <div>
+          <label htmlFor="hobby">Hobbie Preferido:</label>
+          <input
+            type="text"
+            id="hobby"
             name="hobby"
             value={formData.hobby}
             onChange={handleChange}
-            placeholder="Seu hobby"
+            required
           />
         </div>
 
         <div>
-          <label>Você é sociável?</label>
+          <label htmlFor="dislikes">Eu Não Gosto de...:</label>
           <input
-            type="checkbox"
-            name="sociable"
-            checked={formData.sociable}
+            type="text"
+            id="dislikes"
+            name="dislikes"
+            value={formData.dislikes}
             onChange={handleChange}
-          />
-        </div>
-
-        <div>
-          <label>Você gosta de cozinhar?</label>
-          <input
-            type="checkbox"
-            name="likesCooking"
-            checked={formData.likesCooking}
-            onChange={handleChange}
-          />
-        </div>
-
-        <div>
-          <label>Você gosta de limpar a casa?</label>
-          <input
-            type="checkbox"
-            name="likesCleaning"
-            checked={formData.likesCleaning}
-            onChange={handleChange}
+            required
           />
         </div>
 
