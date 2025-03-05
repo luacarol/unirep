@@ -26,9 +26,17 @@ const Home = () => {
         <>
           <h2 className="bigger-subtitle welcome-title">Home</h2>
 
-          <h1 className="title section-title">👤 Meu Perfil</h1>
+          <div className="section">
+            <h1 className="title section-title">👤 Meu Perfil</h1>
+            <EditProfileCard/>
+          </div>
 
-          <EditProfileCard/>
+          <div className="section">
+            <h1 className="title section-title">🏠 Minha Moradia</h1>
+            <UserRepublic republic={user.republic} />
+          </div>
+
+
           {/* <UserRepublic republic={user.republic} />
           <Link to="/edit-profile">Editar Perfil</Link>
           <br />

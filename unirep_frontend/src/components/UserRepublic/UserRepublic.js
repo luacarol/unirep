@@ -1,13 +1,29 @@
 import React from "react";
+import "./UserRepublic.css";
+import republicImage from "../../assets/images/undraw_small_town_re_7mcn 1.svg"
 
 const UserRepublic = ({ republic }) => {
     return (
-        <div>
-            <h3>Você está alocado na república:</h3>
-            <div className="republic-card">
-                <h4>{republic.name}</h4>
-                <p>Aluguel: R$ {republic.rent}</p>
-                <p>Membros: {republic.members}</p>
+        <div className="user-republic-card">
+            <div className="republic-image"><img src={republicImage} /></div>
+
+            <div className="basic-infos">
+
+                <label className="minor-subtitle">Nome da República</label>
+
+                <label className="text-commom">Endereço, Bairro.<br/>CEP, Cidade, Estado</label>
+
+                <label className="text-commom">(00) 00000-00</label>
+
+            </div>
+
+            <div className="description-button">
+                <div className="description-info">
+                    <label className="text-commom">Descrição</label>
+                    <label className="smaller-text">Curta descrição da cultura e da vibe dentro da república, falando de suas características físicas e peculiares.</label>
+                </div>
+
+                <button>Ver itens à pagar</button>
             </div>
         </div>
     );
