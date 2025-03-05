@@ -2,12 +2,9 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #333;
-    padding: 15px 20px;
-}
-
-.navbar h2 {
-    color: white;
+    background-color: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 0rem 15rem;
 }
 
 .navbar ul {
@@ -17,11 +14,15 @@
 }
 
 .navbar ul li a {
-    color: white;
+    color: var(--black-dark);
     text-decoration: none;
     font-weight: bold;
 }
 
 .navbar ul li a:hover {
     text-decoration: underline;
+}
+
+.navbar a:hover {
+    color: var(--orange);
 }

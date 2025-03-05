@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import "./Navbar.css"; // Importando os estilos
+import "./Navbar.css";
 
 const Navbar = () => {
     return (
@@ -8,13 +8,13 @@ const Navbar = () => {
             <h2 className="title">UniRep</h2>
             <ul>
                 <li>
-                    <Link to="/">Home</Link>
+                    <Link className="minor-subtitle" to="/">Home</Link>
                 </li>
                 <li>
-                    <Link to="/register">Cadastrar-se</Link>
+                    <Link className="minor-subtitle" to="/register">Cadastrar-se</Link>
                 </li>
                 <li>
-                    <Link to="/login">Login</Link>
+                    <Link className="minor-subtitle" to="/login">Login</Link>
                 </li>
             </ul>
         </nav>
