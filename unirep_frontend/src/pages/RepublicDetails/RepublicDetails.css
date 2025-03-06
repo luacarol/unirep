@@ -1,0 +1,15 @@
+.republic-details {
+    padding: 1rem 15rem;
+}
+
+.republic-details .title {
+    margin: 1rem 0rem;
+}
+
+.republic-details .section {
+    margin-bottom: 2rem;
+}
+
+.republic-details .section h3 {
+    margin-bottom: 0.5rem;
+}

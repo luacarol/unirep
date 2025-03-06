@@ -8,6 +8,7 @@ import Navbar from "./components/Navbar/Navbar";
 import EditProfile from "./pages/EditProfile/EditProfile";
 import Bills from "./pages/Bills/Bills";
 import "./App.css";
+import RepublicDetails from "./pages/RepublicDetails/RepublicDetails";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/edit-profile" element={<EditProfile />} />
           <Route path="/bills" element={<Bills />} /> 
+          <Route path="/republic-details" element={<RepublicDetails />} /> 
         </Routes>
       </Router>
     </AuthProvider>

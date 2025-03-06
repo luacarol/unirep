@@ -25,7 +25,7 @@ const UserRepublic = ({ republic }) => {
                     <label className="smaller-text">Curta descrição da cultura e da vibe dentro da república, falando de suas características físicas e peculiares.</label>
                 </div>
 
-                <Link className="link" to="/bills"><ButtonLine text="Ver itens à pagar"/></Link>
+                <Link className="link" to="/republic-details"><ButtonLine text="Ver detalhes"/></Link>
             </div>
         </div>
     );
