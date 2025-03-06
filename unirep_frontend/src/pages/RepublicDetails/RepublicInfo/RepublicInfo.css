@@ -1,0 +1,51 @@
+.republic-section {
+    width: 100%;
+}
+
+.republic-section h3 {
+    margin-bottom: 0.5rem;
+}
+
+.republic-section .label-value {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 0.75rem;
+}
+
+.republic-section .name-contact {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.republic-section .name-contact-address {
+    display: grid;
+    grid-template-columns: 0.5fr 1fr;
+}
+
+.republic-section .qtd-members-imgs-videos {
+    display: grid;
+    grid-template-columns: 0.5fr 1fr;
+}
+
+.republic-section .qtd-members-itens-value {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.republic-section .imgs-video {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.republic-section .imgs-videos-section img {
+    height: 4rem;
+    margin-right: 0.3rem;
+    border: 1.5px solid var(--gray-light);
+    border-radius: 0.75rem;
+    padding: 0.3rem;
+    box-sizing: border-box;
+}
