@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { useAuth } from "../../context/AuthContext";
 import { useNavigate } from "react-router-dom";
+import "./EditProfile.css";
+import ButtonIcon from "../../components/Buttons/ButtonIcon/ButtonIcon";
 
 const EditProfile = () => {
   const { user } = useAuth(); // Pegando o usuário logado
@@ -32,11 +34,11 @@ const EditProfile = () => {
   };
 
   return (
-    <div>
-      <h2>Editar Perfil</h2>
+    <div className="edit-profile">
+      <h2 className="title">✏️ Editar Perfil</h2>
       <form onSubmit={handleSubmit}>
-        <div>
-          <label htmlFor="fullName">Nome Completo:</label>
+        <div className="label-input">
+          <label className="legend" htmlFor="fullName">Nome Completo</label>
           <input
             type="text"
             id="fullName"
@@ -47,8 +49,8 @@ const EditProfile = () => {
           />
         </div>
 
-        <div>
-          <label htmlFor="age">Idade:</label>
+        <div className="label-input">
+          <label className="legend" htmlFor="age">Idade</label>
           <input
             type="number"
             id="age"
@@ -59,8 +61,8 @@ const EditProfile = () => {
           />
         </div>
 
-        <div>
-          <label htmlFor="cpf">CPF:</label>
+        <div className="label-input">
+          <label className="legend" htmlFor="cpf">CPF</label>
           <input
             type="text"
             id="cpf"
@@ -71,8 +73,8 @@ const EditProfile = () => {
           />
         </div>
 
-        <div>
-          <label htmlFor="whatsapp">Whatsapp:</label>
+        <div className="label-input">
+          <label className="legend" htmlFor="whatsapp">Whatsapp</label>
           <input
             type="text"
             id="whatsapp"
@@ -83,8 +85,8 @@ const EditProfile = () => {
           />
         </div>
 
-        <div>
-          <label htmlFor="course">Curso:</label>
+        <div className="label-input">
+          <label className="legend" htmlFor="course">Curso</label>
           <input
             type="text"
             id="course"
@@ -95,8 +97,8 @@ const EditProfile = () => {
           />
         </div>
 
-        <div>
-          <label htmlFor="hobby">Hobbie Preferido:</label>
+        <div className="label-input">
+          <label className="legend" htmlFor="hobby">Hobbie Preferido</label>
           <input
             type="text"
             id="hobby"
@@ -107,8 +109,8 @@ const EditProfile = () => {
           />
         </div>
 
-        <div>
-          <label htmlFor="dislikes">Eu Não Gosto de...:</label>
+        <div className="label-input">
+          <label className="legend" htmlFor="dislikes">Eu Não Gosto de...</label>
           <input
             type="text"
             id="dislikes"
@@ -119,7 +121,7 @@ const EditProfile = () => {
           />
         </div>
 
-        <button type="submit">Salvar Alterações</button>
+        <ButtonIcon text="Salvar Alterações" />
       </form>
     </div>
   );

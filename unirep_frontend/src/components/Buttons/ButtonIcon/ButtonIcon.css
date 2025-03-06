@@ -1,0 +1,25 @@
+.button-icon {
+    height: 2rem;
+    border: 2px solid var(--gray);
+    border-radius: 0.5rem;
+    padding: 0.75rem;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.button-icon:hover {
+    border: 2px solid var(--orange);
+}
+
+.button-icon:hover i, .button-icon:hover label {
+    color: var(--orange);
+    cursor: pointer;
+} 
+
+.button-icon i {
+    margin-right: 0.5rem;
+}
