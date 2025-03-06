@@ -1,6 +1,7 @@
 import "./EditProfileCard.css";
 import userImage from "../../assets/images/user.svg";
 import ButtonLine from "../Buttons/ButtonLine/ButtonLine";
+import { Link } from "react-router-dom";
 
 const EditProfileCard = () => {
     return (
@@ -21,7 +22,7 @@ const EditProfileCard = () => {
                     <label className="smaller-text">Descrição curta do perfil do usuário falando da sua personalidade.</label>
                 </div>
 
-                <ButtonLine text="Editar meu perfil" />
+                <Link className="link" to="/edit-profile"><ButtonLine text="Editar meu perfil" /></Link>
             </div>
         </div>
     )

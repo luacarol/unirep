@@ -42,3 +42,7 @@
 .edit-profile-card .description-info {
     margin-bottom: 0.75rem;
 }
+
+.edit-profile-card .link {
+    text-decoration: none;
+}
