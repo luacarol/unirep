@@ -1,3 +1,7 @@
+.bills {
+    padding: 1rem 15rem;
+}
+
 /* No arquivo CSS global ou do componente */
 table {
     width: 100%;

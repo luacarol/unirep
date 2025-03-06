@@ -18,8 +18,8 @@ const Bills = () => {
     }, [user]);
 
     return (
-        <div>
-            <h2>Itens à Pagar da República</h2>
+        <div className="bills">
+            <h2 className="title">💵 Itens à Pagar</h2>
             {bills.length > 0 ? (
                 <table>
                     <thead>

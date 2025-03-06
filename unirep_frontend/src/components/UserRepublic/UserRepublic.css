@@ -38,3 +38,7 @@
 .user-republic-card .description-info {
     margin-bottom: 0.75rem;
 }
+
+.user-republic-card .link {
+    text-decoration: none;
+}
