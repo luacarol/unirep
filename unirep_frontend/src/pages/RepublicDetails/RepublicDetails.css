@@ -13,3 +13,51 @@
 .republic-details .section h3 {
     margin-bottom: 0.5rem;
 }
+
+.republic-details .republic-section {
+    width: 100%;
+}
+
+.republic-details .republic-section .label-value {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 0.75rem;
+}
+
+.republic-details .name-contact {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.republic-details .name-contact-address {
+    display: grid;
+    grid-template-columns: 0.5fr 1fr;
+}
+
+.republic-details .qtd-members-imgs-videos {
+    display: grid;
+    grid-template-columns: 0.5fr 1fr;
+}
+
+.republic-details .qtd-members-itens-value {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.republic-details .imgs-videos-section {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.republic-details .imgs-videos-section img {
+    height: 4rem;
+    margin-right: 0.3rem;
+    border: 1.5px solid var(--gray-light);
+    border-radius: 0.75rem;
+    padding: 0.3rem;
+    box-sizing: border-box;
+}
