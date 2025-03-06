@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import "./Register.css";
+import ButtonIcon from "../../components/Buttons/ButtonIcon/ButtonIcon";
 
 const Register = () => {
     const [formData, setFormData] = useState({
@@ -18,35 +20,52 @@ const Register = () => {
     };
 
     return (
-        <div>
-            <h2>Cadastro</h2>
-            <form onSubmit={handleSubmit}>
-                <input
-                    type="text"
-                    name="full_name"
-                    placeholder="Nome Completo"
-                    value={formData.full_name}
-                    onChange={handleChange}
-                    required
-                />
-                <input
-                    type="email"
-                    name="email"
-                    placeholder="E-mail"
-                    value={formData.email}
-                    onChange={handleChange}
-                    required
-                />
-                <input
-                    type="password"
-                    name="password"
-                    placeholder="Senha"
-                    value={formData.password}
-                    onChange={handleChange}
-                    required
-                />
-                <button type="submit">Cadastrar</button>
-            </form>
+        <div className="register">
+            <h2 className="title">🚀 Cadastro</h2>
+            <div className="content">
+                <form onSubmit={handleSubmit}>
+                    <div className="label-input">
+                        <label htmlFor="full_name" className="minor-subtitle">Nome completo</label>
+                        <input
+                            id="full_name"
+                            type="text"
+                            name="full_name"
+                            placeholder="Luana Caroliny Pedroso dos Anjos"
+                            value={formData.full_name}
+                            onChange={handleChange}
+                            required
+                        />
+                    </div>
+
+                    <div className="label-input">
+                        <label htmlFor="email" className="minor-subtitle">E-mail</label>
+                        <input
+                            id="email"
+                            type="email"
+                            name="email"
+                            placeholder="luanacaroliny07@gmail.com"
+                            value={formData.email}
+                            onChange={handleChange}
+                            required
+                        />
+                    </div>
+
+                    <div className="label-input">
+                        <label htmlFor="password" className="minor-subtitle">Senha</label>
+                        <input
+                            id="password"
+                            type="password"
+                            name="password"
+                            placeholder="*************"
+                            value={formData.password}
+                            onChange={handleChange}
+                            required
+                        />
+                    </div>
+
+                    <ButtonIcon text="Cadastrar" iconClass="fa-solid fa-right-to-bracket" />
+                </form>
+            </div>
         </div>
     );
 };

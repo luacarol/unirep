@@ -121,7 +121,7 @@ const EditProfile = () => {
           />
         </div>
 
-        <ButtonIcon text="Salvar Alterações" />
+        <ButtonIcon text="Salvar Alterações" iconClass="fa-solid fa-floppy-disk" />
       </form>
     </div>
   );

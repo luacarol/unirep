@@ -139,3 +139,7 @@ button {
     display: inline-block; /* Garante que continue funcionando como um botão */
     cursor: pointer; /* Mantém o cursor de clique */
 }
+
+input {
+    all: unset; /* Remove todos os estilos padrão */
+}
