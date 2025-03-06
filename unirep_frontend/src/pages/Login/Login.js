@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "../../context/AuthContext";
+import ButtonIcon from "../../components/Buttons/ButtonIcon/ButtonIcon"
+import "./Login.css";
 
 const Login = () => {
   const [formData, setFormData] = useState({ email: "", password: "" });
@@ -18,27 +20,39 @@ const Login = () => {
   };
 
   return (
-    <div>
-      <h2>Login</h2>
-      <form onSubmit={handleSubmit}>
-        <input
-          type="email"
-          name="email"
-          placeholder="E-mail"
-          value={formData.email}
-          onChange={handleChange}
-          required
-        />
-        <input
-          type="password"
-          name="password"
-          placeholder="Senha"
-          value={formData.password}
-          onChange={handleChange}
-          required
-        />
-        <button type="submit">Entrar</button>
-      </form>
+    <div className="login">
+      <h2 className="title">👤 Login</h2>
+      <div className="content">
+        <form onSubmit={handleSubmit}>
+          <div className="label-input">
+            <label htmlFor="email" className="minor-subtitle">E-mail</label>
+            <input
+              id="email"
+              type="email"
+              name="email"
+              placeholder="E-mail"
+              value={formData.email}
+              onChange={handleChange}
+              required
+            />
+          </div>
+
+          <div className="label-input">
+            <label htmlFor="password" className="minor-subtitle">Senha</label>
+            <input
+              id="password"
+              type="password"
+              name="password"
+              placeholder="Senha"
+              value={formData.password}
+              onChange={handleChange}
+              required
+            />
+          </div>
+
+          <ButtonIcon text="Entrar" iconClass="fa-solid fa-right-to-bracket" />
+        </form>
+      </div>
     </div>
   );
 };

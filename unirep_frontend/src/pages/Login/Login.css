@@ -1,0 +1,60 @@
+.login {
+    padding: 0rem 15rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.login .title {
+    margin: 1rem 0rem;
+}
+
+.login .content {
+    align-self: center;
+    width: 40rem;
+    border: 1.5px solid var(--gray-light);
+    border-radius: 0.75rem;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    box-sizing: border-box;
+}
+
+.login .content form {
+    width: 100%;
+    height: 100%;
+}
+
+.login .content form div:not(:last-child) {
+    margin-bottom: 1rem;
+}
+
+.login .label-input {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.login .label-input label {
+    margin-bottom: 0.3rem;
+}
+
+.login .label-input:hover label {
+    color: var(--orange);
+}
+
+.login .label-input:hover input {
+    border-color: var(--orange);
+}
+
+.login .label-input input {
+    width: 100%;
+    border: 1.5px solid var(--gray-light);
+    border-radius: 0.5rem;
+    padding-left: 0.5rem;
+    height: 2rem;
+    box-sizing: border-box;
+    font-size: 0.85rem;
+    font-weight: 500;
+}
