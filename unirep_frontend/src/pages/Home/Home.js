@@ -24,15 +24,15 @@ const Home = () => {
       {/* Se o usuário estiver logado, exibe a república que ele está alocado */}
       {user ? (
         <>
-          <h2 className="bigger-subtitle welcome-title">Home</h2>
+          <h2 className="title welcome-title">Home</h2>
 
           <div className="section">
-            <h1 className="title section-title">👤 Meu Perfil</h1>
+            <h1 className="bigger-subtitle section-title">👤 Meu Perfil</h1>
             <EditProfileCard/>
           </div>
 
           <div className="section">
-            <h1 className="title section-title">🏠 Minha Moradia</h1>
+            <h1 className="bigger-subtitle section-title">🏠 Minha Moradia</h1>
             <UserRepublic republic={user.republic} />
           </div>
 
