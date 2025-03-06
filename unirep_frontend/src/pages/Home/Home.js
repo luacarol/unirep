@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { useAuth } from "../../context/AuthContext";
-import { Link } from "react-router-dom";
 import RepublicCard from "../../components/RepublicCard/RepublicCard";
 import UserRepublic from "../../components/UserRepublic/UserRepublic";
 import './Home.css';
@@ -35,12 +34,6 @@ const Home = () => {
             <h1 className="bigger-subtitle section-title">🏠 Minha Moradia</h1>
             <UserRepublic republic={user.republic} />
           </div>
-
-
-          {/* <UserRepublic republic={user.republic} />
-          <Link to="/edit-profile">Editar Perfil</Link>
-          <br />
-          <Link to="/bills">Ver Itens à Pagar</Link> */}
         </>
       ) : (
         <>

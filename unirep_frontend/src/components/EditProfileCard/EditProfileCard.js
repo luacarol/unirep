@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 const EditProfileCard = () => {
     return (
         <div className="edit-profile-card">
-            <div className="profile-image"><img src={userImage}/></div>
+            <div className="profile-image"><img src={userImage} alt="User profile"/></div>
             
             <div className="basic-infos">
                 <label className="minor-subtitle">Nome do Usuário</label>

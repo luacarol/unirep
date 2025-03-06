@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 const UserRepublic = ({ republic }) => {
     return (
         <div className="user-republic-card">
-            <div className="republic-image"><img src={republicImage} /></div>
+            <div className="republic-image"><img src={republicImage} alt="Republic logo" /></div>
 
             <div className="basic-infos">
 
