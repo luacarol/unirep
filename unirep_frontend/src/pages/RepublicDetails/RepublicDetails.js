@@ -1,5 +1,5 @@
 import MemberCard from "../../components/MemberCard/MemberCard";
-import Bills from "../Bills/Bills";
+import Bills from "./Bills/Bills";
 import "./RepublicDetails.css";
 import RepublicInfo from "./RepublicInfo/RepublicInfo";
 

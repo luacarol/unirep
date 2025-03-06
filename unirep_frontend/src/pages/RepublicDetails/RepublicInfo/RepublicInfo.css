@@ -21,16 +21,19 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+    padding: 0rem 1rem;
 }
 
 .republic-section .name-contact-address {
     display: grid;
     grid-template-columns: 0.5fr 1fr;
+    margin-bottom: 0.5rem;
 }
 
 .republic-section .qtd-members-imgs-videos {
     display: grid;
     grid-template-columns: 0.5fr 1fr;
+    padding: 0rem 1rem;
 }
 
 .republic-section .qtd-members-itens-value {

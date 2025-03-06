@@ -7,10 +7,29 @@
     margin-bottom: 0.5rem;
 }
 
+.bills-section .content {
+    padding: 0rem 1rem;
+    overflow: hidden; /* Garante que o border-radius funcione */
+    border-radius: 0.75rem;
+}
+
 /* No arquivo CSS global ou do componente */
 .bills-section table {
     width: 100%;
-    border-collapse: collapse;
+    border-collapse: separate; /* Altere de 'collapse' para 'separate' */
+    border-spacing: 0;
+    border-radius: 0.75rem;
+    overflow: hidden;
+}
+
+.bills-section thead tr:first-child th {
+    border-top-left-radius: 0.75rem;
+    border-top-right-radius: 0.75rem;
+}
+
+.bills-section tbody tr:last-child td {
+    border-bottom-left-radius: 0.75rem;
+    border-bottom-right-radius: 0.75rem;
 }
 
 .bills-section table th,
