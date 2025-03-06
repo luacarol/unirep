@@ -43,9 +43,9 @@
 }
 
 .republic-section .imgs-video {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0.3rem;
 }
 
 .republic-section .imgs-videos-section img {

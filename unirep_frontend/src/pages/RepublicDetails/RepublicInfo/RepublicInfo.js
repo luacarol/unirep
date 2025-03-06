@@ -4,7 +4,7 @@ import "./RepublicInfo.css";
 const RepublicInfo = () => {
     return (
         <section className="republic-section">
-            <h3 className="bigger-subtitle">🏠 Informações da Moradia</h3>
+            <h3 className="bigger-subtitle">🏠 Informações da República</h3>
 
             <div className="name-contact-address">
                 <div className="name-contact">
@@ -14,7 +14,7 @@ const RepublicInfo = () => {
                     </div>
 
                     <div className="label-value">
-                        <label className="legend">Contato com representante:</label>
+                        <label className="legend">Contato do representante:</label>
                         <label className="smaller-text">(12) 982173929</label>
                     </div>
                 </div>
@@ -43,6 +43,9 @@ const RepublicInfo = () => {
                     <label className="legend">Imagens e Vídeos:</label>
 
                     <div className="imgs-video">
+                        <img src={republicImage} alt="Republic logo" />
+                        <img src={republicImage} alt="Republic logo" />
+                        <img src={republicImage} alt="Republic logo" />
                         <img src={republicImage} alt="Republic logo" />
                         <img src={republicImage} alt="Republic logo" />
                         <img src={republicImage} alt="Republic logo" />

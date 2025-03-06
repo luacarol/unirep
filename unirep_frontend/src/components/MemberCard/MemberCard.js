@@ -12,7 +12,7 @@ const MemberCard = () => {
 
                 <label className="smaller-text">Cursando...</label>
 
-                <label className="smaller-text">(12)982173929</label>
+                <label className="smaller-text">(12) 982173929</label>
 
                 <ButtonLine text="Ver detalhes"/>
             </div>
