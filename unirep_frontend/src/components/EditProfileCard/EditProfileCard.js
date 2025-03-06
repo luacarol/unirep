@@ -1,5 +1,6 @@
 import "./EditProfileCard.css";
 import userImage from "../../assets/images/user.svg";
+import ButtonLine from "../Buttons/ButtonLine/ButtonLine";
 
 const EditProfileCard = () => {
     return (
@@ -20,7 +21,7 @@ const EditProfileCard = () => {
                     <label className="smaller-text">Descrição curta do perfil do usuário falando da sua personalidade.</label>
                 </div>
 
-                <button>Editar meu perfil</button>
+                <ButtonLine text="Editar meu perfil" />
             </div>
         </div>
     )

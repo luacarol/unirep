@@ -133,3 +133,9 @@ table {
     border-collapse: collapse;
     border-spacing: 0;
 }
+
+button {
+    all: unset; /* Reseta todas as propriedades padrão */
+    display: inline-block; /* Garante que continue funcionando como um botão */
+    cursor: pointer; /* Mantém o cursor de clique */
+}

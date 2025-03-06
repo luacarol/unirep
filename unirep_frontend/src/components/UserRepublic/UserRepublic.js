@@ -1,6 +1,7 @@
 import React from "react";
 import "./UserRepublic.css";
 import republicImage from "../../assets/images/undraw_small_town_re_7mcn 1.svg"
+import ButtonLine from "../Buttons/ButtonLine/ButtonLine";
 
 const UserRepublic = ({ republic }) => {
     return (
@@ -23,7 +24,7 @@ const UserRepublic = ({ republic }) => {
                     <label className="smaller-text">Curta descrição da cultura e da vibe dentro da república, falando de suas características físicas e peculiares.</label>
                 </div>
 
-                <button>Ver itens à pagar</button>
+                <ButtonLine text="Ver itens à pagar"/>
             </div>
         </div>
     );
