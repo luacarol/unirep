@@ -1,3 +1,4 @@
+import MemberCard from "../../components/MemberCard/MemberCard";
 import Bills from "../Bills/Bills";
 import "./RepublicDetails.css";
 import RepublicInfo from "./RepublicInfo/RepublicInfo";
@@ -11,8 +12,16 @@ const RepublicDetails = () => {
 
             <Bills/>
 
-            <section className="section">
+            <section className="section members-section">
                 <h3 className="bigger-subtitle">👥 Membros</h3>
+
+                <div className="members-grid">
+                    <MemberCard/>
+                    <MemberCard/>
+                    <MemberCard/>
+                    <MemberCard/>
+                    <MemberCard/>
+                </div>
             </section>
         </div>
     )
