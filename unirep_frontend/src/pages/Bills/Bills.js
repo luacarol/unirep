@@ -25,8 +25,8 @@ const Bills = () => {
     };
 
     return (
-        <div className="bills">
-            <h2 className="title">💵 Itens à Pagar</h2>
+        <section className="bills-section">
+            <h3 className="bigger-subtitle">💵 Itens à Pagar</h3>
             {bills.length > 0 ? (
                 <table>
                     <thead>
@@ -62,7 +62,7 @@ const Bills = () => {
             ) : (
                 <p>Sem itens à pagar no momento.</p>
             )}
-        </div>
+        </section>
     );
 };
 

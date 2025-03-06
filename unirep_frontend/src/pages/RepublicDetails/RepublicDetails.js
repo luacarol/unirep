@@ -1,3 +1,4 @@
+import Bills from "../Bills/Bills";
 import "./RepublicDetails.css";
 import RepublicInfo from "./RepublicInfo/RepublicInfo";
 
@@ -8,9 +9,7 @@ const RepublicDetails = () => {
 
             <RepublicInfo/>
 
-            <section className="section">
-                <h3 className="bigger-subtitle">💵 Itens à Pagar</h3>
-            </section>
+            <Bills/>
 
             <section className="section">
                 <h3 className="bigger-subtitle">👥 Membros</h3>
