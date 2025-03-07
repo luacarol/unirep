@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useAuth } from "../../context/AuthContext";
 import ButtonIcon from "../../components/Buttons/ButtonIcon/ButtonIcon"
 import "./Login.css";
@@ -48,6 +48,10 @@ const Login = () => {
               onChange={handleChange}
               required
             />
+          </div>
+
+          <div className="label-input">
+            <Link className="link" to="/register"><label className="link">Não tenho uma conta</label></Link>
           </div>
 
           <ButtonIcon text="Entrar" iconClass="fa-solid fa-right-to-bracket" />
