@@ -4,10 +4,12 @@ import { useNavigate } from "react-router-dom";
 import "./EditProfile.css";
 import ButtonIcon from "../../components/Buttons/ButtonIcon/ButtonIcon";
 import defaultProfileImage from "../../assets/images/user.svg"; // Imagem padrão
+import { useToast } from "../../components/Toast/ToastContainer";
 
 const EditProfile = () => {
   const { user } = useAuth(); // Pegando o usuário logado
   const navigate = useNavigate(); // Para redirecionar após salvar o perfil
+  const { addToast } = useToast();
 
   // Estado para armazenar os dados do formulário
   const [formData, setFormData] = useState({
@@ -34,14 +36,28 @@ const EditProfile = () => {
     if (file) {
       const imageUrl = URL.createObjectURL(file);
       setProfileImage(imageUrl);
+      addToast("Imagem alterada com sucesso!", "success");
+    } else {
+      addToast("Nenhuma imagem selecionada.", "warning");
     }
   };
 
   // Função para salvar as informações (substituir por chamada para API real)
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(formData);
-    navigate("/");
+
+    try {
+      console.log(formData);
+
+      // Exibe um toast de sucesso
+      addToast("Perfil atualizado com sucesso!", "success");
+
+      // Redireciona para a página inicial
+      navigate("/");
+    } catch (error) {
+      // Exibe um toast de erro caso ocorra alguma falha
+      addToast("Erro ao atualizar perfil. Tente novamente.", "error");
+    }
   };
 
   return (
