@@ -1,5 +1,4 @@
 .republic-section {
-    width: 100%;
     margin-bottom: 1rem;
 }
 
@@ -7,52 +6,26 @@
     margin-bottom: 0.5rem;
 }
 
-.republic-section .label-value {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-}
-
-.republic-section .label-value:not(:last-child) {
-    margin-bottom: 0.75rem;
-}
-
-.republic-section .name-contact {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 0rem 1rem;
-}
-
-.republic-section .name-contact-address {
-    display: grid;
-    grid-template-columns: 0.5fr 1fr;
-    margin-bottom: 0.5rem;
-}
-
-.republic-section .qtd-members-imgs-videos {
-    display: grid;
-    grid-template-columns: 0.5fr 1fr;
-    padding: 0rem 1rem;
-}
-
-.republic-section .qtd-members-itens-value {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-}
-
-.republic-section .imgs-video {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 0.3rem;
-}
-
-.republic-section .imgs-videos-section img {
-    height: 4rem;
-    margin-right: 0.3rem;
+.republic-section .content {
+    padding: 0.5rem;
     border: 1.5px solid var(--gray-light);
     border-radius: 0.75rem;
-    padding: 0.3rem;
-    box-sizing: border-box;
+    display: grid;
+    grid-template-columns: 0.3fr 0.5fr 0.3fr 0.5fr;
+    align-items: center;
+    column-gap: 0.75rem;
+}
+
+.republic-section .republic-img {
+    width: 12rem;
+}
+
+.republic-section .basic-infos {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.republic-section .basic-infos label:not(:last-child) {
+    margin-bottom: 0.3rem;
 }
