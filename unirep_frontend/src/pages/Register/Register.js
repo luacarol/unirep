@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "./Register.css";
 import ButtonIcon from "../../components/Buttons/ButtonIcon/ButtonIcon";
+import { Link } from "react-router-dom";
 
 const Register = () => {
     const [formData, setFormData] = useState({
@@ -61,6 +62,10 @@ const Register = () => {
                             onChange={handleChange}
                             required
                         />
+                    </div>
+
+                    <div className="label-input">
+                        <Link className="link" to="/login"><label className="link">Já tenho um login</label></Link>
                     </div>
 
                     <ButtonIcon text="Cadastrar" iconClass="fa-solid fa-right-to-bracket" />

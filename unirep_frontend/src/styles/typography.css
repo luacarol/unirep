@@ -29,7 +29,13 @@
 }
 
 .link {
-    font-size: 12px;
-    font-weight: 400;
-    text-wrap: underline;
+    font-size: 12.5px !important;
+    font-weight: 400 !important;
+    text-decoration: underline !important;
+    color: var(--orange) !important;
+    cursor: pointer !important;
+}
+
+.link:hover {
+    color: var(--orange-yellow) !important;
 }
