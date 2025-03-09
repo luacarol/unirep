@@ -9,6 +9,7 @@
     align-items: center;
     justify-content: center;
     cursor: pointer;
+    transition: border-color 0.3s ease, color 0.3s ease;
 }
 
 .button-icon:hover {
@@ -16,8 +17,9 @@
 }
 
 .button-icon:hover i, .button-icon:hover label {
-    color: var(--orange);
+    color: var(--orange); /* Mudando a cor do ícone e do texto */
     cursor: pointer;
+    transition: color 0.3s ease;
 } 
 
 .button-icon i {
