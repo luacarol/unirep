@@ -3,7 +3,7 @@
     border-radius: 0.75rem;
     display: flex;
     flex-direction: row;
-    padding: 0.5rem;
+    padding: 1rem 0.75rem;
     align-items: center;
     justify-content: space-between;
     box-sizing: border-box;
@@ -26,5 +26,5 @@
 }
 
 .member-card .infos .button-line {
-    margin-top: 0.3rem;
+    margin-top: 0.2rem;
 }

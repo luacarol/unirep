@@ -11,9 +11,7 @@ const MemberCard = () => {
                 <label className="legend">Nome do Membro</label>
 
                 <label className="smaller-text">Cursando...</label>
-
-                <label className="smaller-text">(12) 982173929</label>
-
+        
                 <ButtonLine text="Ver detalhes"/>
             </div>
         </div>
