@@ -8,6 +8,7 @@ import EditProfileCard from "../../components/EditProfileCard/EditProfileCard";
 const Home = () => {
   const { user } = useAuth(); // Pega os dados do usuário logado
   const [republics, setRepublics] = useState([]);
+  const [searchQuery, setSearchQuery] = useState(""); // Estado para controlar a pesquisa
 
   // Simulação de dados de repúblicas (pode ser substituído por um fetch na API)
   useEffect(() => {
@@ -15,8 +16,14 @@ const Home = () => {
       { id: 1, name: "República Alpha", rent: 800, members: 3 },
       { id: 2, name: "República Beta", rent: 650, members: 4 },
       { id: 3, name: "República Gamma", rent: 900, members: 2 },
+      { id: 4, name: "República Mágina", rent: 765, members: 4 },
     ]);
   }, []);
+
+  // Filtra as repúblicas com base no texto da pesquisa
+  const filteredRepublics = republics.filter(rep =>
+    rep.name.toLowerCase().includes(searchQuery.toLowerCase())
+  );
 
   return (
     <div className="home">
@@ -27,7 +34,7 @@ const Home = () => {
 
           <div className="section">
             <h1 className="bigger-subtitle section-title">👤 Meu Perfil</h1>
-            <EditProfileCard/>
+            <EditProfileCard />
           </div>
 
           <div className="section">
@@ -39,15 +46,29 @@ const Home = () => {
         <>
           <h2 className="bigger-subtitle welcome-title">Bem-vindo(a) ao UniRep!</h2>
           <h1 className="title">🏠 Repúblicas Disponíveis</h1>
+
+          <div className="search-bar">
+            <input
+              type="text"
+              placeholder="Pesquise por nome de república"
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+            />
+          </div>
+
           <div className="republics">
-            {republics.map((rep) => (
-              <RepublicCard
-                key={rep.id}
-                name={rep.name}
-                rent={rep.rent}
-                members={rep.members}
-              />
-            ))}
+            {filteredRepublics.length > 0 ? (
+              filteredRepublics.map((rep) => (
+                <RepublicCard
+                  key={rep.id}
+                  name={rep.name}
+                  rent={rep.rent}
+                  members={rep.members}
+                />
+              ))
+            ) : (
+              <p>Nenhuma república encontrada.</p>
+            )}
           </div>
         </>
       )}
