@@ -38,14 +38,11 @@
 
 .login .label-input label {
     margin-bottom: 0.3rem;
+    transition: color 0.3s ease; /* Transição suave na mudança de cor */
 }
 
 .login .label-input:hover label {
-    color: var(--orange);
-}
-
-.login .label-input:hover input {
-    border-color: var(--orange);
+    color: var(--orange); /* Cor da label ao passar o mouse */
 }
 
 .login .label-input input {
@@ -57,4 +54,23 @@
     box-sizing: border-box;
     font-size: 0.85rem;
     font-weight: 500;
+    transition: border-color 0.3s ease; /* Transição suave para a borda */
+}
+
+.login .label-input input:focus {
+    border-color: var(--orange); /* Mudança na borda quando o input recebe foco */
+}
+
+.login .label-input:hover input {
+    border-color: var(--orange); /* Cor da borda ao passar o mouse */
+}
+
+.login .link {
+    text-decoration: none;
+}
+
+/* Adicionando efeitos de foco e hover em todos os inputs dentro do form */
+.login input:focus,
+.login input:hover {
+    outline: none;
 }

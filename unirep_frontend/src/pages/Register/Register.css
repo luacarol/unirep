@@ -54,7 +54,7 @@
     box-sizing: border-box;
     font-size: 0.85rem;
     font-weight: 500;
-    transition: border-color 0.3s ease, box-shadow 0.3s ease; /* Adiciona uma transição para a borda e sombra */
+    transition: border-color 0.3s ease; /* Adiciona uma transição para a borda e sombra */
 }
 
 .register .label-input input:focus {

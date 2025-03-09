@@ -17,12 +17,22 @@
     color: var(--black-dark);
     text-decoration: none;
     font-weight: bold;
+    transition: color 0.3s ease, text-decoration 0.3s ease;
+    /* Transições suaves para cor e sublinhado */
 }
 
 .navbar ul li a:hover {
     text-decoration: underline;
+    color: var(--orange);
+    /* Cor ao passar o mouse */
+}
+
+.navbar a {
+    transition: color 0.3s ease;
+    /* Transição suave para a cor do link */
 }
 
 .navbar a:hover {
     color: var(--orange);
+    /* Cor do link ao passar o mouse */
 }
