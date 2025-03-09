@@ -27,7 +27,16 @@ const BillCard = ({ }) => {
                 <i className="fa-solid fa-circle-info"></i>
             </div>
 
-            {isModalOpen && (<Modal handleOpenModal={handleOpenModal} handleCloseModal={handleCloseModal}/>)}
+            {isModalOpen && (<Modal
+                handleOpenModal={handleOpenModal}
+                handleCloseModal={handleCloseModal}
+                infos={
+                    <div className="label-value">
+                        <label className="legend">Explicação da conta:</label>
+                        <label className="smaller-text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.    </label>
+                    </div>
+                }
+            />)}
         </div>
     )
 }
