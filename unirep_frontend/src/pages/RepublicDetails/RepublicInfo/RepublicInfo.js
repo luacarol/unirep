@@ -5,7 +5,7 @@ import ButtonLine from "../../../components/Buttons/ButtonLine/ButtonLine";
 const RepublicInfo = () => {
     return (
         <section className="republic-section">
-            <h3 className="bigger-subtitle">🏠 Informações da República</h3>
+            <h3 className="bigger-subtitle">Informações da República</h3>
 
             <div className="content">
                 <div><img className="republic-img" src={defaultRepublicPicture} alt="Republic logo" /></div>

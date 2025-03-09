@@ -24,7 +24,7 @@ const Bills = () => {
 
     return (
         <section className="bills-section">
-            <h3 className="bigger-subtitle">💵 Itens à Pagar</h3>
+            <h3 className="bigger-subtitle">Itens à Pagar</h3>
 
             <div className="bill-grid">
                 <BillCard/>

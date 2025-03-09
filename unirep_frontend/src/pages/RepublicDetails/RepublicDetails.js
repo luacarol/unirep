@@ -6,14 +6,14 @@ import RepublicInfo from "./RepublicInfo/RepublicInfo";
 const RepublicDetails = () => {
     return (
         <div className="republic-details">
-            <h2 className="bigger-subtitle">Detalhes da sua Moradia!</h2>
+            <h2 className="bigger-subtitle">🏠 Detalhes da sua Moradia!</h2>
 
             <RepublicInfo/>
 
             <Bills/>
 
             <section className="section members-section">
-                <h3 className="bigger-subtitle">👥 Membros</h3>
+                <h3 className="bigger-subtitle">Membros</h3>
 
                 <div className="members-grid">
                     <MemberCard/>
