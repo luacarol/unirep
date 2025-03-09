@@ -2,9 +2,9 @@ import React from "react";
 import "./RepublicCard.css"
 import republicImage from "../../assets/images/undraw_small_town_re_7mcn 1.svg"
 
-const RepublicCard = ({ name, rent, members }) => {
+const RepublicCard = ({ name, rent, members, onClick }) => {
     return (
-        <div className="republic-card">
+        <div className="republic-card" onClick={onClick}>
             <div className="republic-image"><img src={republicImage} alt="Republic logo" /></div>
 
             <div className="republic-card-infos">

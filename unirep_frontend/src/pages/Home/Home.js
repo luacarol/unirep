@@ -4,11 +4,16 @@ import RepublicCard from "../../components/RepublicCard/RepublicCard";
 import UserRepublic from "../../components/UserRepublic/UserRepublic";
 import './Home.css';
 import EditProfileCard from "../../components/EditProfileCard/EditProfileCard";
+import { useNavigate } from "react-router-dom";
 
 const Home = () => {
   const { user } = useAuth(); // Pega os dados do usuário logado
   const [republics, setRepublics] = useState([]);
   const [searchQuery, setSearchQuery] = useState(""); // Estado para controlar a pesquisa
+
+  const navigate = useNavigate();
+
+  let notLoggedIn = false;
 
   // Simulação de dados de repúblicas (pode ser substituído por um fetch na API)
   useEffect(() => {
@@ -24,6 +29,14 @@ const Home = () => {
   const filteredRepublics = republics.filter(rep =>
     rep.name.toLowerCase().includes(searchQuery.toLowerCase())
   );
+
+  const handleRepublicCard = () => {
+    if (notLoggedIn == true) {
+      navigate("/login");
+    } else {
+      navigate("/republic-details")
+    }
+  }
 
   return (
     <div className="home">
@@ -64,6 +77,7 @@ const Home = () => {
                   name={rep.name}
                   rent={rep.rent}
                   members={rep.members}
+                  onClick={handleRepublicCard}
                 />
               ))
             ) : (
