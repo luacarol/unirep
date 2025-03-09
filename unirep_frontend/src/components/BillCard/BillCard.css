@@ -1,0 +1,40 @@
+.bill-card {
+    border: 1.5px solid var(--gray-light);
+    border-radius: 0.7rem;
+    padding: 0.5rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    position: relative; /* Permite posicionar elementos filhos absolutos */
+}
+
+.bill-card .content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.bill-card div:not(:last-child) {
+    margin-right: 1rem;
+}
+
+.bill-card .content label:not(:last-child) {
+    margin-bottom: 0.25rem;
+}
+
+.bill-card .paid {
+    color: var(--green);
+}
+
+.bill-card .info-icon {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    font-size: 0.85rem;
+    color: var(--gray); 
+    cursor: pointer;
+}
+
+.bill-card .info-icon:hover {
+    color: var(--black-dark);
+}

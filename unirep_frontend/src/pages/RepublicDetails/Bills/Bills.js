@@ -28,6 +28,8 @@ const Bills = () => {
 
             <div className="bill-grid">
                 <BillCard/>
+                <BillCard/>
+                <BillCard/>
             </div>
         </section>
     );

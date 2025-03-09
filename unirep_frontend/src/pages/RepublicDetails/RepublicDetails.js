@@ -6,7 +6,7 @@ import RepublicInfo from "./RepublicInfo/RepublicInfo";
 const RepublicDetails = () => {
     return (
         <div className="republic-details">
-            <h2 className="title">✨ Detalhes da sua Moradia</h2>
+            <h2 className="bigger-subtitle">Detalhes da sua Moradia!</h2>
 
             <RepublicInfo/>
 
