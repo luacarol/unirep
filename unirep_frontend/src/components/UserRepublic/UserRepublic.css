@@ -40,5 +40,5 @@
 }
 
 .user-republic-card .link {
-    text-decoration: none;
+    text-decoration: none !important;
 }

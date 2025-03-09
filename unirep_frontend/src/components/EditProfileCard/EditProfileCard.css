@@ -44,5 +44,5 @@
 }
 
 .edit-profile-card .link {
-    text-decoration: none;
+    text-decoration: none !important;
 }
