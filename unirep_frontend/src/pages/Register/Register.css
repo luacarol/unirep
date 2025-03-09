@@ -38,14 +38,11 @@
 
 .register .label-input label {
     margin-bottom: 0.3rem;
+    transition: color 0.3s ease; /* Adicionando transição para a mudança de cor */
 }
 
 .register .label-input:hover label {
-    color: var(--orange);
-}
-
-.register .label-input:hover input {
-    border-color: var(--orange);
+    color: var(--orange); /* Muda a cor da label ao passar o mouse */
 }
 
 .register .label-input input {
@@ -57,8 +54,23 @@
     box-sizing: border-box;
     font-size: 0.85rem;
     font-weight: 500;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease; /* Adiciona uma transição para a borda e sombra */
+}
+
+.register .label-input input:focus {
+    border-color: var(--orange); /* Mudança na borda ao focar no input */
+}
+
+.register .label-input:hover input {
+    border-color: var(--orange); /* Muda a cor da borda ao passar o mouse */
 }
 
 .register .link {
     text-decoration: none;
+}
+
+/* Adicionando efeitos de foco e hover em todos os inputs dentro do form */
+.register input:focus,
+.register input:hover {
+    outline: none;
 }
