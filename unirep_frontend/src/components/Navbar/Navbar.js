@@ -1,20 +1,26 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";  // Importando o useNavigate
 import "./Navbar.css";
 
 const Navbar = () => {
+    const navigate = useNavigate();  // Criando a função de navegação
+
+    const handleTitleClick = () => {
+        navigate("/");  // Navega para a home
+    };
+
     return (
         <nav className="navbar">
-            <h2 className="title">UniRep</h2>
+            <h2 className="title" onClick={handleTitleClick}>UniRep</h2>  {/* Função de clique */}
             <ul>
                 <li>
-                    <Link className="minor-subtitle" to="/">Home</Link>
+                    <a className="minor-subtitle" href="/">Home</a>
                 </li>
                 <li>
-                    <Link className="minor-subtitle" to="/register">Cadastrar-se</Link>
+                    <a className="minor-subtitle" href="/register">Cadastrar-se</a>
                 </li>
                 <li>
-                    <Link className="minor-subtitle" to="/login">Login</Link>
+                    <a className="minor-subtitle" href="/login">Login</a>
                 </li>
             </ul>
         </nav>

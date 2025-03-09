@@ -7,6 +7,10 @@
     padding: 1.5rem 15rem;
 }
 
+.navbar .title {
+    cursor: pointer;
+}
+
 .navbar ul {
     list-style: none;
     display: flex;
