@@ -29,3 +29,47 @@
 .republic-section .basic-infos label:not(:last-child) {
     margin-bottom: 0.3rem;
 }
+
+.republic-section .label-value {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.republic-section .map-card-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.republic-section .map-card-container .section {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.republic-section .map-card-container .section:not(:last-child) {
+    margin-bottom: 0.5rem;
+}
+
+.republic-section .map-card {
+    width: 100%;
+    max-width: 40rem;
+    border-radius: 0.75rem;
+    overflow: hidden;
+    border: 2px solid var(--gray-light);
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    transition: border 0.2s ease-in-out;
+    text-decoration: none;
+    color: inherit;
+}
+
+.republic-section .map-card:hover {
+    border: 2px solid var(--orange);
+}
+
+.republic-section .map-image {
+    width: 100%;
+    height: auto;
+    display: block;
+}
