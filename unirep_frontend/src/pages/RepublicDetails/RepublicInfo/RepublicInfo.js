@@ -5,9 +5,9 @@ import ButtonLine from "../../../components/Buttons/ButtonLine/ButtonLine";
 import Modal from "../../../components/Modal/Modal";
 
 const RepublicInfo = () => {
-    const [isModalOpen, setIsModalOpen] = useState(false);
-    const handleOpenModal = () => setIsModalOpen(true);
-    const handleCloseModal = () => setIsModalOpen(false);
+    const [isAddressModalOpen, setIsAddressModalOpen] = useState(false);
+    const handleAddressOpenModal = () => setIsAddressModalOpen(true);
+    const handleAddressCloseModal = () => setIsAddressModalOpen(false);
 
     // URL do Google Maps com coordenadas específicas (substitua com as reais)
     const googleMapsUrl = "https://www.google.com/maps?q=-23.55052,-46.633308";
@@ -32,16 +32,16 @@ const RepublicInfo = () => {
                 </div>
 
                 <div className="basic-infos">
-                    <ButtonLine text="Endereço" onClick={handleOpenModal} />
+                    <ButtonLine text="Endereço" onClick={handleAddressOpenModal} />
                     <ButtonLine text="Imagens e Vídeos" />
                 </div>
             </div>
 
-            {isModalOpen && (
+            {isAddressModalOpen && (
                 <Modal
                     title="Endereço da República"
-                    handleOpenModal={handleOpenModal}
-                    handleCloseModal={handleCloseModal}
+                    handleOpenModal={handleAddressOpenModal}
+                    handleCloseModal={handleAddressCloseModal}
                     infos={
                         <div className="map-card-container">
                             <div className="section">
