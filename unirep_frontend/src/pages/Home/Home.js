@@ -18,10 +18,10 @@ const Home = () => {
   // Simulação de dados de repúblicas (pode ser substituído por um fetch na API)
   useEffect(() => {
     setRepublics([
-      { id: 1, name: "República Alpha", rent: 800, members: 3 },
-      { id: 2, name: "República Beta", rent: 650, members: 4 },
-      { id: 3, name: "República Gamma", rent: 900, members: 2 },
-      { id: 4, name: "República Mágina", rent: 765, members: 4 },
+      { id: 1, name: "República Alpha", rent: 800, members: 3, description: "Essa é a república Alpha, nós somos unidos e gostamos de organização" },
+      { id: 2, name: "República Beta", rent: 650, members: 4, description: "Essa é a república Beta, gostamos de uma boa festa para unir laços" },
+      { id: 3, name: "República Gamma", rent: 900, members: 2, description: "Essa é a república Gamma, somos centrados nos estudos e gostamos de compartilhar estudos" },
+      { id: 4, name: "República Magma", rent: 765, members: 4, description: "Essa é a república Magma, somos flexíveis uns com os outros, prezados pela diversidade" },
     ]);
   }, []);
 
@@ -77,6 +77,7 @@ const Home = () => {
                   name={rep.name}
                   rent={rep.rent}
                   members={rep.members}
+                  description={rep.description}
                   onClick={handleRepublicCard}
                 />
               ))
