@@ -5,13 +5,14 @@ const Modal = ({ title, handleOpenModal, handleCloseModal, infos }) => {
     return (
         <div className="modal-overlay" onClick={handleOpenModal}>
             <div className="modal-content" onClick={(e) => e.stopPropagation()}>
-                <h3 className="minor-subtitle">{title}</h3>
+                <div className="title-button">
+                    <h3 className="minor-subtitle">{title}</h3>
+                    <ButtonIcon iconClass="fa-solid fa-xmark" onClick={handleCloseModal} onlyIcon={true}/>
+                </div>
 
                 <div className="infos">
                     {infos}
                 </div>
-
-                <ButtonIcon text="Ok" iconClass="fa-solid fa-check" onClick={handleCloseModal}/>
             </div>
         </div>
     )

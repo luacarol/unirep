@@ -11,8 +11,13 @@
     z-index: 1000;
 }
 
-.modal-overlay h3 {
+.modal-content .title-button {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
     margin-bottom: 1rem !important;
+    width: 100%;
 }
 
 .modal-content {
