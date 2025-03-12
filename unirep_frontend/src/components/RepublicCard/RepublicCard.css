@@ -2,9 +2,9 @@
     background-color: white;
     border-radius: 0.75rem;
     box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
-    height: 19rem;
+    height: 20rem;
     border: 1.5px solid var(--gray-light);
-    transition: box-shadow 0.3s ease, transform 0.2s ease;
+    transition: box-shadow 0.3s ease, transform 0.2s ease, border 0.2s ease;
     cursor: pointer;
     box-sizing: border-box;
 }
@@ -12,10 +12,11 @@
 .republic-card:hover {
     box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.2);
     transform: scale(1.02);
+    border: 1.5px solid var(--orange);
 }
 
 .republic-card .republic-name {
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.3rem;
 }
 
 .republic-card .republic-image {
@@ -30,7 +31,7 @@
 
 .republic-card .republic-card-infos {
     padding: 1rem 1.5rem;
-    height: 7rem;
+    height: 8.25rem;
     display: flex;
     flex-direction: column;
     justify-content: space-between;

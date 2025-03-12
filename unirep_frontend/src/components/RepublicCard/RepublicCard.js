@@ -19,6 +19,11 @@ const RepublicCard = ({ name, rent, members, description, onClick }) => {
                     <i className="fas fa-newspaper"></i>
                     <label className="smaller-text description">{description}</label>
                 </div>
+
+                <div className="icon-label">
+                    <i class="fa-solid fa-location-dot"></i>
+                    <label className="smaller-text">São José dos Campos</label>
+                </div>
             
                 <label className="legend rent">R$ {rent}</label>
             </div>
