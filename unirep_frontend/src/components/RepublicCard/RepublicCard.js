@@ -8,7 +8,7 @@ const RepublicCard = ({ name, rent, members, description, onClick }) => {
             <div className="republic-image"><img src={republicImage} alt="Republic logo" /></div>
 
             <div className="republic-card-infos">
-                <label className="text-commom">{name}</label>
+                <label className="text-commom republic-name">{name}</label>
 
                 <div className="icon-label">
                     <i className="fa fa-users"></i>
@@ -17,7 +17,7 @@ const RepublicCard = ({ name, rent, members, description, onClick }) => {
 
                 <div className="icon-label">
                     <i className="fas fa-newspaper"></i>
-                    <label className="smaller-text">{description}</label>
+                    <label className="smaller-text description">{description}</label>
                 </div>
             
                 <label className="legend rent">R$ {rent}</label>
