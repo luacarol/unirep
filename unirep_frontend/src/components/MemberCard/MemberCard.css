@@ -1,17 +1,17 @@
 .member-card {
     border: 1.5px solid var(--gray-light);
     border-radius: 0.75rem;
-    display: flex;
-    flex-direction: row;
-    padding: 1rem 0.75rem;
+    padding: 0.75rem 0.7rem;
+    display: grid;
+    grid-template-columns: 0.3fr 1fr;
+    column-gap: 0.75rem;
     align-items: center;
-    justify-content: space-between;
     box-sizing: border-box;
 }
 
 .member-card .member-profile-img {
-    width: 3rem;
-    height: 3rem;
+    width: 3.5rem;
+    height: 3.5rem;
     border: 1.5px solid var(--gray-light);
     border-radius: 50%;
 }
@@ -19,12 +19,14 @@
 .member-card .infos {
     display: flex;
     flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
 }
 
 .member-card .infos label:not(:last-child) {
     margin-bottom: 0.2rem;
 }
 
-.member-card .infos .button-line {
+.member-card .infos .imgs-videos-button {
     margin-top: 0.2rem;
 }

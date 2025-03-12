@@ -8,11 +8,11 @@ const MemberCard = () => {
             <img className="member-profile-img" src={userProfile} alt="User Profile"/>
 
             <div className="infos">
-                <label className="legend">Nome do Membro</label>
+                <label className="legend">Luana dos Anjos</label>
 
-                <label className="smaller-text">Cursando...</label>
+                <label className="smaller-text course">Cursando Análise e Desenvolvimento de Sistemas</label>
         
-                <ButtonLine text="Ver detalhes"/>
+                <ButtonLine className="imgs-videos-button" text="Detalhes"/>
             </div>
         </div>
     )
