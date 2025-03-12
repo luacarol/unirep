@@ -1,5 +1,5 @@
 .republic-section {
-    width: 50rem;
+    width: 45rem;
     margin-bottom: 2rem;
 }
 
@@ -12,9 +12,9 @@
     border: 1.5px solid var(--gray-light);
     border-radius: 0.75rem;
     display: grid;
-    grid-template-columns: 0.3fr 0.85fr 0.35fr 0.5fr;
+    grid-template-columns: 0.3fr 0.3fr 0.5fr 0.5fr;
     align-items: center;
-    column-gap: 1rem;
+    column-gap: 0.5rem;
 }
 
 .republic-section .republic-img {
@@ -29,6 +29,10 @@
 
 .republic-section .basic-infos label:not(:last-child) {
     margin-bottom: 0.3rem;
+}
+
+.republic-section .address-button {
+    margin-bottom: 0.25rem;
 }
 
 .republic-section .label-value {
@@ -60,9 +64,9 @@
 .republic-section .map-card {
     width: 100%;
     max-width: 43rem;
-    border-radius: 0.75rem;
+    border-radius: 0.5rem;
     overflow: hidden;
-    border: 2px solid var(--gray-light);
+    border: 1.5px solid var(--gray-light);
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
     transition: border 0.2s ease-in-out;
     text-decoration: none;
@@ -70,17 +74,13 @@
 }
 
 .republic-section .map-card:hover {
-    border: 2px solid var(--orange);
+    border: 1.5px solid var(--orange);
 }
 
 .republic-section .map-image {
     width: 100%;
     height: auto;
     display: block;
-}
-
-.republic-section .imgs-modal-grid {
-    
 }
 
 .republic-section .imgs-modal-grid .imgs {

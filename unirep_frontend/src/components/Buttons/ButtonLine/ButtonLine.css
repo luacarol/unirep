@@ -1,9 +1,9 @@
 .button-line {
     color: var(--orange);
-    display: grid;
     display: flex;
     flex-direction: row;
-    align-items: center;
+    align-items: flex-start;
+    justify-content: space-between;
     cursor: pointer;
     transition: color 0.3s ease;
 }

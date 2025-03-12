@@ -20,6 +20,8 @@ const RepublicInfo = () => {
 
     const images = [itemIcon, itemIcon, itemIcon, itemIcon, defaultRepublicPicture, defaultRepublicPicture]; // Substitua por suas imagens reais
 
+    let isMember = false;
+
     return (
         <section className="republic-section">
             <h3 className="bigger-subtitle">Informações da República</h3>
@@ -31,16 +33,16 @@ const RepublicInfo = () => {
 
                 <div className="basic-infos">
                     <label className="legend">República Beta</label>
+                    <label className="smaller-text">4 membros</label>
+                    {isMember == true && <label className="smaller-text">(12) 982173927</label>}
+                </div>
+
+                <div className="basic-infos">
                     <label className="smaller-text description">Essa é a república Beta, gostamos de uma boa festa para unir laços</label>
                 </div>
 
                 <div className="basic-infos">
-                    <label className="smaller-text">(12) 982173927</label>
-                    <label className="smaller-text">4 membros</label>
-                </div>
-
-                <div className="basic-infos">
-                    <ButtonLine text="Endereço" onClick={handleAddressOpenModal} />
+                    <ButtonLine className="address-button" text="Endereço" onClick={handleAddressOpenModal} />
                     <ButtonLine text="Imagens e Vídeos" onClick={handleImgsVideosOpenModal} />
                 </div>
             </div>
