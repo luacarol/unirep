@@ -2,7 +2,7 @@ import React from "react";
 import "./RepublicCard.css"
 import republicImage from "../../assets/images/undraw_small_town_re_7mcn 1.svg"
 
-const RepublicCard = ({ name, rent, members, onClick }) => {
+const RepublicCard = ({ name, rent, members, description, onClick }) => {
     return (
         <div className="republic-card" onClick={onClick}>
             <div className="republic-image"><img src={republicImage} alt="Republic logo" /></div>
@@ -17,7 +17,7 @@ const RepublicCard = ({ name, rent, members, onClick }) => {
 
                 <div className="icon-label">
                     <i className="fas fa-newspaper"></i>
-                    <label className="smaller-text">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</label>
+                    <label className="smaller-text">{description}</label>
                 </div>
             
                 <label className="legend rent">R$ {rent}</label>
