@@ -30,13 +30,13 @@ const RepublicInfo = () => {
                 </div>
 
                 <div className="basic-infos">
-                    <label className="legend">Nome da República</label>
-                    <label className="smaller-text description">Descrição sobre a república e localização.</label>
+                    <label className="legend">República Beta</label>
+                    <label className="smaller-text description">Essa é a república Beta, gostamos de uma boa festa para unir laços</label>
                 </div>
 
                 <div className="basic-infos">
-                    <label className="smaller-text">Contato do Representante</label>
-                    <label className="smaller-text">Quantidade de Membros</label>
+                    <label className="smaller-text">(12) 982173927</label>
+                    <label className="smaller-text">4 membros</label>
                 </div>
 
                 <div className="basic-infos">
@@ -54,7 +54,7 @@ const RepublicInfo = () => {
                         <div className="map-card-container">
                             <div className="section">
                                 <label className="legend">Endereço:</label>
-                                <label className="smaller-text">Av. Júlio Cézar Vilaça, 478.<br />Jardim Santo Onofre.<br />São José dos Campos, SP.</label>
+                                <label className="smaller-text description">Av. Júlio Cézar Vilaça, 478.<br />Jardim Santo Onofre.<br />São José dos Campos, SP.</label>
                             </div>
 
                             <div className="section">
