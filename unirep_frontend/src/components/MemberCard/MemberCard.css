@@ -30,3 +30,7 @@
 .member-card .infos .imgs-videos-button {
     margin-top: 0.2rem;
 }
+
+.member-card .label-value:not(:last-child) {
+    margin-bottom: 0.35rem;
+}
