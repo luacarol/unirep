@@ -3,14 +3,22 @@ import "./RepublicInfo.css";
 import defaultRepublicPicture from "../../../assets/images/undraw_small_town_re_7mcn 1.svg";
 import ButtonLine from "../../../components/Buttons/ButtonLine/ButtonLine";
 import Modal from "../../../components/Modal/Modal";
+import itemIcon from "../../../assets/images/item_icon.svg";
+import CarouselImages from "../../../components/CarouselImages/CarouselImages";
 
 const RepublicInfo = () => {
     const [isAddressModalOpen, setIsAddressModalOpen] = useState(false);
     const handleAddressOpenModal = () => setIsAddressModalOpen(true);
     const handleAddressCloseModal = () => setIsAddressModalOpen(false);
 
+    const [isImgsVideosModalOpen, setIsImgsVideosModalOpen] = useState(false);
+    const handleImgsVideosOpenModal = () => setIsImgsVideosModalOpen(true);
+    const handleImgsVideosCloseModal = () => setIsImgsVideosModalOpen(false);
+
     // URL do Google Maps com coordenadas específicas (substitua com as reais)
     const googleMapsUrl = "https://www.google.com/maps?q=-23.55052,-46.633308";
+
+    const images = [itemIcon, itemIcon, itemIcon, itemIcon, defaultRepublicPicture, defaultRepublicPicture]; // Substitua por suas imagens reais
 
     return (
         <section className="republic-section">
@@ -33,7 +41,7 @@ const RepublicInfo = () => {
 
                 <div className="basic-infos">
                     <ButtonLine text="Endereço" onClick={handleAddressOpenModal} />
-                    <ButtonLine text="Imagens e Vídeos" />
+                    <ButtonLine text="Imagens e Vídeos" onClick={handleImgsVideosOpenModal} />
                 </div>
             </div>
 
@@ -66,6 +74,17 @@ const RepublicInfo = () => {
                                 </a>
                             </div>
                         </div>
+                    }
+                />
+            )}
+
+            {isImgsVideosModalOpen && (
+                <Modal
+                    title="Imagens e Vídeos da República"
+                    handleOpenModal={handleImgsVideosOpenModal}
+                    handleCloseModal={handleImgsVideosCloseModal}
+                    infos={
+                        <CarouselImages images={images} />
                     }
                 />
             )}

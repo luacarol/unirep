@@ -77,3 +77,11 @@
     height: auto;
     display: block;
 }
+
+.republic-section .imgs-modal-grid {
+    
+}
+
+.republic-section .imgs-modal-grid .imgs {
+    width: 6rem;
+}

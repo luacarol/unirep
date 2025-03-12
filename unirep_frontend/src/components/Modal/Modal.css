@@ -27,6 +27,10 @@
     align-items: flex-start;
 }
 
+.modal-content .carousel-container {
+    max-width: 100%;
+}
+
 .modal-content .infos {
     width: 100%;
     margin-bottom: 1rem;
