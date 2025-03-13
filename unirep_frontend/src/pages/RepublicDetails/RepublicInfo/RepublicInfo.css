@@ -41,6 +41,8 @@
     align-items: flex-start;
 }
 
+/* Estilização do Modal de Endereço */
+
 .republic-section .map-card-container {
     display: flex;
     flex-direction: column;
@@ -63,7 +65,7 @@
 
 .republic-section .map-card {
     width: 100%;
-    max-width: 43rem;
+    max-width: 25rem;
     border-radius: 0.5rem;
     overflow: hidden;
     border: 1.5px solid var(--gray-light);
