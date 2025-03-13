@@ -85,6 +85,19 @@
     display: block;
 }
 
-.republic-section .imgs-modal-grid .imgs {
-    width: 6rem;
+/* Estilização do Modal de Imagens e Vídeos */
+
+.republic-section .imgs-videos-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    width: 100%;
+    max-height: 30em; /* Ajuste conforme necessário */
+    overflow-y: auto;
+    padding-right: 1rem; /* Evita que o conteúdo fique muito grudado na barra de rolagem */
+    box-sizing: border-box;
+}
+
+.republic-section .imgs-videos-grid img {
+    width: 16rem;
 }

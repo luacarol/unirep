@@ -1,9 +1,9 @@
 import "./Modal.css";
 import ButtonIcon from "../Buttons/ButtonIcon/ButtonIcon";
 
-const Modal = ({ title, handleOpenModal, handleCloseModal, infos }) => {
+const Modal = ({ className, title, handleOpenModal, handleCloseModal, infos }) => {
     return (
-        <div className="modal-overlay" onClick={handleOpenModal}>
+        <div className={`modal-overlay ${className}`} onClick={handleOpenModal}>
             <div className="modal-content" onClick={(e) => e.stopPropagation()}>
                 <div className="title-button">
                     <h3 className="minor-subtitle">{title}</h3>

@@ -6,6 +6,7 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import './styles/colors.css';
 import './styles/typography.css';
+import './styles/global.css';
 import '@fortawesome/fontawesome-free/css/all.min.css';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));

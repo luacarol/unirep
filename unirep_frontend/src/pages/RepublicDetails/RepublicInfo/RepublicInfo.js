@@ -4,7 +4,6 @@ import defaultRepublicPicture from "../../../assets/images/undraw_small_town_re_
 import ButtonLine from "../../../components/Buttons/ButtonLine/ButtonLine";
 import Modal from "../../../components/Modal/Modal";
 import itemIcon from "../../../assets/images/item_icon.svg";
-import CarouselImages from "../../../components/CarouselImages/CarouselImages";
 
 const RepublicInfo = () => {
     const [isAddressModalOpen, setIsAddressModalOpen] = useState(false);
@@ -87,7 +86,21 @@ const RepublicInfo = () => {
                     handleOpenModal={handleImgsVideosOpenModal}
                     handleCloseModal={handleImgsVideosCloseModal}
                     infos={
-                        <CarouselImages images={images} />
+                        <div className="imgs-videos-content-modal">
+                            <div className="imgs-videos-grid">
+                                <img src={defaultRepublicPicture} alt="Republic logo"/>
+                                <img src={defaultRepublicPicture} alt="Republic logo"/>
+                                <img src={defaultRepublicPicture} alt="Republic logo"/>
+                                <img src={defaultRepublicPicture} alt="Republic logo"/>
+                                <img src={defaultRepublicPicture} alt="Republic logo"/>
+                                <img src={defaultRepublicPicture} alt="Republic logo"/>
+                                <img src={defaultRepublicPicture} alt="Republic logo"/>
+                                <img src={defaultRepublicPicture} alt="Republic logo"/>
+                                <img src={defaultRepublicPicture} alt="Republic logo"/>
+                                <img src={defaultRepublicPicture} alt="Republic logo"/>
+                                
+                            </div>
+                        </div>
                     }
                 />
             )}

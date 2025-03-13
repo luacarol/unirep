@@ -25,7 +25,7 @@
     padding: 1.5rem;
     border-radius: 0.5rem;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
-    max-width: 50rem;
+    max-width: 60rem;
     min-width: 25rem;
     width: auto;
     display: flex;
@@ -35,9 +35,4 @@
 
 .modal-content .carousel-container {
     max-width: 100%;
-}
-
-.modal-content .infos {
-    width: 100%;
-    margin-bottom: 1rem;
 }
