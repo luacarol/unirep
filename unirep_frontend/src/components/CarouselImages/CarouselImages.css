@@ -16,8 +16,8 @@
 }
 
 .carousel-img {
-    width: 25%; /* 100% / 4 imagens = 25% */
-    max-width: 125px; /* Define um tamanho fixo para manter a responsividade */
+    width: 50%; /* 100% / 4 imagens = 25% */
+    max-width: 500px; /* Define um tamanho fixo para manter a responsividade */
     height: auto;
     border-radius: 8px;
     margin: 0 5px;

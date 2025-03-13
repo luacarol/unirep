@@ -41,6 +41,7 @@
 }
 
 .bill-card .label-value {
+    max-width: 25rem;
     display: flex;
     flex-direction: column;
     align-items: flex-start;

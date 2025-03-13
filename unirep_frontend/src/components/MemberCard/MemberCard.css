@@ -45,6 +45,10 @@
     margin-top: 0.2rem;
 }
 
+.member-card .modal-infos {
+    max-width: 25rem;
+}
+
 .member-card .label-value:not(:last-child) {
     margin-bottom: 0.35rem;
 }

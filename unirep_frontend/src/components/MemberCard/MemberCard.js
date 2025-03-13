@@ -28,7 +28,7 @@ const MemberCard = ({ member }) => {
                     handleOpenModal={handleOpenModal}
                     handleCloseModal={handleCloseModal}
                     infos={
-                        <>
+                        <div className="modal-infos">
                             <div className="label-value">
                                 <label className="legend">Nome: </label>
                                 <label className="smaller-text">{member.name}</label>
@@ -65,7 +65,7 @@ const MemberCard = ({ member }) => {
                                     ))}
                                 </ul>
                             </div>
-                        </>
+                        </div>
                     }
                 />
             )}
