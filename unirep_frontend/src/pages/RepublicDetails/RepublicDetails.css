@@ -23,3 +23,31 @@
     align-items: center;
     justify-content: space-between;
 }
+
+/* Estilização do Modal de Confirmação de Entrada */
+
+.republic-details .yes-no-buttons {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 1rem;
+}
+
+.republic-details .yes-no-buttons button:not(:last-child) {
+    margin-right: 0.5rem;
+}
+
+.republic-details .info-confirm-content-modal {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.republic-details .info-confirm-content-modal label:not(:last-child) {
+    margin-bottom: 0.35rem;
+}
+
+.republic-details .info-confirm-content-modal i {
+    font-size: 2.5rem;
+    color: var(--green);
+}
