@@ -1,3 +1,4 @@
+import ButtonIcon from "../../components/Buttons/ButtonIcon/ButtonIcon";
 import MemberCard from "../../components/MemberCard/MemberCard";
 import Bills from "./Bills/Bills";
 import "./RepublicDetails.css";
@@ -47,9 +48,14 @@ const mockMembers = [
 ];
 
 const RepublicDetails = () => {
+    let notMember = true;
+
     return (
         <div className="republic-details">
-            <h2 className="bigger-subtitle">🏠 Detalhes da Moradia!</h2>
+            <div className="title-button-section">
+                <h2 className="bigger-subtitle">🏠 Detalhes da Moradia!</h2>
+                {notMember == true && <div className="button"><ButtonIcon text="Solicitar Entrada" iconClass="fa-solid fa-door-open" /></div>}
+            </div>
 
             <RepublicInfo />
 
@@ -64,6 +70,7 @@ const RepublicDetails = () => {
                     ))}
                 </div>
             </section>
+
         </div>
     );
 };

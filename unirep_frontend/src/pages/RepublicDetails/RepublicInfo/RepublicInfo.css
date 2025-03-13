@@ -1,5 +1,5 @@
 .republic-section {
-    width: 45rem;
+    width: 48.5rem;
     margin-bottom: 2rem;
 }
 
@@ -12,9 +12,9 @@
     border: 1.5px solid var(--gray-light);
     border-radius: 0.75rem;
     display: grid;
-    grid-template-columns: 0.3fr 0.3fr 0.5fr 0.5fr;
+    grid-template-columns: 0.35fr 0.35fr 0.6fr 0.6fr;
     align-items: center;
-    column-gap: 0.5rem;
+    column-gap: 1.5rem;
 }
 
 .republic-section .republic-img {
