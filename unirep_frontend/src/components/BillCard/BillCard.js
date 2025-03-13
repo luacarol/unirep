@@ -4,9 +4,10 @@ import itemPicture from "../../assets/images/item_icon.svg";
 import ButtonLine from "../Buttons/ButtonLine/ButtonLine";
 import Modal from "../Modal/Modal";
 
-const BillCard = ({ }) => {
+const BillCard = ({ bill }) => {
+    const { name, amount, description } = bill;
     let status = "Pago";
-    let notMember = true;  // Alterei o valor para false, de acordo com seu exemplo
+    let notMember = true;
 
     const [isModalOpen, setIsModalOpen] = useState(false);
     const handleOpenModal = () => setIsModalOpen(true);
@@ -17,8 +18,8 @@ const BillCard = ({ }) => {
             <div><img src={itemPicture} alt="Item logo" /></div>
 
             <div className="content">
-                <label className="legend">Nome da Conta</label>
-                <label className="smaller-text">R$ 150,00</label>
+                <label className="legend">{name}</label>
+                <label className="smaller-text">R$ {amount.toFixed(2)}</label>
 
                 {notMember === false && (
                     <>
@@ -34,12 +35,13 @@ const BillCard = ({ }) => {
 
             {isModalOpen && (
                 <Modal
+                    title="Detalhes da Conta"
                     handleOpenModal={handleOpenModal}
                     handleCloseModal={handleCloseModal}
                     infos={
                         <div className="label-value">
-                            <label className="legend">Explicação da conta:</label>
-                            <label className="smaller-text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s. </label>
+                            <label className="legend">{name}</label>
+                            <label className="smaller-text">{description}</label>
                         </div>
                     }
                 />

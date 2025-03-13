@@ -34,6 +34,7 @@ const RepublicInfo = () => {
                 <div className="basic-infos">
                     <label className="legend">República Beta</label>
                     <label className="smaller-text">4 membros</label>
+                    <label className="smaller-text">R$ 180,00</label>
                     {isMember == true && <label className="smaller-text">(12) 982173927</label>}
                 </div>
 
