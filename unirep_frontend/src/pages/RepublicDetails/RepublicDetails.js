@@ -20,7 +20,6 @@ const RepublicDetails = () => {
                     <MemberCard/>
                     <MemberCard/>
                     <MemberCard/>
-                    <MemberCard/>
                 </div>
             </section>
         </div>
