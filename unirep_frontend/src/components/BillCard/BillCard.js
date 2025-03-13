@@ -15,9 +15,9 @@ const BillCard = ({ bill }) => {
 
     return (
         <div className="bill-card">
-            <div><img src={itemPicture} alt="Item logo" /></div>
+            <div className="div"><img src={itemPicture} alt="Item logo" /></div>
 
-            <div className="content">
+            <div className="content div">
                 <label className="legend">{name}</label>
                 <label className="smaller-text">R$ {amount.toFixed(2)}</label>
 

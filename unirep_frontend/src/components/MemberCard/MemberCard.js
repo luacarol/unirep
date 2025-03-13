@@ -1,10 +1,9 @@
 import React, { useState } from "react";
 import "./MemberCard.css";
-import userProfile from "../../assets/images/user.svg"
-import ButtonLine from "../Buttons/ButtonLine/ButtonLine";
+import userProfile from "../../assets/images/user.svg";
 import Modal from "../Modal/Modal";
 
-const MemberCard = () => {
+const MemberCard = ({ member }) => {
     const [isModalOpen, setIsModalOpen] = useState(false);
     const handleOpenModal = () => setIsModalOpen(true);
     const handleCloseModal = () => setIsModalOpen(false);
@@ -14,11 +13,13 @@ const MemberCard = () => {
             <img className="member-profile-img" src={userProfile} alt="User Profile" />
 
             <div className="infos">
-                <label className="legend">Luana dos Anjos</label>
+                <label className="legend">{member.name}</label>
+                <label className="smaller-text">{member.age} anos</label>
+                <label className="smaller-text">Não gosto de {member.dislikes}</label>
+            </div>
 
-                <label className="smaller-text course">Cursando Análise e Desenvolvimento de Sistemas</label>
-
-                <ButtonLine className="imgs-videos-button" text="Detalhes" onClick={handleOpenModal} />
+            <div className="info-icon" onClick={handleOpenModal}>
+                <i className="fa-solid fa-arrow-up-right-from-square"></i>
             </div>
 
             {isModalOpen && (
@@ -30,37 +31,38 @@ const MemberCard = () => {
                         <>
                             <div className="label-value">
                                 <label className="legend">Nome: </label>
-                                <label className="smaller-text">Luana dos Anjos</label>
+                                <label className="smaller-text">{member.name}</label>
                             </div>
                             <div className="label-value">
                                 <label className="legend">Idade: </label>
-                                <label className="smaller-text">24 anos</label>
+                                <label className="smaller-text">{member.age} anos</label>
                             </div>
                             <div className="label-value">
                                 <label className="legend">Cursando: </label>
-                                <label className="smaller-text">Análise e Desenvolvimento de Sistemas</label>
+                                <label className="smaller-text">{member.course}</label>
                             </div>
                             <div className="label-value">
                                 <label className="legend">Hobbie Preferido: </label>
-                                <label className="smaller-text">Jogar futebol</label>
+                                <label className="smaller-text">{member.hobby}</label>
                             </div>
                             <div className="label-value">
                                 <label className="legend">Eu Não Gosto de... </label>
-                                <label className="smaller-text">Cozinhar</label>
+                                <label className="smaller-text">{member.dislikes}</label>
                             </div>
                             <div className="label-value">
                                 <label className="legend">Socialização: </label>
-                                <label className="smaller-text">Introvertido</label>
+                                <label className="smaller-text">{member.socialization}</label>
                             </div>
                             <div className="label-value">
                                 <label className="legend">Possui Habilidades Domésticas: </label>
-                                <label className="smaller-text">Sim</label>
+                                <label className="smaller-text">{member.hasSkills}</label>
                             </div>
                             <div className="label-value">
                                 <label className="legend">Modos de Contribuições: </label>
                                 <ul>
-                                    <li className="smaller-text">Limpar banheiro</li>
-                                    <li className="smaller-text">Tirar pó de armários</li>
+                                    {member.contributions.map((task, idx) => (
+                                        <li key={idx} className="smaller-text">{task}</li>
+                                    ))}
                                 </ul>
                             </div>
                         </>
@@ -68,7 +70,7 @@ const MemberCard = () => {
                 />
             )}
         </div>
-    )
-}
+    );
+};
 
 export default MemberCard;

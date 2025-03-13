@@ -6,9 +6,9 @@
     margin-bottom: 0.5rem;
 }
 
-.bill-grid {
+.bills-section .bill-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 1rem;
+    gap: 2rem;
     padding: 0rem 1rem;
 }
