@@ -6,8 +6,8 @@
     height: 8.5rem;
     padding: 1rem 1.5rem;
     display: grid;
-    grid-template-columns: max-content 0.6fr 1fr;
-    column-gap: 0.5rem;
+    grid-template-columns: 0.3fr 0.55fr 1fr;
+    column-gap: 2rem;
     align-items: center;
     box-sizing: border-box;
 }
