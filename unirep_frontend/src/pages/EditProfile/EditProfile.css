@@ -2,6 +2,10 @@
     padding: 1rem 15rem;
 }
 
+.edit-profile .title {
+    margin: 1rem 0rem;
+}
+
 .edit-profile form {
     width: 100%;
     display: flex;

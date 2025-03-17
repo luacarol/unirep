@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { useAuth } from "../../context/AuthContext";
 import { useNavigate } from "react-router-dom";
 import "./EditProfile.css";
 import ButtonIcon from "../../components/Buttons/ButtonIcon/ButtonIcon";
@@ -7,24 +6,25 @@ import defaultProfileImage from "../../assets/images/user.svg"; // Imagem padrã
 import { useToast } from "../../components/Toast/ToastContainer";
 
 const EditProfile = () => {
-  const { user } = useAuth(); // Pegando o usuário logado
   const navigate = useNavigate(); // Para redirecionar após salvar o perfil
   const { addToast } = useToast();
 
-  // Estado para armazenar os dados do formulário
+  // Mockando os dados do usuário diretamente no estado
   const [formData, setFormData] = useState({
-    fullName: user ? user.full_name : "",
-    age: user ? user.age : "",
-    cpf: user ? user.cpf : "",
-    whatsapp: user ? user.whatsapp : "",
-    course: user ? user.university_course : "",
-    hobby: user ? user.hobby : "",
-    dislikes: user ? user.dislikes : "",
-    contribution: user?.contribution || [], // Agora armazenamos um array
+    fullName: "Isabele Oliveira",
+    age: 24,
+    cpf: "123.456.789-00",
+    whatsapp: "(31) 98765-4321",
+    course: "Engenharia de Software",
+    hobby: "Tocar violão",
+    dislikes: "Bagunça",
+    socialization: "Introvertido",
+    domestic: "Sim",
+    contribution: ["Limpar", "Cozinhar"], // Exemplo de opções selecionadas
   });
 
-  // Estado para armazenar a imagem de perfil
-  const [profileImage, setProfileImage] = useState(user?.profileImage || defaultProfileImage);
+  // Estado para armazenar a imagem de perfil (mockada)
+  const [profileImage, setProfileImage] = useState(defaultProfileImage);
 
   // Função para lidar com mudanças nos inputs
   const handleChange = (e) => {
@@ -57,22 +57,12 @@ const EditProfile = () => {
     }
   };
 
-  // Função para salvar as informações (substituir por chamada para API real)
+  // Função para salvar as informações (simulação de envio)
   const handleSubmit = (e) => {
     e.preventDefault();
-
-    try {
-      console.log(formData);
-
-      // Exibe um toast de sucesso
-      addToast("Perfil atualizado com sucesso!", "success");
-
-      // Redireciona para a página inicial
-      navigate("/");
-    } catch (error) {
-      // Exibe um toast de erro caso ocorra alguma falha
-      addToast("Erro ao atualizar perfil. Tente novamente.", "error");
-    }
+    console.log(formData);
+    addToast("Perfil atualizado com sucesso!", "success");
+    navigate("/");
   };
 
   return (
@@ -84,9 +74,8 @@ const EditProfile = () => {
         <div className="profile-picture">
           <img src={profileImage} alt="Foto de perfil" className="profile-img" />
           <input type="file" id="fileInput" accept="image/*" onChange={handleImageChange} />
-
           <label htmlFor="fileInput" className="upload-btn">
-            <i class="fa-solid fa-pen-to-square"></i>
+            <i className="fa-solid fa-pen-to-square"></i>
             <label htmlFor="fileInput" className="text-commom">Mudar foto</label>
           </label>
         </div>
@@ -124,6 +113,7 @@ const EditProfile = () => {
           <input type="text" id="dislikes" name="dislikes" value={formData.dislikes} onChange={handleChange} required />
         </div>
 
+        {/* Radio Buttons */}
         <div className="flex-three-columns">
           <div className="label-input">
             <label className="legend">Socialização</label>
@@ -152,7 +142,7 @@ const EditProfile = () => {
           </div>
 
           <div className="label-input">
-            <label className="legend" htmlFor="domestic">Possui Habilidades Domésticas</label>
+            <label className="legend">Possui Habilidades Domésticas</label>
             <div className="options">
               <label>
                 <input
@@ -178,7 +168,7 @@ const EditProfile = () => {
           </div>
 
           <div className="label-input">
-            <label className="legend" htmlFor="contribution">Modos de Contribuição</label>
+            <label className="legend">Modos de Contribuição</label>
             <div className="options">
               <label>
                 <input
