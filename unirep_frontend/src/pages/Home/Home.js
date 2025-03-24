@@ -31,7 +31,7 @@ const Home = () => {
   );
 
   const handleRepublicCard = () => {
-    if (notLoggedIn == true) {
+    if (notLoggedIn === true) {
       navigate("/login");
     } else {
       navigate("/republic-details")
