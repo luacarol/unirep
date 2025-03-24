@@ -4,15 +4,14 @@
     box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
     height: 20rem;
     border: 1.5px solid var(--gray-light);
-    transition: box-shadow 0.3s ease, transform 0.2s ease, border 0.2s ease;
+    transition: box-shadow 0.3s ease, transform 0.2s ease;
     cursor: pointer;
     box-sizing: border-box;
 }
 
 .republic-card:hover {
     box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.2);
-    transform: scale(1.02);
-    border: 1.5px solid var(--orange);
+    transform: scale(1.02); 
 }
 
 .republic-card .republic-name {
