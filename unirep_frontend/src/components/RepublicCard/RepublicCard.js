@@ -2,7 +2,7 @@ import React from "react";
 import "./RepublicCard.css"
 import republicImage from "../../assets/images/undraw_small_town_re_7mcn 1.svg"
 
-const RepublicCard = ({ name, rent, members, description, onClick }) => {
+const RepublicCard = ({ name, rent, members, description, city, onClick }) => {
     return (
         <div className="republic-card" onClick={onClick}>
             <div className="republic-image"><img src={republicImage} alt="Republic logo" /></div>
@@ -22,7 +22,7 @@ const RepublicCard = ({ name, rent, members, description, onClick }) => {
 
                 <div className="icon-label">
                     <i class="fa-solid fa-location-dot"></i>
-                    <label className="smaller-text">São José dos Campos</label>
+                    <label className="smaller-text">{city}</label>
                 </div>
             
                 <label className="legend rent">R$ {rent}</label>
