@@ -10,6 +10,7 @@ const Home = () => {
   const { user } = useAuth();
   const [republics, setRepublics] = useState([]);
   const [searchQuery, setSearchQuery] = useState("");
+  const [maxRent, setMaxRent] = useState(1000); // Estado inicial do slider 
 
   const navigate = useNavigate();
   let notLoggedIn = false;
@@ -51,10 +52,11 @@ const Home = () => {
     ]);
   }, []);
 
-  // Filtra as repúblicas pelo nome ou cidade
+  // Filtra as repúblicas pelo nome, cidade e valor do aluguel
   const filteredRepublics = republics.filter((rep) =>
-    rep.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
-    rep.city.toLowerCase().includes(searchQuery.toLowerCase())
+    (rep.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      rep.city.toLowerCase().includes(searchQuery.toLowerCase())) &&
+    rep.rent <= maxRent
   );
 
   const handleRepublicCard = () => {
@@ -86,6 +88,7 @@ const Home = () => {
           <h2 className="bigger-subtitle welcome-title">Bem-vindo(a) ao UniRep!</h2>
           <h1 className="title">🏠 Repúblicas Disponíveis</h1>
 
+          {/* Barra de pesquisa */}
           <div className="search-bar">
             <input
               type="text"
@@ -95,6 +98,23 @@ const Home = () => {
             />
           </div>
 
+          {/* Slider para filtragem por aluguel */}
+          <div className="filter-container">
+            <label className="legend" htmlFor="rent-slider">
+              💰 Filtrar por aluguel (até R$ {maxRent})
+            </label>
+            <input
+              id="rent-slider"
+              type="range"
+              min="500"
+              max="1000"
+              step="50"
+              value={maxRent}
+              onChange={(e) => setMaxRent(Number(e.target.value))}
+            />
+          </div>
+
+          {/* Lista de repúblicas filtradas */}
           <div className="republics">
             {filteredRepublics.length > 0 ? (
               filteredRepublics.map((rep) => (

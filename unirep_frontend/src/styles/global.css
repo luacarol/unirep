@@ -16,3 +16,42 @@
     background: var(--gray); 
     cursor: pointer;
 }
+
+input[type="range"] {
+    -webkit-appearance: none;
+    width: 100%;
+    height: 6px;
+    /* Define o corpinho */
+    background: var(--gray-light);
+    /* Cor do fundo */
+    border-radius: 5px;
+    outline: none;
+    opacity: 0.9;
+    transition: opacity 0.2s;
+}
+
+input[type="range"]:hover {
+    opacity: 1;
+}
+
+/* Estiliza a bolinha (thumb) do slider no Chrome, Safari e Edge */
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 16px;
+    height: 16px;
+    background: var(--orange);
+    /* Define a cor da bolinha */
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+/* Para Firefox */
+input[type="range"]::-moz-range-thumb {
+    width: 16px;
+    height: 16px;
+    background: var(--orange);
+    /* Define a cor da bolinha */
+    border-radius: 50%;
+    cursor: pointer;
+}

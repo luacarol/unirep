@@ -35,3 +35,21 @@
     font-size: 0.85rem;
     font-weight: 500;
 }
+
+.home .filter-container {
+    width: 30rem;
+    margin: 1rem 0;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 0.5rem;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.home .filter-container label {
+    color: var(--gray);
+}
+
+.home .filter-container input {
+    width: 11.5rem;
+}
