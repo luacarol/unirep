@@ -37,11 +37,11 @@
 }
 
 .home .filter-container {
-    width: 30rem;
+    width: 26rem;
     margin: 1rem 0;
     display: grid;
-    grid-template-columns: auto 1fr;
-    gap: 0.5rem;
+    grid-template-columns: auto 12rem;
+    gap: none;
     align-items: center;
     justify-content: space-between;
 }
@@ -51,5 +51,5 @@
 }
 
 .home .filter-container input {
-    width: 11.5rem;
+    width: 100%;
 }

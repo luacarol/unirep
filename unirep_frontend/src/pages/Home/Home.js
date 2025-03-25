@@ -10,7 +10,8 @@ const Home = () => {
   const { user } = useAuth();
   const [republics, setRepublics] = useState([]);
   const [searchQuery, setSearchQuery] = useState("");
-  const [maxRent, setMaxRent] = useState(1000); // Estado inicial do slider 
+  const [maxRent, setMaxRent] = useState(1000);
+  const [maxMembers, setMaxMembers] = useState(5); // Novo estado para o filtro de membros
 
   const navigate = useNavigate();
   let notLoggedIn = false;
@@ -52,11 +53,13 @@ const Home = () => {
     ]);
   }, []);
 
-  // Filtra as repúblicas pelo nome, cidade e valor do aluguel
-  const filteredRepublics = republics.filter((rep) =>
-    (rep.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      rep.city.toLowerCase().includes(searchQuery.toLowerCase())) &&
-    rep.rent <= maxRent
+  // Filtra as repúblicas pelo nome, cidade, valor do aluguel e número de membros
+  const filteredRepublics = republics.filter(
+    (rep) =>
+      (rep.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
+        rep.city.toLowerCase().includes(searchQuery.toLowerCase())) &&
+      rep.rent <= maxRent &&
+      rep.members <= maxMembers
   );
 
   const handleRepublicCard = () => {
@@ -98,7 +101,7 @@ const Home = () => {
             />
           </div>
 
-          {/* Slider para filtragem por aluguel */}
+          {/* Filtro por aluguel */}
           <div className="filter-container">
             <label className="legend" htmlFor="rent-slider">
               💰 Filtrar por aluguel (até R$ {maxRent})
@@ -111,6 +114,22 @@ const Home = () => {
               step="50"
               value={maxRent}
               onChange={(e) => setMaxRent(Number(e.target.value))}
+            />
+          </div>
+
+          {/* Filtro por quantidade de membros */}
+          <div className="filter-container">
+            <label className="legend" htmlFor="members-slider">
+              👥 Filtrar por membros (até {maxMembers})
+            </label>
+            <input
+              id="members-slider"
+              type="range"
+              min="1"
+              max="5"
+              step="1"
+              value={maxMembers}
+              onChange={(e) => setMaxMembers(Number(e.target.value))}
             />
           </div>
 
