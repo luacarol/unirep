@@ -30,3 +30,7 @@ env_bk/
 # Arquivos do sistema operacional
 .DS_Store
 Thumbs.db
+
+/media/
+
+migrations
