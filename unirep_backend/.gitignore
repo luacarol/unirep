@@ -1,0 +1,32 @@
+# Django
+*.log
+*.pot
+*.pyc
+*.pyo
+*.pyd
+__pycache__/
+db.sqlite3
+/static/
+media/
+
+# Dependências
+.env
+venv/
+venv_bk/
+env/
+env_bk/
+*.env
+
+# Ferramentas do IDE
+.vscode/
+.idea/
+
+# Arquivos de configuração
+*.sqlite3
+
+# Arquivos de backup
+*.bak
+
+# Arquivos do sistema operacional
+.DS_Store
+Thumbs.db
