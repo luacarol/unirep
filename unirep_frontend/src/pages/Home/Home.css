@@ -22,13 +22,13 @@
 }
 
 .home .search-bar {
-    margin: 1rem 0;
+    margin: 0.5rem 0;
 }
 
 .home .search-bar input {
     padding: 0.5rem;
     width: 80%;
-    max-width: 400px;
+    max-width: 417px;
     border: 1.5px solid var(--gray-light);
     border-radius: 0.5rem;
     box-sizing: border-box;
@@ -36,14 +36,26 @@
     font-weight: 500;
 }
 
+.home .filter-section {
+    margin: 1rem 0rem;
+    padding: 1.5rem 2rem;
+    max-width: auto;
+    border: 1.5px solid var(--gray-light);
+    border-radius: 0.5rem;
+    box-sizing: border-box;
+}
+
 .home .filter-container {
     width: 26rem;
-    margin: 1rem 0;
     display: grid;
     grid-template-columns: auto 12rem;
     gap: none;
     align-items: center;
     justify-content: space-between;
+}
+
+.home .filter-rent {
+    margin: 1em 0;
 }
 
 .home .filter-container label {

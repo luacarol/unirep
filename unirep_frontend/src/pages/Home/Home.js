@@ -11,7 +11,7 @@ const Home = () => {
   const [republics, setRepublics] = useState([]);
   const [searchQuery, setSearchQuery] = useState("");
   const [maxRent, setMaxRent] = useState(1000);
-  const [maxMembers, setMaxMembers] = useState(5); // Novo estado para o filtro de membros
+  const [maxMembers, setMaxMembers] = useState(15); // Novo estado para o filtro de membros
 
   const navigate = useNavigate();
   let notLoggedIn = false;
@@ -91,46 +91,50 @@ const Home = () => {
           <h2 className="bigger-subtitle welcome-title">Bem-vindo(a) ao UniRep!</h2>
           <h1 className="title">🏠 Repúblicas Disponíveis</h1>
 
-          {/* Barra de pesquisa */}
-          <div className="search-bar">
-            <input
-              type="text"
-              placeholder="Pesquise por nome ou cidade"
-              value={searchQuery}
-              onChange={(e) => setSearchQuery(e.target.value)}
-            />
-          </div>
+          <div className="filter-section">
+            <h2 className="minor-subtitle">Filtre a sua República</h2>
 
-          {/* Filtro por aluguel */}
-          <div className="filter-container">
-            <label className="legend" htmlFor="rent-slider">
-              💰 Filtrar por aluguel (até R$ {maxRent})
-            </label>
-            <input
-              id="rent-slider"
-              type="range"
-              min="500"
-              max="1000"
-              step="50"
-              value={maxRent}
-              onChange={(e) => setMaxRent(Number(e.target.value))}
-            />
-          </div>
+            {/* Barra de pesquisa */}
+            <div className="search-bar">
+              <input
+                type="text"
+                placeholder="Pesquise por nome ou cidade"
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+              />
+            </div>
 
-          {/* Filtro por quantidade de membros */}
-          <div className="filter-container">
-            <label className="legend" htmlFor="members-slider">
-              👥 Filtrar por membros (até {maxMembers})
-            </label>
-            <input
-              id="members-slider"
-              type="range"
-              min="1"
-              max="5"
-              step="1"
-              value={maxMembers}
-              onChange={(e) => setMaxMembers(Number(e.target.value))}
-            />
+            {/* Filtro por aluguel */}
+            <div className="filter-container filter-rent">
+              <label className="legend" htmlFor="rent-slider">
+                💰 Filtrar por aluguel (até R$ {maxRent})
+              </label>
+              <input
+                id="rent-slider"
+                type="range"
+                min="500"
+                max="1000"
+                step="50"
+                value={maxRent}
+                onChange={(e) => setMaxRent(Number(e.target.value))}
+              />
+            </div>
+
+            {/* Filtro por quantidade de membros */}
+            <div className="filter-container">
+              <label className="legend" htmlFor="members-slider">
+                👥 Filtrar por membros (até {maxMembers})
+              </label>
+              <input
+                id="members-slider"
+                type="range"
+                min="1"
+                max="15"
+                step="1"
+                value={maxMembers}
+                onChange={(e) => setMaxMembers(Number(e.target.value))}
+              />
+            </div>
           </div>
 
           {/* Lista de repúblicas filtradas */}
