@@ -17,49 +17,27 @@ const Home = () => {
   let notLoggedIn = false;
 
   useEffect(() => {
-    setRepublics([
-      {
-        id: 1,
-        name: "República Alpha",
-        rent: 800,
-        members: 3,
-        city: "São Paulo",
-        description: "Essa é a república Alpha, nós somos unidos e gostamos de organização",
-      },
-      {
-        id: 2,
-        name: "República Beta",
-        rent: 650,
-        members: 4,
-        city: "Rio de Janeiro",
-        description: "Essa é a república Beta, gostamos de uma boa festa para unir laços",
-      },
-      {
-        id: 3,
-        name: "República Gamma",
-        rent: 900,
-        members: 2,
-        city: "Belo Horizonte",
-        description: "Essa é a república Gamma, somos centrados nos estudos e gostamos de compartilhar conhecimentos",
-      },
-      {
-        id: 4,
-        name: "República Magma",
-        rent: 765,
-        members: 4,
-        city: "Curitiba",
-        description: "Essa é a república Magma, somos flexíveis uns com os outros e prezamos pela diversidade",
-      },
-    ]);
+    const fetchRepublics = async () => {
+      try {
+        const response = await fetch("http://127.0.0.1:8000/api/republics/");
+        const data = await response.json();
+        console.log("Repúblicas recebidas:", data); // 👀 Verificar no console
+        setRepublics(data);
+      } catch (error) {
+        console.error("Erro ao buscar repúblicas:", error);
+      }
+    };
+
+    fetchRepublics();
   }, []);
 
   // Filtra as repúblicas pelo nome, cidade, valor do aluguel e número de membros
   const filteredRepublics = republics.filter(
     (rep) =>
       (rep.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
-        rep.city.toLowerCase().includes(searchQuery.toLowerCase())) &&
+        rep.address.city.toLowerCase().includes(searchQuery.toLowerCase())) &&
       rep.rent <= maxRent &&
-      rep.members <= maxMembers
+      rep.number_of_members <= maxMembers
   );
 
   const handleRepublicCard = () => {
@@ -145,9 +123,9 @@ const Home = () => {
                   key={rep.id}
                   name={rep.name}
                   rent={rep.rent}
-                  members={rep.members}
+                  members={rep.number_of_members}  // 🔄 Corrigido
                   description={rep.description}
-                  city={rep.city}
+                  city={rep.address.city} // 🔄 Corrigido
                   onClick={handleRepublicCard}
                 />
               ))

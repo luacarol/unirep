@@ -18,9 +18,11 @@ from django.conf import settings
 from django.conf.urls.static import static
 from django.contrib import admin
 from django.urls import path
+from republic.views import RepublicListView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('api/republics/', RepublicListView.as_view(), name='republic-list'),
 ]
 
 # Adiciona a configuração para servir arquivos de mídia durante o desenvolvimento
