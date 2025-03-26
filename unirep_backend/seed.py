@@ -2,8 +2,8 @@ import os
 import django
 from faker import Faker
 from decimal import Decimal
-from django.core.files.uploadedfile import SimpleUploadedFile
-import random
+from django.core.files.storage import default_storage
+from django.core.files import File as DjangoFile
 
 # Configurar Django para rodar standalone
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'unirep_backend.settings')
@@ -13,8 +13,8 @@ from republic.models import Republic, Address, ItemToPay, File
 
 fake = Faker('pt_BR')
 
-# Extensões permitidas
-ALLOWED_EXTENSIONS = ['jpg', 'jpeg', 'png', 'mp4']
+# Caminho do arquivo para ser alocado
+DEFAULT_FILE_PATH = os.path.join('media', 'default_files', 'republic.jpg')
 
 def create_republic():
     # Criando um endereço fictício
@@ -34,20 +34,18 @@ def create_republic():
         address=address
     )
 
-    # Criando arquivos fictícios para a república
-    for _ in range(2):
-        ext = random.choice(ALLOWED_EXTENSIONS)
-        file_name = f'report_{fake.random_int(min=1, max=100)}.{ext}'
-        
-        # Criando conteúdo fictício conforme a extensão
-        if ext in ['jpg', 'jpeg', 'png']:
-            file_content = b'\x89PNG\r\n\x1a\n\x00\x00\x00\rIHDR'  # Simulação de um arquivo PNG
-        else:  # .mp4
-            file_content = b'\x00\x00\x00\x18ftypmp42'  # Simulação de um arquivo MP4
-
-        uploaded_file = SimpleUploadedFile(file_name, file_content)
-        file_instance = File.objects.create(republic=republic, file=uploaded_file)
-        republic.files.add(file_instance)
+    # Garantindo que o arquivo existe
+    if os.path.exists(DEFAULT_FILE_PATH):
+        # Usando default_storage para salvar o arquivo no diretório de mídia
+        with open(DEFAULT_FILE_PATH, 'rb') as f:
+            # Salvando o arquivo no Django Storage
+            uploaded_file = default_storage.save('republic_files/republic.jpeg', DjangoFile(f, name='republic.jpeg'))
+            
+            # Criando a instância do modelo File e associando ao campo 'file'
+            file_instance = File.objects.create(republic=republic, file=uploaded_file)
+            republic.files.add(file_instance)
+    else:
+        print(f"Arquivo {DEFAULT_FILE_PATH} não encontrado!")
 
     # Criando itens a pagar para a república
     for _ in range(3):
