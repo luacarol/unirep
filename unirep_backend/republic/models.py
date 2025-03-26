@@ -44,6 +44,15 @@ class File(models.Model):
 
     def __str__(self):
         return f'File {self.id} - {self.file.name}'
+    
+class ItemToPay(models.Model):
+    republic = models.ForeignKey('Republic', related_name='items_to_pay', on_delete=models.CASCADE)
+    name = models.CharField(max_length=255, blank=True)
+    amount = models.DecimalField(max_digits=10, decimal_places=2)
+    description = models.TextField(blank=True, default="")
+
+    def __str__(self):
+        return f"{self.name} - R${self.amount}"
 
 class Republic(models.Model):
     name = models.CharField(max_length=150, blank=False)
