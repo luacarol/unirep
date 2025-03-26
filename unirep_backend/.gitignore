@@ -7,7 +7,9 @@
 __pycache__/
 db.sqlite3
 /static/
-media/
+/media/
+/media/*
+!/media/default_files/
 
 # Dependências
 .env
@@ -30,7 +32,5 @@ env_bk/
 # Arquivos do sistema operacional
 .DS_Store
 Thumbs.db
-
-/media/
 
 migrations
