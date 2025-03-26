@@ -7,7 +7,8 @@
 __pycache__/
 db.sqlite3
 /static/
-/media/
+
+# Ignorar arquivos dentro de media, mas não a pasta default_files
 /media/*
 !/media/default_files/
 
