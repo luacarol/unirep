@@ -1,4 +1,5 @@
 from django.db import models
+from django.core.validators import FileExtensionValidator
 
 class Address(models.Model):
     # Lista de estados do Brasil
@@ -39,7 +40,7 @@ class Address(models.Model):
     
 class File(models.Model):
     republic = models.ForeignKey('Republic', related_name='republic_files', on_delete=models.CASCADE)
-    file = models.FileField(upload_to='republic_files/')
+    file = models.FileField(upload_to='republic_files/', validators=[FileExtensionValidator(allowed_extensions=['jpg', 'jpeg', 'png', 'mp4'])])
     uploaded_at = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
