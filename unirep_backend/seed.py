@@ -20,6 +20,7 @@ def create_republic():
     # Criando um endereço fictício
     address = Address.objects.create(
         street=fake.street_name(),
+        number=fake.random_int(min=1, max=10),
         neighborhood=fake.city_suffix(),
         city=fake.city(),
         state=fake.state_abbr()

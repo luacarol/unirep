@@ -4,7 +4,7 @@ from .models import Address, File, ItemToPay, Republic
 class AddressSerializer(serializers.ModelSerializer):
     class Meta:
         model = Address
-        fields = ['street', 'neighborhood', 'city', 'state']
+        fields = ['street', 'number', 'neighborhood', 'city', 'state']
 
 
 class FileSerializer(serializers.ModelSerializer):

@@ -34,6 +34,7 @@ class Address(models.Model):
     ]
 
     street = models.CharField(max_length=200)
+    number = models.IntegerField(default=0)
     neighborhood = models.CharField(max_length=100)
     city = models.CharField(max_length=100)
     state = models.CharField(max_length=2, choices=STATES_CHOICES)

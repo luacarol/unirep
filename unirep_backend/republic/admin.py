@@ -4,7 +4,7 @@ from .models import Republic, Address, File, ItemToPay
 # Registro do modelo Address no admin
 @admin.register(Address)
 class AddressAdmin(admin.ModelAdmin):
-    list_display = ('street', 'neighborhood', 'city', 'state')
+    list_display = ('street', 'number', 'neighborhood', 'city', 'state')
     search_fields = ('street', 'city')
     ordering = ('city',)
 
