@@ -4,6 +4,7 @@ from faker import Faker
 from decimal import Decimal
 from django.core.files.storage import default_storage
 from django.core.files import File as DjangoFile
+import random
 
 # Configurar Django para rodar standalone
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'unirep_backend.settings')
@@ -23,7 +24,9 @@ def create_republic():
         number=fake.random_int(min=1, max=10),
         neighborhood=fake.city_suffix(),
         city=fake.city(),
-        state=fake.state_abbr()
+        state=fake.state_abbr(),
+        latitude = random.uniform(-90, 90), 
+        longitude = random.uniform(-180, 180)
     )
 
     # Criando a república com endereço

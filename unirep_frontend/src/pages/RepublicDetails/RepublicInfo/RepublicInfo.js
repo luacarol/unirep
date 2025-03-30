@@ -17,8 +17,11 @@ const RepublicInfo = ({ republic }) => {
     const handleImgsVideosOpenModal = () => setIsImgsVideosModalOpen(true);
     const handleImgsVideosCloseModal = () => setIsImgsVideosModalOpen(false);
 
-    // URL do Google Maps com coordenadas específicas (substitua com as reais)
-    const googleMapsUrl = "https://www.google.com/maps?q=-23.55052,-46.633308";
+    // Garantir que o endereço tenha coordenadas
+    const { latitude, longitude } = republic.address || {};
+    const googleMapsUrl = latitude && longitude
+        ? `https://www.google.com/maps?q=${latitude},${longitude}`
+        : "https://www.google.com/maps";  // Caso as coordenadas não existam, link padrão para o Google Maps
 
     const images = [itemIcon, itemIcon, itemIcon, itemIcon, defaultRepublicPicture, defaultRepublicPicture]; // Substitua por suas imagens reais
 
@@ -59,7 +62,11 @@ const RepublicInfo = ({ republic }) => {
                         <div className="map-card-container">
                             <div className="section">
                                 <label className="legend">Endereço:</label>
-                                <label className="smaller-text description">{republic.address.street}, {republic.address.number}.<br />{republic.address.neighborhood}.<br />{republic.address.city}, {republic.address.state}.</label>
+                                <label className="smaller-text description">
+                                    {republic.address.street}, {republic.address.number}.<br />
+                                    {republic.address.neighborhood}.<br />
+                                    {republic.address.city}, {republic.address.state}.
+                                </label>
                             </div>
 
                             <div className="section">
@@ -71,7 +78,7 @@ const RepublicInfo = ({ republic }) => {
                                     className="map-card"
                                 >
                                     <img
-                                        src={`https://static-maps.yandex.ru/1.x/?lang=en-US&ll=-46.633308,-23.55052&z=15&l=map&size=600,300`}
+                                        src={`https://static-maps.yandex.ru/1.x/?lang=en-US&ll=${longitude},${latitude}&z=15&l=map&size=600,300`}
                                         alt="Mapa da República"
                                         className="map-image"
                                     />

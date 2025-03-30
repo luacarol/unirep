@@ -38,6 +38,11 @@ class Address(models.Model):
     neighborhood = models.CharField(max_length=100)
     city = models.CharField(max_length=100)
     state = models.CharField(max_length=2, choices=STATES_CHOICES)
+    latitude = models.FloatField(null=True, blank=True)
+    longitude = models.FloatField(null=True, blank=True)
+
+    def __str__(self):
+        return f"{self.street}, {self.number} - {self.neighborhood}, {self.city}, {self.state}"
     
 class File(models.Model):
     republic = models.ForeignKey('Republic', related_name='republic_files', on_delete=models.CASCADE)
