@@ -10,7 +10,7 @@ const Home = () => {
   const { user } = useAuth();
   const [republics, setRepublics] = useState([]);
   const [searchQuery, setSearchQuery] = useState("");
-  const [maxRent, setMaxRent] = useState(1000);
+  const [maxRent, setMaxRent] = useState(3000);
   const [maxMembers, setMaxMembers] = useState(15); // Novo estado para o filtro de membros
 
   const navigate = useNavigate();
@@ -36,8 +36,8 @@ const Home = () => {
     (rep) =>
       (rep.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
         rep.address.city.toLowerCase().includes(searchQuery.toLowerCase())) &&
-      rep.rent <= maxRent &&
-      rep.number_of_members <= maxMembers
+      parseFloat(rep.rent) <= maxRent && // 🛠️ Convertendo corretamente para número decimal
+      Number(rep.number_of_members) <= maxMembers
   );
 
   const handleRepublicCard = () => {
