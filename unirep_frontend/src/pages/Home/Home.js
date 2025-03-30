@@ -40,11 +40,11 @@ const Home = () => {
       Number(rep.number_of_members) <= maxMembers
   );
 
-  const handleRepublicCard = () => {
+  const handleRepublicCard = (rep) => {
     if (notLoggedIn === true) {
       navigate("/login");
     } else {
-      navigate("/republic-details");
+      navigate("/republic-details", { state: { republic: rep } });
     }
   };
 
@@ -123,10 +123,10 @@ const Home = () => {
                   key={rep.id}
                   name={rep.name}
                   rent={rep.rent}
-                  members={rep.number_of_members}  // 🔄 Corrigido
+                  members={rep.number_of_members}
                   description={rep.description}
-                  city={rep.address.city} // 🔄 Corrigido
-                  onClick={handleRepublicCard}
+                  city={rep.address.city}
+                  onClick={() => handleRepublicCard(rep)}  // Aqui passamos apenas a república
                 />
               ))
             ) : (

@@ -5,6 +5,7 @@ import Bills from "./Bills/Bills";
 import "./RepublicDetails.css";
 import RepublicInfo from "./RepublicInfo/RepublicInfo";
 import Modal from "../../components/Modal/Modal";
+import { useLocation } from "react-router-dom";
 
 const mockMembers = [
     {
@@ -50,6 +51,9 @@ const mockMembers = [
 ];
 
 const RepublicDetails = () => {
+    const location = useLocation();
+    const { republic } = location.state || {};
+
     const [isRequestModalOpen, setIsRequestModalOpen] = useState(false);
     const [isInfoConfirmModal, setIsInfoConfirmModal] = useState(false);
 
@@ -87,7 +91,7 @@ const RepublicDetails = () => {
                 )}
             </div>
 
-            <RepublicInfo />
+            <RepublicInfo republic={republic} />
             <Bills />
 
             <section className="section members-section">

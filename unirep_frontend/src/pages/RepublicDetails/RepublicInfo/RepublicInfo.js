@@ -5,12 +5,15 @@ import ButtonLine from "../../../components/Buttons/ButtonLine/ButtonLine";
 import Modal from "../../../components/Modal/Modal";
 import itemIcon from "../../../assets/images/item_icon.svg";
 
-const RepublicInfo = () => {
+const RepublicInfo = ({ republic }) => {
+
+    // Inicializando os estados de modal
     const [isAddressModalOpen, setIsAddressModalOpen] = useState(false);
+    const [isImgsVideosModalOpen, setIsImgsVideosModalOpen] = useState(false);
+
     const handleAddressOpenModal = () => setIsAddressModalOpen(true);
     const handleAddressCloseModal = () => setIsAddressModalOpen(false);
 
-    const [isImgsVideosModalOpen, setIsImgsVideosModalOpen] = useState(false);
     const handleImgsVideosOpenModal = () => setIsImgsVideosModalOpen(true);
     const handleImgsVideosCloseModal = () => setIsImgsVideosModalOpen(false);
 
@@ -19,7 +22,8 @@ const RepublicInfo = () => {
 
     const images = [itemIcon, itemIcon, itemIcon, itemIcon, defaultRepublicPicture, defaultRepublicPicture]; // Substitua por suas imagens reais
 
-    let isMember = false;
+    // Lógica condicional sobre o membro
+    const isMember = false; // Simulação de membro, pode vir de lógica de usuário logado
 
     return (
         <section className="republic-section">
@@ -31,14 +35,13 @@ const RepublicInfo = () => {
                 </div>
 
                 <div className="basic-infos">
-                    <label className="legend">República Beta</label>
-                    <label className="smaller-text">4 membros</label>
-                    <label className="smaller-text">R$ 180,00</label>
-                    {isMember == true && <label className="smaller-text">(12) 982173927</label>}
+                    <label className="legend">{republic.name}</label>
+                    <label className="smaller-text">{republic.number_of_members} membros</label>
+                    <label className="smaller-text">R$ {republic.rent}</label>
                 </div>
 
                 <div className="basic-infos">
-                    <label className="smaller-text description">Essa é a república Beta, gostamos de uma boa festa para unir laços</label>
+                    <label className="smaller-text description">{republic.description}</label>
                 </div>
 
                 <div className="basic-infos">
@@ -56,12 +59,11 @@ const RepublicInfo = () => {
                         <div className="map-card-container">
                             <div className="section">
                                 <label className="legend">Endereço:</label>
-                                <label className="smaller-text description">Av. Júlio Cézar Vilaça, 478.<br />Jardim Santo Onofre.<br />São José dos Campos, SP.</label>
+                                <label className="smaller-text description">{republic.address.street}, {republic.address.number}.<br />{republic.address.neighborhood}.<br />{republic.address.city}, {republic.address.state}.</label>
                             </div>
 
                             <div className="section">
                                 <label className="legend">Localização no Google Maps:</label>
-                                {/* Card Interativo para Localização */}
                                 <a
                                     href={googleMapsUrl}
                                     target="_blank"
@@ -98,14 +100,13 @@ const RepublicInfo = () => {
                                 <img src={defaultRepublicPicture} alt="Republic logo"/>
                                 <img src={defaultRepublicPicture} alt="Republic logo"/>
                                 <img src={defaultRepublicPicture} alt="Republic logo"/>
-                                
                             </div>
                         </div>
                     }
                 />
             )}
         </section>
-    )
-}
+    );
+};
 
 export default RepublicInfo;
