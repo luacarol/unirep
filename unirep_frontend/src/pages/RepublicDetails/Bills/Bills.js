@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import "./Bills.css";
 import BillCard from "../../../components/BillCard/BillCard";
 
-const Bills = () => {
+const Bills = ({ items }) => {
     const [bills, setBills] = useState([]);
 
     useEffect(() => {
@@ -49,8 +49,8 @@ const Bills = () => {
             <h3 className="bigger-subtitle">Itens a Pagar</h3>
 
             <div className="bill-grid">
-                {bills.map((bill) => (
-                    <BillCard key={bill.id} bill={bill} />
+                {items.map((item) => (
+                    <BillCard key={item.id} bill={item} />
                 ))}
             </div>
         </section>

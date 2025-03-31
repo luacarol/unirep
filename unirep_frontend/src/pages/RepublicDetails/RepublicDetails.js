@@ -92,7 +92,8 @@ const RepublicDetails = () => {
             </div>
 
             <RepublicInfo republic={republic} />
-            <Bills />
+
+            <Bills items={republic.items_to_pay} />
 
             <section className="section members-section">
                 <h3 className="bigger-subtitle">Membros</h3>

@@ -19,7 +19,7 @@ const BillCard = ({ bill }) => {
 
             <div className="content div">
                 <label className="legend">{name}</label>
-                <label className="smaller-text">R$ {amount.toFixed(2)}</label>
+                <label className="smaller-text">R$ {amount}</label>
 
                 {notMember === false && (
                     <>
