@@ -27,8 +27,8 @@
 
 .home .search-bar input {
     padding: 0.5rem;
-    width: 80%;
-    max-width: 417px;
+    width: 36rem;
+    max-width: 50%;
     border: 1.5px solid var(--gray-light);
     border-radius: 0.5rem;
     box-sizing: border-box;
@@ -37,7 +37,7 @@
 }
 
 .home .filter-section {
-    margin: 1rem 0rem;
+    margin: 1.5rem 0rem;
     padding: 1.5rem 2rem;
     max-width: auto;
     border: 1.5px solid var(--gray-light);
@@ -46,9 +46,9 @@
 }
 
 .home .filter-container {
-    width: 26rem;
+    width: 36rem;
     display: grid;
-    grid-template-columns: auto 12rem;
+    grid-template-columns: auto 20rem;
     gap: none;
     align-items: center;
     justify-content: space-between;

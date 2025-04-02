@@ -2,7 +2,7 @@
     background-color: white;
     border-radius: 0.75rem;
     box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
-    height: 20rem;
+    height: 22.5rem;
     border: 1.5px solid var(--gray-light);
     transition: box-shadow 0.3s ease, transform 0.2s ease;
     cursor: pointer;
@@ -30,7 +30,7 @@
 
 .republic-card .republic-card-infos {
     padding: 1rem 1.5rem;
-    height: 8.25rem;
+    height: 10em;
     display: flex;
     flex-direction: column;
     justify-content: space-between;

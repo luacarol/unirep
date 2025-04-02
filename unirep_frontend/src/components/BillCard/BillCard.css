@@ -7,6 +7,7 @@
     flex-direction: row;
     align-items: center;
     position: relative; /* Permite posicionar elementos filhos absolutos */
+    box-sizing: border-box;
 }
 
 .bill-card .content {
