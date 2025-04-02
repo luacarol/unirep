@@ -6,6 +6,7 @@ import Modal from "../../../components/Modal/Modal";
 import itemIcon from "../../../assets/images/item_icon.svg";
 
 const RepublicInfo = ({ republic }) => {
+    // console.log("republic ", republic)
 
     // Inicializando os estados de modal
     const [isAddressModalOpen, setIsAddressModalOpen] = useState(false);
@@ -97,16 +98,13 @@ const RepublicInfo = ({ republic }) => {
                     infos={
                         <div className="imgs-videos-content-modal">
                             <div className="imgs-videos-grid">
-                                <img src={defaultRepublicPicture} alt="Republic logo"/>
-                                <img src={defaultRepublicPicture} alt="Republic logo"/>
-                                <img src={defaultRepublicPicture} alt="Republic logo"/>
-                                <img src={defaultRepublicPicture} alt="Republic logo"/>
-                                <img src={defaultRepublicPicture} alt="Republic logo"/>
-                                <img src={defaultRepublicPicture} alt="Republic logo"/>
-                                <img src={defaultRepublicPicture} alt="Republic logo"/>
-                                <img src={defaultRepublicPicture} alt="Republic logo"/>
-                                <img src={defaultRepublicPicture} alt="Republic logo"/>
-                                <img src={defaultRepublicPicture} alt="Republic logo"/>
+                                {republic.files.length > 0 ? (
+                                    republic.files.map((file) => (
+                                        <img key={file.id} src={file.file_url} alt="Imagem da República" />
+                                    ))
+                                ) : (
+                                    <img src={defaultRepublicPicture} alt="Republic logo" />
+                                )}
                             </div>
                         </div>
                     }

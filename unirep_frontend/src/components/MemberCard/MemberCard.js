@@ -7,7 +7,7 @@ const MemberCard = ({ member }) => {
     const [isModalOpen, setIsModalOpen] = useState(false);
     const handleOpenModal = () => setIsModalOpen(true);
     const handleCloseModal = () => setIsModalOpen(false);
-    console.log("member ", member);
+    // console.log("member ", member);
 
     // Mapeamento de nomes amigáveis para os atributos
     const fieldLabels = {

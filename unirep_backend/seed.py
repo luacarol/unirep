@@ -67,7 +67,7 @@ def create_republic():
             description=fake.sentence(),
             republic=republic
         )
-        print(f'Item "{item.name}" adicionado à república "{republic.name}".')
+        # print(f'Item "{item.name}" adicionado à república "{republic.name}".')
 
     # Criando e associando arquivos padrão à república
     file_objects = []
@@ -79,9 +79,9 @@ def create_republic():
             )
             file_objects.append(file_instance)
 
-    print(f'Arquivos adicionados à república "{republic.name}" com sucesso!')
+    # print(f'Arquivos adicionados à república "{republic.name}" com sucesso!')
 
-    print(f'\nRepública "{republic.name}" criada com sucesso com {republic.number_of_members} membros e {republic.items_to_pay.count()} itens a pagar!\n')
+    print(f'\nRepública "{republic.name}" criada com sucesso!\n')
 
 if __name__ == '__main__':
     create_republic()

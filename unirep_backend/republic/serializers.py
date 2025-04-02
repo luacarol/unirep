@@ -9,9 +9,17 @@ class AddressSerializer(serializers.ModelSerializer):
 
 
 class FileSerializer(serializers.ModelSerializer):
+    file_url = serializers.SerializerMethodField()
+
     class Meta:
         model = File
-        fields = ['id', 'file', 'uploaded_at']
+        fields = ['id', 'file', 'file_url', 'uploaded_at']
+
+    def get_file_url(self, obj):
+        request = self.context.get('request')
+        if obj.file:
+            return request.build_absolute_uri(obj.file.url)
+        return None
 
 class ItemToPaySerializer(serializers.ModelSerializer):
     class Meta:
@@ -21,7 +29,7 @@ class ItemToPaySerializer(serializers.ModelSerializer):
 
 class RepublicSerializer(serializers.ModelSerializer):
     address = AddressSerializer()
-    files = FileSerializer(many=True)
+    files = FileSerializer(many=True, read_only=True, source="republic_files")
     items_to_pay = ItemToPaySerializer(many=True)
     users = UserSerializer(many=True, read_only=True)
 

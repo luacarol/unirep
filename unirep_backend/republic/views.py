@@ -7,7 +7,7 @@ from .serializers import RepublicSerializer
 class RepublicListView(APIView):
     def get(self, request):
         republics = Republic.objects.all()
-        serializer = RepublicSerializer(republics, many=True)
+        serializer = RepublicSerializer(republics, many=True, context={'request': request}) 
         return Response(serializer.data)
 
     def post(self, request):
