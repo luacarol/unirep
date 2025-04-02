@@ -10,10 +10,13 @@ import random
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'unirep_backend.settings')
 django.setup()
 
-from republic.models import Republic, Address, ItemToPay
+from django.conf import settings
+from republic.models import Republic, Address, ItemToPay, File
 from user.models import User  # Importe o modelo User
 
 fake = Faker('pt_BR')
+
+DEFAULT_FILE_PATH = os.path.join(settings.MEDIA_ROOT, "default_files", "republic.jpg")
 
 def create_republic():
     # Criando um endereço fictício
@@ -66,8 +69,19 @@ def create_republic():
         )
         print(f'Item "{item.name}" adicionado à república "{republic.name}".')
 
-    print(f'\nRepública "{republic.name}" criada com sucesso com {republic.number_of_members} membros e {republic.items_to_pay.count()} itens a pagar!\n')
+    # Criando e associando arquivos padrão à república
+    file_objects = []
+    for _ in range(3):  # Criando 3 instâncias do mesmo arquivo
+        with open(DEFAULT_FILE_PATH, "rb") as f:
+            file_instance = File.objects.create(
+                republic=republic,
+                file=DjangoFile(f, name="republic.jpg")
+            )
+            file_objects.append(file_instance)
 
+    print(f'Arquivos adicionados à república "{republic.name}" com sucesso!')
+
+    print(f'\nRepública "{republic.name}" criada com sucesso com {republic.number_of_members} membros e {republic.items_to_pay.count()} itens a pagar!\n')
 
 if __name__ == '__main__':
     create_republic()
