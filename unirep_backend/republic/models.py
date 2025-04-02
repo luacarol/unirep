@@ -1,5 +1,6 @@
 from django.db import models
 from django.core.validators import FileExtensionValidator
+from user.models import User
 
 class Address(models.Model):
     # Lista de estados do Brasil
@@ -68,6 +69,7 @@ class Republic(models.Model):
     rent = models.DecimalField(max_digits=10, decimal_places=2, default=0)
     address = models.OneToOneField(Address, on_delete=models.CASCADE, null=True, blank=True)
     files = models.ManyToManyField(File, related_name='republics', blank=True)
+    users = models.ManyToManyField(User, related_name='republics', blank=True)
 
     def save(self, *args, **kwargs):
         # Se o nome não for preenchido, define o nome como 'Republic {id}'
