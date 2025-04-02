@@ -10,12 +10,10 @@ import random
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'unirep_backend.settings')
 django.setup()
 
-from republic.models import Republic, Address, ItemToPay, File
+from republic.models import Republic, Address, ItemToPay
 from user.models import User  # Importe o modelo User
 
 fake = Faker('pt_BR')
-
-DEFAULT_FILE_PATH = os.path.join('media', 'default_files', 'republic.jpg')
 
 def create_republic():
     # Criando um endereço fictício
@@ -30,22 +28,21 @@ def create_republic():
     )
 
     # Criando a república
-    number_of_members = fake.random_int(min=1, max=10)
     republic = Republic.objects.create(
         name=fake.company(),
         description=fake.text(),
-        number_of_members=number_of_members,
         rent=Decimal(fake.random_int(min=500, max=3000)),
         address=address
     )
 
     # Criando usuários para a república
+    number_of_members = fake.random_int(min=1, max=10)
     for _ in range(number_of_members):
         user = User.objects.create(
-            name=fake.name(),  # 🔄 Corrigido de full_name para name
+            name=fake.name(),
             age=fake.random_int(min=18, max=35),
             phone_number=fake.phone_number(),
-            course=fake.job(),  # 🔄 Corrigido de university_course para course
+            course=fake.job(),
             favorite_hobby=fake.word(),
             dislikes=fake.sentence(),
             socialization=random.choice(['introvert', 'extrovert']),
@@ -54,7 +51,22 @@ def create_republic():
         )
         republic.users.add(user)  # Adiciona o usuário à república
 
-    print(f'República "{republic.name}" criada com sucesso com {number_of_members} membros!')
+    # Atualiza o número de membros com base nos usuários adicionados
+    republic.number_of_members = republic.users.count()
+    republic.save()
+
+    # Criando itens a pagar para a república
+    item_names = ["Água", "Luz", "Internet", "Gás", "Condomínio"]
+    for _ in range(random.randint(2, 5)):  # Criando de 2 a 5 itens aleatórios
+        item = ItemToPay.objects.create(
+            name=random.choice(item_names),
+            amount=Decimal(fake.random_int(min=50, max=500)),  
+            description=fake.sentence(),
+            republic=republic
+        )
+        print(f'Item "{item.name}" adicionado à república "{republic.name}".')
+
+    print(f'\nRepública "{republic.name}" criada com sucesso com {republic.number_of_members} membros e {republic.items_to_pay.count()} itens a pagar!\n')
 
 
 if __name__ == '__main__':

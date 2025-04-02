@@ -21,7 +21,7 @@ const Home = () => {
       try {
         const response = await fetch("http://127.0.0.1:8000/api/republics/");
         const data = await response.json();
-        console.log("Repúblicas recebidas:", data); // 👀 Verificar no console
+        // console.log("Repúblicas recebidas:", data);
         setRepublics(data);
       } catch (error) {
         console.error("Erro ao buscar repúblicas:", error);

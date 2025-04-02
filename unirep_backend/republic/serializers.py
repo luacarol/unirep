@@ -1,5 +1,6 @@
 from rest_framework import serializers
 from .models import Address, File, ItemToPay, Republic
+from user.serializers import UserSerializer
 
 class AddressSerializer(serializers.ModelSerializer):
     class Meta:
@@ -22,10 +23,11 @@ class RepublicSerializer(serializers.ModelSerializer):
     address = AddressSerializer()
     files = FileSerializer(many=True)
     items_to_pay = ItemToPaySerializer(many=True)
+    users = UserSerializer(many=True, read_only=True)
 
     class Meta:
         model = Republic
-        fields = ['id', 'name', 'description', 'number_of_members', 'rent', 'address', 'files', 'items_to_pay']
+        fields = ['id', 'name', 'description', 'number_of_members', 'rent', 'address', 'files', 'items_to_pay', 'users']
 
     def create(self, validated_data):
         address_data = validated_data.pop('address')

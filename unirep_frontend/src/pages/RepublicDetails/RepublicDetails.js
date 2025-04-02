@@ -53,6 +53,7 @@ const mockMembers = [
 const RepublicDetails = () => {
     const location = useLocation();
     const { republic } = location.state || {};
+    // console.log("republic ", republic)
 
     const [isRequestModalOpen, setIsRequestModalOpen] = useState(false);
     const [isInfoConfirmModal, setIsInfoConfirmModal] = useState(false);
@@ -99,7 +100,7 @@ const RepublicDetails = () => {
                 <h3 className="bigger-subtitle">Membros</h3>
 
                 <div className="members-grid">
-                    {mockMembers.map((member, index) => (
+                    {republic.users.map((member, index) => (
                         <MemberCard key={index} member={member} />
                     ))}
                 </div>

@@ -7,6 +7,20 @@ const MemberCard = ({ member }) => {
     const [isModalOpen, setIsModalOpen] = useState(false);
     const handleOpenModal = () => setIsModalOpen(true);
     const handleCloseModal = () => setIsModalOpen(false);
+    console.log("member ", member);
+
+    // Mapeamento de nomes amigáveis para os atributos
+    const fieldLabels = {
+        name: "Nome",
+        age: "Idade",
+        phone_number: "Número de Telefone",
+        course: "Curso",
+        favorite_hobby: "Hobbie Preferido",
+        dislikes: "Não Gosta de",
+        socialization: "Nível de Socialização",
+        hasSkills: "Habilidades Domésticas",
+        contributions: "Modos de Contribuição",
+    };
 
     return (
         <div className="member-card">
@@ -29,42 +43,20 @@ const MemberCard = ({ member }) => {
                     handleCloseModal={handleCloseModal}
                     infos={
                         <div className="modal-infos">
-                            <div className="label-value">
-                                <label className="legend">Nome: </label>
-                                <label className="smaller-text">{member.name}</label>
-                            </div>
-                            <div className="label-value">
-                                <label className="legend">Idade: </label>
-                                <label className="smaller-text">{member.age} anos</label>
-                            </div>
-                            <div className="label-value">
-                                <label className="legend">Cursando: </label>
-                                <label className="smaller-text">{member.course}</label>
-                            </div>
-                            <div className="label-value">
-                                <label className="legend">Hobbie Preferido: </label>
-                                <label className="smaller-text">{member.hobby}</label>
-                            </div>
-                            <div className="label-value">
-                                <label className="legend">Eu Não Gosto de... </label>
-                                <label className="smaller-text">{member.dislikes}</label>
-                            </div>
-                            <div className="label-value">
-                                <label className="legend">Socialização: </label>
-                                <label className="smaller-text">{member.socialization}</label>
-                            </div>
-                            <div className="label-value">
-                                <label className="legend">Possui Habilidades Domésticas: </label>
-                                <label className="smaller-text">{member.hasSkills}</label>
-                            </div>
-                            <div className="label-value">
-                                <label className="legend">Modos de Contribuições: </label>
-                                <ul>
-                                    {member.contributions.map((task, idx) => (
-                                        <li key={idx} className="smaller-text">{task}</li>
-                                    ))}
-                                </ul>
-                            </div>
+                            {Object.keys(member)
+                                .filter((key) => key !== "id") // Remove o ID
+                                .map((key) => (
+                                    <div key={key} className="label-value">
+                                        <label className="legend">
+                                            {fieldLabels[key] || key.charAt(0).toUpperCase() + key.slice(1)}:{" "}
+                                        </label>
+                                        <label className="smaller-text">
+                                            {Array.isArray(member[key])
+                                                ? member[key].join(", ") // Exibe arrays como lista separada por vírgulas
+                                                : member[key] ?? "Não informado"} {/* Evita valores null/undefined */}
+                                        </label>
+                                    </div>
+                                ))}
                         </div>
                     }
                 />
