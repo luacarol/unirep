@@ -3,7 +3,6 @@ import "./RepublicInfo.css";
 import defaultRepublicPicture from "../../../assets/images/undraw_small_town_re_7mcn 1.svg";
 import ButtonLine from "../../../components/Buttons/ButtonLine/ButtonLine";
 import Modal from "../../../components/Modal/Modal";
-import itemIcon from "../../../assets/images/item_icon.svg";
 
 const RepublicInfo = ({ republic }) => {
     // console.log("republic ", republic)
@@ -23,11 +22,6 @@ const RepublicInfo = ({ republic }) => {
     const googleMapsUrl = latitude && longitude
         ? `https://www.google.com/maps?q=${latitude},${longitude}`
         : "https://www.google.com/maps";  // Caso as coordenadas não existam, link padrão para o Google Maps
-
-    const images = [itemIcon, itemIcon, itemIcon, itemIcon, defaultRepublicPicture, defaultRepublicPicture]; // Substitua por suas imagens reais
-
-    // Lógica condicional sobre o membro
-    const isMember = false; // Simulação de membro, pode vir de lógica de usuário logado
 
     return (
         <section className="republic-section">

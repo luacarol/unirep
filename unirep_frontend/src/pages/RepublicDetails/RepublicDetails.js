@@ -7,49 +7,6 @@ import RepublicInfo from "./RepublicInfo/RepublicInfo";
 import Modal from "../../components/Modal/Modal";
 import { useLocation } from "react-router-dom";
 
-const mockMembers = [
-    {
-        name: "Luana dos Anjos",
-        age: 22,
-        course: "Análise e Desenvolvimento de Sistemas",
-        hobby: "Jogar futebol",
-        dislikes: "Cozinhar",
-        socialization: "Introvertido",
-        hasSkills: "Sim",
-        contributions: ["Limpar banheiro", "Tirar pó de armários"]
-    },
-    {
-        name: "Carlos Ferreira",
-        age: 25,
-        course: "Engenharia Civil",
-        hobby: "Tocar violão",
-        dislikes: "Acordar cedo",
-        socialization: "Extrovertido",
-        hasSkills: "Não",
-        contributions: ["Lavar louça", "Organizar a sala"]
-    },
-    {
-        name: "Mariana Souza",
-        age: 21,
-        course: "Psicologia",
-        hobby: "Ler livros",
-        dislikes: "Lugares barulhentos",
-        socialization: "Introvertida",
-        hasSkills: "Sim",
-        contributions: ["Cozinhar", "Regar as plantas"]
-    },
-    {
-        name: "Pedro Oliveira",
-        age: 23,
-        course: "Medicina",
-        hobby: "Correr no parque",
-        dislikes: "Ficar muito tempo no celular",
-        socialization: "Meio termo",
-        hasSkills: "Sim",
-        contributions: ["Fazer compras", "Levar o lixo para fora"]
-    }
-];
-
 const RepublicDetails = () => {
     const location = useLocation();
     const { republic } = location.state || {};
