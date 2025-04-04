@@ -1,5 +1,6 @@
 import os
 import django
+import requests
 from faker import Faker
 from decimal import Decimal
 from django.core.files.storage import default_storage
@@ -18,16 +19,51 @@ fake = Faker('pt_BR')
 
 DEFAULT_FILE_PATH = os.path.join(settings.MEDIA_ROOT, "default_files", "republic.jpg")
 
+def get_real_address():
+    """Busca um endereço real aleatório da API ViaCEP"""
+    cep = str(random.randint(1000000, 9999999)).zfill(8)  # Gera CEP aleatório
+    url = f"https://viacep.com.br/ws/{cep}/json/"
+    response = requests.get(url)
+
+    if response.status_code == 200:
+        data = response.json()
+        if "erro" not in data:
+            return {
+                "street": data.get("logradouro", fake.street_name()),
+                "neighborhood": data.get("bairro", fake.city_suffix()),
+                "city": data.get("localidade", fake.city()),
+                "state": data.get("uf", fake.state_abbr()),
+                "cep": data.get("cep", ""),
+                "number": random.randint(1, 500),
+                "latitude": random.uniform(-23.5, -22.8),  # Coordenadas genéricas
+                "longitude": random.uniform(-46.8, -46.3),
+            }
+    
+    # Caso o CEP seja inválido, gera um endereço fictício
+    return {
+        "street": fake.street_name(),
+        "neighborhood": fake.city_suffix(),
+        "city": fake.city(),
+        "state": fake.state_abbr(),
+        "cep": "",
+        "number": random.randint(1, 500),
+        "latitude": random.uniform(-23.5, -22.8),
+        "longitude": random.uniform(-46.8, -46.3),
+    }
+
 def create_republic():
-    # Criando um endereço fictício
+    # Obtendo um endereço real
+    real_address = get_real_address()
+
+    # Criando um endereço no banco de dados
     address = Address.objects.create(
-        street=fake.street_name(),
-        number=fake.random_int(min=1, max=10),
-        neighborhood=fake.city_suffix(),
-        city=fake.city(),
-        state=fake.state_abbr(),
-        latitude=random.uniform(-90, 90),
-        longitude=random.uniform(-180, 180)
+        street=real_address["street"],
+        number=real_address["number"],
+        neighborhood=real_address["neighborhood"],
+        city=real_address["city"],
+        state=real_address["state"],
+        latitude=real_address["latitude"],
+        longitude=real_address["longitude"]
     )
 
     # Criando a república
