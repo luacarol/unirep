@@ -13,11 +13,11 @@ const Login = () => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    login(formData.email, formData.password); // Chama a função de login
-    navigate("/"); // Redireciona para Home
-  };
+    await login(formData.email, formData.password);
+    navigate("/"); // Redireciona só depois do login
+  };  
 
   return (
     <div className="login">

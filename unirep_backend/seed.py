@@ -79,6 +79,7 @@ def create_republic():
     for _ in range(number_of_members):
         user = User.objects.create(
             name=fake.name(),
+            email=fake.unique.email(),  # <-- Adiciona email único
             age=fake.random_int(min=18, max=35),
             phone_number=fake.phone_number(),
             course=fake.job(),
@@ -88,7 +89,7 @@ def create_republic():
             household_skills=random.choice(['yes', 'no']),
             contribution_modes=random.choice(['cleaning', 'cooking', 'organizing']),
         )
-        republic.users.add(user)  # Adiciona o usuário à república
+        republic.users.add(user)
 
     # Atualiza o número de membros com base nos usuários adicionados
     republic.number_of_members = republic.users.count()

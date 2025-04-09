@@ -1,41 +1,55 @@
-import { createContext, useState, useContext } from "react";
+import React, { createContext, useContext, useState } from "react";
+import axios from "axios";
 
-// Criando o contexto
 const AuthContext = createContext();
 
-// Hook personalizado para acessar o contexto facilmente
-export const useAuth = () => {
-    return useContext(AuthContext);
-};
-
-// Provedor do contexto que envolverá a aplicação
 export const AuthProvider = ({ children }) => {
-    const [user, setUser] = useState(null); // Estado do usuário logado
+  const [authTokens, setAuthTokens] = useState(() =>
+    localStorage.getItem("authTokens") ? JSON.parse(localStorage.getItem("authTokens")) : null
+  );
 
-    // Simulação de login (substitua pela chamada real à API)
-    const login = (email, password) => {
-        // Simulação de um usuário logado e sua república
-        const fakeUser = {
-            id: 1,
-            full_name: "Luana Oliveira",
-            email,
-            republic: {
-                name: "República Universitária Alpha",
-                rent: 1200,
-                members: 5,
-            },
-        };
-        setUser(fakeUser); // Salva o usuário no estado
-    };
+  const [user, setUser] = useState(() =>
+    localStorage.getItem("user") ? JSON.parse(localStorage.getItem("user")) : null
+  );
 
-    // Logout
-    const logout = () => {
-        setUser(null);
-    };
+  const login = async (email, password) => {
+    try {
+      const response = await axios.post("http://127.0.0.1:8000/auth/jwt/create/", {
+        email,
+        password,
+      });
 
-    return (
-        <AuthContext.Provider value={{ user, login, logout }}>
-            {children}
-        </AuthContext.Provider>
-    );
+      const tokens = response.data;
+      setAuthTokens(tokens);
+      localStorage.setItem("authTokens", JSON.stringify(tokens));
+
+      // Obter dados do usuário autenticado
+      const userResponse = await axios.get("http://127.0.0.1:8000/auth/users/me/", {
+        headers: {
+          Authorization: `Bearer ${tokens.access}`,
+        },
+      });
+
+      setUser(userResponse.data);
+      localStorage.setItem("user", JSON.stringify(userResponse.data));
+    } catch (error) {
+      console.error("Erro ao fazer login:", error.response?.data || error.message);
+      alert("Email ou senha inválidos.");
+    }
+  };
+
+  const logout = () => {
+    setAuthTokens(null);
+    setUser(null);
+    localStorage.removeItem("authTokens");
+    localStorage.removeItem("user");
+  };
+
+  return (
+    <AuthContext.Provider value={{ user, login, logout, authTokens }}>
+      {children}
+    </AuthContext.Provider>
+  );
 };
+
+export const useAuth = () => useContext(AuthContext);
